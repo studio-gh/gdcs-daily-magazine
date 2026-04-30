@@ -1,0 +1,27 @@
+PMI Creative Studio Morning Edition
+Thursday, April 30, 2026
+Homepage: index.html
+Archive copy: archives/2026/04/2026-04-30.html
+
+SLACK VERSION
+Morning Edition is live: AI tools worth the team's attention today.
+
+Today's issue is centered on one big shift: AI is moving into real creative workflows, not just idea generation.
+- Adobe and Microsoft both made the strongest "act inside the tool" case, with Firefly AI Assistant and app-native Copilot actions in PowerPoint.
+- Canva AI 2.0 and Claude Design point toward a new intake model where rough ideas arrive already structured, editable, and closer to handoff-ready.
+- OpenAI and Google both pushed the experimentation layer forward, especially for editorial image making, lightweight video, and lower-cost motion prototyping.
+
+Open the full edition here: index.html
+
+EMAIL VERSION
+Subject: Morning Edition: 10 AI workflow shifts worth the design team's attention
+
+Today's Morning Edition is ready. The strongest thread across this issue is that the major platforms are no longer treating AI as a side feature: Adobe, Microsoft, Anthropic, Canva, OpenAI, and Google are all pushing toward assistants that can act inside real creative workflows, move across files and tools, and reduce the amount of setup work before design judgment begins.
+
+- Adobe Firefly AI Assistant and Microsoft Copilot in PowerPoint look most immediately relevant for current production workflows.
+- Canva AI 2.0 and Claude Design suggest upstream teams may soon arrive with more structured, editable first drafts.
+- ChatGPT Images 2.0, Google Vids, and Veo 3.1 Lite make concepting and motion experimentation cheaper, faster, and easier to operationalize.
+
+Read the full magazine: index.html
+
+Read the full magazine: index.html
