@@ -1,0 +1,10 @@
+{
+  "name": "gdcs-daily-magazine",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "node ./scripts/generate-magazine.mjs",
+    "test:local": "MAGAZINE_INPUT_JSON=./scripts/sample-edition.json node ./scripts/generate-magazine.mjs"
+  }
+}

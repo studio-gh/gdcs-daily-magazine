@@ -1,0 +1,124 @@
+{
+  "edition_date": "2026-04-29",
+  "cover_title": "AI tools worth the team's attention today.",
+  "cover_deck": "Ten signals across Claude, ChatGPT, Gemini, Canva, Adobe, and Microsoft that actually touch design workflow, experimentation, and production inside PMI.",
+  "cover_notes": [
+    "Every story below clears the same bar: workflow impact, internal discussion value, practical experimentation potential, or direct application to creative operations.",
+    "Agentic creation is no longer a concept demo. The most relevant launches now act inside real design tools, real files, and real brand systems."
+  ],
+  "slack_summary": "Morning Edition is live: AI tools worth the team's attention today.\n\nToday's issue is centered on one big shift: AI is moving into real creative workflows, not just idea generation.\n- Adobe and Microsoft both made the strongest \"act inside the tool\" case, with Firefly AI Assistant and app-native Copilot actions in PowerPoint.\n- Canva AI 2.0 and Claude Design point toward a new intake model where rough ideas arrive already structured, editable, and closer to handoff-ready.\n- OpenAI and Google both pushed the experimentation layer forward, especially for editorial image making, lightweight video, and lower-cost motion prototyping.\n\nOpen the full edition here: index.html",
+  "email_subject": "Morning Edition: 10 AI workflow shifts worth the design team's attention",
+  "email_summary": "Today's Morning Edition is ready. The strongest thread across this issue is that the major platforms are no longer treating AI as a side feature: Adobe, Microsoft, Anthropic, Canva, OpenAI, and Google are all pushing toward assistants that can act inside real creative workflows, move across files and tools, and reduce the amount of setup work before design judgment begins.\n\n- Adobe Firefly AI Assistant and Microsoft Copilot in PowerPoint look most immediately relevant for current production workflows.\n- Canva AI 2.0 and Claude Design suggest upstream teams may soon arrive with more structured, editable first drafts.\n- ChatGPT Images 2.0, Google Vids, and Veo 3.1 Lite make concepting and motion experimentation cheaper, faster, and easier to operationalize.\n\nRead the full magazine: index.html",
+  "stories": [
+    {
+      "source_name": "Anthropic",
+      "published_date": "Apr 28",
+      "headline": "Claude starts showing up inside the tools creative teams already use.",
+      "why_it_matters": "Anthropic is no longer positioning Claude as just a chat surface. The bigger signal is that it is wiring Claude into existing creative environments where repetitive production work and file handoff friction already exist, which makes it newly relevant to actual studio operations.",
+      "detail": "For PMI, the practical value is the chance to test whether natural-language orchestration can reduce asset prep, file translation, and multi-app campaign friction without forcing the design team to abandon the current stack.",
+      "urgent": false,
+      "story_url": "https://www.anthropic.com/news/claude-for-creative-work",
+      "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/a62b6eb169818f14c35b7a192af269e283f8fa93-1000x1000.svg",
+      "image_alt": "Anthropic artwork for Claude for Creative Work."
+    },
+    {
+      "source_name": "Adobe",
+      "published_date": "Apr 27",
+      "headline": "Adobe has moved from single generative features to a true workflow assistant.",
+      "why_it_matters": "Adobe is finally testing an interface that can chain creative steps instead of only generating one-off results. That is much closer to how campaign teams actually work under deadline and worth immediate review inside PMI's studio.",
+      "detail": "Adobe's examples include smart crops, mockups, mood boards, and variation work. Those are exactly the kinds of repetitive but brand-sensitive tasks where assistant-led acceleration could be useful if the design team still controls final judgment and brand quality.",
+      "urgent": true,
+      "story_url": "https://blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta",
+      "image_url": "https://blog.adobe.com/en/publish/2026/04/27/media_120f55e65ce82173a0e54777188bd1ce9cf51b27e.png?format=png&optimize=medium&width=750",
+      "image_alt": "Adobe Firefly AI Assistant public beta interface showing mockup creation."
+    },
+    {
+      "source_name": "OpenAI",
+      "published_date": "Apr 23",
+      "headline": "GPT-5.5 keeps pushing AI from prompt helper toward delegated work.",
+      "why_it_matters": "The real signal is persistence across messy, multi-step work. That directly touches the upstream tasks creative teams juggle around source digestion, structure, brief prep, and early content shaping before design craft starts.",
+      "detail": "For PMI, the strongest use is not asking GPT-5.5 to design finished work. It is delegating prep work that slows teams down: compiling references, checking consistency, drafting working materials, and reducing the amount of manual setup before a designer gets involved.",
+      "urgent": false,
+      "story_url": "https://openai.com/index/introducing-gpt-5-5/",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/3tvjV3IAWoNm6kBwh6XjQB/5d2c1ca28e25d5ee015fd220b919d5b3/Blog3.png?fm=webp&q=90&w=3840",
+      "image_alt": "OpenAI source image associated with the GPT-5.5 release page."
+    },
+    {
+      "source_name": "Microsoft",
+      "published_date": "Apr 22",
+      "headline": "PowerPoint Copilot can now take app-native actions instead of staying in suggestion mode.",
+      "why_it_matters": "This is directly operational for PMI because presentation work is a recurring output. If Copilot can update decks, add slides, and work inside company templates, it changes how first-pass deck production and maintenance could be split between content owners and designers.",
+      "detail": "The gain is speed and workflow leverage, not originality. It may let partners handle routine changes while the design team stays focused on hierarchy, polish, visual pacing, and brand-sensitive review.",
+      "urgent": true,
+      "story_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/",
+      "image_url": "https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2026/04/Edit-with-Copilot-4.jpg",
+      "image_alt": "Microsoft 365 Copilot editing directly inside PowerPoint."
+    },
+    {
+      "source_name": "OpenAI",
+      "published_date": "Apr 21",
+      "headline": "ChatGPT Images 2.0 looks much more usable for editorial concepting than the last wave.",
+      "why_it_matters": "The strongest signal is improved control around layout, aspect ratio, denser text, and editorial coherence. Those are the areas earlier image tools struggled with most when used for concept covers, social headline explorations, or campaign moodboards.",
+      "detail": "That still does not make it production-safe by default. For PMI, the better use is rapid concept development and visual direction testing before the team moves into finished craft and brand-specific refinement.",
+      "urgent": true,
+      "story_url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/3IdBQyOlVNdmSCdUjK0zYT/e05480b1b44cc06d6ff2b357c3f80855/introducingchatfinal.jpg?fm=webp&q=90&w=3840",
+      "image_alt": "OpenAI poster image for ChatGPT Images 2.0."
+    },
+    {
+      "source_name": "Anthropic",
+      "published_date": "Apr 17",
+      "headline": "Claude Design is trying to own the messy space before formal handoff.",
+      "why_it_matters": "This is not a replacement for final design craft. The value is earlier in the workflow, where teams need presentable first drafts, prototypes, slides, and one-pagers before a designer invests time in elevating the work.",
+      "detail": "Inside PMI, that could reshape intake. If partners arrive with more legible and editable first passes, the studio can spend less time translating rough intent and more time pushing quality, pacing, and brand expression.",
+      "urgent": false,
+      "story_url": "https://www.anthropic.com/news/claude-design-anthropic-labs?target=_blank",
+      "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/33dbe8f783d4835a838b4c4ae85d3c04e352fee1-1000x1000.svg",
+      "image_alt": "Anthropic artwork for Claude Design."
+    },
+    {
+      "source_name": "Canva",
+      "published_date": "Apr 16",
+      "headline": "Canva is recasting itself as a conversational, brand-aware creation system.",
+      "why_it_matters": "This is a broader directional shift than a simple feature release. Canva is aiming to become the place where non-specialists begin work that is already layered, structured, and closer to handoff-ready before design ever touches it.",
+      "detail": "For PMI, that matters wherever distributed teams already rely on Canva for quick-turn content, social variants, or early deck work. The strategic question is how much of that upstream creation should be encouraged and where central brand review should still step in.",
+      "urgent": false,
+      "story_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "image_url": "https://content-management-files.canva.com/78cefba4-480b-4c32-9650-bbb941e118e2/CanvaAI2.0launch.png",
+      "image_alt": "Canva AI 2.0 launch artwork."
+    },
+    {
+      "source_name": "Google",
+      "published_date": "Apr 2",
+      "headline": "Google is lowering the cost barrier for AI-assisted video creation.",
+      "why_it_matters": "This is a practical team-enablement update because it widens access to lightweight AI-assisted video creation rather than keeping it inside a premium tool lane. That makes motion experimentation more reachable for distributed teams.",
+      "detail": "For PMI, the immediate use cases are internal explainers, event recaps, social prototypes, and quick tutorials. The design implication is that motion is becoming a more common adjacent skill, which may require clearer guidance on where self-serve work ends and brand review begins.",
+      "urgent": true,
+      "story_url": "https://blog.google/products-and-platforms/products/workspace/google-vids-expands-ai-access/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Vids_TT_Consumer_1.gif",
+      "image_alt": "Google Vids animation showing AI tools in the editing panel."
+    },
+    {
+      "source_name": "Google",
+      "published_date": "Mar 31",
+      "headline": "Cheaper video generation matters because it turns experimentation into something teams can actually budget.",
+      "why_it_matters": "Lower-cost motion generation matters because it changes behavior. When the price of trying many directions drops, more teams will use moving-image concepts earlier in the creative process instead of waiting for formal production.",
+      "detail": "For PMI, that makes tools like this relevant for storyboards, campaign visualization, and pre-production exploration even if the final polished video still happens elsewhere.",
+      "urgent": false,
+      "story_url": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/veo31lite.width-200.format-webp.webp",
+      "image_alt": "Source artwork for Google Veo 3.1 Lite."
+    },
+    {
+      "source_name": "Adobe",
+      "published_date": "Apr 9",
+      "headline": "Adobe's newest Firefly story is really about control, not generation.",
+      "why_it_matters": "This is one of the more designer-friendly AI updates in the stack because it addresses vague outputs and over-reprompting. Precision Flow and AI Markup are both about preserving art direction rather than replacing it.",
+      "detail": "For PMI, that makes this a strong pilot candidate for image refinement, social adaptation, and visual iteration where speed matters but the team still needs to steer composition and brand-sensitive decisions closely.",
+      "urgent": true,
+      "story_url": "https://blog.adobe.com/en/publish/2026/04/09/new-image-editing-features-adobe-firefly-get-you-from-almost-there-to-exactly-right",
+      "image_url": "https://blog.adobe.com/en/publish/2026/04/09/media_1b21ea21953de7a61c803383c7042bf3724b6e798.jpg?format=jpg&optimize=medium&width=750",
+      "image_alt": "Adobe Firefly Precision Flow interface showing controlled image variations."
+    }
+  ]
+}
