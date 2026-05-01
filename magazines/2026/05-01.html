@@ -251,6 +251,7 @@
       .tone-tangerine { background: linear-gradient(180deg, rgba(255,97,15,0.08), rgba(255,255,255,0.96) 36%), #fff; }
 
       .footer { padding: 0 0 56px; }
+      .footer-stack { display: grid; gap: 16px; }
       .footer-panel {
         padding: 22px 24px;
         border-radius: 22px;
@@ -758,16 +759,27 @@
 
     <footer class="footer">
       <div class="shell">
-        <section class="footer-panel">
-          <h2>Editorial takeaway</h2>
-          <p>
-            The clearest pattern today is that the winning tools are trying to own more of the chain between brief and
-            finished output while keeping files editable and increasingly brand-aware. For PMI’s Graphic Design Team,
-            the opportunity is not to chase every launch. It is to define where agentic help improves speed without
-            weakening the studio’s role as the guardian of narrative clarity, accessibility, and premium brand
-            expression.
-          </p>
-        </section>
+        <div class="footer-stack">
+          <section class="footer-panel">
+            <h2>Editorial takeaway</h2>
+            <p>
+              The clearest pattern today is that the winning tools are trying to own more of the chain between brief and
+              finished output while keeping files editable and increasingly brand-aware. For PMI’s Graphic Design Team,
+              the opportunity is not to chase every launch. It is to define where agentic help improves speed without
+              weakening the studio’s role as the guardian of narrative clarity, accessibility, and premium brand
+              expression.
+            </p>
+          </section>
+          <section class="footer-panel">
+            <h2>Browse previous editions</h2>
+            <p>
+              Open the archive to browse the latest Morning Edition issues and jump by month as the magazine library grows.
+            </p>
+            <p style="margin-top:14px;">
+              <a class="read-link" href="/archives/">Open the archive ↗</a>
+            </p>
+          </section>
+        </div>
       </div>
     </footer>
   </body>

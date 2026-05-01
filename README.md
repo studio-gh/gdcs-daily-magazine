@@ -1,24 +1,32 @@
-# GitHub Update Bundle for 2026-05-01
+# Netlify + GitHub site update bundle
 
-This corrected bundle matches your actual GitHub path pattern:
+This bundle is designed to fix the live site so:
 
+- the homepage opens the latest edition
+- the current issue includes an archive link at the bottom
+- previous editions are reachable through an archive page
+
+## Upload these paths into your GitHub repo
+
+- `index.html`
+- `archives/index.html`
+- `archives/2026/05/index.html`
+- `archives/2026/04/index.html`
 - `magazines/2026/05-01.html`
+- `magazines/2026/04-30.html`
 
-## How to use
+## Why this should fix the live site
 
-1. Open your GitHub repo locally or in the GitHub web editor.
-2. Copy the `magazines/2026/05-01.html` file into the matching folder in the repo.
-3. Commit the change with a message like:
-   `Add Morning Edition for 2026-05-01`
-4. Push to GitHub.
-5. Netlify should redeploy automatically if the repo is connected.
+- `index.html` sends the Netlify homepage to the latest issue at `/magazines/2026/05-01.html`
+- `/archives/` becomes the archive landing page
+- the two magazine files now include an archive link at the bottom
 
 ## Important note
 
-This bundle follows the corrected structure you provided:
+Yes, if you want a year/month archive structure, a May folder should exist here:
 
-- `/magazines/YYYY/MM-DD.html`
+- `archives/2026/05/`
 
-So for this issue, the correct destination is:
+And an April folder should exist here:
 
-- `/magazines/2026/05-01.html`
+- `archives/2026/04/`
