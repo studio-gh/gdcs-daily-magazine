@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Morning Edition | PMI Creative Studio | 2026-05-01</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --violet-800: #200f3b;
+        --violet-500: #4f17a8;
+        --violet-150: #e4d8f6;
+        --aqua-300: #05bfe0;
+        --aqua-100: #dcf8fd;
+        --tangerine-300: #ff610f;
+        --tangerine-100: #fff0e7;
+        --paper: #f8f4ee;
+        --white: #ffffff;
+        --ink: #201a31;
+        --soft: #5a536e;
+        --line: rgba(32, 15, 59, 0.12);
+        --shadow: 0 22px 60px rgba(32, 15, 59, 0.12);
+        --radius: 28px;
+        --max: 1300px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(79, 23, 168, 0.14), transparent 26%),
+          linear-gradient(180deg, #fcf9f4 0%, #f5f1ea 100%);
+      }
+
+      a { color: inherit; }
+      .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+      .cover { padding: 28px 0 18px; }
+      .cover-panel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 34px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background:
+          radial-gradient(circle at 15% 20%, rgba(5,191,224,0.32), transparent 18%),
+          linear-gradient(135deg, #4f17a8 0%, #2a154f 55%, #200f3b 100%);
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+      .cover-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 30px;
+        padding: 40px;
+      }
+      .eyebrow {
+        display: inline-flex;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.12);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 18px 0 14px;
+        font-family: "Fraunces", serif;
+        font-size: clamp(3.2rem, 6.1vw, 5.8rem);
+        line-height: 0.93;
+        letter-spacing: -0.04em;
+      }
+      .cover-copy {
+        max-width: 64ch;
+        font-size: 1.08rem;
+        line-height: 1.72;
+        color: rgba(255,255,255,0.9);
+      }
+      .cover-side {
+        display: grid;
+        gap: 14px;
+        align-content: end;
+      }
+      .side-card {
+        padding: 18px 18px 20px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+      }
+      .side-card h2, .side-card h3 {
+        margin: 0 0 8px;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .side-card p { margin: 0; line-height: 1.65; color: rgba(255,255,255,0.9); }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      .chip {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.12);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .nav-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 10px 0 18px;
+        background: linear-gradient(180deg, rgba(248,244,238,0.98), rgba(248,244,238,0.84), transparent);
+        backdrop-filter: blur(12px);
+      }
+      .jump-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+        background: rgba(255,255,255,0.82);
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        box-shadow: 0 10px 30px rgba(32,15,59,0.08);
+      }
+      .jump-nav a {
+        padding: 10px 12px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 800;
+        background: rgba(79,23,168,0.08);
+        color: var(--violet-800);
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        padding: 10px 0 30px;
+      }
+      .intro p {
+        margin: 0;
+        line-height: 1.72;
+        color: var(--soft);
+      }
+
+      main {
+        display: grid;
+        gap: 26px;
+        padding-bottom: 40px;
+      }
+      .story {
+        --accent: var(--violet-500);
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        border: 1px solid var(--line);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+      .story::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 10px;
+        background: linear-gradient(90deg, var(--accent), rgba(255,255,255,0));
+      }
+      .story-inner {
+        display: grid;
+        gap: 22px;
+        padding: 28px;
+      }
+      .story-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 11px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .pill.primary { background: var(--accent); color: #fff; }
+      .pill.secondary { background: rgba(79,23,168,0.08); color: var(--violet-800); }
+      .story h2 {
+        margin: 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 3.35vw, 3.15rem);
+        line-height: 0.98;
+        letter-spacing: -0.03em;
+      }
+      .dek {
+        margin: 0;
+        max-width: 62ch;
+        color: var(--soft);
+        line-height: 1.66;
+        font-size: 1.02rem;
+      }
+      .body-copy { display: grid; gap: 14px; }
+      .body-copy p { margin: 0; line-height: 1.74; font-size: 1.02rem; }
+      .body-copy p:first-child { font-weight: 500; }
+      .read-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        justify-self: start;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: var(--violet-800);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+      }
+      .figure { margin: 0; display: grid; gap: 10px; }
+      .figure figcaption { font-size: 0.82rem; line-height: 1.45; color: var(--soft); }
+      .preview {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 22px;
+        border: 1px solid rgba(32,15,59,0.12);
+        background: #f5f0fb;
+      }
+      .quote {
+        padding: 16px 18px;
+        border-radius: 20px;
+        border: 1px solid rgba(79,23,168,0.12);
+        background: rgba(79,23,168,0.06);
+      }
+      .quote p { margin: 0; font-family: "Fraunces", serif; font-size: 1.16rem; line-height: 1.4; }
+
+      .story-1 .story-inner, .story-4 .story-inner, .story-8 .story-inner { grid-template-columns: 1.08fr 0.92fr; }
+      .story-2 .story-inner, .story-6 .story-inner { grid-template-columns: 0.9fr 1.1fr; }
+      .story-3 .story-inner, .story-10 .story-inner { grid-template-columns: 1fr; }
+      .story-3 .band, .story-10 .band { display: grid; grid-template-columns: 0.98fr 1.02fr; gap: 24px; }
+      .story-5 .story-inner, .story-9 .story-inner { grid-template-columns: 1fr; }
+      .story-5 .split, .story-9 .split { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 24px; }
+      .story-7 .story-inner { grid-template-columns: 1fr 1fr; }
+
+      .tone-aqua { background: linear-gradient(180deg, rgba(5,191,224,0.08), rgba(255,255,255,0.96) 40%), #fff; }
+      .tone-violet { background: linear-gradient(180deg, rgba(79,23,168,0.06), rgba(255,255,255,0.96) 36%), #fff; }
+      .tone-tangerine { background: linear-gradient(180deg, rgba(255,97,15,0.08), rgba(255,255,255,0.96) 36%), #fff; }
+
+      .footer { padding: 0 0 56px; }
+      .footer-panel {
+        padding: 22px 24px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.82);
+      }
+      .footer-panel h2 { margin: 0 0 10px; font-family: "Fraunces", serif; font-size: 1.7rem; }
+      .footer-panel p { margin: 0; line-height: 1.72; color: var(--soft); }
+
+      @media (max-width: 1040px) {
+        .cover-grid, .intro, .story-1 .story-inner, .story-2 .story-inner, .story-4 .story-inner, .story-6 .story-inner, .story-7 .story-inner, .story-8 .story-inner, .story-3 .band, .story-5 .split, .story-9 .split, .story-10 .band {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 720px) {
+        .shell { width: min(calc(100% - 20px), var(--max)); }
+        .cover-grid, .story-inner { padding: 22px; }
+        h1 { font-size: 3.25rem; }
+        .jump-nav a { font-size: 0.78rem; }
+        .story h2 { font-size: 2.2rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cover">
+      <div class="shell">
+        <section class="cover-panel">
+          <div class="cover-grid">
+            <div>
+              <div class="eyebrow">PMI Creative Studio • Morning Edition • 2026-05-01</div>
+              <h1>Today’s AI tool shifts that actually touch design work</h1>
+              <p class="cover-copy">
+                This edition is tuned for a team that has to do more than admire launches. It filters for the changes
+                most likely to affect deck production, brand systems, campaign ideation, review loops, editable AI
+                output, and the growing pressure to decide where automation belongs inside a premium design practice.
+              </p>
+            </div>
+            <div class="cover-side">
+              <div class="side-card">
+                <h2>Editorial lens</h2>
+                <p>Fearless, bright, and purposeful. We are watching where AI becomes structure, not spectacle.</p>
+              </div>
+              <div class="side-card">
+                <h3>Today’s frame</h3>
+                <p>Ten current stories, each translated into implications for workflow, experimentation, training, or internal debate.</p>
+                <div class="chips">
+                  <span class="chip">Agentic creation</span>
+                  <span class="chip">Editable output</span>
+                  <span class="chip">Deck workflows</span>
+                  <span class="chip">Brand control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <div class="nav-wrap">
+      <div class="shell">
+        <nav class="jump-nav" aria-label="Jump navigation">
+          <a href="#story-1">1. Claude Creative Work</a>
+          <a href="#story-2">2. Firefly Beta</a>
+          <a href="#story-3">3. PowerPoint Agent</a>
+          <a href="#story-4">4. ChatGPT Images 2.0</a>
+          <a href="#story-5">5. Canva AI 2.0</a>
+          <a href="#story-6">6. Canva Pro Suite</a>
+          <a href="#story-7">7. Gemini in Slides</a>
+          <a href="#story-8">8. Slides Visual Updates</a>
+          <a href="#story-9">9. Firefly Boards</a>
+          <a href="#story-10">10. Magic Layers</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="shell">
+      <section class="intro">
+        <p>
+          Selection rule: official or primary-source coverage only, limited to Anthropic, OpenAI, Google AI, Canva,
+          Adobe, and Microsoft. The test was practical: would this alter how PMI’s Graphic Design Team briefs, builds,
+          reviews, presents, adapts, or governs design work?
+        </p>
+        <p>
+          The dominant pattern today is unmistakable: platforms are racing to collapse research, generation, editing,
+          and output into fewer surfaces while promising more brand memory and less production friction.
+        </p>
+      </section>
+    </div>
+
+    <main class="shell">
+      <article class="story story-1 tone-violet" id="story-1" style="--accent:#4f17a8;">
+        <div class="story-inner">
+          <div>
+            <div class="story-meta">
+              <span class="pill primary">Story 01</span>
+              <span class="pill secondary">Anthropic</span>
+              <span class="pill secondary">Apr 28, 2026</span>
+              <span class="pill secondary">Creative workflows</span>
+            </div>
+            <h2>Anthropic is positioning Claude as a working layer across professional creative tools</h2>
+            <p class="dek">
+              “Claude for Creative Work” is less a single feature launch than a strategy statement: connectors for Adobe,
+              Ableton, Autodesk, Blender, Splice, and Canva-adjacent workflows, plus a heavy emphasis on handoff,
+              translation, and repetitive production work.
+            </p>
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: this is the clearest sign that Anthropic wants Claude to sit inside the actual toolchain rather than beside it as a detached brainstorming bot. That matters for Creative Studio because the hidden cost in design work is often not ideation itself, but the drag of moving assets, formats, context, and approval-ready outputs across systems.</p>
+              <p>The practical implication is that AI value may increasingly come from orchestration rather than generation. If Claude can keep track of project context while helping teams bridge concepting, editing, and export across software they already trust, it becomes useful for real studio operations: campaign scaffolding, pitch assembly, and production clean-up where consistency matters.</p>
+              <p>This is worth discussing internally as a boundary-setting exercise. PMI can benefit from AI that reduces manual toil, but only if the team stays explicit about where brand judgment, accessibility judgment, and narrative judgment remain human-owned.</p>
+            </div>
+            <a class="read-link" href="https://www.anthropic.com/news/claude-for-creative-work">Read the full story ↗</a>
+          </div>
+          <figure class="figure">
+            <svg class="preview" viewBox="0 0 820 620" role="img" aria-label="Same-source preview card for Anthropic Claude for Creative Work">
+              <rect width="820" height="620" fill="#2c241f"/>
+              <rect x="36" y="36" width="748" height="548" rx="30" fill="#4e4338"/>
+              <text x="70" y="98" fill="#f7efe4" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="4">ANTHROPIC • APR 28, 2026</text>
+              <text x="70" y="166" fill="#ffffff" font-family="Fraunces, serif" font-size="60">Claude for</text>
+              <text x="70" y="220" fill="#ffffff" font-family="Fraunces, serif" font-size="60">Creative Work</text>
+              <rect x="70" y="286" width="214" height="146" rx="24" fill="#f4eadf" opacity="0.95"/>
+              <rect x="306" y="286" width="214" height="146" rx="24" fill="#d8b58d" opacity="0.95"/>
+              <rect x="542" y="286" width="208" height="146" rx="24" fill="#f4eadf" opacity="0.84"/>
+              <text x="106" y="366" fill="#2c241f" font-family="Inter, sans-serif" font-size="24" font-weight="800">Connectors</text>
+              <text x="346" y="366" fill="#2c241f" font-family="Inter, sans-serif" font-size="24" font-weight="800">Handoffs</text>
+              <text x="572" y="366" fill="#2c241f" font-family="Inter, sans-serif" font-size="24" font-weight="800">Pipelines</text>
+              <text x="70" y="510" fill="#f1e4d5" font-family="Inter, sans-serif" font-size="24">A creative-tool strategy story, not just a model story</text>
+            </svg>
+            <figcaption>Same-source preview built from Anthropic’s article framing around connectors, pipeline bridging, and handoff.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="story story-2 tone-tangerine" id="story-2" style="--accent:#ff610f;">
+        <div class="story-inner">
+          <figure class="figure">
+            <svg class="preview" viewBox="0 0 820 620" role="img" aria-label="Same-source preview card for Firefly AI Assistant public beta">
+              <rect width="820" height="620" fill="#fff4ec"/>
+              <rect x="40" y="40" width="740" height="540" rx="30" fill="#ffffff" stroke="#f0d7c6"/>
+              <text x="76" y="100" fill="#b44a0f" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="4">ADOBE • APR 27, 2026</text>
+              <text x="76" y="168" fill="#200f3b" font-family="Fraunces, serif" font-size="58">Firefly AI Assistant</text>
+              <text x="76" y="220" fill="#200f3b" font-family="Fraunces, serif" font-size="58">public beta</text>
+              <rect x="76" y="282" width="668" height="96" rx="24" fill="#200f3b"/>
+              <text x="108" y="340" fill="#ffffff" font-family="Inter, sans-serif" font-size="28" font-weight="700">One interface orchestrating Photoshop, Express, Premiere, Illustrator, Lightroom</text>
+              <rect x="76" y="416" width="300" height="112" rx="22" fill="#ff610f" opacity="0.92"/>
+              <rect x="404" y="416" width="340" height="112" rx="22" fill="#f4f0fa"/>
+              <text x="104" y="482" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="800">Creator-led control</text>
+              <text x="438" y="482" fill="#200f3b" font-family="Inter, sans-serif" font-size="24" font-weight="800">Multi-step workflow execution</text>
+            </svg>
+            <figcaption>Same-source preview reflecting Adobe’s public-beta move from agentic vision to live creative workflow testing.</figcaption>
+          </figure>
+          <div>
+            <div class="story-meta">
+              <span class="pill primary">Story 02</span>
+              <span class="pill secondary">Adobe</span>
+              <span class="pill secondary">Apr 27, 2026</span>
+              <span class="pill secondary">Creative agent</span>
+            </div>
+            <h2>Adobe’s Firefly AI Assistant has moved from concept to public beta</h2>
+            <p class="dek">
+              Two weeks after outlining its creative-agent vision, Adobe shipped a public beta inside Firefly, letting
+              users describe outcomes and have the assistant orchestrate multi-step workflows across Creative Cloud apps.
+            </p>
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: this is the moment Adobe’s agent story becomes testable instead of theoretical. When a platform that already sits inside established enterprise design practice starts collapsing multi-app production steps into a guided conversational flow, it has the potential to change where time is spent inside the studio.</p>
+              <p>The practical implication is not that craft disappears, but that set-up and assembly work may shrink. If the assistant can move from “turn this product shot into a social kit” or “build a mood board from this brief” into actual app-level execution, Creative Studio can reserve more energy for concept quality, stakeholder calibration, and the kinds of refinements that still require design maturity.</p>
+              <p>This is an especially good pilot candidate for PMI because Adobe is already close to the team’s production reality. The important question is which workflows gain speed without making review quality or brand discipline more fragile.</p>
+            </div>
+            <a class="read-link" href="https://blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta">Read the full story ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="story story-3 tone-aqua" id="story-3" style="--accent:#05bfe0;">
+        <div class="story-inner">
+          <div class="band">
+            <div>
+              <div class="story-meta">
+                <span class="pill primary">Story 03</span>
+                <span class="pill secondary">Microsoft</span>
+                <span class="pill secondary">Apr 30, 2026</span>
+                <span class="pill secondary">PowerPoint agent</span>
+              </div>
+              <h2>Microsoft’s April Copilot update makes PowerPoint feel more like a delegated production partner</h2>
+              <p class="dek">
+                In its April roundup, Microsoft highlighted PowerPoint agent creation from Copilot Notebooks, with user
+                control over focus, detail, slide count, and design theme.
+              </p>
+            </div>
+            <div class="quote">
+              <p>“PowerPoint agent will create a presentation based on those unique requests.”</p>
+            </div>
+          </div>
+          <div class="band">
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: presentation production is one of the most persistent “looks simple, eats hours” categories in enterprise design. Microsoft is steadily turning Copilot from a drafting helper into a deck-building system that can start from notes and references, then shape a presentation within a chosen structure and visual direction.</p>
+              <p>The practical implication is that more stakeholders will arrive with AI-assembled starting points instead of blank documents. That could be genuinely helpful if it reduces repetitive formatting work, but it also means Creative Studio will need sharper guidance on what counts as a reviewable draft, what needs design intervention, and how PMI templates should evolve for an AI-assisted environment.</p>
+              <p>This deserves internal attention because it changes expectations as much as output. Once teams believe “the deck is mostly done,” the studio’s value may need to be articulated more clearly around story logic, clarity, hierarchy, accessibility, and premium brand expression.</p>
+            </div>
+            <figure class="figure">
+              <svg class="preview" viewBox="0 0 820 520" role="img" aria-label="Same-source preview card for Microsoft Copilot PowerPoint update">
+                <rect width="820" height="520" fill="#f3fbfd"/>
+                <rect x="36" y="36" width="748" height="448" rx="28" fill="#ffffff" stroke="#d7eef3"/>
+                <text x="74" y="96" fill="#008aa2" font-family="Inter, sans-serif" font-size="20" font-weight="800" letter-spacing="4">MICROSOFT 365 COPILOT • APR 2026</text>
+                <text x="74" y="156" fill="#200f3b" font-family="Fraunces, serif" font-size="58">PowerPoint agent</text>
+                <rect x="74" y="228" width="392" height="192" rx="24" fill="#f4f0fa"/>
+                <rect x="494" y="228" width="216" height="192" rx="24" fill="#dcf8fd"/>
+                <rect x="106" y="270" width="216" height="18" rx="9" fill="#200f3b"/>
+                <rect x="106" y="306" width="176" height="12" rx="6" fill="#5a536e" opacity="0.5"/>
+                <rect x="106" y="346" width="140" height="54" rx="16" fill="#ffffff" stroke="#d9d0c7"/>
+                <text x="530" y="296" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Theme</text>
+                <text x="530" y="334" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Slide count</text>
+                <text x="530" y="372" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Detail level</text>
+              </svg>
+              <figcaption>Same-source preview centered on the new notebook-to-deck workflow and PowerPoint agent controls.</figcaption>
+            </figure>
+          </div>
+          <a class="read-link" href="https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935">Read the full story ↗</a>
+        </div>
+      </article>
+
+      <article class="story story-4 tone-violet" id="story-4" style="--accent:#4f17a8;">
+        <div class="story-inner">
+          <div>
+            <div class="story-meta">
+              <span class="pill primary">Story 04</span>
+              <span class="pill secondary">OpenAI</span>
+              <span class="pill secondary">Apr 21, 2026</span>
+              <span class="pill secondary">Image generation</span>
+            </div>
+            <h2>ChatGPT Images 2.0 is openly targeting editorial-grade communication design</h2>
+            <p class="dek">
+              OpenAI’s launch examples pushed beyond novelty art into posters, multilingual typography, brochure-style
+              layouts, infographics, character sheets, and publication-like spreads.
+            </p>
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: the important shift is not that image quality improved, but that OpenAI is showcasing the model as a communication-design engine. When a model starts handling layout logic, typography, multilingual rendering, and coherent editorial structure more reliably, it becomes newly relevant to the kind of concept exploration graphic teams actually do.</p>
+              <p>The practical implication is faster territory-mapping for campaigns, event graphics, multilingual concept boards, and educational visuals. Creative Studio can use it to widen the aperture early, then apply PMI’s own hierarchy, accessibility, and brand standards on top of that generated starting field.</p>
+              <p>The best near-term use is exploratory rather than final. PMI can get value by treating Images 2.0 as a high-range mood and composition partner, especially in moments where more visual options would improve decision quality before final craft begins.</p>
+            </div>
+            <a class="read-link" href="https://openai.com/index/introducing-chatgpt-images-2-0/">Read the full story ↗</a>
+          </div>
+          <figure class="figure">
+            <svg class="preview" viewBox="0 0 820 620" role="img" aria-label="Same-source preview card for ChatGPT Images 2.0">
+              <rect width="820" height="620" fill="#f8f4ee"/>
+              <rect x="38" y="38" width="744" height="544" rx="28" fill="#ffffff" stroke="#ddd4c7"/>
+              <text x="74" y="96" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="4">OPENAI • APR 21, 2026</text>
+              <text x="74" y="160" fill="#200f3b" font-family="Fraunces, serif" font-size="58">ChatGPT Images 2.0</text>
+              <rect x="74" y="214" width="206" height="282" rx="22" fill="#200f3b"/>
+              <rect x="306" y="214" width="206" height="282" rx="22" fill="#ff610f"/>
+              <rect x="538" y="214" width="206" height="282" rx="22" fill="#05bfe0"/>
+              <text x="110" y="370" fill="#ffffff" font-family="Fraunces, serif" font-size="40">Type</text>
+              <text x="338" y="370" fill="#ffffff" font-family="Fraunces, serif" font-size="40">Posters</text>
+              <text x="568" y="370" fill="#ffffff" font-family="Fraunces, serif" font-size="40">Spreads</text>
+              <text x="74" y="542" fill="#5a536e" font-family="Inter, sans-serif" font-size="23">Launch examples leaned hard into editorial layouts and multilingual visual communication</text>
+            </svg>
+            <figcaption>Same-source preview based on OpenAI’s own poster, brochure, infographic, and layout-heavy launch examples.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="story story-5 tone-violet" id="story-5" style="--accent:#4f17a8;">
+        <div class="story-inner">
+          <div class="split">
+            <div>
+              <div class="story-meta">
+                <span class="pill primary">Story 05</span>
+                <span class="pill secondary">Canva</span>
+                <span class="pill secondary">Apr 16, 2026</span>
+                <span class="pill secondary">Agentic platform</span>
+              </div>
+              <h2>Canva AI 2.0 wants to turn design from an app task into an ambient operating layer</h2>
+              <p class="dek">
+                Canva framed AI 2.0 as its biggest product shift since launch: conversational creation, layered editable
+                output, living memory, and six new workflows including connectors, scheduling, research, brand
+                intelligence, Sheets AI, and Canva Code 2.0.
+              </p>
+            </div>
+            <figure class="figure">
+              <svg class="preview" viewBox="0 0 820 420" role="img" aria-label="Same-source preview card for Canva AI 2.0">
+                <rect width="820" height="420" fill="#f2f7fb"/>
+                <rect x="34" y="34" width="752" height="352" rx="26" fill="#ffffff" stroke="#d8e5f0"/>
+                <text x="68" y="90" fill="#4f17a8" font-family="Inter, sans-serif" font-size="20" font-weight="800" letter-spacing="4">CANVA • APR 16, 2026</text>
+                <text x="68" y="148" fill="#200f3b" font-family="Fraunces, serif" font-size="52">AI 2.0</text>
+                <rect x="68" y="194" width="684" height="72" rx="20" fill="#4f17a8"/>
+                <text x="98" y="238" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="700">Connectors • Scheduling • Brand Intelligence • Canva Code 2.0</text>
+                <text x="68" y="320" fill="#5a536e" font-family="Inter, sans-serif" font-size="24">Layered, editable output from the first prompt</text>
+              </svg>
+              <figcaption>Same-source preview reflecting Canva’s move toward a full creative operating layer rather than a single editor.</figcaption>
+            </figure>
+          </div>
+          <div class="body-copy">
+            <p>Why it matters for PMI's design team: Canva is no longer talking like a template company with extra AI features. It is talking like a workflow platform that wants to absorb research, ideation, generation, editing, scheduling, brand memory, and interactive output into one place. That is strategically important for any in-house team balancing speed demands with brand governance.</p>
+            <p>The practical implication is that Canva is becoming more plausible for repeatable studio-adjacent work: internal communications, event support kits, scaled content variations, and brand-safe drafts assembled from connected organizational context. The layered editability piece is key, because it keeps AI outputs in the realm of working files rather than dead-end visuals.</p>
+            <p>PMI should read this as a systems story. The opportunity is not just faster making, but deciding which kinds of work can responsibly move into a more automated, memory-aware environment without flattening design judgment.</p>
+          </div>
+          <a class="read-link" href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Read the full story ↗</a>
+        </div>
+      </article>
+
+      <article class="story story-6 tone-tangerine" id="story-6" style="--accent:#ff610f;">
+        <div class="story-inner">
+          <figure class="figure">
+            <svg class="preview" viewBox="0 0 820 620" role="img" aria-label="Same-source preview card for Canva Create pro suite and offline launch">
+              <rect width="820" height="620" fill="#fff8f2"/>
+              <rect x="38" y="38" width="744" height="544" rx="28" fill="#ffffff" stroke="#edd9c7"/>
+              <text x="74" y="96" fill="#b44a0f" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="4">CANVA CREATE • APR 16, 2026</text>
+              <text x="74" y="158" fill="#200f3b" font-family="Fraunces, serif" font-size="54">Offline mode, pro design,</text>
+              <text x="74" y="208" fill="#200f3b" font-family="Fraunces, serif" font-size="54">and a bigger creative stack</text>
+              <rect x="74" y="276" width="192" height="184" rx="22" fill="#ff610f" opacity="0.92"/>
+              <rect x="294" y="276" width="192" height="184" rx="22" fill="#200f3b"/>
+              <rect x="514" y="276" width="230" height="184" rx="22" fill="#f4f0fa"/>
+              <text x="104" y="380" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="800">Offline</text>
+              <text x="328" y="380" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="800">Brand System</text>
+              <text x="550" y="380" fill="#200f3b" font-family="Inter, sans-serif" font-size="24" font-weight="800">Claude integration</text>
+            </svg>
+            <figcaption>Same-source preview focused on Canva’s expanded pro suite, Affinity stack, and broader production ambitions.</figcaption>
+          </figure>
+          <div>
+            <div class="story-meta">
+              <span class="pill primary">Story 06</span>
+              <span class="pill secondary">Canva</span>
+              <span class="pill secondary">Apr 16, 2026</span>
+              <span class="pill secondary">Professional suite</span>
+            </div>
+            <h2>Canva’s broader Create launch is quietly a serious professional-workflow story</h2>
+            <p class="dek">
+              Beyond AI 2.0, Canva also launched Offline mode, a larger professional suite, Brand System inside
+              Affinity, and new integrations with Capture One, DaVinci Resolve, and Claude.
+            </p>
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: this is the part of Canva’s story that matters to professionals who care less about novelty and more about whether a platform can support a disciplined, resilient workflow. Offline mode, deeper Affinity integration, and brand-system expansion all signal an attempt to win trust from teams doing more serious production work.</p>
+              <p>The practical implication is that Canva is trying to reduce the distance between “easy collaborative tool” and “real member of the pro creative stack.” For a team like Creative Studio, that raises useful questions about where Canva can now slot into production without forcing awkward compromises on brand consistency, handoff quality, or tool fragmentation.</p>
+              <p>This is a good internal-review topic because it is about stack design as much as feature design. PMI does not need one tool to do everything, but it does need clarity about which combinations reduce friction instead of multiplying it.</p>
+            </div>
+            <a class="read-link" href="https://www.canva.com/newsroom/news/canva-create-2026-launches/">Read the full story ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="story story-7 tone-aqua" id="story-7" style="--accent:#05bfe0;">
+        <div class="story-inner">
+          <div>
+            <div class="story-meta">
+              <span class="pill primary">Story 07</span>
+              <span class="pill secondary">Google</span>
+              <span class="pill secondary">Mar 10, 2026</span>
+              <span class="pill secondary">Gemini in Slides</span>
+            </div>
+            <h2>Google is turning Gemini into a more context-aware slide collaborator inside Workspace</h2>
+            <p class="dek">
+              Google said Gemini in Slides can create editable slides that align to a deck’s theme, pull from files,
+              emails, and the web, and help revise visual tone through conversational edits.
+            </p>
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: slide work remains one of the clearest intersections between AI assistance and everyday communication design. Google is not just offering blank-page help here; it is trying to turn Gemini into a theme-aware collaborator that can assemble and revise slides while drawing from distributed organizational context.</p>
+              <p>The practical implication is stronger first-pass support for teams already deep in Google Workspace. That could be especially useful for workshop materials, review decks, or internal project storytelling where speed matters and the studio would benefit from stakeholders arriving with more coherent early drafts.</p>
+              <p>The PMI lens should stay disciplined: this is a drafting accelerator, not a substitute for editorial structure or final design polish. But if Creative Studio develops a clear rubric for when Gemini-authored slides are acceptable as inputs, it could shorten turnaround on lower-risk presentation work.</p>
+            </div>
+            <a class="read-link" href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/">Read the full story ↗</a>
+          </div>
+          <figure class="figure">
+            <svg class="preview" viewBox="0 0 820 620" role="img" aria-label="Same-source preview card for Gemini in Slides updates">
+              <rect width="820" height="620" fill="#f5fbfc"/>
+              <rect x="40" y="40" width="740" height="540" rx="28" fill="#ffffff" stroke="#d6eef2"/>
+              <text x="76" y="98" fill="#008aa2" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="4">GOOGLE WORKSPACE • MAR 10, 2026</text>
+              <text x="76" y="160" fill="#200f3b" font-family="Fraunces, serif" font-size="56">Gemini in Slides</text>
+              <rect x="76" y="228" width="286" height="224" rx="24" fill="#f4f0fa"/>
+              <rect x="392" y="228" width="312" height="224" rx="24" fill="#dcf8fd"/>
+              <rect x="112" y="270" width="208" height="18" rx="9" fill="#4f17a8"/>
+              <rect x="112" y="306" width="166" height="12" rx="6" fill="#5a536e" opacity="0.45"/>
+              <path d="M428 286 H652" stroke="#05bfe0" stroke-width="9" stroke-linecap="round"/>
+              <path d="M428 328 H622" stroke="#05bfe0" stroke-width="9" stroke-linecap="round"/>
+              <path d="M428 370 H586" stroke="#05bfe0" stroke-width="9" stroke-linecap="round"/>
+              <text x="76" y="516" fill="#5a536e" font-family="Inter, sans-serif" font-size="24">Theme-aware slide generation using files, emails, and web context</text>
+            </svg>
+            <figcaption>Same-source preview focused on Google’s slide-generation, contextual grounding, and collaborative revision framing.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="story story-8 tone-aqua" id="story-8" style="--accent:#05bfe0;">
+        <div class="story-inner">
+          <div>
+            <div class="story-meta">
+              <span class="pill primary">Story 08</span>
+              <span class="pill secondary">Google</span>
+              <span class="pill secondary">Apr 2026</span>
+              <span class="pill secondary">Slides visuals</span>
+            </div>
+            <h2>Google’s newer Slides visual tools make the deck canvas itself more design-literate</h2>
+            <p class="dek">
+              Google highlighted a refreshed design sidebar, Imagen 3 image generation, more templates, building
+              blocks, expanded stock access, and proportional scaling inside Slides.
+            </p>
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: not every meaningful design-tool story is about a frontier model. Sometimes the workflow change is simpler and more durable: better visual controls inside the product people already use every day. Google is making Slides itself more capable for non-designers without requiring them to leave the presentation surface.</p>
+              <p>The practical implication is a likely rise in “good-enough” draft quality from teams using Workspace. Better templates, easier components, stronger image generation, and improved scaling all reduce the friction that used to separate rough thinking from presentable work, which may raise expectations for self-serve decks across organizations.</p>
+              <p>For PMI, this is a standards opportunity. As commodity presentation surfaces get better, Creative Studio can define more clearly where branded components, visual principles, and escalation criteria should live so improved self-service does not mean brand drift.</p>
+            </div>
+            <a class="read-link" href="https://blog.google/products-and-platforms/products/workspace/workspace-slides-visuals-ai-updates/">Read the full story ↗</a>
+          </div>
+          <figure class="figure">
+            <svg class="preview" viewBox="0 0 820 620" role="img" aria-label="Same-source preview card for Google Slides visual AI updates">
+              <rect width="820" height="620" fill="#eefbfc"/>
+              <rect x="42" y="42" width="736" height="536" rx="28" fill="#ffffff" stroke="#d5eef1"/>
+              <text x="78" y="98" fill="#008aa2" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="4">GOOGLE SLIDES • VISUAL UPDATES</text>
+              <text x="78" y="160" fill="#200f3b" font-family="Fraunces, serif" font-size="54">Imagen 3, new sidebar,</text>
+              <text x="78" y="210" fill="#200f3b" font-family="Fraunces, serif" font-size="54">and editable building blocks</text>
+              <rect x="78" y="278" width="220" height="200" rx="22" fill="#dcf8fd"/>
+              <rect x="320" y="278" width="220" height="200" rx="22" fill="#f4f0fa"/>
+              <rect x="562" y="278" width="158" height="200" rx="22" fill="#fff0e7"/>
+              <text x="112" y="386" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Sidebar</text>
+              <text x="352" y="386" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Blocks</text>
+              <text x="590" y="386" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Scale</text>
+            </svg>
+            <figcaption>Same-source preview emphasizing the product-level visual upgrades inside Google Slides.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="story story-9 tone-tangerine" id="story-9" style="--accent:#ff610f;">
+        <div class="story-inner">
+          <div class="split">
+            <div>
+              <div class="story-meta">
+                <span class="pill primary">Story 09</span>
+                <span class="pill secondary">Adobe</span>
+                <span class="pill secondary">Apr 17, 2026</span>
+                <span class="pill secondary">Collaboration</span>
+              </div>
+              <h2>Adobe’s Firefly Boards case study is a useful reminder that AI value often starts in team alignment</h2>
+              <p class="dek">
+                In a Delhi campaign case study, Adobe’s brand studio described Firefly Boards as a shared ideation and
+                collaboration surface for distributed teams, live feedback, and visual territory exploration.
+              </p>
+            </div>
+            <figure class="figure">
+              <svg class="preview" viewBox="0 0 820 420" role="img" aria-label="Same-source preview card for Firefly Boards case study">
+                <rect width="820" height="420" fill="#fff6ef"/>
+                <rect x="34" y="34" width="752" height="352" rx="26" fill="#ffffff" stroke="#edd7c8"/>
+                <text x="68" y="90" fill="#b44a0f" font-family="Inter, sans-serif" font-size="20" font-weight="800" letter-spacing="4">ADOBE FIREFLY BOARDS • APR 17, 2026</text>
+                <text x="68" y="150" fill="#200f3b" font-family="Fraunces, serif" font-size="50">Shared exploration,</text>
+                <text x="68" y="196" fill="#200f3b" font-family="Fraunces, serif" font-size="50">faster alignment</text>
+                <rect x="68" y="242" width="684" height="80" rx="20" fill="#ff610f" opacity="0.92"/>
+                <text x="100" y="290" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="700">Generate visual directions, variants, patterns, and stakeholder-ready alternatives in one space</text>
+              </svg>
+              <figcaption>Same-source preview derived from Adobe’s campaign case study around Boards as a collaborative decision surface.</figcaption>
+            </figure>
+          </div>
+          <div class="body-copy">
+            <p>Why it matters for PMI's design team: this story matters because it describes AI as a team thinking environment rather than a one-person shortcut. Adobe’s own takeaway was that Firefly Boards changed where and how creative decisions happened, which is directly relevant to any in-house studio navigating distributed stakeholders, fast feedback loops, and visual ambiguity at the start of projects.</p>
+            <p>The practical implication is that collaborative ideation surfaces may become more important than raw generation quality. If teams can stress-test tone, composition, references, and stakeholder reactions in one shared board before expensive production starts, they may make better decisions earlier and waste less effort later.</p>
+            <p>This is especially applicable for PMI when briefing event campaigns, chapter-facing materials, or multi-market concepts. The lesson is not “let AI decide,” but “use AI to expand the conversation while the work is still cheap to redirect.”</p>
+          </div>
+          <a class="read-link" href="https://blog.adobe.com/en/publish/2026/04/17/building-city-scale-campaign-across-delhi-with-adobe-firefly-boards">Read the full story ↗</a>
+        </div>
+      </article>
+
+      <article class="story story-10 tone-violet" id="story-10" style="--accent:#4f17a8;">
+        <div class="story-inner">
+          <div class="band">
+            <div>
+              <div class="story-meta">
+                <span class="pill primary">Story 10</span>
+                <span class="pill secondary">Canva</span>
+                <span class="pill secondary">Mar 11, 2026</span>
+                <span class="pill secondary">Editable AI output</span>
+              </div>
+              <h2>Magic Layers may be one of the most strategically important Canva stories of the year</h2>
+              <p class="dek">
+                Canva says Magic Layers can turn flat images and AI outputs into structured, editable, multi-layered
+                designs with restored text, separated objects, and preserved layout logic.
+              </p>
+            </div>
+            <div class="quote">
+              <p>AI should spark creation, not bring it to a halt.</p>
+            </div>
+          </div>
+          <div class="band">
+            <div class="body-copy">
+              <p>Why it matters for PMI's design team: editable AI output is one of the most important fault lines in creative tooling right now. A beautiful generated image is much less useful to a working studio than a malleable design file. Magic Layers goes straight at that problem by trying to turn static outputs into something a designer can actually refine, resize, localize, and adapt.</p>
+              <p>The practical implication is major for any team doing versioning or cross-channel adaptation. If generated visuals can be reopened as live text, discrete objects, and preserved layout relationships, Creative Studio gains a more realistic path for using AI outputs as starting material without getting trapped by them.</p>
+              <p>PMI should watch this closely because it aligns with a premium, governance-aware workflow. The promise here is not automation for automation’s sake; it is restoring creative control after generation, which is exactly the condition serious brand work requires.</p>
+            </div>
+            <figure class="figure">
+              <svg class="preview" viewBox="0 0 820 520" role="img" aria-label="Same-source preview card for Canva Magic Layers">
+                <rect width="820" height="520" fill="#f5f0fb"/>
+                <rect x="36" y="36" width="748" height="448" rx="28" fill="#ffffff" stroke="#ded2ef"/>
+                <text x="74" y="96" fill="#4f17a8" font-family="Inter, sans-serif" font-size="20" font-weight="800" letter-spacing="4">CANVA • MAR 11, 2026</text>
+                <text x="74" y="156" fill="#200f3b" font-family="Fraunces, serif" font-size="58">Magic Layers</text>
+                <rect x="74" y="228" width="194" height="182" rx="22" fill="#200f3b"/>
+                <rect x="292" y="228" width="194" height="182" rx="22" fill="#4f17a8"/>
+                <rect x="510" y="228" width="236" height="182" rx="22" fill="#dcf8fd"/>
+                <text x="106" y="328" fill="#ffffff" font-family="Inter, sans-serif" font-size="22" font-weight="800">Live text</text>
+                <text x="326" y="328" fill="#ffffff" font-family="Inter, sans-serif" font-size="22" font-weight="800">Separated objects</text>
+                <text x="542" y="328" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Preserved layout</text>
+              </svg>
+              <figcaption>Same-source preview centered on Canva’s promise to transform flat AI visuals into working design files.</figcaption>
+            </figure>
+          </div>
+          <a class="read-link" href="https://www.canva.com/newsroom/news/magic-layers/">Read the full story ↗</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <section class="footer-panel">
+          <h2>Editorial takeaway</h2>
+          <p>
+            The clearest pattern today is that the winning tools are trying to own more of the chain between brief and
+            finished output while keeping files editable and increasingly brand-aware. For PMI’s Graphic Design Team,
+            the opportunity is not to chase every launch. It is to define where agentic help improves speed without
+            weakening the studio’s role as the guardian of narrative clarity, accessibility, and premium brand
+            expression.
+          </p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
