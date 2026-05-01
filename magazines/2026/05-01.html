@@ -4,9 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Morning Edition | PMI Creative Studio | 2026-05-01</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
         --violet-800: #200f3b;
@@ -30,10 +27,9 @@
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: "Inter", sans-serif;
+        font-family: Aptos, "Aptos", "Segoe UI", sans-serif;
         color: var(--ink);
         background:
-          radial-gradient(circle at top left, rgba(79, 23, 168, 0.14), transparent 26%),
           linear-gradient(180deg, #fcf9f4 0%, #f5f1ea 100%);
       }
 
@@ -46,9 +42,7 @@
         overflow: hidden;
         border-radius: 34px;
         border: 1px solid rgba(255,255,255,0.14);
-        background:
-          radial-gradient(circle at 15% 20%, rgba(5,191,224,0.32), transparent 18%),
-          linear-gradient(135deg, #4f17a8 0%, #2a154f 55%, #200f3b 100%);
+        background: linear-gradient(135deg, #4f17a8 0%, #2f1460 58%, #200f3b 100%);
         color: #fff;
         box-shadow: var(--shadow);
       }
@@ -70,15 +64,16 @@
       }
       h1 {
         margin: 18px 0 14px;
-        font-family: "Fraunces", serif;
-        font-size: clamp(3.2rem, 6.1vw, 5.8rem);
-        line-height: 0.93;
-        letter-spacing: -0.04em;
+        font-family: Aptos, "Aptos", "Segoe UI", sans-serif;
+        font-size: clamp(3rem, 5.2vw, 5rem);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
       }
       .cover-copy {
         max-width: 64ch;
         font-size: 1.08rem;
-        line-height: 1.72;
+        line-height: 1.84;
         color: rgba(255,255,255,0.9);
       }
       .cover-side {
@@ -144,7 +139,7 @@
       }
       .intro p {
         margin: 0;
-        line-height: 1.72;
+        line-height: 1.84;
         color: var(--soft);
       }
 
@@ -154,7 +149,7 @@
         padding-bottom: 40px;
       }
       .story {
-        --accent: var(--violet-500);
+        --accent: var(--violet-500) !important;
         position: relative;
         overflow: hidden;
         border-radius: 30px;
@@ -172,7 +167,12 @@
       .story-inner {
         display: grid;
         gap: 22px;
-        padding: 28px;
+        padding: 32px;
+      }
+      .story-inner > *,
+      .band > *,
+      .split > * {
+        min-width: 0;
       }
       .story-meta {
         display: flex;
@@ -190,23 +190,25 @@
         text-transform: uppercase;
       }
       .pill.primary { background: var(--accent); color: #fff; }
-      .pill.secondary { background: rgba(79,23,168,0.08); color: var(--violet-800); }
+      .pill.secondary { background: rgba(32,15,59,0.06); color: var(--violet-800); }
       .story h2 {
         margin: 0;
-        font-family: "Fraunces", serif;
-        font-size: clamp(2rem, 3.35vw, 3.15rem);
-        line-height: 0.98;
-        letter-spacing: -0.03em;
+        font-family: Aptos, "Aptos", "Segoe UI", sans-serif;
+        font-size: clamp(1.9rem, 2.9vw, 2.9rem);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        max-width: 20ch;
       }
       .dek {
         margin: 0;
         max-width: 62ch;
         color: var(--soft);
-        line-height: 1.66;
-        font-size: 1.02rem;
+        line-height: 1.82;
+        font-size: 1.06rem;
       }
       .body-copy { display: grid; gap: 14px; }
-      .body-copy p { margin: 0; line-height: 1.74; font-size: 1.02rem; }
+      .body-copy p { margin: 0; line-height: 1.88; font-size: 1.06rem; color: #312949; }
       .body-copy p:first-child { font-weight: 500; }
       .read-link {
         display: inline-flex;
@@ -215,40 +217,45 @@
         justify-self: start;
         padding: 12px 16px;
         border-radius: 999px;
-        background: var(--violet-800);
+        background: var(--accent);
         color: #fff;
         text-decoration: none;
         font-weight: 800;
       }
-      .figure { margin: 0; display: grid; gap: 10px; }
-      .figure figcaption { font-size: 0.82rem; line-height: 1.45; color: var(--soft); }
+      .figure { margin: 0; display: grid; gap: 10px; min-width: 0; }
+      .figure figcaption { font-size: 0.82rem; line-height: 1.6; color: var(--soft); overflow-wrap: anywhere; }
       .preview {
         display: block;
         width: 100%;
         height: auto;
         border-radius: 22px;
         border: 1px solid rgba(32,15,59,0.12);
-        background: #f5f0fb;
+        background: #f7f4fb;
+        filter: grayscale(1) contrast(1.02) brightness(1.01);
+      }
+      .preview text {
+        font-family: Aptos, "Aptos", "Segoe UI", sans-serif !important;
       }
       .quote {
-        padding: 16px 18px;
+        padding: 18px 20px;
         border-radius: 20px;
-        border: 1px solid rgba(79,23,168,0.12);
-        background: rgba(79,23,168,0.06);
+        border: 1px solid rgba(79,23,168,0.1);
+        background: rgba(79,23,168,0.04);
       }
-      .quote p { margin: 0; font-family: "Fraunces", serif; font-size: 1.16rem; line-height: 1.4; }
+      .quote p { margin: 0; font-family: Aptos, "Aptos", "Segoe UI", sans-serif; font-size: 1.12rem; font-weight: 600; line-height: 1.58; color: #372d55; }
 
       .story-1 .story-inner, .story-4 .story-inner, .story-8 .story-inner { grid-template-columns: 1.08fr 0.92fr; }
-      .story-2 .story-inner, .story-6 .story-inner { grid-template-columns: 0.9fr 1.1fr; }
+      .story-2 .story-inner { grid-template-columns: 0.9fr 1.1fr; }
+      .story-6 .story-inner { grid-template-columns: 1fr; }
       .story-3 .story-inner, .story-10 .story-inner { grid-template-columns: 1fr; }
       .story-3 .band, .story-10 .band { display: grid; grid-template-columns: 0.98fr 1.02fr; gap: 24px; }
       .story-5 .story-inner, .story-9 .story-inner { grid-template-columns: 1fr; }
       .story-5 .split, .story-9 .split { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 24px; }
-      .story-7 .story-inner { grid-template-columns: 1fr 1fr; }
+      .story-7 .story-inner { grid-template-columns: 1fr; }
 
-      .tone-aqua { background: linear-gradient(180deg, rgba(5,191,224,0.08), rgba(255,255,255,0.96) 40%), #fff; }
-      .tone-violet { background: linear-gradient(180deg, rgba(79,23,168,0.06), rgba(255,255,255,0.96) 36%), #fff; }
-      .tone-tangerine { background: linear-gradient(180deg, rgba(255,97,15,0.08), rgba(255,255,255,0.96) 36%), #fff; }
+      .tone-aqua,
+      .tone-violet,
+      .tone-tangerine { background: linear-gradient(180deg, rgba(79,23,168,0.05), rgba(255,255,255,0.985) 34%), #fff; }
 
       .footer { padding: 0 0 56px; }
       .footer-stack { display: grid; gap: 16px; }
@@ -258,8 +265,8 @@
         border: 1px solid var(--line);
         background: rgba(255,255,255,0.82);
       }
-      .footer-panel h2 { margin: 0 0 10px; font-family: "Fraunces", serif; font-size: 1.7rem; }
-      .footer-panel p { margin: 0; line-height: 1.72; color: var(--soft); }
+      .footer-panel h2 { margin: 0 0 10px; font-family: Aptos, "Aptos", "Segoe UI", sans-serif; font-size: 1.5rem; font-weight: 700; }
+      .footer-panel p { margin: 0; line-height: 1.82; color: var(--soft); }
 
       @media (max-width: 1040px) {
         .cover-grid, .intro, .story-1 .story-inner, .story-2 .story-inner, .story-4 .story-inner, .story-6 .story-inner, .story-7 .story-inner, .story-8 .story-inner, .story-3 .band, .story-5 .split, .story-9 .split, .story-10 .band {
@@ -268,10 +275,10 @@
       }
       @media (max-width: 720px) {
         .shell { width: min(calc(100% - 20px), var(--max)); }
-        .cover-grid, .story-inner { padding: 22px; }
+        .cover-grid, .story-inner { padding: 24px; }
         h1 { font-size: 3.25rem; }
         .jump-nav a { font-size: 0.78rem; }
-        .story h2 { font-size: 2.2rem; }
+        .story h2 { font-size: 2.15rem; }
       }
     </style>
   </head>
@@ -565,7 +572,7 @@
               <rect x="514" y="276" width="230" height="184" rx="22" fill="#f4f0fa"/>
               <text x="104" y="380" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="800">Offline</text>
               <text x="328" y="380" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="800">Brand System</text>
-              <text x="550" y="380" fill="#200f3b" font-family="Inter, sans-serif" font-size="24" font-weight="800">Claude integration</text>
+                <text x="550" y="380" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Claude link</text>
             </svg>
             <figcaption>Same-source preview focused on Canva’s expanded pro suite, Affinity stack, and broader production ambitions.</figcaption>
           </figure>
@@ -625,7 +632,7 @@
               <path d="M428 286 H652" stroke="#05bfe0" stroke-width="9" stroke-linecap="round"/>
               <path d="M428 328 H622" stroke="#05bfe0" stroke-width="9" stroke-linecap="round"/>
               <path d="M428 370 H586" stroke="#05bfe0" stroke-width="9" stroke-linecap="round"/>
-              <text x="76" y="516" fill="#5a536e" font-family="Inter, sans-serif" font-size="24">Theme-aware slide generation using files, emails, and web context</text>
+              <text x="76" y="508" fill="#5a536e" font-family="Inter, sans-serif" font-size="20">Theme-aware generation from files, email, and web context</text>
             </svg>
             <figcaption>Same-source preview focused on Google’s slide-generation, contextual grounding, and collaborative revision framing.</figcaption>
           </figure>
@@ -746,7 +753,7 @@
                 <rect x="292" y="228" width="194" height="182" rx="22" fill="#4f17a8"/>
                 <rect x="510" y="228" width="236" height="182" rx="22" fill="#dcf8fd"/>
                 <text x="106" y="328" fill="#ffffff" font-family="Inter, sans-serif" font-size="22" font-weight="800">Live text</text>
-                <text x="326" y="328" fill="#ffffff" font-family="Inter, sans-serif" font-size="22" font-weight="800">Separated objects</text>
+                <text x="348" y="328" fill="#ffffff" font-family="Inter, sans-serif" font-size="22" font-weight="800">Objects</text>
                 <text x="542" y="328" fill="#200f3b" font-family="Inter, sans-serif" font-size="22" font-weight="800">Preserved layout</text>
               </svg>
               <figcaption>Same-source preview centered on Canva’s promise to transform flat AI visuals into working design files.</figcaption>
