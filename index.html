@@ -1,958 +1,910 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning Edition | PMI Creative Studio | 2026-05-04</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet-900: #1c1035;
+      --violet-800: #200f3b;
+      --violet-700: #341864;
+      --violet-600: #431e86;
+      --violet-500: #4f17a8;
+      --violet-300: #8b63d7;
+      --aqua-300: #05bfe0;
+      --aqua-100: #d7f7fc;
+      --tangerine-300: #ff610f;
+      --paper: #fbf8ff;
+      --paper-2: #f3eefb;
+      --ink: #241540;
+      --muted: #61557b;
+      --line: rgba(32, 15, 59, 0.12);
+      --white: #fff;
+      --shadow: 0 18px 50px rgba(32, 15, 59, 0.09);
+      --radius: 24px;
+      --max: 1320px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(5, 191, 224, 0.08), transparent 28%),
+        linear-gradient(180deg, #fff 0%, var(--paper) 34%, #f7f2ff 100%);
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .site-shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding-bottom: 64px;
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      margin: 18px auto 28px;
+      padding: 28px;
+      border: 1px solid rgba(79, 23, 168, 0.15);
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(79, 23, 168, 0.98), rgba(32, 15, 59, 1) 66%),
+        var(--violet-800);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .cover::before,
+    .cover::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .cover::before {
+      width: 420px;
+      height: 420px;
+      top: -170px;
+      right: -70px;
+      background: linear-gradient(135deg, var(--aqua-300), transparent 70%);
+    }
+
+    .cover::after {
+      width: 260px;
+      height: 260px;
+      bottom: -90px;
+      left: -40px;
+      background: linear-gradient(135deg, rgba(255, 97, 15, 0.7), transparent 72%);
+    }
+
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: baseline;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      align-items: end;
+      margin-top: 36px;
+    }
+
+    .cover h1 {
+      margin: 0;
+      max-width: 11ch;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+    }
+
+    .deck {
+      margin-top: 16px;
+      max-width: 44rem;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.02rem;
+    }
+
+    .cover-notes {
+      display: grid;
+      gap: 14px;
+      align-content: end;
+    }
+
+    .cover-card {
+      border-radius: 22px;
+      padding: 18px 18px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .cover-card strong,
+    .cover-card span {
+      display: block;
+    }
+
+    .cover-card strong {
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .cover-card span {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .jump {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 0 auto 22px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 12px 30px rgba(32, 15, 59, 0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .jump-label {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .jump nav {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .jump a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--paper-2);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--violet-800);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .jump a:hover {
+      background: rgba(5, 191, 224, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .story {
+      position: relative;
+      overflow: hidden;
+      margin: 22px auto;
+      padding: 26px;
+      border-radius: 30px;
+      border: 1px solid rgba(79, 23, 168, 0.12);
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+
+    .story::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.72;
+      background: linear-gradient(180deg, rgba(79, 23, 168, 0.018), transparent 36%);
+    }
+
+    .story-inner {
+      position: relative;
+      display: grid;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .story h2 {
+      margin: 0 0 14px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      color: var(--violet-800);
+    }
+
+    .story p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      color: #352553;
+    }
+
+    .story p:last-child { margin-bottom: 0; }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--violet-500), var(--violet-800));
+    }
+
+    .read-link span {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .figure,
+    .poster {
+      position: relative;
+      min-height: 300px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(79, 23, 168, 0.12);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(241, 236, 252, 0.92));
+    }
+
+    .poster {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(145deg, rgba(79, 23, 168, 0.08), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(5, 191, 224, 0.16), transparent 36%);
+      pointer-events: none;
+    }
+
+    .poster-top,
+    .poster-bottom {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .poster-tag {
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .source-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(79, 23, 168, 0.1);
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--violet-800);
+      box-shadow: 0 10px 18px rgba(32, 15, 59, 0.06);
+    }
+
+    .source-chip img {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: var(--white);
+      flex: none;
+    }
+
+    .poster-text {
+      position: relative;
+      z-index: 1;
+      margin: 18px 0;
+    }
+
+    .poster-text h3 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.7rem, 3.2vw, 3rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      max-width: 11ch;
+      color: var(--violet-800);
+    }
+
+    .poster-text p {
+      margin: 10px 0 0;
+      max-width: 26rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .caption-note {
+      position: relative;
+      z-index: 1;
+      max-width: 18rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(5, 191, 224, 0.1);
+      color: var(--white);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .quote-box,
+    .sidebar-note,
+    .utility-box,
+    .decision-box,
+    .signal-box,
+    .matrix-box,
+    .take-box,
+    .ops-box,
+    .chip-cloud {
+      border-radius: 22px;
+      border: 1px solid rgba(79, 23, 168, 0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244, 239, 252, 0.96));
+      padding: 18px;
+    }
+
+    .quote-box {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.3rem;
+      line-height: 1.15;
+      color: var(--violet-800);
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .chip-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .chip-cloud span,
+    .utility-box span,
+    .signal-box span,
+    .matrix-box span,
+    .take-box span,
+    .ops-box span,
+    .decision-box span,
+    .sidebar-note span {
+      display: inline-flex;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(79, 23, 168, 0.08);
+      color: var(--violet-800);
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin: 4px 6px 0 0;
+    }
+
+    .utility-box p,
+    .signal-box p,
+    .matrix-box p,
+    .take-box p,
+    .ops-box p,
+    .decision-box p,
+    .sidebar-note p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .story-1 .story-inner { grid-template-columns: 1.1fr 0.9fr; }
+    .story-2 .story-inner { grid-template-columns: 0.88fr 1.12fr; }
+    .story-3 .story-inner { grid-template-columns: 1fr; }
+    .story-4 .story-inner { grid-template-columns: 1.08fr 0.92fr; }
+    .story-5 .story-inner { grid-template-columns: 0.96fr 1.04fr; }
+    .story-6 .story-inner { grid-template-columns: 1fr 1fr; }
+    .story-7 .story-inner { grid-template-columns: 1.12fr 0.88fr; }
+    .story-8 .story-inner { grid-template-columns: 0.92fr 1.08fr; }
+    .story-9 .story-inner { grid-template-columns: 1fr; }
+    .story-10 .story-inner { grid-template-columns: 1fr 1fr; }
+
+    .story-3 .headline-band,
+    .story-9 .headline-band {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+
+    .story-3 .analysis-grid,
+    .story-9 .analysis-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 18px;
+    }
+
+    .story-6 .poster,
+    .story-10 .poster {
+      min-height: 360px;
+    }
+
+    .story-3 .poster::after,
+    .story-9 .poster::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--aqua-300), rgba(79, 23, 168, 0.1), var(--tangerine-300));
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      padding: 20px 24px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(243, 238, 251, 0.98));
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 1100px) {
+      .jump nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .cover-grid,
+      .story-1 .story-inner,
+      .story-2 .story-inner,
+      .story-4 .story-inner,
+      .story-5 .story-inner,
+      .story-6 .story-inner,
+      .story-7 .story-inner,
+      .story-8 .story-inner,
+      .story-10 .story-inner,
+      .story-3 .headline-band,
+      .story-9 .headline-band,
+      .story-3 .analysis-grid,
+      .story-9 .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-shell { width: min(calc(100% - 18px), var(--max)); }
+      .cover,
+      .story { padding: 18px; border-radius: 24px; }
+      .jump { padding: 12px; }
+      .jump nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .source-chip { max-width: 100%; }
+      .poster-text h3 { max-width: none; }
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Morning Edition | PMI Creative Studio | 2026-05-04&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--violet-900: #1c1035;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--violet-800: #200f3b;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--violet-700: #341864;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--violet-600: #431e86;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--violet-500: #4f17a8;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--violet-300: #8b63d7;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--aqua-300: #05bfe0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--aqua-100: #d7f7fc;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--tangerine-300: #ff610f;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--paper: #fbf8ff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--paper-2: #f3eefb;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--ink: #241540;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--muted: #61557b;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--line: rgba(32, 15, 59, 0.12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--white: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 18px 50px rgba(32, 15, 59, 0.09);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--radius: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--max: 1320px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>* { box-sizing: border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html { scroll-behavior: smooth; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--ink);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(circle at top left, rgba(5, 191, 224, 0.08), transparent 28%),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(180deg, #fff 0%, var(--paper) 34%, #f7f2ff 100%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Inter", Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>a { color: inherit; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.site-shell {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: min(calc(100% - 32px), var(--max));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding-bottom: 64px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 18px auto 28px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(79, 23, 168, 0.15);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
-<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(135deg, rgba(79, 23, 168, 0.98), rgba(32, 15, 59, 1) 66%),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var(--violet-800);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover::before,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover::after {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.18;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 420px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 420px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: -170px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>right: -70px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--aqua-300), transparent 70%);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover::after {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 260px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 260px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>bottom: -90px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: -40px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, rgba(255, 97, 15, 0.7), transparent 72%);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-top {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: baseline;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.12em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.74rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-grid {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1.25fr 0.75fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: end;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 36px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 11ch;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Fraunces", Georgia, serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(3rem, 7vw, 6rem);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 0.92;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.03em;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.deck {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 44rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255, 255, 255, 0.86);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.02rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-notes {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-content: end;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-card {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 22px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 18px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255, 255, 255, 0.18);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(14px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-card strong,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-card span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-card strong {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.12em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255, 255, 255, 0.74);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cover-card span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.jump {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 10;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto 22px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--line);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.88);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 12px 30px rgba(32, 15, 59, 0.06);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(14px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.jump-label {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.76rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.12em;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.jump nav {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(5, minmax(0, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.jump a {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--paper-2);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.88rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--violet-800);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.18s ease, background 0.18s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.jump a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(5, 191, 224, 0.12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-1px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 22px auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(79, 23, 168, 0.12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.72;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg, rgba(79, 23, 168, 0.018), transparent 36%);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-inner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-meta {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story h2 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Fraunces", Georgia, serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(2rem, 4vw, 3.6rem);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 0.97;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.03em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--violet-800);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #352553;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story p:last-child { margin-bottom: 0; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.read-link {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--violet-500), var(--violet-800));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.read-link span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.14);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.figure,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 300px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(79, 23, 168, 0.12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(241, 236, 252, 0.92));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-image {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
-<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(180deg, rgba(17, 9, 35, 0.18), rgba(17, 9, 35, 0.7)),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(145deg, rgba(79, 23, 168, 0.12), transparent 38%),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(circle at bottom right, rgba(5, 191, 224, 0.16), transparent 36%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-top,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-bottom {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-tag {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.73rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.11em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255, 255, 255, 0.84);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.source-chip {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255, 255, 255, 0.22);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(17, 9, 35, 0.42);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.82rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 18px rgba(32, 15, 59, 0.14);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(8px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.source-chip img {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-text {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 18px 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-text h3 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Fraunces", Georgia, serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(1.7rem, 3.2vw, 3rem);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 0.95;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.03em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 11ch;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.poster-text p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 0 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 26rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255, 255, 255, 0.9);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.96rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.caption-note {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 18rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255, 255, 255, 0.78);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.84rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.45;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.eyebrow {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(5, 191, 224, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.76rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.09em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.quote-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sidebar-note,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.utility-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.decision-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.signal-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.matrix-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.take-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.ops-box,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.chip-cloud {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 22px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(79, 23, 168, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244, 239, 252, 0.96));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.quote-box {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Fraunces", Georgia, serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.15;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--violet-800);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.label {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.74rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.chip-cloud {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-content: start;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.chip-cloud span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.utility-box span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.signal-box span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.matrix-box span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.take-box span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.ops-box span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.decision-box span,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sidebar-note span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(79, 23, 168, 0.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--violet-800);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.84rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 4px 6px 0 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.utility-box p,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.signal-box p,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.matrix-box p,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.take-box p,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.ops-box p,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.decision-box p,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sidebar-note p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--ink);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-1 .story-inner { grid-template-columns: 1.1fr 0.9fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-2 .story-inner { grid-template-columns: 0.88fr 1.12fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-3 .story-inner { grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-4 .story-inner { grid-template-columns: 1.08fr 0.92fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-5 .story-inner { grid-template-columns: 0.96fr 1.04fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-6 .story-inner { grid-template-columns: 1fr 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-7 .story-inner { grid-template-columns: 1.12fr 0.88fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-8 .story-inner { grid-template-columns: 0.92fr 1.08fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-9 .story-inner { grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-10 .story-inner { grid-template-columns: 1fr 1fr; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-3 .headline-band,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-9 .headline-band {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1.05fr 0.95fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: stretch;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-3 .analysis-grid,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-9 .analysis-grid {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-6 .poster,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-10 .poster {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 360px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-3 .poster::after,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-9 .poster::after {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>right: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>bottom: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--aqua-300), rgba(79, 23, 168, 0.1), var(--tangerine-300));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-note {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 22px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--line);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(243, 238, 251, 0.98));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.93rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 1100px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.jump nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.cover-grid,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-1 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-2 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-4 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-5 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-6 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-7 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-8 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-10 .story-inner,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-3 .headline-band,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-9 .headline-band,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-3 .analysis-grid,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story-9 .analysis-grid {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 760px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.site-shell { width: min(calc(100% - 18px), var(--max)); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.cover,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.story { padding: 18px; border-radius: 24px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.jump { padding: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.jump nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.source-chip { max-width: 100%; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.poster-text h3 { max-width: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="site-shell"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cover-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;PMI Creative Studio&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Morning Edition • 4 May 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cover-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="eyebrow"&gt;Daily editorial magazine&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1&gt;Morning Edition&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="deck"&gt;A tightly curated read on the AI and design-tool stories most likely to change how PMI’s Graphic Design Team briefs, experiments, reviews, and ships work across campaigns, decks, chapters, and certification touchpoints.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cover-notes"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cover-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Today’s editorial frame&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Only the stories with real workflow impact made the cut: design generation, brand-safe iteration, deck production, creative automation, and collaborative AI.&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cover-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;What to watch&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Agentic creative tooling is converging with presentation systems and brand-aware production. The most strategic question is no longer “which model?” but “where does it enter our workflow?”&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="jump" aria-label="Jump navigation"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="jump-label"&gt;Jump to story&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-1"&gt;Claude Design&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-2"&gt;Claude Connectors&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-3"&gt;ChatGPT Images 2.0&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-4"&gt;Workspace Agents&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-5"&gt;Gemini for Slides&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-6"&gt;Canva AI 2.0&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-7"&gt;Magic Layers&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-8"&gt;Firefly Agent&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-9"&gt;Adobe Video&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#story-10"&gt;Copilot in PowerPoint&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-1" id="story-1" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;01 • Anthropic • 17 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Exploration to prototype&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Claude Design turns the AI brief into a working design surface&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: Anthropic is moving Claude closer to a real concepting studio, with a new design environment that can assemble artifacts, interpret brand inputs, and export work into formats the team already uses. For Creative Studio, that changes AI from a research sidecar into a serious early-phase option for campaign layouts, event one-pagers, and fast internal visualization.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The practical implication is not final-production replacement; it is speed at the fuzzy front of the process. Claude Design looks strongest when the team needs multiple directions before opening heavier production tools, especially for workshops, stakeholder alignment, or fast iteration on narrative structure before brand refinement in Figma, Adobe, or PowerPoint.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Internally, this is a workflow discussion as much as a tooling discussion. PMI should define how AI-generated first drafts enter review, what brand materials are safe to expose, and where human creative judgment must remain non-negotiable in the shift from concept to polished asset.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://www.anthropic.com/news/claude-design-anthropic-labs?cam=claude" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://www-cdn.anthropic.com/images/4zrzovbb/website/33dbe8f783d4835a838b4c4ae85d3c04e352fee1-1000x1000.svg" alt="Claude Design official Anthropic preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.anthropic.com/favicon.ico" alt="Anthropic source icon"&gt;Anthropic&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;From prompt to prototype, faster.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Design-native AI is starting to close the gap between ideation, layout exploration, and shareable outputs.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Source image from the official Anthropic domain, paired with an editorial preview treatment for internal circulation.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-2" id="story-2" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;02 • Anthropic • 28 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Creative automation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Claude for Creative Work points toward a real creative-ops layer&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: this is Anthropic’s clearest signal yet that AI value for creatives will come from cross-tool coordination, not just better prompting. The more Claude can connect into asset libraries, production apps, and approval materials, the more it becomes useful for prep work, repetitive tasks, and internal handoff friction that normally drains studio time.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Practically, PMI should look at the low-risk parts of the workflow first: batch cleanup, naming conventions, export planning, reference gathering, and structured design documentation. Those are the places where connective AI can save meaningful time without weakening craft, review discipline, or brand precision.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;This also opens a training conversation about creative automation literacy. The opportunity is not only “what can Claude make?” but “which tedious motions can it absorb so designers spend more time on narrative, hierarchy, and judgment?”&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="chip-cloud"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Asset prep&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Batch operations&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Reference digestion&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Design documentation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://www.anthropic.com/news/claude-for-creative-work?c=ordem" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://www-cdn.anthropic.com/images/4zrzovbb/website/4df0f56f23e98f6dd2d8250fe98f2e37dc79d806-1000x1000.svg" alt="Claude for Creative Work official Anthropic preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.anthropic.com/favicon.ico" alt="Anthropic source icon"&gt;Anthropic&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Creative connectors&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Claude wants to sit between tools, not beside them.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Connectors across creative apps point toward a new layer of design operations.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Official-source image marker from Anthropic, used here as the anchor for the spread’s connector motif.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-3" id="story-3" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;03 • OpenAI • 21 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Generative image production&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="headline-band"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;ChatGPT Images 2.0 makes AI imagery more useful for real design comps&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: OpenAI is pushing image generation toward the practical details designers actually care about, especially typography, layout fidelity, multilingual rendering, and more deliberate control over composition. That matters far more to a global brand team than another round of pretty-but-fragile image output.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The workflow implication is speed in comping and exploration. For PMI, that could mean faster first-pass posters, slide openers, infographics, campaign moodboards, or localized social variants that reach review in a more believable state before the team invests polish time in Adobe or Canva.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;It also raises a quality-governance question. Generated visuals can now arrive looking “finished” earlier, which means the team needs sharper checkpoints for brand fit, accessibility, legibility, and cultural accuracy before these assets move deeper into live marketing work.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://images.ctfassets.net/kftzwdyauwt9/3IdBQyOlVNdmSCdUjK0zYT/e05480b1b44cc06d6ff2b357c3f80855/introducingchatfinal.jpg?fm=webp&amp;q=90&amp;w=3840" alt="ChatGPT Images 2.0 official OpenAI preview poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://openai.com/favicon.ico" alt="OpenAI source icon"&gt;OpenAI&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Better text. Better control. Better comps.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Image generation is becoming more editorially useful because precision is catching up to imagination.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;OpenAI-sourced icon and a custom cover treatment built for internal editorial readability.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="analysis-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="quote-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="label"&gt;PMI lens&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>“The jump from inspiration image to campaign-comp image is where this release matters most.”</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="utility-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Fast poster drafts&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Localized headline comps&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Storyboard frames&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Infographic visual starts&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-4" id="story-4" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;04 • OpenAI • 22 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Team workflow systems&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Workspace agents in ChatGPT shift AI from solo prompting to team process&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: shared agents make ChatGPT more relevant to studio operations, not just individual experimentation. For a creative team that juggles campaigns, presentation requests, chapter support, and internal stakeholders, a repeatable AI layer for briefs, summaries, reference gathering, and status synthesis can create leverage even when the output is not visual.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The most practical near-term use cases are operational: kickoff brief assembly, weekly inspiration curation, stakeholder summary drafts, content-source digestion, and pre-review packets for presentation or campaign work. That kind of structure can free design time without interfering with the high-value craft moments that still require human decision-making.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;What matters internally is governance. PMI should test which agents are worth standardizing, what sources they can safely access, and where escalation to a human editor must happen so convenience never outruns trust.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://images.ctfassets.net/kftzwdyauwt9/5F912CO6XJQKhgyrmlhnRE/54322d0b38cc0b74d9c2355b2505b903/OAI_Blog_Agents_Slack.png?fm=webp&amp;q=90&amp;w=3840" alt="Workspace agents official OpenAI preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://openai.com/favicon.ico" alt="OpenAI source icon"&gt;OpenAI&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Shared agents are becoming a design-ops layer.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;OpenAI is framing agents as reusable team systems, not one-off prompts.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;The official OpenAI preview shows a Slack-style agent workflow, which is the clearest visual cue for how this could reshape studio coordination.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-5" id="story-5" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;05 • Google • 10 Mar 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Deck acceleration&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Gemini’s latest Workspace push makes Slides more relevant to real deck production&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: PMI produces a large volume of presentations across leadership updates, certifications, partner materials, and chapter-facing communications. Google’s push toward faster generation inside Docs, Sheets, Slides, and Drive makes AI-generated narrative structure more useful when the team needs to turn raw notes into presentable material quickly.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The practical implication is not that Slides suddenly becomes the final design surface for every PMI deck. It is that Gemini is getting better at the messy middle, where scattered notes, rough talking points, and partial source material need to become a coherent slide draft before the design team sharpens hierarchy, pacing, and brand tone.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;This is worth an internal comparison against Copilot and Canva. For PMI, the real question is which system gives the best first draft for deck-heavy work while staying editable, source-aware, and easy for designers to refine without fighting the tool.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://www.gstatic.com/images/branding/product/2x/workspace_96dp.png" alt="Google Workspace official product image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://blog.google/favicon.ico" alt="Google source icon"&gt;Google&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Gemini is getting closer to the first usable deck draft.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;For PMI, the value is the jump from scattered notes to editable Slides structure.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Google’s public article focuses on Workspace-native creation; the official product image serves as the source-side visual anchor for this deck story.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-6" id="story-6" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;06 • Canva • 16 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Brand-aware AI creation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Canva AI 2.0 pushes Canva from quick-turn tool toward campaign system&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: Canva is making its AI output more editable, more brand-aware, and more persistent across projects. That matters because PMI’s design operations often depend on scaling one idea across formats, teams, and speed tiers, especially when assets move from central studio work to local chapter use or partner adaptation.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The practical change is compression of the production loop. If Canva can turn prompts, source material, and brand context into layered drafts that stay editable, the team can move faster from brief to social set, internal comms graphic, event tile, or stakeholder-ready variation without rebuilding every touchpoint manually.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Strategically, PMI should decide whether Canva’s role is exploratory, productional, or hybrid. The strongest value may come when central design defines the brand logic and downstream teams use Canva’s intelligence to scale approved systems without diluting them.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://www.canva.com/newsroom/news/canva-create-2026-ai/" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://content-management-files.canva.com/dc68f557-6ae6-4f24-803d-8930eebf284b/CanvaAI2.0HeroCollage.png" alt="Canva AI 2.0 official Canva preview collage"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.canva.com/favicon.ico" alt="Canva source icon"&gt;Canva&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Brand logic meets AI scale.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Editable AI is much more useful than flattened novelty for a distributed design organization.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Official Canva-domain image marker carried into a premium magazine treatment for internal reading.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-7" id="story-7" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;07 • Canva • 11 Mar 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Layer recovery&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Magic Layers tackles one of creative production’s most annoying problems&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: flattened visuals are where too much production time disappears, whether the source is a legacy asset, a vendor export, an AI concept, or a fast-turn marketing file that never came with proper layers. Canva’s Magic Layers is directly aimed at recovering editability, which makes it unusually practical compared with more attention-grabbing AI features.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;For PMI, the most immediate use case is asset salvage. External partner materials, older campaign graphics, chapter-provided visuals, and concept art can all create rework when they arrive as images instead of structured files. If layer recovery is reliable enough, it reduces rebuild work and speeds adaptation into current templates.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;This is a good candidate for a focused internal experiment: pick a small set of archived PMI assets and third-party visuals, then compare recovery quality against manual recreation time. If the lift is meaningful, Magic Layers could become a quiet but important productivity win.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://www.canva.com/newsroom/news/magic-layers/" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://content-management-files.canva.com/3e0c7416-264d-40d7-abd9-5af48e0fc345/EditableimagesCanvaAIMagicLayers.jpg" alt="Magic Layers official Canva preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.canva.com/favicon.ico" alt="Canva source icon"&gt;Canva&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Flattened files might finally be less painful.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Magic Layers is unusually relevant because it targets asset recovery, not just generation.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;The official Canva preview makes the feature tangible: turning a fixed image back into editable structure.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-8" id="story-8" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;08 • Adobe • 15 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Agentic creative stack&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Adobe’s new creative agent ambitions deserve attention from any multi-format studio&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: Adobe is no longer talking about AI only as isolated generation features. It is positioning Firefly and related products as an orchestration layer across professional creative tools, which is directly relevant to teams balancing stills, motion, social assets, event graphics, and presentation support within one operating rhythm.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The practical implication is coordination efficiency. If Adobe can help assemble, revise, and route creative work while keeping professional controls intact, it could shorten the path between idea, edit, review, and final handoff. Frame.io and cross-app continuity are especially important here for PMI’s distributed review needs.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;For internal discussion, the question is whether Adobe’s agent layer meaningfully reduces overhead or mostly rearranges familiar steps. Either way, this is the right moment for Creative Studio to define which handoffs are worth automating and which must stay deeply manual because brand nuance lives there.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://news.adobe.com/news/2026/04/adobe-new-creative-agent" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://news.adobe.com/news/2026/04/media_1c50c833f9a9ea7d9952feb4e372a4c300092f3a8.png?format=png&amp;optimize=medium&amp;width=750" alt="Adobe Firefly AI Assistant official Adobe preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.adobe.com/favicon.ico" alt="Adobe source icon"&gt;Adobe&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Firefly strategy&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Adobe is trying to orchestrate the creative stack.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Agentic features matter if they reduce switching, coordination, and review friction across campaign production.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Adobe-domain image source paired with an editorial poster treatment to keep the spread self-contained and readable.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-9" id="story-9" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;09 • Adobe • 15 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Video production acceleration&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="headline-band"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Adobe’s latest video stack update is about real production pain, not AI theater&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: the new Firefly video tooling, Stock integration, audio cleanup, and Premiere color work all point at everyday editing friction rather than speculative future features. That makes this story relevant to the studio’s motion, event recap, social video, and webinar support work right now.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The practical implication is faster assembly and finishing inside a familiar ecosystem. PMI’s teams could use these tools for rough cuts, cleaner social edits, visual filler generation, and audio rescue without hopping between too many systems, especially when the work needs to move quickly but still look intentional and brand-safe.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;This is worth a side-by-side benchmark with current Adobe workflows. The key question is where AI meaningfully speeds throughput without flattening creative decisions, over-smoothing edits, or eroding the polish that gives PMI motion work its authority.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://blog.adobe.com/en/publish/2026/04/15/adobe-extends-leadership-video-unleashing-new-ai-powered-creation-firefly-reinventing-color-editors-in-premiere" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://blog.adobe.com/en/publish/2026/04/15/media_1cf9d5e233f22a899b45ad06d02e73af0968c5507.jpg?format=jpg&amp;optimize=medium&amp;width=750" alt="Adobe video tools official Adobe preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.adobe.com/favicon.ico" alt="Adobe source icon"&gt;Adobe&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Faster rough cuts. Cleaner finishing. Fewer context switches.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Useful AI in video work is about speed-to-edit, not just speed-to-generate.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Adobe-domain source image marker with a custom editorial panel for internal circulation.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="analysis-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="take-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="label"&gt;Watch for&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Audio cleanup&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Stock-assisted filler&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Color workflow gains&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Faster social edits&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="quote-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="label"&gt;Studio read&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>“This release matters because it aims at the boring, expensive parts of video work that creative teams actually feel.”</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;article class="story story-10" id="story-10" data-story&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;10 • Microsoft • 22 Apr 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Presentation workflows&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Copilot’s new PowerPoint capabilities make presentation AI a governance issue, not just a speed issue&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Why it matters for PMI’s design team: PowerPoint remains one of the most important production surfaces in PMI’s communication stack, and Microsoft is now making Copilot’s multi-step, agentic presentation work broadly available. That puts AI directly into a format the team already manages at scale, from executive decks to chapter materials and partner-facing narratives.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;The practical implication is acceleration in drafting, restructuring, and visual organization. Designers and content leads may be able to turn notes, documents, or working decks into sharper first drafts faster, then spend their attention on hierarchy, narrative confidence, and brand refinement instead of basic slide assembly.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;For PMI, the real conversation is operational discipline. If Copilot is going to shape decks earlier in the process, the team needs clear norms for template preservation, claim checking, design review, and how AI-generated slides are marked before they enter high-stakes communication channels.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="read-link" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/" target="_blank" rel="noopener noreferrer"&gt;Read the full story &lt;span&gt;↗&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="poster"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="poster-image" src="https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2026/04/Featured-image_-Option-1.webp" alt="Microsoft Copilot official preview image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="poster-tag"&gt;Official source preview&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="source-chip"&gt;&lt;img src="https://www.microsoft.com/favicon.ico" alt="Microsoft source icon"&gt;Microsoft&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;PowerPoint AI is moving from assist to action.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;The operational question for PMI is how much draft labor Copilot should absorb before human design review begins.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poster-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption-note"&gt;Microsoft’s official visual shows Copilot taking action inside the work canvas, which is exactly why this matters for presentation-heavy teams.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="footer-note"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;strong style="display:block; color:var(--violet-800); margin-bottom:8px;"&gt;Assumptions&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>This issue prioritizes official source material and uses official source-domain imagery where available, paired with editorial preview treatments so the file stays readable and share-ready in a single HTML artifact.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;strong style="display:block; color:var(--violet-800); margin:16px 0 8px;"&gt;Recommendation&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>The strongest near-term PMI opportunities are deck acceleration, brand-aware first drafts, and low-risk creative automation around prep, recovery, and review.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;strong style="display:block; color:var(--violet-800); margin:16px 0 8px;"&gt;Next actions&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Pick three pilot lanes for May: presentation drafting, AI-assisted concept comps, and asset-salvage or batch-prep workflows. Compare speed gains against review overhead before broadening adoption.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div class="site-shell">
+    <header class="cover">
+      <div class="cover-top">
+        <span>PMI Creative Studio</span>
+        <span>Morning Edition • 4 May 2026</span>
+      </div>
+      <div class="cover-grid">
+        <div>
+          <div class="eyebrow">Daily editorial magazine</div>
+          <h1>Morning Edition</h1>
+          <p class="deck">A tightly curated read on the AI and design-tool stories most likely to change how PMI’s Graphic Design Team briefs, experiments, reviews, and ships work across campaigns, decks, chapters, and certification touchpoints.</p>
+        </div>
+        <div class="cover-notes">
+          <div class="cover-card">
+            <strong>Today’s editorial frame</strong>
+            <span>Only the stories with real workflow impact made the cut: design generation, brand-safe iteration, deck production, creative automation, and collaborative AI.</span>
+          </div>
+          <div class="cover-card">
+            <strong>What to watch</strong>
+            <span>Agentic creative tooling is converging with presentation systems and brand-aware production. The most strategic question is no longer “which model?” but “where does it enter our workflow?”</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="jump" aria-label="Jump navigation">
+      <div class="jump-label">Jump to story</div>
+      <nav>
+        <a href="#story-1">Claude Design</a>
+        <a href="#story-2">Claude Connectors</a>
+        <a href="#story-3">ChatGPT Images 2.0</a>
+        <a href="#story-4">Workspace Agents</a>
+        <a href="#story-5">Gemini for Slides</a>
+        <a href="#story-6">Canva AI 2.0</a>
+        <a href="#story-7">Magic Layers</a>
+        <a href="#story-8">Firefly Agent</a>
+        <a href="#story-9">Adobe Video</a>
+        <a href="#story-10">Copilot in PowerPoint</a>
+      </nav>
+    </section>
+
+    <article class="story story-1" id="story-1" data-story>
+      <div class="story-meta">
+        <span>01 • Anthropic • 17 Apr 2026</span>
+        <span>Exploration to prototype</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Claude Design turns the AI brief into a working design surface</h2>
+          <p>Why it matters for PMI’s design team: Anthropic is moving Claude closer to a real concepting studio, with a new design environment that can assemble artifacts, interpret brand inputs, and export work into formats the team already uses. For Creative Studio, that changes AI from a research sidecar into a serious early-phase option for campaign layouts, event one-pagers, and fast internal visualization.</p>
+          <p>The practical implication is not final-production replacement; it is speed at the fuzzy front of the process. Claude Design looks strongest when the team needs multiple directions before opening heavier production tools, especially for workshops, stakeholder alignment, or fast iteration on narrative structure before brand refinement in Figma, Adobe, or PowerPoint.</p>
+          <p>Internally, this is a workflow discussion as much as a tooling discussion. PMI should define how AI-generated first drafts enter review, what brand materials are safe to expose, and where human creative judgment must remain non-negotiable in the shift from concept to polished asset.</p>
+          <a class="read-link" href="https://www.anthropic.com/news/claude-design-anthropic-labs?cam=claude" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="poster">
+          <div class="poster-top">
+            <div class="poster-tag">Official source preview</div>
+            <div class="source-chip"><img src="https://www.anthropic.com/favicon.ico" alt="Anthropic source icon">Anthropic</div>
+          </div>
+          <div class="poster-text">
+            <h3>From prompt to prototype, faster.</h3>
+            <p>Design-native AI is starting to close the gap between ideation, layout exploration, and shareable outputs.</p>
+          </div>
+          <div class="poster-bottom">
+            <div class="caption-note">Source image from the official Anthropic domain, paired with an editorial preview treatment for internal circulation.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-2" id="story-2" data-story>
+      <div class="story-meta">
+        <span>02 • Anthropic • 28 Apr 2026</span>
+        <span>Creative automation</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Claude for Creative Work points toward a real creative-ops layer</h2>
+          <p>Why it matters for PMI’s design team: this is Anthropic’s clearest signal yet that AI value for creatives will come from cross-tool coordination, not just better prompting. The more Claude can connect into asset libraries, production apps, and approval materials, the more it becomes useful for prep work, repetitive tasks, and internal handoff friction that normally drains studio time.</p>
+          <p>Practically, PMI should look at the low-risk parts of the workflow first: batch cleanup, naming conventions, export planning, reference gathering, and structured design documentation. Those are the places where connective AI can save meaningful time without weakening craft, review discipline, or brand precision.</p>
+          <p>This also opens a training conversation about creative automation literacy. The opportunity is not only “what can Claude make?” but “which tedious motions can it absorb so designers spend more time on narrative, hierarchy, and judgment?”</p>
+          <div class="chip-cloud">
+            <span>Asset prep</span>
+            <span>Batch operations</span>
+            <span>Reference digestion</span>
+            <span>Design documentation</span>
+          </div>
+          <a class="read-link" href="https://www.anthropic.com/news/claude-for-creative-work?c=ordem" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="poster">
+          <div class="poster-top">
+            <div class="source-chip"><img src="https://www.anthropic.com/favicon.ico" alt="Anthropic source icon">Anthropic</div>
+            <div class="poster-tag">Creative connectors</div>
+          </div>
+          <div class="poster-text">
+            <h3>Claude wants to sit between tools, not beside them.</h3>
+            <p>Connectors across creative apps point toward a new layer of design operations.</p>
+          </div>
+          <div class="poster-bottom">
+            <div class="caption-note">Official-source image marker from Anthropic, used here as the anchor for the spread’s connector motif.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-3" id="story-3" data-story>
+      <div class="story-meta">
+        <span>03 • OpenAI • 21 Apr 2026</span>
+        <span>Generative image production</span>
+      </div>
+      <div class="headline-band">
+        <div>
+          <h2>ChatGPT Images 2.0 makes AI imagery more useful for real design comps</h2>
+          <p>Why it matters for PMI’s design team: OpenAI is pushing image generation toward the practical details designers actually care about, especially typography, layout fidelity, multilingual rendering, and more deliberate control over composition. That matters far more to a global brand team than another round of pretty-but-fragile image output.</p>
+          <p>The workflow implication is speed in comping and exploration. For PMI, that could mean faster first-pass posters, slide openers, infographics, campaign moodboards, or localized social variants that reach review in a more believable state before the team invests polish time in Adobe or Canva.</p>
+          <p>It also raises a quality-governance question. Generated visuals can now arrive looking “finished” earlier, which means the team needs sharper checkpoints for brand fit, accessibility, legibility, and cultural accuracy before these assets move deeper into live marketing work.</p>
+          <a class="read-link" href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="poster">
+          <div class="poster-top">
+            <div class="poster-tag">Official source preview</div>
+            <div class="source-chip"><img src="https://openai.com/favicon.ico" alt="OpenAI source icon">OpenAI</div>
+          </div>
+          <div class="poster-text">
+            <h3>Better text. Better control. Better comps.</h3>
+            <p>Image generation is becoming more editorially useful because precision is catching up to imagination.</p>
+          </div>
+          <div class="poster-bottom">
+            <div class="caption-note">OpenAI-sourced icon and a custom cover treatment built for internal editorial readability.</div>
+          </div>
+        </div>
+      </div>
+      <div class="analysis-grid">
+        <div class="quote-box">
+          <span class="label">PMI lens</span>
+          “The jump from inspiration image to campaign-comp image is where this release matters most.”
+        </div>
+        <div class="utility-box">
+          <span>Fast poster drafts</span>
+          <span>Localized headline comps</span>
+          <span>Storyboard frames</span>
+          <span>Infographic visual starts</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-4" id="story-4" data-story>
+      <div class="story-meta">
+        <span>04 • OpenAI • 22 Apr 2026</span>
+        <span>Team workflow systems</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Workspace agents in ChatGPT shift AI from solo prompting to team process</h2>
+          <p>Why it matters for PMI’s design team: shared agents make ChatGPT more relevant to studio operations, not just individual experimentation. For a creative team that juggles campaigns, presentation requests, chapter support, and internal stakeholders, a repeatable AI layer for briefs, summaries, reference gathering, and status synthesis can create leverage even when the output is not visual.</p>
+          <p>The most practical near-term use cases are operational: kickoff brief assembly, weekly inspiration curation, stakeholder summary drafts, content-source digestion, and pre-review packets for presentation or campaign work. That kind of structure can free design time without interfering with the high-value craft moments that still require human decision-making.</p>
+          <p>What matters internally is governance. PMI should test which agents are worth standardizing, what sources they can safely access, and where escalation to a human editor must happen so convenience never outruns trust.</p>
+          <a class="read-link" href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="decision-box">
+          <span class="label">Best early pilots</span>
+          <span>Campaign kickoff packs</span>
+          <span>Deck source summaries</span>
+          <span>Creative review prep</span>
+          <span>Daily inspiration pulls</span>
+          <p style="margin-top:12px;">The strategic value here is consistency: the same AI briefing structure can show up across recurring design requests instead of starting from zero each time.</p>
+          <div class="source-chip" style="margin-top:16px;"><img src="https://openai.com/favicon.ico" alt="OpenAI source icon">Official OpenAI source image</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-5" id="story-5" data-story>
+      <div class="story-meta">
+        <span>05 • Google • 10 Mar 2026</span>
+        <span>Deck acceleration</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Gemini’s latest Workspace push makes Slides more relevant to real deck production</h2>
+          <p>Why it matters for PMI’s design team: PMI produces a large volume of presentations across leadership updates, certifications, partner materials, and chapter-facing communications. Google’s push toward faster generation inside Docs, Sheets, Slides, and Drive makes AI-generated narrative structure more useful when the team needs to turn raw notes into presentable material quickly.</p>
+          <p>The practical implication is not that Slides suddenly becomes the final design surface for every PMI deck. It is that Gemini is getting better at the messy middle, where scattered notes, rough talking points, and partial source material need to become a coherent slide draft before the design team sharpens hierarchy, pacing, and brand tone.</p>
+          <p>This is worth an internal comparison against Copilot and Canva. For PMI, the real question is which system gives the best first draft for deck-heavy work while staying editable, source-aware, and easy for designers to refine without fighting the tool.</p>
+          <a class="read-link" href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="signal-box">
+          <span class="label">What changed</span>
+          <span>Editable slides</span>
+          <span>Faster first drafts</span>
+          <span>Docs-to-deck flow</span>
+          <span>Workspace-native creation</span>
+          <p style="margin-top:12px;">Slides are becoming an AI-authored output surface, not just a destination for manually arranged content.</p>
+          <div class="source-chip" style="margin-top:16px;"><img src="https://blog.google/favicon.ico" alt="Google source icon">Official Google source image</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-6" id="story-6" data-story>
+      <div class="story-meta">
+        <span>06 • Canva • 16 Apr 2026</span>
+        <span>Brand-aware AI creation</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Canva AI 2.0 pushes Canva from quick-turn tool toward campaign system</h2>
+          <p>Why it matters for PMI’s design team: Canva is making its AI output more editable, more brand-aware, and more persistent across projects. That matters because PMI’s design operations often depend on scaling one idea across formats, teams, and speed tiers, especially when assets move from central studio work to local chapter use or partner adaptation.</p>
+          <p>The practical change is compression of the production loop. If Canva can turn prompts, source material, and brand context into layered drafts that stay editable, the team can move faster from brief to social set, internal comms graphic, event tile, or stakeholder-ready variation without rebuilding every touchpoint manually.</p>
+          <p>Strategically, PMI should decide whether Canva’s role is exploratory, productional, or hybrid. The strongest value may come when central design defines the brand logic and downstream teams use Canva’s intelligence to scale approved systems without diluting them.</p>
+          <a class="read-link" href="https://www.canva.com/newsroom/news/canva-create-2026-ai/" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="poster">
+          <div class="poster-top">
+            <div class="poster-tag">Official source preview</div>
+            <div class="source-chip"><img src="https://www.canva.com/favicon.ico" alt="Canva source icon">Canva</div>
+          </div>
+          <div class="poster-text">
+            <h3>Brand logic meets AI scale.</h3>
+            <p>Editable AI is much more useful than flattened novelty for a distributed design organization.</p>
+          </div>
+          <div class="poster-bottom">
+            <div class="caption-note">Official Canva-domain image marker carried into a premium magazine treatment for internal reading.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-7" id="story-7" data-story>
+      <div class="story-meta">
+        <span>07 • Canva • 11 Mar 2026</span>
+        <span>Layer recovery</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Magic Layers tackles one of creative production’s most annoying problems</h2>
+          <p>Why it matters for PMI’s design team: flattened visuals are where too much production time disappears, whether the source is a legacy asset, a vendor export, an AI concept, or a fast-turn marketing file that never came with proper layers. Canva’s Magic Layers is directly aimed at recovering editability, which makes it unusually practical compared with more attention-grabbing AI features.</p>
+          <p>For PMI, the most immediate use case is asset salvage. External partner materials, older campaign graphics, chapter-provided visuals, and concept art can all create rework when they arrive as images instead of structured files. If layer recovery is reliable enough, it reduces rebuild work and speeds adaptation into current templates.</p>
+          <p>This is a good candidate for a focused internal experiment: pick a small set of archived PMI assets and third-party visuals, then compare recovery quality against manual recreation time. If the lift is meaningful, Magic Layers could become a quiet but important productivity win.</p>
+          <a class="read-link" href="https://www.canva.com/newsroom/news/magic-layers/" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="ops-box">
+          <span class="label">High-value tests</span>
+          <span>Legacy campaign JPEGs</span>
+          <span>Vendor flat files</span>
+          <span>AI concept comps</span>
+          <span>Chapter-supplied graphics</span>
+          <p style="margin-top:12px;">If recovered layers are “good enough,” this becomes a time-saving bridge feature rather than a novelty.</p>
+          <div class="source-chip" style="margin-top:16px;"><img src="https://www.canva.com/favicon.ico" alt="Canva source icon">Official Canva source image</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-8" id="story-8" data-story>
+      <div class="story-meta">
+        <span>08 • Adobe • 15 Apr 2026</span>
+        <span>Agentic creative stack</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Adobe’s new creative agent ambitions deserve attention from any multi-format studio</h2>
+          <p>Why it matters for PMI’s design team: Adobe is no longer talking about AI only as isolated generation features. It is positioning Firefly and related products as an orchestration layer across professional creative tools, which is directly relevant to teams balancing stills, motion, social assets, event graphics, and presentation support within one operating rhythm.</p>
+          <p>The practical implication is coordination efficiency. If Adobe can help assemble, revise, and route creative work while keeping professional controls intact, it could shorten the path between idea, edit, review, and final handoff. Frame.io and cross-app continuity are especially important here for PMI’s distributed review needs.</p>
+          <p>For internal discussion, the question is whether Adobe’s agent layer meaningfully reduces overhead or mostly rearranges familiar steps. Either way, this is the right moment for Creative Studio to define which handoffs are worth automating and which must stay deeply manual because brand nuance lives there.</p>
+          <a class="read-link" href="https://news.adobe.com/news/2026/04/adobe-new-creative-agent" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="poster">
+          <div class="poster-top">
+            <div class="source-chip"><img src="https://www.adobe.com/favicon.ico" alt="Adobe source icon">Adobe</div>
+            <div class="poster-tag">Firefly strategy</div>
+          </div>
+          <div class="poster-text">
+            <h3>Adobe is trying to orchestrate the creative stack.</h3>
+            <p>Agentic features matter if they reduce switching, coordination, and review friction across campaign production.</p>
+          </div>
+          <div class="poster-bottom">
+            <div class="caption-note">Adobe-domain image source paired with an editorial poster treatment to keep the spread self-contained and readable.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-9" id="story-9" data-story>
+      <div class="story-meta">
+        <span>09 • Adobe • 15 Apr 2026</span>
+        <span>Video production acceleration</span>
+      </div>
+      <div class="headline-band">
+        <div>
+          <h2>Adobe’s latest video stack update is about real production pain, not AI theater</h2>
+          <p>Why it matters for PMI’s design team: the new Firefly video tooling, Stock integration, audio cleanup, and Premiere color work all point at everyday editing friction rather than speculative future features. That makes this story relevant to the studio’s motion, event recap, social video, and webinar support work right now.</p>
+          <p>The practical implication is faster assembly and finishing inside a familiar ecosystem. PMI’s teams could use these tools for rough cuts, cleaner social edits, visual filler generation, and audio rescue without hopping between too many systems, especially when the work needs to move quickly but still look intentional and brand-safe.</p>
+          <p>This is worth a side-by-side benchmark with current Adobe workflows. The key question is where AI meaningfully speeds throughput without flattening creative decisions, over-smoothing edits, or eroding the polish that gives PMI motion work its authority.</p>
+          <a class="read-link" href="https://blog.adobe.com/en/publish/2026/04/15/adobe-extends-leadership-video-unleashing-new-ai-powered-creation-firefly-reinventing-color-editors-in-premiere" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="poster">
+          <div class="poster-top">
+            <div class="poster-tag">Official source preview</div>
+            <div class="source-chip"><img src="https://www.adobe.com/favicon.ico" alt="Adobe source icon">Adobe</div>
+          </div>
+          <div class="poster-text">
+            <h3>Faster rough cuts. Cleaner finishing. Fewer context switches.</h3>
+            <p>Useful AI in video work is about speed-to-edit, not just speed-to-generate.</p>
+          </div>
+          <div class="poster-bottom">
+            <div class="caption-note">Adobe-domain source image marker with a custom editorial panel for internal circulation.</div>
+          </div>
+        </div>
+      </div>
+      <div class="analysis-grid">
+        <div class="take-box">
+          <span class="label">Watch for</span>
+          <span>Audio cleanup</span>
+          <span>Stock-assisted filler</span>
+          <span>Color workflow gains</span>
+          <span>Faster social edits</span>
+        </div>
+        <div class="quote-box">
+          <span class="label">Studio read</span>
+          “This release matters because it aims at the boring, expensive parts of video work that creative teams actually feel.”
+        </div>
+      </div>
+    </article>
+
+    <article class="story story-10" id="story-10" data-story>
+      <div class="story-meta">
+        <span>10 • Microsoft • 22 Apr 2026</span>
+        <span>Presentation workflows</span>
+      </div>
+      <div class="story-inner">
+        <div>
+          <h2>Copilot’s new PowerPoint capabilities make presentation AI a governance issue, not just a speed issue</h2>
+          <p>Why it matters for PMI’s design team: PowerPoint remains one of the most important production surfaces in PMI’s communication stack, and Microsoft is now making Copilot’s multi-step, agentic presentation work broadly available. That puts AI directly into a format the team already manages at scale, from executive decks to chapter materials and partner-facing narratives.</p>
+          <p>The practical implication is acceleration in drafting, restructuring, and visual organization. Designers and content leads may be able to turn notes, documents, or working decks into sharper first drafts faster, then spend their attention on hierarchy, narrative confidence, and brand refinement instead of basic slide assembly.</p>
+          <p>For PMI, the real conversation is operational discipline. If Copilot is going to shape decks earlier in the process, the team needs clear norms for template preservation, claim checking, design review, and how AI-generated slides are marked before they enter high-stakes communication channels.</p>
+          <a class="read-link" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/" target="_blank" rel="noopener noreferrer">Read the full story <span>↗</span></a>
+        </div>
+        <div class="matrix-box">
+          <span class="label">PMI discussion prompts</span>
+          <span>Template fidelity</span>
+          <span>Deck QA checkpoints</span>
+          <span>Source-grounded slide creation</span>
+          <span>Designer versus author roles</span>
+          <p style="margin-top:12px;">This is less about whether Copilot can make slides and more about whether it can make the right slides inside PMI’s standards.</p>
+          <div class="source-chip" style="margin-top:16px;"><img src="https://www.microsoft.com/favicon.ico" alt="Microsoft source icon">Official Microsoft source image</div>
+        </div>
+      </div>
+    </article>
+
+    <section class="footer-note">
+      <strong style="display:block; color:var(--violet-800); margin-bottom:8px;">Assumptions</strong>
+      This issue prioritizes official source material and uses official source-domain imagery where available, paired with editorial preview treatments so the file stays readable and share-ready in a single HTML artifact.
+      <strong style="display:block; color:var(--violet-800); margin:16px 0 8px;">Recommendation</strong>
+      The strongest near-term PMI opportunities are deck acceleration, brand-aware first drafts, and low-risk creative automation around prep, recovery, and review.
+      <strong style="display:block; color:var(--violet-800); margin:16px 0 8px;">Next actions</strong>
+      Pick three pilot lanes for May: presentation drafting, AI-assisted concept comps, and asset-salvage or batch-prep workflows. Compare speed gains against review overhead before broadening adoption.
+    </section>
+  </div>
 </body>
 </html>
