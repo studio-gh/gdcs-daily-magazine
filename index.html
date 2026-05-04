@@ -1,62 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PMI Creative Studio Morning Edition</title>
-    <meta http-equiv="refresh" content="0; url=/magazines/2026/05-01.html" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        background: linear-gradient(180deg, #fbf7f1 0%, #f3efe7 100%);
-        color: #200f3b;
-        display: grid;
-        min-height: 100vh;
-        place-items: center;
-        padding: 24px;
-      }
-      .card {
-        max-width: 760px;
-        padding: 32px;
-        border-radius: 28px;
-        background: #fff;
-        border: 1px solid rgba(32,15,59,0.12);
-        box-shadow: 0 20px 50px rgba(32,15,59,0.1);
-      }
-      h1 {
-        margin: 0 0 12px;
-        font-family: "Fraunces", serif;
-        font-size: clamp(2.2rem, 5vw, 4rem);
-        line-height: 0.96;
-      }
-      p { line-height: 1.7; color: #5a536e; }
-      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
-      a {
-        display: inline-flex;
-        align-items: center;
-        padding: 12px 16px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 800;
-      }
-      .primary { background: #200f3b; color: #fff; }
-      .secondary { background: rgba(79,23,168,0.08); color: #200f3b; }
-    </style>
-  </head>
-  <body>
-    <main class="card">
-      <h1>Opening today’s Morning Edition</h1>
-      <p>
-        If you are not redirected automatically, use the links below to open the latest issue or browse recent editions.
-      </p>
-      <div class="actions">
-        <a class="primary" href="/magazines/2026/05-01.html">Open May 1 edition</a>
-        <a class="secondary" href="/archives/">Browse archive</a>
-      </div>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GDCS Daily Magazine</title>
+  <meta http-equiv="refresh" content="0; url=./magazines/2026-05-04.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet-800: #200f3b;
+      --violet-500: #4f17a8;
+      --aqua-300: #05bfe0;
+      --paper: #f8f4ff;
+      --ink: #241540;
+      --muted: #5f5574;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(5,191,224,0.12), transparent 28%),
+        linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+      color: var(--ink);
+      font-family: "Inter", Arial, sans-serif;
+    }
+    main {
+      width: min(calc(100% - 32px), 760px);
+      padding: 32px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(79,23,168,0.12);
+      box-shadow: 0 24px 60px rgba(32,15,59,0.1);
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(79,23,168,0.1);
+      color: var(--violet-800);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    h1 {
+      margin: 18px 0 10px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      line-height: 0.95;
+      color: var(--violet-800);
+    }
+    p {
+      margin: 0 auto;
+      max-width: 40rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--violet-500), var(--violet-800));
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Latest edition</div>
+    <h1>Morning Edition</h1>
+    <p>Redirecting to the latest GDCS Daily Magazine issue. If the page does not move automatically, use the link below.</p>
+    <a href="./magazines/2026-05-04.html">Open the 2026-05-04 edition</a>
+  </main>
+</body>
 </html>
