@@ -13,6 +13,14 @@ const BRAND = {
   line: "rgba(32, 15, 59, 0.14)"
 };
 
+const SECTION_ORDER = [
+  "AI Latest",
+  "Tool Updates",
+  "Workflow Shifts",
+  "Design Campaigns to Watch",
+  "Inspiration"
+];
+
 const SPREAD_STYLES = [
   "spread-hero",
   "spread-midnight",
@@ -63,6 +71,7 @@ const JSON_SCHEMA = {
           type: "object",
           additionalProperties: false,
           required: [
+            "section",
             "source_name",
             "published_date",
             "headline",
@@ -74,6 +83,10 @@ const JSON_SCHEMA = {
             "image_alt"
           ],
           properties: {
+            section: {
+              type: "string",
+              enum: SECTION_ORDER
+            },
             source_name: { type: "string" },
             published_date: { type: "string" },
             headline: { type: "string" },
@@ -96,10 +109,10 @@ async function main() {
   const edition =
     process.env.MAGAZINE_INPUT_JSON
       ? JSON.parse(await fs.readFile(process.env.MAGAZINE_INPUT_JSON, "utf8"))
-      : await generateEdition(runDate, EDITION_TYPE);
+      : await generateEdition(runDate, EDITION_TYPE, root);
 
   edition.edition_date = runDate;
-  edition.stories = edition.stories.slice(0, 10);
+  edition.stories = sortStoriesBySection(edition.stories).slice(0, 10);
 
   if (edition.stories.length !== 10) {
     throw new Error(`Expected 10 stories, received ${edition.stories.length}`);
@@ -141,6 +154,7 @@ async function main() {
   await fs.writeFile(path.join(archiveDir, `${runDate}.html`), html);
   await fs.writeFile(path.join(summariesDir, `${runDate}-summary.html`), summaryHtml);
   await fs.writeFile(path.join(summariesDir, `${runDate}-summary.txt`), summaryTxt);
+  await writeArchiveIndexes(root);
 
   console.log(`Generated Morning Edition for ${runDate}`);
 }
@@ -157,11 +171,27 @@ function getRunDate() {
   }).format(new Date());
 }
 
-async function generateEdition(runDate, editionType) {
+async function generateEdition(runDate, editionType, root) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     throw new Error("OPENAI_API_KEY is required.");
   }
+
+  const recentCoverage = await collectRecentCoverage(root, runDate);
+  const coverageBlock =
+    recentCoverage.length > 0
+      ? `Recent archive coverage from the last 14 days. Avoid repeating these unless there is a material update and you explicitly state what changed:\n${recentCoverage.map((item) => `- ${item.date}: ${item.headline}`).join("\n")}`
+      : "No recent archive coverage was found in the repo, so use your normal non-repetition judgment.";
+
+  const systemText =
+    editionType === "weekly"
+      ? "You are producing a premium Friday weekly editorial magazine for PMI's Graphic Design Team. Use web search to find the most important official-source stories from this week only. Allowed source families: OpenAI/ChatGPT, Anthropic/Claude, Google/Gemini/Workspace/NotebookLM, Canva, Adobe, and Microsoft/Microsoft 365/Copilot/PowerPoint. Choose exactly 10 stories that mattered most to design workflow, experimentation, training, presentations, creative production, collaboration, creative operations, inspiring design campaigns, or visual-system inspiration across the week. AI and design-creativity news must remain the core of the issue, especially in the opening section. Build the issue in this section order: AI Latest first, then Tool Updates, Workflow Shifts, Design Campaigns to Watch, and Inspiration. Campaign and inspiration content should be complementary, not the main event. Exclude generic hype, crypto, celebrity news, and stories with no practical design impact. Every story must begin from a PMI-specific why-it-matters lens. Use concise, selective editorial writing and emphasize what deserves discussion or piloting next week."
+      : "You are producing a premium internal editorial magazine for PMI's Graphic Design Team. Use web search to find the most relevant current stories from official primary sources first. Allowed source families: OpenAI/ChatGPT, Anthropic/Claude, Google/Gemini/Workspace/NotebookLM, Canva, Adobe, and Microsoft/Microsoft 365/Copilot/PowerPoint. Choose exactly 10 stories that matter to design workflow, experimentation, training, presentations, creative production, collaboration, creative operations, inspiring design campaigns, or visual-system inspiration. AI and design-creativity news must remain the core of the issue, especially in the opening section. Build the issue in this section order: AI Latest first, then Tool Updates, Workflow Shifts, Design Campaigns to Watch, and Inspiration. Campaign and inspiration content should be complementary, not the main event. Exclude generic hype, crypto, celebrity news, and stories with no practical design impact. Every story must begin from a PMI-specific why-it-matters lens. Use concise, sharp editorial writing. Keep the issue selective and calming so the team does not feel buried by the news cycle.";
+
+  const userText =
+    editionType === "weekly"
+      ? `Create the Friday Weekly Edition for ${runDate}. Return valid JSON only. Requirements: exactly 10 stories from the current week; each story must have a section, a headline, a why-it-matters paragraph focused on PMI Creative Studio, a second supporting detail paragraph, a story URL, and an image URL from the original source or a same-source preview image. Mark urgent true only for immediately actionable workflow changes. Put 4-6 stories in AI Latest, then distribute the rest across the remaining sections. The cover title, deck, notes, and summaries should clearly reflect that this is a weekly wrap of the most important developments and what PMI's design team should discuss or test next week.\n\n${coverageBlock}`
+      : `Create the Morning Edition for ${runDate}. Return valid JSON only. Requirements: exactly 10 stories; each story must have a section, a headline, a why-it-matters paragraph focused on PMI Creative Studio, a second supporting detail paragraph, a story URL, and an image URL from the original source or a same-source preview image. Mark urgent true only for immediately actionable workflow changes. Put 4-6 stories in AI Latest, then distribute the rest across the remaining sections. Make the overall issue feel selective, insightful, and share-ready for an internal senior design team.\n\n${coverageBlock}`;
 
   const body = {
     model: process.env.OPENAI_MODEL || "gpt-5",
@@ -179,27 +209,11 @@ async function generateEdition(runDate, editionType) {
     input: [
       {
         role: "system",
-        content: [
-          {
-            type: "input_text",
-            text:
-              editionType === "weekly"
-                ? "You are producing a premium Friday weekly editorial magazine for PMI's Graphic Design Team. Use web search to find the most important official-source stories from this week only. Allowed source families: OpenAI, Anthropic, Google/Gemini/Workspace, Canva, Adobe, and Microsoft/Microsoft 365. Choose exactly 10 stories that mattered most to design workflow, experimentation, training, presentations, creative production, collaboration, or creative operations across the week. Exclude generic hype, crypto, celebrity news, and stories with no practical design impact. Every story must begin from a PMI-specific why-it-matters lens. Use concise, selective editorial writing and emphasize what deserves discussion or piloting next week."
-                : "You are producing a premium internal editorial magazine for PMI's Graphic Design Team. Use web search to find the most relevant current stories from official primary sources only. Allowed source families: OpenAI, Anthropic, Google/Gemini/Workspace, Canva, Adobe, and Microsoft/Microsoft 365. Choose exactly 10 stories that matter to design workflow, experimentation, training, presentations, creative production, collaboration, or creative operations. Exclude generic hype, crypto, celebrity news, and stories with no practical design impact. Every story must begin from a PMI-specific why-it-matters lens. Use concise, sharp editorial writing."
-          }
-        ]
+        content: [{ type: "input_text", text: systemText }]
       },
       {
         role: "user",
-        content: [
-          {
-            type: "input_text",
-            text:
-              editionType === "weekly"
-                ? `Create the Friday Weekly Edition for ${runDate}. Return valid JSON only. Requirements: exactly 10 stories from the current week; each story must have a headline, a why-it-matters paragraph focused on PMI Creative Studio, a second supporting detail paragraph, a story URL, and an image URL from the original source or a same-source preview image. Mark urgent true only for immediately actionable workflow changes. The cover title, deck, notes, and summaries should clearly reflect that this is a weekly wrap of the most important developments and what PMI's design team should discuss or test next week.`
-                : `Create the Morning Edition for ${runDate}. Return valid JSON only. Requirements: exactly 10 stories; each story must have a headline, a why-it-matters paragraph focused on PMI Creative Studio, a second supporting detail paragraph, a story URL, and an image URL from the original source or a same-source preview image. Mark urgent true only for immediately actionable workflow changes. Make the overall issue feel selective, insightful, and share-ready for an internal senior design team.`
-          }
-        ]
+        content: [{ type: "input_text", text: userText }]
       }
     ],
     text: {
@@ -285,6 +299,14 @@ function extensionFor(contentType, sourceUrl) {
   return ext || ".jpg";
 }
 
+function sortStoriesBySection(stories) {
+  return [...stories].sort((a, b) => {
+    const left = SECTION_ORDER.indexOf(a.section);
+    const right = SECTION_ORDER.indexOf(b.section);
+    return (left === -1 ? 999 : left) - (right === -1 ? 999 : right);
+  });
+}
+
 function renderEditionHtml(edition) {
   const dateLabel = longDate(edition.edition_date);
   const editionName = EDITION_TYPE === "weekly" ? "Weekly Edition" : "Morning Edition";
@@ -293,15 +315,24 @@ function renderEditionHtml(edition) {
     EDITION_TYPE === "weekly"
       ? "Weekly editorial for the Graphic Design Team"
       : "Internal editorial for the Graphic Design Team";
+
   const jumpLinks = edition.stories
     .map(
       (story, index) =>
-        `<a href="#story-${index + 1}">${index + 1}. ${escapeHtml(shortHeadline(story.headline, 32))}</a>`
+        `<a href="#story-${index + 1}"><span>${escapeHtml(story.section)}</span><strong>${index + 1}. ${escapeHtml(shortHeadline(story.headline, 30))}</strong></a>`
     )
     .join("\n");
 
+  let currentSection = "";
   const storyMarkup = edition.stories
-    .map((story, index) => renderStory(story, index))
+    .map((story, index) => {
+      let prefix = "";
+      if (story.section !== currentSection) {
+        currentSection = story.section;
+        prefix = renderSectionMarker(currentSection);
+      }
+      return `${prefix}\n${renderStory(story, index)}`;
+    })
     .join("\n");
 
   return `<!DOCTYPE html>
@@ -337,7 +368,13 @@ function renderEditionHtml(edition) {
     .jump { position:sticky; top:10px; z-index:30; margin:20px 0 26px; padding:14px 18px 16px; border-radius:24px; background:rgba(251,248,255,.82); border:1px solid rgba(79,23,168,.1); backdrop-filter:blur(16px); box-shadow:var(--shadow); }
     .jump h2 { margin:0 0 10px; font-size:.9rem; text-transform:uppercase; letter-spacing:.14em; color:var(--violet); }
     .jump-links { display:flex; flex-wrap:wrap; gap:10px; }
-    .jump a { text-decoration:none; padding:10px 14px; border-radius:999px; border:1px solid rgba(79,23,168,.12); background:rgba(79,23,168,.04); color:var(--ink); font-size:.93rem; line-height:1.25; }
+    .jump a { display:grid; gap:2px; text-decoration:none; padding:10px 14px; border-radius:18px; border:1px solid rgba(79,23,168,.12); background:rgba(79,23,168,.04); color:var(--ink); font-size:.82rem; line-height:1.25; min-width:176px; }
+    .jump a span { text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
+    .jump a strong { font-size:.92rem; font-weight:700; }
+    .section-marker { margin:34px 0 18px; padding:18px 20px; border-radius:24px; background:linear-gradient(90deg,rgba(79,23,168,.12),rgba(5,191,224,.06)); border:1px solid rgba(79,23,168,.12); }
+    .section-marker .eyebrow { margin:0 0 8px; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; font-weight:800; color:var(--violet); }
+    .section-marker h2 { margin:0; font-family:"Fraunces",serif; font-size:clamp(1.8rem,3vw,2.8rem); line-height:1; }
+    .section-marker p { margin:8px 0 0; color:var(--muted); font-size:.98rem; }
     .spread { position:relative; margin:26px 0; padding:34px; border-radius:34px; background:var(--white); border:1px solid var(--line); box-shadow:var(--shadow); overflow:hidden; }
     .spread-inner { position:relative; z-index:1; }
     .spread-header { display:flex; justify-content:space-between; gap:18px; align-items:center; margin-bottom:22px; flex-wrap:wrap; }
@@ -374,7 +411,7 @@ function renderEditionHtml(edition) {
     .spread-poster .poster-box { padding:18px; border-radius:22px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); }
     .footer-note { margin-top:36px; padding:24px; border-radius:26px; background:rgba(255,255,255,.84); border:1px solid var(--line); color:var(--muted); font-size:.96rem; }
     @media (max-width:960px){ .cover,.spread{padding:28px 22px;} .cover-meta,.story-grid,.story-columns{grid-template-columns:1fr;} .figure img{height:auto;} .spread-stamped .stamp{position:static;transform:none;display:inline-flex;margin-bottom:12px;} }
-    @media (max-width:680px){ .shell{width:min(calc(100% - 18px),var(--max));padding-top:12px;} .cover{min-height:auto;} h1{max-width:8ch;} .jump{position:static; margin:14px 0 18px; padding:10px 12px; border-radius:18px; background:rgba(251,248,255,.68); box-shadow:0 10px 24px rgba(32,15,59,.08);} .jump h2{margin:0 0 6px; font-size:.74rem; letter-spacing:.1em;} .jump-links{gap:8px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:2px; scrollbar-width:none;} .jump-links::-webkit-scrollbar{display:none;} .jump a{padding:8px 11px; font-size:.78rem; white-space:nowrap;} .copy p{font-size:1rem; line-height:1.82;} }
+    @media (max-width:680px){ .shell{width:min(calc(100% - 18px),var(--max));padding-top:12px;} .cover{min-height:auto;} h1{max-width:8ch;} .jump{position:static; margin:14px 0 18px; padding:10px 12px; border-radius:18px; background:rgba(251,248,255,.68); box-shadow:0 10px 24px rgba(32,15,59,.08);} .jump h2{margin:0 0 6px; font-size:.74rem; letter-spacing:.1em;} .jump-links{gap:8px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:2px; scrollbar-width:none;} .jump-links::-webkit-scrollbar{display:none;} .jump a{padding:8px 11px; font-size:.78rem; white-space:nowrap; min-width:150px;} .copy p{font-size:1rem; line-height:1.82;} }
   </style>
 </head>
 <body>
@@ -397,14 +434,26 @@ function renderEditionHtml(edition) {
       </div>
     </section>
     <nav class="jump" aria-label="Jump to section">
-      <h2>Jump to section</h2>
+      <h2>Jump to story</h2>
       <div class="jump-links">${jumpLinks}</div>
     </nav>
     ${storyMarkup}
-    <section class="footer-note">This ${EDITION_TYPE === "weekly" ? "weekly edition" : "edition"} was curated for PMI’s Graphic Design Team with a workflow-first filter: only stories with immediate operational relevance, clear experimentation potential, or meaningful implications for content production and design systems made the cut.</section>
+    <section class="footer-note">This ${EDITION_TYPE === "weekly" ? "weekly edition" : "edition"} was curated for PMI’s Graphic Design Team with a workflow-first filter: AI and design-creativity developments lead the issue, while campaigns and inspiration stay complementary and only appear when they offer real team value.</section>
   </main>
 </body>
 </html>`;
+}
+
+function renderSectionMarker(section) {
+  const blurbs = {
+    "AI Latest": "The core stories most likely to change how the team works, experiments, or briefs this week.",
+    "Tool Updates": "Important product changes in the software stack the team already touches or may need to evaluate.",
+    "Workflow Shifts": "Moves that change process, collaboration, approvals, or handoff patterns more than the pixels themselves.",
+    "Design Campaigns to Watch": "Brand and campaign work worth scanning for craft, system thinking, or strategic framing.",
+    Inspiration: "Complementary visual references that can sharpen taste, pacing, and conversation without overwhelming the core issue."
+  };
+
+  return `<section class="section-marker"><div class="eyebrow">Section</div><h2>${escapeHtml(section)}</h2><p>${escapeHtml(blurbs[section] || "")}</p></section>`;
 }
 
 function renderStory(story, index) {
@@ -417,30 +466,30 @@ function renderStory(story, index) {
   const classes = `spread ${style}`;
 
   if (style === "spread-pullquote") {
-    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><blockquote class="quote-block">${escapeHtml(story.why_it_matters)}</blockquote><div class="story-grid"><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
+    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">${escapeHtml(story.section)} • Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><blockquote class="quote-block">${escapeHtml(story.why_it_matters)}</blockquote><div class="story-grid"><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
   }
 
   if (style === "spread-techgrid") {
-    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="terminal-note">Prototype lane • workflow impact • primary source</div><div class="story-columns"><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div></div></div></section>`;
+    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">${escapeHtml(story.section)} • Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="terminal-note">Prototype lane • workflow impact • primary source</div><div class="story-columns"><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div></div></div></section>`;
   }
 
   if (style === "spread-stamped") {
-    return `<section id="${storyId}" class="${classes}"><div class="stamp">${story.urgent ? "Act Soon" : "Worth Reviewing"}</div><div class="spread-inner"><div class="spread-header"><div class="story-index">Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="story-grid"><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
+    return `<section id="${storyId}" class="${classes}"><div class="stamp">${story.urgent ? "Act Soon" : "Worth Reviewing"}</div><div class="spread-inner"><div class="spread-header"><div class="story-index">${escapeHtml(story.section)} • Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="story-grid"><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
   }
 
   if (style === "spread-ribbon") {
-    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="ribbon-tag">${story.urgent ? "Immediate workflow signal" : "Team discussion candidate"}</div><div class="story-columns"><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div></div></div></section>`;
+    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">${escapeHtml(story.section)} • Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="ribbon-tag">${story.urgent ? "Immediate workflow signal" : "Team discussion candidate"}</div><div class="story-columns"><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta" href="${escapeAttribute(story.story_url)}">Read the full story</a></div></div></div></section>`;
   }
 
   if (style === "spread-poster") {
-    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="story-grid"><div class="poster-box copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta light" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
+    return `<section id="${storyId}" class="${classes}"><div class="spread-inner"><div class="spread-header"><div class="story-index">${escapeHtml(story.section)} • Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="story-grid"><div class="poster-box copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta light" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
   }
 
   const numeralAttr = style === "spread-numeral" ? ` data-mark="${pad(index + 1)}"` : "";
   const lightClass = style === "spread-midnight" ? " light" : "";
   const layoutClass = index % 2 === 0 ? "story-grid" : "story-columns";
 
-  return `<section id="${storyId}" class="${classes}"${numeralAttr}><div class="spread-inner"><div class="spread-header"><div class="story-index">Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="rule"></div><div class="${layoutClass}"><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta${lightClass}" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
+  return `<section id="${storyId}" class="${classes}"${numeralAttr}><div class="spread-inner"><div class="spread-header"><div class="story-index">${escapeHtml(story.section)} • Story ${pad(index + 1)} • ${escapeHtml(story.source_name)} • ${escapeHtml(story.published_date)}</div><div class="story-source">${escapeHtml(shortHeadline(story.headline, 42))}</div></div><div class="rule"></div><div class="${layoutClass}"><div class="copy"><h2 class="headline">${escapeHtml(headline)}</h2><p>${lead}</p><p>${detail}</p><a class="cta${lightClass}" href="${escapeAttribute(story.story_url)}">Read the full story</a></div><figure class="figure"><img loading="eager" referrerpolicy="no-referrer" src="${escapeAttribute(imagePath)}" alt="${escapeAttribute(story.image_alt)}"><figcaption>Source image from the original story page.</figcaption></figure></div></div></section>`;
 }
 
 function renderSummaryText(edition) {
@@ -451,7 +500,7 @@ function renderSummaryText(edition) {
   return [
     `PMI Creative Studio ${EDITION_TYPE === "weekly" ? "Weekly Edition" : "Morning Edition"}`,
     longDate(edition.edition_date),
-    `Homepage: index.html`,
+    "Homepage: index.html",
     `Archive copy: ${editionPath}`,
     "",
     "SLACK VERSION",
@@ -522,6 +571,210 @@ function renderSummaryHtml(edition) {
   </main>
 </body>
 </html>`;
+}
+
+async function collectRecentCoverage(root, runDate) {
+  const archivesRoot = path.join(root, "archives");
+  const entries = [];
+
+  try {
+    for (const year of await listDirs(archivesRoot)) {
+      const yearPath = path.join(archivesRoot, year);
+      for (const month of await listDirs(yearPath)) {
+        const monthPath = path.join(yearPath, month);
+        const files = await fs.readdir(monthPath);
+        for (const file of files) {
+          if (!file.endsWith(".html") || file === "index.html") continue;
+          const date = file.replace(/\.html$/, "");
+          if (!isWithinLastDays(date, runDate, 14)) continue;
+          const text = await fs.readFile(path.join(monthPath, file), "utf8");
+          for (const headline of extractHeadlinesFromHtml(text).slice(0, 10)) {
+            entries.push({ date, headline });
+          }
+        }
+      }
+    }
+  } catch {
+    return [];
+  }
+
+  entries.sort((a, b) => b.date.localeCompare(a.date));
+
+  const unique = [];
+  const seen = new Set();
+  for (const item of entries) {
+    const key = `${item.date}::${item.headline.toLowerCase()}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(item);
+    if (unique.length >= 30) break;
+  }
+  return unique;
+}
+
+async function listDirs(dir) {
+  try {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+    return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
+  } catch {
+    return [];
+  }
+}
+
+function extractHeadlinesFromHtml(text) {
+  const matches = [...text.matchAll(/<h2[^>]*>(.*?)<\/h2>/gis)];
+  return matches
+    .map((match) => stripHtml(match[1]).trim())
+    .filter(Boolean)
+    .map((headline) => headline.replace(/^⚡\s*/, ""));
+}
+
+function stripHtml(value) {
+  return String(value)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ");
+}
+
+function isWithinLastDays(dateString, runDate, days) {
+  const left = new Date(`${dateString}T12:00:00Z`);
+  const right = new Date(`${runDate}T12:00:00Z`);
+  const diffDays = Math.floor((right - left) / 86400000);
+  return diffDays >= 0 && diffDays <= days;
+}
+
+async function writeArchiveIndexes(root) {
+  const archivesRoot = path.join(root, "archives");
+  const years = await listDirs(archivesRoot);
+  const monthEntries = [];
+
+  for (const year of years) {
+    const months = await listDirs(path.join(archivesRoot, year));
+    for (const month of months) {
+      const monthPath = path.join(archivesRoot, year, month);
+      const files = (await fs.readdir(monthPath))
+        .filter((file) => file.endsWith(".html") && file !== "index.html")
+        .sort()
+        .reverse();
+      if (!files.length) continue;
+
+      const monthItems = files.map((file) => {
+        const date = file.replace(/\.html$/, "");
+        return {
+          date,
+          href: `/archives/${year}/${month}/${file}`,
+          title: longDate(date)
+        };
+      });
+
+      monthEntries.push({
+        year,
+        month,
+        href: `/archives/${year}/${month}/`,
+        label: `${year}-${month}`,
+        items: monthItems
+      });
+
+      await fs.writeFile(
+        path.join(monthPath, "index.html"),
+        renderArchiveMonthIndex(year, month, monthItems)
+      );
+    }
+  }
+
+  monthEntries.sort((a, b) => `${b.year}${b.month}`.localeCompare(`${a.year}${a.month}`));
+  await fs.writeFile(path.join(archivesRoot, "index.html"), renderArchiveLanding(monthEntries));
+}
+
+function renderArchiveLanding(monthEntries) {
+  const cards = monthEntries
+    .map(
+      (entry) => `<article class="card"><div class="label">${entry.label}</div><h2><a href="${entry.href}">${escapeHtml(monthName(entry.month))} ${entry.year}</a></h2><ul>${entry.items
+        .slice(0, 8)
+        .map((item) => `<li><a href="${item.href}">${escapeHtml(item.title)}</a></li>`)
+        .join("")}</ul></article>`
+    )
+    .join("\n");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning Edition Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:"Inter",sans-serif;color:${BRAND.ink};background:linear-gradient(180deg,#f3eefb 0%,#fbf8ff 100%);}
+    .shell{width:min(calc(100% - 28px),1080px);margin:0 auto;padding:28px 0 48px;}
+    .hero,.card{background:rgba(255,255,255,.92);border:1px solid ${BRAND.line};border-radius:28px;box-shadow:0 18px 44px rgba(32,15,59,.08);}
+    .hero{padding:28px 30px;margin-bottom:22px;}
+    .hero h1,.card h2{margin:0 0 12px;font-family:"Fraunces",serif;line-height:1;}
+    .hero p{margin:0;color:rgba(32,15,59,.72);}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+    .card{padding:22px;}
+    .label{display:inline-block;margin-bottom:10px;padding:7px 11px;border-radius:999px;background:rgba(79,23,168,.08);color:${BRAND.violet};font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;}
+    ul{margin:0;padding-left:18px;} li+li{margin-top:8px;} a{text-decoration:none;color:inherit;} a:hover{text-decoration:underline;}
+    @media (max-width:820px){.grid{grid-template-columns:1fr;}.hero,.card{padding:22px;}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <h1>Morning Edition archive</h1>
+      <p>Browse previous PMI Creative Studio daily issues by month.</p>
+    </section>
+    <section class="grid">${cards}</section>
+  </main>
+</body>
+</html>`;
+}
+
+function renderArchiveMonthIndex(year, month, items) {
+  const list = items
+    .map((item) => `<li><a href="${item.href}">${escapeHtml(item.title)}</a></li>`)
+    .join("");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${monthName(month)} ${year} Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:"Inter",sans-serif;color:${BRAND.ink};background:linear-gradient(180deg,#f3eefb 0%,#fbf8ff 100%);}
+    .shell{width:min(calc(100% - 28px),980px);margin:0 auto;padding:28px 0 48px;}
+    .card{background:rgba(255,255,255,.92);border:1px solid ${BRAND.line};border-radius:28px;box-shadow:0 18px 44px rgba(32,15,59,.08);padding:28px 30px;}
+    h1{margin:0 0 12px;font-family:"Fraunces",serif;line-height:1;}
+    p{margin:0 0 18px;color:rgba(32,15,59,.72);}
+    ul{margin:0;padding-left:18px;} li+li{margin-top:10px;} a{text-decoration:none;color:inherit;} a:hover{text-decoration:underline;}
+    .back{display:inline-block;margin-bottom:16px;color:${BRAND.violet};font-weight:700;}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <a class="back" href="/archives/">Back to archive</a>
+      <h1>${monthName(month)} ${year}</h1>
+      <p>Daily Morning Edition issues published during this month.</p>
+      <ul>${list}</ul>
+    </section>
+  </main>
+</body>
+</html>`;
+}
+
+function monthName(month) {
+  const date = new Date(`2026-${month}-01T12:00:00Z`);
+  return new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" }).format(date);
 }
 
 function longDate(dateString) {
