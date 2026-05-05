@@ -1,25 +1,36 @@
 # Morning and Weekly Edition automation
 
-This folder contains the files to automate the PMI Creative Studio Morning Edition and the Friday Weekly Edition in GitHub Actions and publish them to Netlify through your GitHub-connected repo.
+This bundle contains the files to automate the PMI Creative Studio Morning Edition and the Friday Weekly Edition in GitHub Actions and publish them to Netlify through your GitHub-connected repo.
 
 ## What this setup does
 
-- Runs automatically every weekday at 9:00 AM in `America/Sao_Paulo`
-- Runs a separate Friday Weekly Edition at 10:00 AM in `America/Sao_Paulo`
+- Runs the Morning Edition automatically every weekday at 9:00 AM in `America/Sao_Paulo`
+- Runs the Weekly Edition automatically every Friday at 10:00 AM in `America/Sao_Paulo`
 - Lets you run a manual test from the GitHub Actions tab
 - Uses the OpenAI Responses API with the built-in `web_search` tool to gather current source material
-- Generates:
-  - `index.html` for the latest edition
-  - `archives/YYYY/MM/YYYY-MM-DD.html` for dated back issues
+- Generates the daily site files:
+  - `index.html` for the latest daily edition
+  - `archives/YYYY/MM/YYYY-MM-DD.html` for dated daily back issues
+  - `archives/index.html` for the archive landing page
+  - `archives/YYYY/MM/index.html` for monthly archive landing pages
   - `summaries/YYYY-MM-DD-summary.html`
   - `summaries/YYYY-MM-DD-summary.txt`
-- Also generates every Friday:
+  - `images/YYYY-MM-DD/...` for cached story images when possible
+- Generates the weekly files every Friday:
   - `weekly/YYYY-W##.html`
   - `weekly/latest.html`
   - `weekly-summaries/YYYY-W##-summary.html`
   - `weekly-summaries/YYYY-W##-summary.txt`
 - Commits the files back into the same repo
 - Triggers Netlify to redeploy automatically from Git
+
+## Editorial behavior baked into the generator
+
+- `AI Latest` is the core opening section
+- The watched product set includes `OpenAI/ChatGPT`, `Anthropic/Claude`, `Google/Gemini/Workspace/NotebookLM`, `Canva`, `Adobe`, and `Microsoft/Microsoft 365/Copilot/PowerPoint`
+- The issue then rounds out with `Tool Updates`, `Workflow Shifts`, `Design Campaigns to Watch`, and `Inspiration`
+- Campaign and inspiration coverage is complementary, not the main event
+- The generator reads recent archive headlines from the repo and tells the model not to repeat recent coverage unless there is a material update
 
 ## Files to upload into your repo
 
@@ -39,23 +50,25 @@ This folder contains the files to automate the PMI Creative Studio Morning Editi
 
 You do not need to create a GitHub personal access token for commits. This workflow uses GitHub's built-in `GITHUB_TOKEN` with `contents: write`.
 
-## Manual test
+## Manual test for the daily edition
 
 1. Upload the files listed above into the matching folders in your repo.
-2. Open the `Actions` tab.
-3. Open the workflow named `Publish Morning Edition`.
-4. Click `Run workflow`.
-5. Leave `run_date` blank, or set a test date like `2026-04-30`.
-6. Run it.
+2. Remove the outdated files and folders listed in `README-APPLY.md`.
+3. Open the `Actions` tab.
+4. Open the workflow named `Publish Morning Edition`.
+5. Click `Run workflow`.
+6. Leave `run_date` blank, or set a test date like `2026-05-06`.
+7. Run it.
 
 If the run succeeds:
 
 - `index.html` will update
-- a new archive file will appear under `archives/`
+- a new daily archive file will appear under `archives/`
+- the archive landing pages will refresh
 - the summary files will appear under `summaries/`
 - Netlify will redeploy automatically from the push
 
-## Weekly Friday test
+## Manual test for the weekly edition
 
 1. Open the `Actions` tab.
 2. Open the workflow named `Publish Weekly Edition`.
@@ -70,13 +83,15 @@ If the run succeeds:
 - the weekly summary files will appear under `weekly-summaries/`
 - Netlify will redeploy automatically from the push
 
+## Important note about schedule times
+
+GitHub Actions cron runs in UTC, not local time. The workflows in this bundle are already converted to UTC so they align with:
+
+- 9:00 AM weekdays in `America/Sao_Paulo` for the Morning Edition
+- 10:00 AM Fridays in `America/Sao_Paulo` for the Weekly Edition
+
 ## Important note about source images
 
 The generator tries to download source images locally into `images/YYYY-MM-DD/` and rewrites the HTML to use those local files. If a source blocks direct download, the script falls back to the original image URL.
 
 That means most editions should be more reliable than the first manual prototype, but a few source hosts may still occasionally block previews.
-
-## Readability updates included
-
-- Body text is lighter and a touch airier, so it should feel easier to read.
-- On mobile, the jump-to-section area is smaller, less sticky, and turns into a compact horizontal chip list so it does not dominate the screen.
