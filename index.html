@@ -3,693 +3,1017 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Morning Edition | 2026-05-11 | PMI Creative Studio</title>
+  <title>Morning Edition | 2026-05-12 | PMI Creative Studio</title>
+  <meta name="description" content="PMI Creative Studio Morning Edition: ten current AI and design-tool stories, curated as a premium editorial magazine.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --violet-900: #200f3b;
-      --violet-700: #35156e;
+      --violet-800: #2b1650;
+      --violet-700: #38156f;
+      --violet-600: #432186;
       --violet-500: #4f17a8;
-      --violet-300: #8660c9;
-      --aqua-300: #05bfe0;
-      --aqua-100: #dff8fc;
-      --tangerine-300: #ff610f;
-      --stone-50: #faf8fd;
-      --stone-100: #f2edf8;
-      --stone-200: #ddd3ec;
-      --stone-500: #6b6379;
-      --ink: #1e1730;
-      --white: #ffffff;
-      --border: rgba(32, 15, 59, 0.12);
-      --shadow: 0 24px 60px rgba(32, 15, 59, 0.12);
-      --max: 1240px;
+      --violet-300: #7a53d6;
+      --paper: #f8f4ee;
+      --paper-strong: #f2ece4;
+      --paper-soft: #fcfaf7;
+      --ink: #23183c;
+      --muted: #6f6780;
+      --line: rgba(32, 15, 59, 0.12);
+      --line-strong: rgba(32, 15, 59, 0.22);
+      --shadow: 0 30px 90px rgba(32, 15, 59, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 20px;
+      --max: 1320px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top right, rgba(79, 23, 168, 0.18), transparent 25%),
-        linear-gradient(180deg, #f7f2ff 0%, #ffffff 28%, #f9f8fc 100%);
-      line-height: 1.6;
+        linear-gradient(180deg, rgba(79, 23, 168, 0.06), transparent 22%),
+        linear-gradient(180deg, #fff 0%, var(--paper-soft) 16%, var(--paper) 100%);
+      line-height: 1.65;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; }
 
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    .page {
+    .page-shell {
       width: min(var(--max), calc(100vw - 32px));
       margin: 0 auto;
-      padding-bottom: 64px;
+      padding: 24px 0 72px;
     }
 
     .masthead {
-      position: relative;
-      overflow: hidden;
-      margin: 24px auto 28px;
-      padding: 32px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.7);
       background:
-        linear-gradient(135deg, rgba(79, 23, 168, 0.96), rgba(32, 15, 59, 0.96)),
-        linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
-      color: var(--white);
+        linear-gradient(135deg, rgba(79, 23, 168, 0.97), rgba(43, 22, 80, 0.98) 62%, rgba(32, 15, 59, 1)),
+        var(--violet-900);
+      color: #fff;
+      border-radius: 40px;
       box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      padding: 28px;
     }
 
     .masthead::before,
     .masthead::after {
       content: "";
       position: absolute;
-      inset: auto;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(5, 191, 224, 0.26), rgba(255,255,255,0.02));
       pointer-events: none;
+      border-radius: 999px;
+      opacity: 0.18;
     }
 
     .masthead::before {
-      width: 280px;
-      height: 280px;
-      top: -120px;
-      right: -40px;
+      width: 380px;
+      height: 380px;
+      right: -120px;
+      top: -140px;
+      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 72%);
     }
 
     .masthead::after {
-      width: 180px;
-      height: 180px;
-      bottom: -70px;
-      left: -30px;
+      width: 300px;
+      height: 300px;
+      left: -80px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(122,83,214,0.95) 0%, rgba(122,83,214,0) 72%);
     }
 
-    .eyebrow,
-    .section-kicker,
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .issue-label,
+    .issue-date,
+    .section-label,
     .story-meta,
-    .story-index,
-    .jump-label,
-    .footer-note {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 12px;
-      font-weight: 700;
+    .story-kicker,
+    .jump-index,
+    .newsbar {
+      font-family: "Space Mono", monospace;
     }
 
-    .eyebrow {
-      color: rgba(255,255,255,0.78);
-      margin-bottom: 18px;
+    .issue-label,
+    .issue-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.07);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .masthead-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 28px;
       align-items: end;
+      position: relative;
+      z-index: 1;
     }
 
-    .title {
-      margin: 0 0 16px;
-      font-family: "Fraunces", serif;
-      font-size: clamp(46px, 7vw, 88px);
-      line-height: 0.92;
-      letter-spacing: 0;
-    }
-
-    .dek {
-      max-width: 58ch;
+    .masthead-copy h1 {
       margin: 0;
-      font-size: 18px;
-      color: rgba(255,255,255,0.9);
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      max-width: 11ch;
     }
 
-    .issue-card {
-      justify-self: end;
-      width: min(360px, 100%);
-      padding: 18px 18px 20px;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 22px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-    }
-
-    .issue-card h2 {
-      margin: 0 0 10px;
-      font-family: "Fraunces", serif;
-      font-size: 24px;
-      line-height: 1.1;
-    }
-
-    .issue-card p {
-      margin: 0 0 12px;
-      font-size: 14px;
+    .masthead-copy p {
+      max-width: 58ch;
+      margin: 14px 0 0;
       color: rgba(255,255,255,0.82);
+      font-size: 1.02rem;
     }
 
-    .issue-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .masthead-notes {
+      display: grid;
+      gap: 14px;
     }
 
-    .chip {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 12px;
-      font-weight: 700;
+    .note-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 18px 18px 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .note-card strong {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .note-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
     }
 
     .jump-nav {
-      margin: 0 0 26px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: rgba(255,255,255,0.78);
-      backdrop-filter: blur(12px);
+      margin: 22px 0 26px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(32, 15, 59, 0.08);
+      border-radius: 30px;
+      padding: 22px;
+      box-shadow: 0 18px 60px rgba(32, 15, 59, 0.08);
     }
 
-    .jump-nav-header {
+    .jump-top {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
       align-items: baseline;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .jump-nav h3,
-    .section-head h2 {
+    .jump-top h2,
+    .section-head h2,
+    .story-spread h3 {
       margin: 0;
-      font-family: "Fraunces", serif;
-      font-size: 28px;
-      line-height: 1.1;
     }
 
-    .jump-links {
+    .jump-top h2,
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .jump-top p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .jump-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
     }
 
-    .jump-links a {
+    .jump-grid a {
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(79, 23, 168, 0.08);
+      background: linear-gradient(180deg, rgba(79, 23, 168, 0.05), rgba(79, 23, 168, 0.015));
       min-height: 72px;
-      padding: 12px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, #ffffff, #f7f1ff);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 140ms ease, border-color 140ms ease;
     }
 
-    .jump-links a:hover {
-      transform: translateY(-2px);
-      border-color: rgba(79, 23, 168, 0.35);
-    }
-
-    .jump-label {
+    .jump-index {
       color: var(--violet-500);
-      margin-bottom: 6px;
+      font-size: 0.79rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding-top: 2px;
     }
 
-    .jump-title {
-      font-size: 13px;
-      font-weight: 700;
+    .jump-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    .jump-copy strong {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--violet-900);
+    }
+
+    .jump-copy span {
+      font-size: 0.9rem;
+      color: var(--muted);
       line-height: 1.35;
     }
 
     .section-head {
-      margin: 0 0 20px;
-      padding: 24px 24px 18px;
-      border-left: 6px solid var(--violet-500);
-      border-radius: 24px;
-      background: linear-gradient(90deg, rgba(79, 23, 168, 0.1), rgba(255,255,255,0.7));
+      display: grid;
+      gap: 10px;
+      padding: 16px 6px 0;
+      margin-bottom: 18px;
     }
 
-    .section-kicker {
+    .section-label {
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--violet-500);
-      margin-bottom: 10px;
     }
 
     .section-head p {
-      margin: 10px 0 0;
-      max-width: 70ch;
-      color: var(--stone-500);
-      font-size: 16px;
+      margin: 0;
+      color: var(--muted);
+      max-width: 72ch;
     }
 
-    .story {
-      margin: 24px 0;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: rgba(255,255,255,0.94);
-      box-shadow: 0 18px 48px rgba(32, 15, 59, 0.08);
-      overflow: hidden;
-    }
-
-    .story-grid {
+    .stories {
       display: grid;
-      gap: 20px;
-      align-items: start;
+      gap: 22px;
     }
 
-    .story-media {
-      position: relative;
+    .story-spread {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(32,15,59,0.08);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: 0 20px 65px rgba(32,15,59,0.08);
       overflow: hidden;
-      border-radius: 24px;
-      min-height: 280px;
-      background: linear-gradient(135deg, rgba(79, 23, 168, 0.2), rgba(5, 191, 224, 0.18));
-      border: 1px solid var(--border);
     }
 
-    .story-media img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-content {
-      min-width: 0;
-    }
-
-    .story-index {
-      color: var(--violet-500);
-      margin-bottom: 10px;
-    }
-
-    .story h3 {
-      margin: 0 0 10px;
-      font-family: "Fraunces", serif;
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1;
+    .story-spread h3 {
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      margin: 10px 0 12px;
     }
 
     .story-meta {
-      color: var(--stone-500);
-      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
     }
 
-    .story p {
+    .story-number {
+      color: var(--violet-500);
+    }
+
+    .story-kicker {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--violet-500);
+    }
+
+    .story-deck,
+    .story-pull {
       margin: 0 0 14px;
-      font-size: 16px;
     }
 
-    .story p strong {
-      color: var(--violet-900);
+    .story-deck {
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 600;
+      max-width: 60ch;
+    }
+
+    .story-pull {
+      color: var(--muted);
+      font-size: 0.94rem;
+      max-width: 52ch;
+    }
+
+    .story-visual {
+      margin: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(32,15,59,0.1);
+      background: var(--paper-strong);
+      min-height: 220px;
+    }
+
+    .story-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 10;
+    }
+
+    .panel {
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,244,238,0.95));
+      border: 1px solid rgba(32,15,59,0.08);
+      padding: 20px;
+    }
+
+    .story-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 16px;
     }
 
     .read-more {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 6px;
-      padding: 11px 15px;
+      justify-content: center;
+      text-decoration: none;
+      padding: 11px 16px;
       border-radius: 999px;
       background: var(--violet-900);
-      color: var(--white);
-      font-size: 13px;
+      color: #fff;
       font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      font-size: 0.92rem;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
     }
 
-    .pull {
-      padding: 16px 18px;
-      border-radius: 20px;
-      font-family: "Fraunces", serif;
-      font-size: 22px;
-      line-height: 1.2;
-      background: var(--stone-100);
-      color: var(--violet-900);
+    .source-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
-    .layout-a .story-grid { grid-template-columns: 0.88fr 1.12fr; }
-    .layout-b .story-grid { grid-template-columns: 1.08fr 0.92fr; }
-    .layout-c .story-grid { grid-template-columns: 1fr; }
-    .layout-d .story-grid { grid-template-columns: 0.78fr 1.22fr; }
-    .layout-e .story-grid { grid-template-columns: 1.15fr 0.85fr; }
-    .layout-f .story-grid { grid-template-columns: 0.95fr 1.05fr; }
-    .layout-g .story-grid { grid-template-columns: 1fr; }
-    .layout-h .story-grid { grid-template-columns: 0.9fr 1.1fr; }
-    .layout-i .story-grid { grid-template-columns: 1.05fr 0.95fr; }
-    .layout-j .story-grid { grid-template-columns: 0.84fr 1.16fr; }
-
-    .layout-c .story-media,
-    .layout-g .story-media {
-      min-height: 360px;
-    }
-
-    .layout-c .story-content,
-    .layout-g .story-content {
+    .spread-1 {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 22px;
+      grid-template-columns: 0.92fr 1.15fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .spread-1 .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .spread-1 .body-copy {
+      grid-column: 1 / -1;
+      background: linear-gradient(180deg, rgba(79,23,168,0.06), rgba(255,255,255,0.92));
+    }
+
+    .spread-2 {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 18px;
       align-items: start;
-      margin-top: 18px;
     }
 
-    .layout-c .story-copy,
-    .layout-g .story-copy {
-      grid-column: 2;
+    .spread-2 .stack {
+      display: grid;
+      gap: 14px;
     }
 
-    .layout-c .story-header,
-    .layout-g .story-header {
-      grid-column: 1;
-      position: sticky;
-      top: 12px;
+    .spread-2 .caption-strip {
+      padding: 16px 18px;
+      background: var(--paper-soft);
     }
 
-    .layout-d .story-media {
-      clip-path: inset(0 round 24px 80px 24px 24px);
-    }
-
-    .layout-e {
+    .spread-3 {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr 0.9fr;
+      gap: 16px;
+      align-items: start;
       background:
-        linear-gradient(135deg, rgba(5, 191, 224, 0.08), rgba(79, 23, 168, 0.04)),
-        rgba(255,255,255,0.94);
+        linear-gradient(135deg, rgba(79,23,168,0.1), rgba(255,255,255,0.92) 32%),
+        rgba(255,255,255,0.92);
     }
 
-    .layout-f .story-media {
-      border-radius: 160px 160px 24px 24px;
+    .spread-3 .poster-copy,
+    .spread-10 .closing-copy {
+      padding: 10px 4px 10px 2px;
     }
 
-    .layout-h .story-media {
-      min-height: 100%;
+    .spread-3 .story-visual img {
+      aspect-ratio: 4 / 5;
     }
 
-    .layout-i .story-media {
-      border-radius: 24px 24px 110px 24px;
+    .spread-4 {
+      display: grid;
+      grid-template-columns: 1.06fr 1fr;
+      gap: 18px;
+      align-items: stretch;
     }
 
-    .layout-j {
+    .spread-4 .dossier {
       background:
-        linear-gradient(180deg, rgba(79, 23, 168, 0.05), rgba(255,255,255,0.95));
+        linear-gradient(180deg, rgba(79,23,168,0.07), rgba(255,255,255,0.96)),
+        #fff;
     }
 
-    .footer {
-      margin-top: 36px;
-      padding: 22px 24px;
-      border-radius: 24px;
-      background: var(--violet-900);
+    .spread-5 {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(32,15,59,0.02), rgba(32,15,59,0.08));
+    }
+
+    .spread-5 .dark-copy {
+      background: linear-gradient(180deg, var(--violet-900), var(--violet-800));
+      color: #fff;
+      border-color: rgba(255,255,255,0.06);
+    }
+
+    .spread-5 .dark-copy .story-meta,
+    .spread-5 .dark-copy .story-pull,
+    .spread-5 .dark-copy .source-label {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .spread-5 .dark-copy .story-kicker {
       color: rgba(255,255,255,0.88);
     }
 
-    .footer h4 {
-      margin: 0 0 8px;
-      font-family: "Fraunces", serif;
-      font-size: 24px;
-      color: var(--white);
+    .spread-5 .dark-copy .story-deck {
+      color: rgba(255,255,255,0.92);
     }
 
-    .footer p {
-      margin: 0;
-      max-width: 72ch;
+    .spread-5 .dark-copy .read-more {
+      background: #fff;
+      color: var(--violet-900);
     }
 
-    @media (max-width: 1100px) {
-      .jump-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .masthead-grid { grid-template-columns: 1fr; }
-      .issue-card { justify-self: start; }
-      .layout-a .story-grid,
-      .layout-b .story-grid,
-      .layout-d .story-grid,
-      .layout-e .story-grid,
-      .layout-f .story-grid,
-      .layout-h .story-grid,
-      .layout-i .story-grid,
-      .layout-j .story-grid,
-      .layout-c .story-content,
-      .layout-g .story-content {
+    .spread-6 {
+      display: grid;
+      grid-template-columns: 0.84fr 0.84fr 1.1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .spread-6 .brief {
+      background: rgba(248,244,238,0.98);
+    }
+
+    .spread-6 .analysis {
+      border-style: dashed;
+      border-color: rgba(32,15,59,0.16);
+      background: rgba(255,255,255,0.8);
+    }
+
+    .spread-7 {
+      background:
+        linear-gradient(180deg, rgba(79,23,168,0.06), rgba(255,255,255,0.9));
+    }
+
+    .spread-7 .lab-head {
+      margin-bottom: 12px;
+    }
+
+    .spread-7 .lab-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .spread-7 .lab-copy {
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(242,236,228,0.9));
+    }
+
+    .spread-8 {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+      background:
+        linear-gradient(135deg, rgba(79,23,168,0.08), rgba(255,255,255,0.96) 36%);
+    }
+
+    .spread-8 .cutout {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .spread-8 .cutout .story-actions {
+      margin-top: 0;
+      padding-left: 6px;
+    }
+
+    .spread-9 {
+      background:
+        linear-gradient(180deg, rgba(79,23,168,0.04), rgba(255,255,255,0.96));
+    }
+
+    .spread-9 .newsbar {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: var(--violet-900);
+      color: #fff;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .spread-9 .news-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .spread-10 {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
+      align-items: end;
+      background:
+        linear-gradient(180deg, rgba(79,23,168,0.1), rgba(255,255,255,0.92));
+    }
+
+    .closing-note {
+      margin-top: 26px;
+      padding: 20px 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,244,238,0.96));
+      border: 1px solid rgba(32,15,59,0.08);
+      color: var(--muted);
+    }
+
+    .closing-note strong {
+      color: var(--violet-900);
+    }
+
+    @media (max-width: 980px) {
+      .masthead-grid,
+      .spread-1,
+      .spread-2,
+      .spread-4,
+      .spread-5,
+      .spread-7 .lab-grid,
+      .spread-8,
+      .spread-9 .news-grid,
+      .spread-10 {
         grid-template-columns: 1fr;
       }
-      .layout-c .story-header,
-      .layout-c .story-copy,
-      .layout-g .story-header,
-      .layout-g .story-copy {
-        grid-column: auto;
-        position: static;
+
+      .spread-3,
+      .spread-6 {
+        grid-template-columns: 1fr;
+      }
+
+      .jump-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 720px) {
-      .page { width: min(var(--max), calc(100vw - 18px)); }
-      .masthead { padding: 22px; border-radius: 24px; }
-      .jump-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .story { padding: 16px; border-radius: 24px; }
-      .story-media { min-height: 220px; }
-      .layout-c .story-media,
-      .layout-g .story-media { min-height: 260px; }
-      .title { font-size: clamp(40px, 12vw, 66px); }
+      .page-shell {
+        width: min(var(--max), calc(100vw - 20px));
+        padding-top: 12px;
+      }
+
+      .masthead {
+        padding: 20px;
+        border-radius: 28px;
+      }
+
+      .jump-nav,
+      .story-spread,
+      .closing-note {
+        border-radius: 24px;
+      }
+
+      .story-spread {
+        padding: 14px;
+      }
+
+      .panel,
+      .story-visual {
+        border-radius: 20px;
+      }
+
+      .masthead-copy h1 {
+        max-width: 9ch;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="page-shell">
     <header class="masthead">
-      <div class="eyebrow">PMI Creative Studio • Morning Edition • May 11, 2026</div>
+      <div class="masthead-top">
+        <div class="issue-label">Morning Edition / PMI Creative Studio</div>
+        <div class="issue-date">Issue Date / 2026-05-12</div>
+      </div>
       <div class="masthead-grid">
-        <div>
-          <h1 class="title">AI Latest</h1>
-          <p class="dek">Ten current stories shaping how PMI’s Graphic Design Team can prototype faster, protect brand consistency, and decide where agentic creative workflows actually deserve attention.</p>
+        <div class="masthead-copy">
+          <h1>AI latest for the design desk</h1>
+          <p>This issue opens with exactly 10 current stories shaping the tools PMI’s Graphic Design Team should actually care about right now: design generation, editable output, presentation workflows, agentic creation, and the quiet platform shifts that will change how briefs turn into branded work.</p>
+          <p>The edit is intentionally narrow. No generic tech hype. No celebrity chatter. Only the releases that have real implications for visual communication, studio velocity, and brand-safe production.</p>
         </div>
-        <aside class="issue-card">
-          <h2>Today’s editorial angle</h2>
-          <p>This issue filters for real creative operations impact: design generation, presentation building, motion, review loops, brand systems, and tool handoffs that could change how Creative Studio works.</p>
-          <div class="issue-chip-row">
-            <span class="chip">Claude</span>
-            <span class="chip">OpenAI</span>
-            <span class="chip">Gemini</span>
-            <span class="chip">Canva</span>
-            <span class="chip">Adobe</span>
-            <span class="chip">Microsoft</span>
+        <div class="masthead-notes">
+          <div class="note-card">
+            <strong>What changed</strong>
+            <p>Today’s refresh follows the new brief precisely: one opening section labeled <em>AI Latest</em>, ten core stories, stronger editorial structure, and distinct share-ready spreads.</p>
           </div>
-        </aside>
+          <div class="note-card">
+            <strong>PMI lens</strong>
+            <p>Every pick is filtered for presentation craft, creative workflow change, and what it means for a team that must move quickly without letting brand judgment slip.</p>
+          </div>
+        </div>
       </div>
     </header>
 
     <nav class="jump-nav" aria-label="Jump navigation">
-      <div class="jump-nav-header">
-        <h3>Jump To The Ten Core Stories</h3>
-        <div class="jump-label">Section One</div>
+      <div class="jump-top">
+        <h2>Jump to the issue</h2>
+        <p>Ten stories, one design-led read. Each spread uses a different treatment so the issue feels like a magazine, not a template stack.</p>
       </div>
-      <div class="jump-links">
-        <a href="#story-1"><span class="jump-label">01</span><span class="jump-title">Claude Design launches</span></a>
-        <a href="#story-2"><span class="jump-label">02</span><span class="jump-title">Canva AI 2.0 goes agentic</span></a>
-        <a href="#story-3"><span class="jump-label">03</span><span class="jump-title">Adobe debuts Firefly AI Assistant</span></a>
-        <a href="#story-4"><span class="jump-label">04</span><span class="jump-title">Copilot acts inside PowerPoint</span></a>
-        <a href="#story-5"><span class="jump-label">05</span><span class="jump-title">Gemini gets editable Slides</span></a>
-        <a href="#story-6"><span class="jump-label">06</span><span class="jump-title">OpenAI and Figma tighten the loop</span></a>
-        <a href="#story-7"><span class="jump-label">07</span><span class="jump-title">Canva lands inside Claude Design</span></a>
-        <a href="#story-8"><span class="jump-label">08</span><span class="jump-title">Google Vids becomes a free studio</span></a>
-        <a href="#story-9"><span class="jump-label">09</span><span class="jump-title">Adobe turns Acrobat into a publishing agent</span></a>
-        <a href="#story-10"><span class="jump-label">10</span><span class="jump-title">Workspace agents arrive in ChatGPT</span></a>
+      <div class="jump-grid">
+        
+        <a href="#story-1">
+          <span class="jump-index">01</span>
+          <span class="jump-copy">
+            <strong>Gemini in Google Slides</strong>
+            <span>Google finally makes slide AI editable enough to be useful</span>
+          </span>
+        </a>
+        <a href="#story-2">
+          <span class="jump-index">02</span>
+          <span class="jump-copy">
+            <strong>Agentic PowerPoint workflows</strong>
+            <span>Copilot is getting closer to a real presentation co-producer</span>
+          </span>
+        </a>
+        <a href="#story-3">
+          <span class="jump-index">03</span>
+          <span class="jump-copy">
+            <strong>Acrobat Studio</strong>
+            <span>Adobe wants the source document to become the first creative brief</span>
+          </span>
+        </a>
+        <a href="#story-4">
+          <span class="jump-index">04</span>
+          <span class="jump-copy">
+            <strong>What’s New in Canva</strong>
+            <span>Canva is smoothing out the awkward middle of production</span>
+          </span>
+        </a>
+        <a href="#story-5">
+          <span class="jump-index">05</span>
+          <span class="jump-copy">
+            <strong>Google Vids script editing</strong>
+            <span>Google Vids fixes a small step that changes the whole workflow</span>
+          </span>
+        </a>
+        <a href="#story-6">
+          <span class="jump-index">06</span>
+          <span class="jump-copy">
+            <strong>Google Vids voiceovers</strong>
+            <span>Synthetic voice is becoming art-directable instead of merely usable</span>
+          </span>
+        </a>
+        <a href="#story-7">
+          <span class="jump-index">07</span>
+          <span class="jump-copy">
+            <strong>ChatGPT release notes</strong>
+            <span>ChatGPT’s file layer is getting more operational for design teams</span>
+          </span>
+        </a>
+        <a href="#story-8">
+          <span class="jump-index">08</span>
+          <span class="jump-copy">
+            <strong>Photoshop + Firefly</strong>
+            <span>Adobe is making AI image editing feel more like directed craft</span>
+          </span>
+        </a>
+        <a href="#story-9">
+          <span class="jump-index">09</span>
+          <span class="jump-copy">
+            <strong>Claude Opus 4.7</strong>
+            <span>Claude gets more relevant as the work becomes more visual</span>
+          </span>
+        </a>
+        <a href="#story-10">
+          <span class="jump-index">10</span>
+          <span class="jump-copy">
+            <strong>Adobe + NVIDIA</strong>
+            <span>Adobe’s platform strategy is tilting toward brand-safe automation at scale</span>
+          </span>
+        </a>
       </div>
     </nav>
 
-    <section id="ai-latest">
+    <section aria-labelledby="ai-latest">
       <div class="section-head">
-        <div class="section-kicker">Section One</div>
-        <h2>AI Latest</h2>
-        <p>The ten stories below are ordered for PMI relevance, not just market noise. The emphasis is on design systems, campaign production, presentation workflows, editable outputs, and the growing handoff layer between prompting and polished deliverables.</p>
+        <div class="section-label">Section One</div>
+        <h2 id="ai-latest">AI Latest</h2>
+        <p>The 10 most relevant current stories across Claude, ChatGPT/OpenAI, Gemini/Google AI, Canva, Adobe, and Microsoft/Copilot/PowerPoint. Ordered for design impact first, platform strategy second.</p>
       </div>
+      <div class="stories">
+        
+        <article class="story-spread spread-1" id="story-1">
+          <div class="panel intro">
+    <div class="story-meta">
+      <span class="story-number">Story 01</span>
+      <span>Google AI</span>
+      <span>April 1, 2026</span>
+    </div>
+    <div class="story-kicker">Gemini in Google Slides</div>
+    <h3>Google finally makes slide AI editable enough to be useful</h3>
+    <p class="story-deck">Gemini can now generate fully editable, brand-matched slides and rework existing layouts inside Slides itself.</p>
+    <div class="story-pull">Why it matters for PMI: first-draft decks can arrive with stronger structure before the studio steps in for final hierarchy, pacing, and polish.</div>
+  
+    <div class="story-actions">
+      <a class="read-more" href="https://workspaceupdates.googleblog.com/2026/04/enerate-beautiful-and-editable-slides-with-ease-in-Google-Slides.html" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Google Workspace Updates</span>
+    </div>
+  </div>
+          
+    <figure class="story-visual">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPIGMWNJ-iNlZZyjRWk6O1TftIQDE7Q-x6Wz-Yj2HtLxZgU3ONeXaNPMlviHjwo1oLSByBtojHJrY1jwiWIp4HYkG3FX6BkgGGtCWNXjetWDl2dPY3OIDXMaiOY9q7wpvQ5OwpBCK8vXVO0ZzjplqvZose9xLygamVomXfIGEEM7oMekE-Xt7cNkhqBxk/s16000/Generate%20beautiful%20and%20editable%20slides%20with%20ease%20in%20Google%20Slides%20-%206540.gif" alt="Source preview for Gemini in Google Slides from Google Workspace Updates" loading="lazy">
+    </figure>
+  
+          <div class="panel body-copy"><p>This is one of the most practical AI launches of the spring because it fixes the problem that made many slide generators feel disposable: the output can stay editable. Google is positioning Gemini as a layout partner that reads the deck, aligns to the existing visual system, and returns slides designers can still reshape instead of rebuild.</p><p>For PMI Creative Studio, that makes Google Slides more plausible as a pre-production surface. Teams working on internal briefings, learning decks, or regional presentation support can draft faster without locking the studio into a flattened result that kills craft on contact.</p></div>
+        </article>
 
-      <article class="story layout-a" id="story-1" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://www.anthropic.com/news/claude-design-anthropic-labs" alt="Preview of Anthropic's Claude Design launch story" loading="lazy">
+        <article class="story-spread spread-2" id="story-2">
+          <div class="stack">
+            
+    <figure class="story-visual">
+      <img src="https://support.microsoft.com/images/en-us/a4fc56b2-3091-4a6b-aa95-08db55e62aa1" alt="Source preview for Agentic PowerPoint workflows from Microsoft Source Asia" loading="lazy">
+    </figure>
+  
+            <div class="panel caption-strip">
+    <div class="story-actions">
+      <a class="read-more" href="https://news.microsoft.com/source/asia/2026/05/05/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available-th/?lang=th" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Microsoft Source Asia</span>
+    </div>
+  </div>
           </div>
-          <div class="story-content">
-            <div class="story-index">Story 01</div>
-            <h3>Claude wants a seat inside the design studio</h3>
-            <div class="story-meta">Anthropic • Apr 17, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Claude Design pushes Anthropic from a writing-and-reasoning assistant into a visual prototyping surface, which matters because Creative Studio is increasingly asked to move from concept to artifact in one sitting. Anthropic says teams can create designs, prototypes, slides, one-pagers, and even export to Canva, PDF, PPTX, or HTML, with design-system awareness built into onboarding.</p>
-            <p>The practical shift is speed at the exploration layer. For PMI, that means earlier visualization of campaign directions, event concepts, deck structures, and landing-page ideas before the team commits time in core craft tools. It is especially relevant for internal stakeholders who need to make abstract asks more concrete before a designer takes over.</p>
-            <p>The smarter internal discussion is not whether Claude should replace design tools. It is whether Creative Studio wants a sanctioned “rough-draft visualizer” for briefs, pre-alignment, and fast prototypes, paired with a rule that final brand work still passes through tighter review and polish in established systems.</p>
-            <a class="read-more" href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-        </div>
-      </article>
+          <div class="panel essay">
+    <div class="story-meta">
+      <span class="story-number">Story 02</span>
+      <span>Microsoft Copilot</span>
+      <span>May 5, 2026</span>
+    </div>
+    <div class="story-kicker">Agentic PowerPoint workflows</div>
+    <h3>Copilot is getting closer to a real presentation co-producer</h3>
+    <p class="story-deck">Microsoft says agentic capabilities in Word, Excel, and PowerPoint are now generally available worldwide, pushing Copilot deeper into the file itself.</p>
+    <div class="story-pull">Editorial read: PowerPoint AI matters most when it stops being a side panel and starts shaping the sequence, tone, and setup of the deck.</div>
+  <p>The important Microsoft shift is not mere drafting help. It is the move toward multi-step action inside the working file, where Copilot can do more of the mechanical build-out that usually sits between an outline and a usable presentation. That makes it more relevant to actual production rhythms, especially for teams already living in Microsoft 365.</p><p>For PMI, the best opportunity is controlled acceleration. PowerPoint can become a stronger first-pass engine for internal and operational decks, provided the studio defines what still requires human review for message hierarchy, visual discipline, and brand consistency before anything high-stakes leaves the room.</p></div>
+        </article>
 
-      <article class="story layout-b" id="story-2" data-story>
-        <div class="story-grid">
-          <div class="story-content">
-            <div class="story-index">Story 02</div>
-            <h3>Canva AI 2.0 reframes design as an agentic system, not a template app</h3>
-            <div class="story-meta">Canva • Apr 16, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Canva’s new architecture is explicitly about layered, editable outputs, persistent memory, brand intelligence, and workflow automation. That combination is closer to a creative operating system than a quick-design utility, and it points to a future where stakeholders expect AI-generated first drafts to already carry hierarchy, layout logic, and brand guardrails.</p>
-            <p>For PMI, the most important pieces are not the headline demo language. They are the six workflow additions beneath it: connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. Those capabilities map directly to internal newsletter production, presentation support, recurring social batches, and the increasingly blurred line between static content and lightweight interactive experiences.</p>
-            <p>This should trigger a practical evaluation question for Creative Studio: where would branded automation save time without flattening craft? A good pilot would test whether Canva can reliably generate on-brand internal communications or draft presentation systems while keeping enough structure and editability for human refinement.</p>
-            <a class="read-more" href="https://www.canva.com/newsroom/news/canva-create-2026-ai/" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://www.canva.com/newsroom/news/canva-create-2026-ai/" alt="Preview of Canva AI 2.0 launch story" loading="lazy">
-          </div>
-        </div>
-      </article>
+        <article class="story-spread spread-3" id="story-3">
+          <div class="poster-copy">
+    <div class="story-meta">
+      <span class="story-number">Story 03</span>
+      <span>Adobe</span>
+      <span>January 2026</span>
+    </div>
+    <div class="story-kicker">Acrobat Studio</div>
+    <h3>Adobe wants the source document to become the first creative brief</h3>
+    <p class="story-deck">Acrobat Studio is collapsing dense files, summaries, and presentation drafting into the document workflow itself.</p>
+    <div class="story-pull">PMI lens: the real value is shortening the distance between source overload and a clear story spine.</div>
+  </div>
+          
+    <figure class="story-visual">
+      <img src="https://news.adobe.com/news/2026/01/media_15c11b7cb6ee6f80c9386deec924584dbf7c1be22.png?format=png&amp;optimize=medium&amp;width=750" alt="Source preview for Acrobat Studio from Adobe Newsroom" loading="lazy">
+    </figure>
+  
+          <div class="panel side-note"><p>Adobe’s Acrobat move matters because so much studio work starts in clutter: PDFs, transcripts, source decks, research docs, stakeholder notes. By treating the document layer as a place where AI can summarize, structure, and help draft presentation output, Adobe is aiming at a very real bottleneck in creative production.</p><p>For PMI Creative Studio, that makes Acrobat less like a final-format tool and more like a briefing accelerant. If dense inputs can become cleaner story frameworks sooner, designers spend more time on decision-grade narrative and less time extracting signal from noise.</p>
+    <div class="story-actions">
+      <a class="read-more" href="https://news.adobe.com/news/2026/01/adobe-acrobat-studio-transforms" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Adobe Newsroom</span>
+    </div>
+  </div>
+        </article>
 
-      <article class="story layout-c" id="story-3" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://news.adobe.com/news/2026/04/adobe-new-creative-agent" alt="Preview of Adobe Firefly AI Assistant story" loading="lazy">
-          </div>
-          <div class="story-content">
-            <div class="story-header">
-              <div class="story-index">Story 03</div>
-              <h3>Adobe is making the creative brief executable</h3>
-              <div class="story-meta">Adobe • Apr 15, 2026</div>
-              <div class="pull">Firefly AI Assistant is Adobe’s clearest move yet toward multi-step, creator-led orchestration across its core apps.</div>
-            </div>
-            <div class="story-copy">
-              <p><strong>Why it matters for PMI’s design team:</strong> Adobe is not just adding another prompt box. Firefly AI Assistant is being positioned as a conversational layer that can orchestrate work across Firefly, Photoshop, Premiere, Lightroom, Express, and Illustrator while keeping the creator in control. That is a meaningful signal for a brand team that already lives in Adobe’s ecosystem.</p>
-              <p>The most PMI-relevant details are the pre-built creative skills, asset awareness, preference learning, and feedback loop with Frame.io. In practice, that points to faster adaptation of campaign assets, more efficient social derivatives, quicker review-response cycles, and a new expectation that designers can delegate repetitive production steps without leaving the suite where final quality is judged.</p>
-              <p>The near-term opportunity is workflow mapping. Creative Studio should identify which high-volume tasks are ripe for orchestration first: ratio changes, cross-channel resizing, presentation visuals, retouching presets, or review-driven updates. The bigger strategic question is how much “agentic” assistance improves throughput before it starts to obscure authorship and review accountability.</p>
-              <a class="read-more" href="https://news.adobe.com/news/2026/04/adobe-new-creative-agent" target="_blank" rel="noreferrer">Read the full story</a>
-            </div>
-          </div>
-        </div>
-      </article>
+        <article class="story-spread spread-4" id="story-4">
+          <div class="panel dossier">
+    <div class="story-meta">
+      <span class="story-number">Story 04</span>
+      <span>Canva</span>
+      <span>February 18, 2026</span>
+    </div>
+    <div class="story-kicker">What’s New in Canva</div>
+    <h3>Canva is smoothing out the awkward middle of production</h3>
+    <p class="story-deck">This release is less about one splashy AI trick and more about reducing the friction that slows real teams down.</p>
+    <div class="story-pull">The less glamorous product stories are often the ones that change adoption most inside a studio.</div>
+  <p>Canva’s February product batch is relevant because it targets the work between idea and release: grouped edits, easier publishing, Style Match, motion-adjacent refinements, and tighter AI integrations. None of that sounds dramatic on its own, but together it makes Canva more credible as a repeatable workflow surface instead of a quick one-off maker.</p><p>For PMI, that is where Canva can be genuinely useful. It helps when a design system needs to travel across recurring communications without generating cleanup debt every time. The tool gets more valuable when reuse, adaptation, and controlled variation are the job.</p>
+    <div class="story-actions">
+      <a class="read-more" href="https://www.canva.com/newsroom/news/whats-new-february-2026/" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Canva Newsroom</span>
+    </div>
+  </div>
+          
+    <figure class="story-visual">
+      <img src="https://content-management-files.canva.com/c2848b2a-374a-41f1-be4a-15ec9cede18a/WhatsNewCanvaFeb2026.png" alt="Source preview for What’s New in Canva from Canva Newsroom" loading="lazy">
+    </figure>
+  
+        </article>
 
-      <article class="story layout-d" id="story-4" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/" alt="Preview of Microsoft's Copilot agentic PowerPoint story" loading="lazy">
-          </div>
-          <div class="story-content">
-            <div class="story-index">Story 04</div>
-            <h3>Copilot is now acting inside PowerPoint, not just advising beside it</h3>
-            <div class="story-meta">Microsoft • Apr 22, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Presentation work is a real operational surface for Creative Studio, and Microsoft’s shift from passive guidance to app-native, multi-step action in PowerPoint changes the baseline. The company says Copilot can now perform edits directly in presentations, while keeping user control over structure, style, and brand preferences.</p>
-            <p>That matters because many PMI stakeholders will experience “AI design” first through PowerPoint, not through Figma or Adobe. As this improves, Creative Studio may receive more AI-assisted drafts that are closer to usable, but also more visually inconsistent unless brand systems and review standards are reinforced. Microsoft’s own language around control and context shows the same tension.</p>
-            <p>A practical response is to prepare for upstream behavior change. PMI can define what a “reviewable AI-generated deck” looks like, where Copilot output is welcome, and which deck components still need studio oversight. That will save time without quietly lowering the presentation quality bar.</p>
-            <a class="read-more" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-        </div>
-      </article>
+        <article class="story-spread spread-5" id="story-5">
+          
+    <figure class="story-visual">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3rj7lb6AFVvgz9rBp2EeMovfDEKxv-A-QCGsLQxAyferyfm3iwNQqDY2oZqHyLHAtYzEwONFCA2LN0vA7jAktocZUZ-w2SQV75wrY0pdwkrz0WCoVBfZNM1l7AEGU54J10c957q2-NU9IQPBdMGwt8K-V6FNjqLoOcC1aLDA8llrDk2coKNDBHklGuPk/s16000/Edit%20your%20AI-generated%20scripts%20when%20you%20convert%20Slides%20to%20Vids%20-%206759.png" alt="Source preview for Google Vids script editing from Google Workspace Updates" loading="lazy">
+    </figure>
+  
+          <div class="panel dark-copy">
+    <div class="story-meta">
+      <span class="story-number">Story 05</span>
+      <span>Google AI</span>
+      <span>April 9, 2026</span>
+    </div>
+    <div class="story-kicker">Google Vids script editing</div>
+    <h3>Google Vids fixes a small step that changes the whole workflow</h3>
+    <p class="story-deck">Teams can now edit AI-generated scripts before voiceovers and animations lock into place.</p>
+    <div class="story-pull">This is a deceptively important change because narrative correction happens earlier, when it is cheaper and safer.</div>
+  <p>Slide-to-video workflows often collapse under the weight of late-stage corrections. Google’s update matters because it lets teams shape the generated script before the rest of the draft compounds around it. That turns a frustrating repair loop into a cleaner editorial checkpoint.</p><p>For PMI Creative Studio, the strongest use is fast explainer work, internal recaps, and lower-risk video derivatives where the narrative usually already lives inside a deck. Earlier control means less time undoing and more time deciding what deserves motion in the first place.</p>
+    <div class="story-actions">
+      <a class="read-more" href="https://workspaceupdates.googleblog.com/2026/04/edit-your-ai-generated-scripts-when-you-convert-slides-to-vids.html" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Google Workspace Updates</span>
+    </div>
+  </div>
+        </article>
 
-      <article class="story layout-e" id="story-5" data-story>
-        <div class="story-grid">
-          <div class="story-content">
-            <div class="story-index">Story 05</div>
-            <h3>Gemini in Slides is getting closer to a real design collaborator</h3>
-            <div class="story-meta">Google • Mar 10, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Google’s Workspace update makes Gemini more relevant to presentation design by promising fully editable slides, editable diagrams, and theme-aware new slides that can pull context from files, emails, and the web. That is a workflow change, not just a writing improvement, especially for teams that increasingly move across deck ecosystems.</p>
-            <p>For PMI, the big implication is context-aware assembly. If Gemini can turn background material into a presentation draft while keeping outputs editable, then stakeholder teams can arrive with stronger raw material and fewer blank-page requests. It also raises the possibility of faster first-pass internal decks, meeting briefings, or concept summaries before they are elevated into higher-fidelity branded pieces.</p>
-            <p>The internal conversation here should focus on review and portability. Creative Studio may want to test how well Gemini respects tone, hierarchy, and visual simplicity in Google Slides, then decide whether Google-generated content is best treated as a rough briefing layer or a legitimate starting point for branded presentation production.</p>
-            <a class="read-more" href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" alt="Preview of Google's Gemini Workspace update story" loading="lazy">
-          </div>
-        </div>
-      </article>
+        <article class="story-spread spread-6" id="story-6">
+          <div class="panel brief">
+    <div class="story-meta">
+      <span class="story-number">Story 06</span>
+      <span>Google AI</span>
+      <span>April 15, 2026</span>
+    </div>
+    <div class="story-kicker">Google Vids voiceovers</div>
+    <h3>Synthetic voice is becoming art-directable instead of merely usable</h3>
+    <p class="story-deck">Google Vids now offers more expressive AI voiceovers, more languages, and more control over delivery.</p>
+    <div class="story-pull">For a global organization, voice quality and language range change whether AI narration stays a draft tool or becomes a viable delivery option.</div>
+  
+    <div class="story-actions">
+      <a class="read-more" href="https://workspaceupdates.googleblog.com/2026/04/new-more-expressive-ai-voiceovers-in-Google-Vids-and-16-additional-languages-powered-by-Gemini-3.1-Flash-TTS.html?hl=en_GB" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Google Workspace Updates</span>
+    </div>
+  </div>
+          <div class="panel analysis"><p>Voice quality is often the line between a workable prototype and something nobody wants to circulate. Google’s update is notable because it adds more conversational options and broader language support, which makes AI narration more relevant for distributed communications and early-stage testing.</p><p>PMI should treat this as a tiering tool. It is strong for prototype narration, multilingual concept validation, and fast internal explainers. The more emotionally loaded or public-facing the work becomes, the more the studio should raise the bar for review and performance quality.</p></div>
+          
+    <figure class="story-visual">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaP7gF1CAKpnC-9KjLSrQSP0KS1CgmRoOHKgypbr4XP331aeRW-eCT7di4Qg5iT7on6D-SNCA4rs_Gn4o9eFSXoD5gw-7hyexCLCOChD5kU17Y6SObJbzVgjMb16ai5xdV7cAsk5ABVATROVOTvFwbtDZ4nXzSqs2smrxtxNnMaHqKx4B9X52Qr55y4tk/s16000/New%20more%20expressive%20AI%20Voiceovers%20in%20Google%20Vids%2C%20and%2016%20additional%20languages%2C%20powered%20by%20Gemini%203.1%20Flash%20TTS%20-%206665%20-%202.png" alt="Source preview for Google Vids voiceovers from Google Workspace Updates" loading="lazy">
+    </figure>
+  
+        </article>
 
-      <article class="story layout-f" id="story-6" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://openai.com/index/figma-partnership/" alt="Preview of OpenAI and Figma partnership story" loading="lazy">
+        <article class="story-spread spread-7" id="story-7">
+          <div class="lab-head">
+    <div class="story-meta">
+      <span class="story-number">Story 07</span>
+      <span>OpenAI</span>
+      <span>April 21, 2026</span>
+    </div>
+    <div class="story-kicker">ChatGPT release notes</div>
+    <h3>ChatGPT’s file layer is getting more operational for design teams</h3>
+    <p class="story-deck">Recent release notes tie image generation upgrades to a cleaner file-app experience for Google Docs, Sheets, and Slides in ChatGPT.</p>
+    <div class="story-pull">The workflow story is bigger than any one feature: ChatGPT is becoming a place where creation, reference, and file actions start to live together.</div>
+  </div>
+          <div class="lab-grid">
+            
+    <figure class="story-visual">
+      <img src="https://help.openai.com/logo.png" alt="Source preview for ChatGPT release notes from OpenAI Help Center" loading="lazy">
+    </figure>
+  
+            <div class="panel lab-copy"><p>OpenAI’s release-note cadence is starting to tell a more important story than the feature headlines alone. As ChatGPT adds image-generation improvements and unifies Google file connectors under Drive, it becomes more plausible as a working surface where teams can reference, generate, and move material without so much app-swapping.</p><p>For PMI Creative Studio, that matters because research, copy shaping, and file-based collaboration often happen before visual craft even begins. The more coherent ChatGPT becomes as a file-aware assistant, the more useful it is for upstream support, so long as the studio keeps final editorial control firmly human.</p>
+    <div class="story-actions">
+      <a class="read-more" href="https://help.openai.com/en/articles/6825453-chatgpt-can-now-generate-images" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">OpenAI Help Center</span>
+    </div>
+  </div>
           </div>
-          <div class="story-content">
-            <div class="story-index">Story 06</div>
-            <h3>OpenAI and Figma are tightening the roundtrip between code and design</h3>
-            <div class="story-meta">OpenAI • Feb 26, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> The OpenAI-Figma integration matters because it attacks one of the messiest handoff zones in modern design work: moving between implemented code, design exploration, and final refinement without losing intent. OpenAI says teams can generate Figma designs from Codex and turn UI from code into editable Figma designs, then move changes back into implementation.</p>
-            <p>For a brand-sensitive team like PMI’s, the most interesting implication is not speed alone. It is the possibility of keeping exploration closer to real implementation while still preserving craft review. That is useful for campaign microsites, interactive modules, registration flows, and any surface where design and development usually drift apart once production starts.</p>
-            <p>This is a signal to watch, even if it is not yet a daily Creative Studio tool. If the roundtrip becomes reliable, the team could shorten prototype cycles, review coded outputs earlier, and better protect brand fidelity on interactive work where static mockups have traditionally broken down.</p>
-            <a class="read-more" href="https://openai.com/index/figma-partnership/" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="story layout-g" id="story-7" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://www.canva.com/newsroom/news/canva-claude-design/" alt="Preview of Canva in Claude Design story" loading="lazy">
+        <article class="story-spread spread-8" id="story-8">
+          <div class="panel column-copy">
+    <div class="story-meta">
+      <span class="story-number">Story 08</span>
+      <span>Adobe</span>
+      <span>March 10, 2026</span>
+    </div>
+    <div class="story-kicker">Photoshop + Firefly</div>
+    <h3>Adobe is making AI image editing feel more like directed craft</h3>
+    <p class="story-deck">The story here is precision: markup, selective edits, and conversational control inside familiar image workflows.</p>
+    <div class="story-pull">That makes AI more relevant to real studio behavior, which is usually adjustment and repurposing rather than blank-canvas generation.</div>
+  <p>Adobe’s latest Photoshop and Firefly work matters because it is focused on where AI acts, not just what it can make. Designers can point, mark up, refine, and instruct changes inside the editing environment, which is a much better fit for real production work than generic prompt-only generation.</p><p>For PMI, the value is speed under control. The studio can use AI to accelerate cleanup, exploration, and selective revision while keeping the final composition, retouching standards, and brand choices in human hands.</p></div>
+          <div class="cutout">
+            
+    <figure class="story-visual">
+      <img src="https://blog.adobe.com/en/publish/2026/03/10/media_15d6512b862e78bf685e48015a6a9422adbfabe30.jpg?format=jpg&amp;optimize=medium&amp;width=750" alt="Source preview for Photoshop + Firefly from Adobe Blog" loading="lazy">
+    </figure>
+  
+            
+    <div class="story-actions">
+      <a class="read-more" href="https://blog.adobe.com/en/publish/2026/03/10/image-editing-just-got-smarter-with-ai-photoshop-firefly" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Adobe Blog</span>
+    </div>
+  
           </div>
-          <div class="story-content">
-            <div class="story-header">
-              <div class="story-index">Story 07</div>
-              <h3>Canva is positioning itself as the finishing layer for AI-generated design</h3>
-              <div class="story-meta">Canva • Apr 17, 2026</div>
-              <div class="pull">Generation is not the end state. Canva is betting that editability, collaboration, and brand control are where enterprise value actually lands.</div>
-            </div>
-            <div class="story-copy">
-              <p><strong>Why it matters for PMI’s design team:</strong> Canva’s Claude Design integration is strategically important because it reframes AI outputs as starting material that should become editable, structured, and on-brand. Canva is also adding HTML import and artifact editing, which means AI-generated interactive work can be pulled into a collaborative editor instead of living as brittle code or flat images.</p>
-              <p>That has direct relevance for PMI’s internal communications and campaign work. It points to a future where a stakeholder uses Claude to draft a one-pager, microsite concept, or internal presentation, then hands off something editable inside Canva rather than a screenshot or vague prompt transcript. That improves collaboration, but it also increases the need for clear standards around when Canva is sufficient and when studio craft needs to take over.</p>
-              <p>The right lens here is workflow architecture. Creative Studio should watch how often AI drafts can enter a brand-safe collaborative layer without collapsing into cleanup overhead. If that balance holds, Canva may become a more serious bridge tool between ideation and managed design production.</p>
-              <a class="read-more" href="https://www.canva.com/newsroom/news/canva-claude-design/" target="_blank" rel="noreferrer">Read the full story</a>
-            </div>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="story layout-h" id="story-8" data-story>
-        <div class="story-grid">
-          <div class="story-content">
-            <div class="story-index">Story 08</div>
-            <h3>Google Vids is becoming a low-friction motion lab</h3>
-            <div class="story-meta">Google • Apr 2, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Motion work keeps creeping into everyday communications, and Google’s update makes lightweight video generation more accessible by bringing Veo 3.1 video clips, custom music, avatars, screen recording, and direct YouTube publishing into Vids. That is enough capability to change expectations for routine internal and stakeholder-facing video needs.</p>
-            <p>For PMI, this does not replace studio-led motion design. It does mean more teams may be able to self-produce explainers, recaps, or event support videos, then come to Creative Studio for refinement, framing, or quality escalation. The free tier matters because experimentation will expand quickly when the barrier to entry drops.</p>
-            <p>The productive move is to get ahead of that behavior. Creative Studio can define which motion use cases are low-risk enough for assisted self-service and which ones still need stronger brand review, especially when narration style, avatar tone, and visual polish can shape how PMI is perceived.</p>
-            <a class="read-more" href="https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/" target="_blank" rel="noreferrer">Read the full story</a>
+        <article class="story-spread spread-9" id="story-9">
+          <div class="newsbar">
+    <div class="story-meta">
+      <span class="story-number">Story 09</span>
+      <span>Claude</span>
+      <span>April 2026</span>
+    </div>
+    <div class="story-kicker">Claude Opus 4.7</div>
+    <h3>Claude gets more relevant as the work becomes more visual</h3>
+    <p class="story-deck">Anthropic is positioning Opus 4.7 as stronger on interfaces, slides, docs, and high-resolution visual reasoning.</p>
+    <div class="story-pull">The creative implication is less about final-image generation and more about better thinking over visual material.</div>
+  </div>
+          <div class="news-grid">
+            
+    <figure class="story-visual">
+      <img src="https://www.anthropic.com/_next/image?q=75&amp;url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F96ea2509a90e527642c822303e56296a07bcfce4-1920x1080.png&amp;w=3840" alt="Source preview for Claude Opus 4.7 from Anthropic" loading="lazy">
+    </figure>
+  
+            <div class="panel desk-copy"><p>Anthropic is explicitly talking about better performance on interfaces, slides, and documents, which is a meaningful shift for design-adjacent workflows. When a model can read denser visuals and hold onto more nuance over longer tasks, it becomes more useful for critique, synthesis, and structural thinking around creative work.</p><p>For PMI Creative Studio, Claude’s role looks strongest before the final design pass: reference analysis, layout critique, framing options, and support on dense visual systems. It is a thinking partner story more than a finished-asset story, and that distinction matters.</p>
+    <div class="story-actions">
+      <a class="read-more" href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Anthropic</span>
+    </div>
+  </div>
           </div>
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/" alt="Preview of Google Vids AI update story" loading="lazy">
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="story layout-i" id="story-9" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://news.adobe.com/news/2026/05/adobes-new-productivity-agent" alt="Preview of Adobe productivity agent story" loading="lazy">
-          </div>
-          <div class="story-content">
-            <div class="story-index">Story 09</div>
-            <h3>Adobe wants Acrobat to turn source documents into publishable content</h3>
-            <div class="story-meta">Adobe • May 6, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Adobe’s new productivity agent is a reminder that document intelligence is now part of the creative stack. Adobe says the agent can chat with PDFs, surface insights, and generate presentations, podcasts, blogs, social posts, and conversational PDF edits. For a team surrounded by reports, decks, briefs, and source documents, that is operationally relevant.</p>
-            <p>The PMI implication is straightforward: long-form source material can become campaign-ready components faster. Think annual reports, research summaries, event content, certification documents, or executive talking points that need to become a presentation spine, a social package, or a digestible internal story. The opportunity is speed; the risk is flattening nuance.</p>
-            <p>This is worth testing as a transformation layer rather than a final creative engine. If Acrobat can reliably extract structure and draft derivative content, Creative Studio gains a better first pass. The editorial and visual judgment still needs to sit with people, but the prep work could get much lighter.</p>
-            <a class="read-more" href="https://news.adobe.com/news/2026/05/adobes-new-productivity-agent" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="story layout-j" id="story-10" data-story>
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="https://image.thum.io/get/width/1600/noanimate/https://openai.com/index/introducing-workspace-agents-in-chatgpt/" alt="Preview of OpenAI workspace agents story" loading="lazy">
-          </div>
-          <div class="story-content">
-            <div class="story-index">Story 10</div>
-            <h3>ChatGPT is moving from single prompts to shared team agents</h3>
-            <div class="story-meta">OpenAI • Apr 22, 2026</div>
-            <p><strong>Why it matters for PMI’s design team:</strong> Workspace agents in ChatGPT are less about image generation and more about operational design support. OpenAI is positioning them as shared, cloud-running agents that can gather context, use connected tools, work on schedules, and operate in Slack. That matters for any studio balancing intake, review cycles, recurring content, and internal reporting.</p>
-            <p>The practical implication is that Creative Studio could eventually formalize reusable AI workflows instead of relying on individual prompt craft. A team agent could summarize incoming requests, convert campaign feedback into action lists, assemble weekly editorial materials, or draft status recaps from connected systems. That is a workflow governance story as much as a tooling story.</p>
-            <p>The PMI lens here should stay disciplined. The real value is in repeatable operational support around the creative process, not in surrendering brand judgment. If tested carefully, workspace agents could reduce coordination drag and free more human attention for concepting, editing, and final quality decisions.</p>
-            <a class="read-more" href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/" target="_blank" rel="noreferrer">Read the full story</a>
-          </div>
-        </div>
-      </article>
+        <article class="story-spread spread-10" id="story-10">
+          <div class="closing-copy">
+    <div class="story-meta">
+      <span class="story-number">Story 10</span>
+      <span>Adobe</span>
+      <span>March 2026</span>
+    </div>
+    <div class="story-kicker">Adobe + NVIDIA</div>
+    <h3>Adobe’s platform strategy is tilting toward brand-safe automation at scale</h3>
+    <p class="story-deck">The Adobe and NVIDIA partnership is an infrastructure story, but one with real implications for how enterprise creative systems evolve.</p>
+    <div class="story-pull">This is where the next wave of design tooling will compete: controllability, governance, and output that can scale without falling apart.</div>
+  <p>This announcement matters because Adobe is talking less like a feature company and more like a systems company. Precision, orchestration, and enterprise-scale creative generation are all in view, which suggests the next competitive battleground is not who can make the flashiest output, but who can make automation dependable inside real brand environments.</p><p>For PMI, this is a strategic watch item. As campaign and content systems become more automated, the studio will need to care about provenance, control, and review discipline just as much as speed. Adobe is clearly betting that those concerns, not novelty alone, will shape adoption.</p>
+    <div class="story-actions">
+      <a class="read-more" href="https://news.adobe.com/news/2026/03/adobe-and-nvidia-announce-strategic-partnership" target="_blank" rel="noreferrer">Read the full story</a>
+      <span class="source-label">Adobe Newsroom</span>
+    </div>
+  </div>
+          
+    <figure class="story-visual">
+      <img src="https://news.adobe.com/news/2026/03/media_140c2180d47466a638c74776720807b620f29ead9.png?format=png&amp;optimize=medium&amp;width=750" alt="Source preview for Adobe + NVIDIA from Adobe Newsroom" loading="lazy">
+    </figure>
+  
+        </article>
+      </div>
     </section>
 
-    <footer class="footer">
-      <h4>Editorial close</h4>
-      <p>The through-line across this edition is clear: the market is shifting from one-shot generation to editable, agentic, brand-aware systems. For PMI Creative Studio, the opportunity is not to chase every release. It is to decide where AI should accelerate preparation, exploration, adaptation, and internal coordination while keeping final judgment visibly human.</p>
+    <footer class="closing-note">
+      <strong>Editorial note:</strong> This HTML edition is self-contained for internal sharing and quick browser review. Every story includes a same-source preview image and a direct link back to the original source for deeper reading.
     </footer>
   </div>
 </body>
-</html> 
+</html>
