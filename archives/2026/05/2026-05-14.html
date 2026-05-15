@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morning Edition | 2026-05-14</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --violet-800: #200f3b;
+      --violet-700: #351765;
+      --violet-500: #4f17a8;
+      --violet-300: #7c49d8;
+      --aqua-300: #05bfe0;
+      --aqua-100: #d9fbff;
+      --tangerine-300: #ff610f;
+      --cream: #f7f4ee;
+      --paper: #fffdf9;
+      --ink: #1e1630;
+      --muted: #6d6680;
+      --line: rgba(32, 15, 59, 0.12);
+      --shadow: 0 24px 70px rgba(32, 15, 59, 0.14);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 12px;
+      --page-max: 1380px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(5, 191, 224, 0.17), transparent 28%),
+        radial-gradient(circle at left 12% top 10%, rgba(79, 23, 168, 0.15), transparent 24%),
+        linear-gradient(180deg, #f4f0fb 0%, #ffffff 22%, #fbfaf7 100%);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(var(--page-max), calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .cover {
+      padding: 28px 0 26px;
+    }
+
+    .cover-card {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(32, 15, 59, 0.96), rgba(79, 23, 168, 0.94) 48%, rgba(5, 191, 224, 0.92));
+      color: #fff;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .cover-card::before,
+    .cover-card::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .cover-card::before {
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      top: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.32), rgba(255,255,255,0.03) 65%, transparent 72%);
+    }
+
+    .cover-card::after {
+      width: 520px;
+      height: 220px;
+      left: -40px;
+      bottom: -90px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.06) 0 10%, transparent 10% 14%, rgba(255,255,255,0.08) 14% 23%, transparent 23% 100%);
+      transform: rotate(-9deg);
+      opacity: 0.75;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .meta,
+    .mini-kicker {
+      font-family: "Space Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .cover-topline {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .cover h1 {
+      margin: 0;
+      max-width: 10ch;
+      font-family: "Space Mono", monospace;
+      font-size: clamp(2.9rem, 6vw, 6rem);
+      line-height: 0.92;
+    }
+
+    .cover-deck {
+      margin: 16px 0 0;
+      max-width: 68ch;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 28px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    .cover-brief {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .cover-brief p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.62;
+    }
+
+    .jump-nav {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .jump-nav a {
+      display: block;
+      min-height: 100%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .jump-nav a:hover,
+    .jump-nav a:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.18);
+    }
+
+    .jump-nav strong {
+      display: block;
+      font-family: "Space Mono", monospace;
+      font-size: 0.74rem;
+      margin-bottom: 6px;
+      opacity: 0.82;
+    }
+
+    .jump-nav span {
+      display: block;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      padding: 26px 0 14px;
+    }
+
+    .section-header h2 {
+      margin: 8px 0 0;
+      font-family: "Space Mono", monospace;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.96;
+      color: var(--violet-800);
+    }
+
+    .section-summary {
+      max-width: 46ch;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .stories {
+      display: grid;
+      gap: 22px;
+      padding-bottom: 40px;
+    }
+
+    .spread {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 50px rgba(32, 15, 59, 0.08);
+    }
+
+    .spread-head {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .story-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--violet-800);
+      color: #fff;
+      font-family: "Space Mono", monospace;
+      font-size: 0.88rem;
+    }
+
+    .meta {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .story-title {
+      margin: 14px 0 14px;
+      font-family: "Space Mono", monospace;
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      line-height: 1.02;
+      color: var(--violet-800);
+    }
+
+    .story-body p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .story-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--violet-500);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 18px;
+      box-shadow: 0 12px 26px rgba(79, 23, 168, 0.22);
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      background: var(--violet-700);
+    }
+
+    .image-card,
+    .poster-frame,
+    .story-photo {
+      overflow: hidden;
+      border-radius: 24px;
+      background: #efe9fb;
+    }
+
+    .image-card img,
+    .poster-frame img,
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mini-note,
+    .side-note,
+    .impact,
+    .caption,
+    .rail {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .accent-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(5, 191, 224, 0.12);
+      color: var(--violet-800);
+      font-weight: 700;
+      font-size: 0.86rem;
+    }
+
+    .spread-1 {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+      background:
+        linear-gradient(135deg, rgba(79, 23, 168, 0.07), rgba(255,255,255,0) 42%),
+        var(--paper);
+    }
+
+    .spread-1 .story-photo {
+      min-height: 540px;
+      border-radius: 28px;
+    }
+
+    .spread-1 .side-stack {
+      display: grid;
+      gap: 18px;
+      align-content: space-between;
+    }
+
+    .spread-1 .mini-note {
+      padding: 18px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .spread-2 {
+      padding: 30px;
+      background:
+        radial-gradient(circle at top left, rgba(5, 191, 224, 0.18), transparent 28%),
+        linear-gradient(140deg, #23113f 12%, #2e1651 40%, #140d27 100%);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 26px;
+    }
+
+    .spread-2 .story-title,
+    .spread-2 .meta,
+    .spread-2 .mini-kicker {
+      color: #fff;
+    }
+
+    .spread-2 .story-photo {
+      min-height: 520px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .spread-2 .story-body p,
+    .spread-2 .impact {
+      color: rgba(255,255,255,0.88);
+    }
+
+    .spread-2 .cta {
+      background: #fff;
+      color: var(--violet-800);
+      box-shadow: none;
+    }
+
+    .spread-2 .impact {
+      padding: 16px 18px;
+      border-left: 4px solid var(--aqua-300);
+      background: rgba(255,255,255,0.08);
+      border-radius: 0 16px 16px 0;
+      margin-top: 18px;
+    }
+
+    .spread-3 {
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      background:
+        linear-gradient(180deg, rgba(247, 244, 238, 0.6), rgba(255,255,255,0.96)),
+        var(--paper);
+    }
+
+    .spread-3 .poster-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .spread-3 .poster-frame {
+      min-height: 640px;
+      padding: 10px;
+      background: linear-gradient(135deg, #f1ebe2, #fff);
+      border: 1px solid var(--line);
+    }
+
+    .spread-3 .poster-frame img {
+      border-radius: 18px;
+    }
+
+    .spread-3 .right-panel {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .spread-3 .caption {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(79, 23, 168, 0.06);
+    }
+
+    .spread-4 {
+      padding: 0;
+      background: linear-gradient(180deg, #fff, #f6fbff);
+    }
+
+    .spread-4 .top-band {
+      padding: 24px 28px 0;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: end;
+    }
+
+    .spread-4 .wave-card {
+      padding: 20px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(5, 191, 224, 0.16), rgba(79, 23, 168, 0.12)),
+        #fff;
+      border: 1px solid var(--line);
+    }
+
+    .spread-4 .story-photo {
+      min-height: 380px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #eef7ff, #fff);
+    }
+
+    .spread-4 .lower-copy {
+      padding: 0 28px 28px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 26px;
+    }
+
+    .spread-4 .rail {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(32, 15, 59, 0.04);
+      border: 1px solid var(--line);
+      align-self: start;
+    }
+
+    .spread-5 {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
+      background:
+        linear-gradient(180deg, rgba(5, 191, 224, 0.08), transparent 36%),
+        var(--paper);
+    }
+
+    .spread-5 .film-card {
+      position: relative;
+      padding: 18px;
+      border-radius: 28px;
+      background: var(--violet-800);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .spread-5 .film-card::before,
+    .spread-5 .film-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 18px;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0 5px, transparent 6px) center top / 18px 34px repeat-y;
+      opacity: 0.16;
+    }
+
+    .spread-5 .film-card::before {
+      left: 8px;
+    }
+
+    .spread-5 .film-card::after {
+      right: 8px;
+    }
+
+    .spread-5 .film-card .story-photo {
+      min-height: 460px;
+      border-radius: 20px;
+      margin: 16px 26px 0;
+    }
+
+    .spread-5 .film-card .caption {
+      color: rgba(255,255,255,0.8);
+      margin: 12px 26px 0;
+    }
+
+    .spread-6 {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 24px;
+      background:
+        linear-gradient(130deg, rgba(79, 23, 168, 0.08), rgba(5, 191, 224, 0.08)),
+        #fff;
+    }
+
+    .spread-6 .left-column {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .spread-6 .story-photo {
+      min-height: 300px;
+      border-radius: 22px;
+    }
+
+    .spread-6 .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .spread-6 .stat {
+      padding: 14px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .spread-6 .stat strong {
+      display: block;
+      font-family: "Space Mono", monospace;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--violet-800);
+    }
+
+    .spread-7 {
+      padding: 28px;
+      background:
+        radial-gradient(circle at 74% 18%, rgba(5,191,224,0.22), transparent 24%),
+        radial-gradient(circle at 16% 88%, rgba(255,97,15,0.12), transparent 22%),
+        linear-gradient(145deg, #1d1035, #32165d 58%, #42207b 100%);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .spread-7 .spread-head,
+    .spread-7 .story-title,
+    .spread-7 .meta {
+      color: #fff;
+    }
+
+    .spread-7 .story-core {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .spread-7 .story-photo {
+      min-height: 400px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .spread-7 .story-body p,
+    .spread-7 .side-note {
+      color: rgba(255,255,255,0.86);
+    }
+
+    .spread-7 .side-note {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      margin-top: 16px;
+    }
+
+    .spread-7 .cta {
+      background: var(--aqua-300);
+      color: var(--violet-800);
+      box-shadow: none;
+    }
+
+    .spread-8 {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      background:
+        linear-gradient(90deg, rgba(247,244,238,0.9) 0 56%, rgba(255,255,255,0.98) 56% 100%);
+    }
+
+    .spread-8 .news-columns {
+      column-count: 2;
+      column-gap: 22px;
+    }
+
+    .spread-8 .news-columns p {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+    }
+
+    .spread-8 .story-photo {
+      min-height: 560px;
+      border-radius: 24px;
+    }
+
+    .spread-8 .side-note {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .spread-9 {
+      padding: 28px;
+      background:
+        linear-gradient(135deg, rgba(255,97,15,0.08), rgba(255,255,255,0) 34%),
+        linear-gradient(180deg, #fff, #fff8f3);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .spread-9 .story-photo {
+      min-height: 520px;
+      border-radius: 26px;
+      border: 10px solid #ff2d00;
+    }
+
+    .spread-9 .stack-note {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .spread-9 .stack-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .spread-10 {
+      padding: 26px;
+      background:
+        linear-gradient(180deg, rgba(5,191,224,0.1), rgba(255,255,255,0)),
+        #fdfefe;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 24px;
+    }
+
+    .spread-10 .deck-view {
+      padding: 20px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, #f6fbff, #fff);
+    }
+
+    .spread-10 .story-photo {
+      min-height: 390px;
+      border-radius: 22px;
+    }
+
+    .spread-10 .side-panel {
+      display: grid;
+      gap: 16px;
+      align-content: space-between;
+    }
+
+    .spread-10 .side-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .footer-note {
+      padding: 8px 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .editorial-sections {
+      display: grid;
+      gap: 24px;
+      padding: 8px 0 42px;
+    }
+
+    .section-block {
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,244,238,0.88));
+      box-shadow: 0 12px 40px rgba(32, 15, 59, 0.06);
+      overflow: hidden;
+    }
+
+    .section-block.campaigns {
+      background:
+        radial-gradient(circle at top right, rgba(255,97,15,0.12), transparent 24%),
+        linear-gradient(180deg, #fff, #fff7f1);
+    }
+
+    .section-block.inspiration {
+      background:
+        radial-gradient(circle at top left, rgba(5,191,224,0.12), transparent 24%),
+        linear-gradient(180deg, #fff, #f7fcff);
+    }
+
+    .section-block header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      padding: 24px 28px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-block h3 {
+      margin: 8px 0 0;
+      font-family: "Space Mono", monospace;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 1;
+      color: var(--violet-800);
+    }
+
+    .section-block .section-summary {
+      max-width: 42ch;
+      margin: 0;
+    }
+
+    .section-grid {
+      display: grid;
+      gap: 18px;
+      padding: 22px;
+    }
+
+    .section-grid.two-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-grid.three-up {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .section-card {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.82);
+      min-height: 100%;
+    }
+
+    .section-art {
+      min-height: 180px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      place-items: end start;
+      padding: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--violet-700), var(--violet-500));
+    }
+
+    .section-art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.28), transparent 28%),
+        linear-gradient(135deg, rgba(255,255,255,0.08) 0 24%, transparent 24% 100%);
+      pointer-events: none;
+    }
+
+    .section-art strong {
+      position: relative;
+      z-index: 1;
+      font-family: "Space Mono", monospace;
+      font-size: 1.2rem;
+      line-height: 1.1;
+      max-width: 12ch;
+    }
+
+    .section-art.offf {
+      background:
+        radial-gradient(circle at 24% 22%, rgba(255,255,255,0.22), transparent 18%),
+        radial-gradient(circle at 72% 58%, rgba(255,97,15,0.4), transparent 22%),
+        linear-gradient(135deg, #2b1250, #4f17a8 60%, #05bfe0);
+    }
+
+    .section-art.snl {
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.22), rgba(0,0,0,0.1)),
+        linear-gradient(135deg, #3e2d70, #200f3b);
+    }
+
+    .section-art.snl::after {
+      content: "SNL UK";
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      font-family: "Space Mono", monospace;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.86);
+      letter-spacing: 0.04em;
+    }
+
+    .section-art.ndf {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0)),
+        linear-gradient(135deg, #200f3b, #4f17a8);
+    }
+
+    .section-art.ndf::after {
+      content: "Lancer";
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .section-art.mews {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0)),
+        linear-gradient(135deg, #ff3fa4, #ff6cbf 55%, #1f112f);
+    }
+
+    .section-art.casi {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(255,255,255,0.26), transparent 15%),
+        linear-gradient(135deg, #176553, #05bfe0);
+    }
+
+    .section-card .meta {
+      margin-bottom: -4px;
+    }
+
+    .section-card h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      color: var(--violet-800);
+    }
+
+    .section-card p {
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.66;
+    }
+
+    .section-card .cta {
+      margin-top: 0;
+      justify-self: start;
+    }
+
+    @media (max-width: 1100px) {
+      .cover-grid,
+      .spread-1,
+      .spread-2,
+      .spread-3 .poster-grid,
+      .spread-4 .top-band,
+      .spread-4 .lower-copy,
+      .spread-5,
+      .spread-6,
+      .spread-7 .story-core,
+      .spread-8,
+      .spread-9,
+      .spread-10 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-grid.two-up,
+      .section-grid.three-up {
+        grid-template-columns: 1fr;
+      }
+
+      .jump-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .spread-8 .news-columns {
+        column-count: 1;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(var(--page-max), calc(100vw - 20px));
+      }
+
+      .cover-card,
+      .spread,
+      .spread-4 .top-band,
+      .spread-4 .lower-copy {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .cover-card,
+      .spread {
+        border-radius: 24px;
+      }
+
+      .jump-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .story-title {
+        font-size: 1.7rem;
+      }
+
+      .spread-1 .story-photo,
+      .spread-2 .story-photo,
+      .spread-5 .film-card .story-photo,
+      .spread-8 .story-photo,
+      .spread-9 .story-photo {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="cover">
+      <div class="cover-card">
+        <div class="cover-topline">
+          <div>
+            <div class="eyebrow">PMI Creative Studio</div>
+            <h1>Morning Edition</h1>
+          </div>
+          <div class="eyebrow">Issue 2026-05-14</div>
+        </div>
+
+        <p class="cover-deck">
+          A curated editorial readout for PMI’s Graphic Design Team: ten workflow-shaping moves across Claude, ChatGPT, Gemini, Canva, Adobe, and Copilot, selected for real creative impact rather than hype.
+        </p>
+
+        <div class="cover-grid">
+          <div class="cover-brief">
+            <div class="section-kicker">Editorial lens</div>
+            <p>
+              This issue favors changes that alter how teams brief, prototype, localize, generate, edit, collaborate, and ship. The throughline is simple: AI is moving from isolated prompt moments into branded, editable, multi-app production systems.
+            </p>
+          </div>
+
+          <nav aria-label="Jump to stories">
+            <ul class="jump-nav">
+              <li><a href="#story-1"><strong>01</strong><span>Claude Design</span></a></li>
+              <li><a href="#story-2"><strong>02</strong><span>Claude for creative work</span></a></li>
+              <li><a href="#story-3"><strong>03</strong><span>ChatGPT Images 2.0</span></a></li>
+              <li><a href="#story-4"><strong>04</strong><span>OpenAI realtime voice</span></a></li>
+              <li><a href="#story-5"><strong>05</strong><span>Google Vids free video</span></a></li>
+              <li><a href="#story-6"><strong>06</strong><span>Nano Banana 2</span></a></li>
+              <li><a href="#story-7"><strong>07</strong><span>Canva AI 2.0</span></a></li>
+              <li><a href="#story-8"><strong>08</strong><span>Canva in Claude Design</span></a></li>
+              <li><a href="#story-9"><strong>09</strong><span>Firefly AI Assistant</span></a></li>
+              <li><a href="#story-10"><strong>10</strong><span>Copilot in PowerPoint</span></a></li>
+              <li><a href="#campaigns-watch"><strong>11</strong><span>Campaigns to Watch</span></a></li>
+              <li><a href="#inspiration"><strong>12</strong><span>Inspiration</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-header" aria-labelledby="ai-latest">
+        <div>
+          <div class="section-kicker">Section One</div>
+          <h2 id="ai-latest">AI Latest</h2>
+        </div>
+        <p class="section-summary">
+          Ten current stories, sequenced for the work PMI Creative Studio actually does: visual exploration, on-brand production, presentations, interactive artifacts, multilingual outputs, and faster handoff between strategy and execution.
+        </p>
+      </section>
+
+      <section class="stories">
+        <article class="spread spread-1" id="story-1">
+          <div class="story-photo">
+            <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/33dbe8f783d4835a838b4c4ae85d3c04e352fee1-1000x1000.svg" alt="Claude Design announcement artwork from Anthropic" loading="lazy" />
+          </div>
+          <div class="side-stack">
+            <div>
+              <div class="spread-head">
+                <span class="story-count">01</span>
+                <span class="meta">Anthropic | Apr 17, 2026</span>
+              </div>
+              <h3 class="story-title">Claude turns from assistant into design surface</h3>
+              <div class="story-body">
+                <p>Anthropic’s launch of Claude Design is the clearest sign yet that AI vendors now want a seat inside the visual workflow, not just beside it. The product moves beyond idea generation into real design territory: prototypes, slides, one-pagers, wireframes, and marketing assets that can be refined in conversation, annotated inline, and exported as working outputs.</p>
+                <p>What matters for PMI Creative Studio is the built-in design-system logic. Claude can read codebases and design files during onboarding, then use those rules across future work. That suggests a more serious future for AI-assisted exploration inside branded environments, where speed only matters if the result still feels like the system your team already owns.</p>
+              </div>
+              <a class="cta" href="https://www.anthropic.com/news/claude-design-anthropic-labs">Read the full story</a>
+            </div>
+            <div class="mini-note">
+              <div class="mini-kicker">Why it matters</div>
+              Faster exploration is useful. Faster exploration that can export to Canva, PDF, PPTX, and standalone HTML is a workflow shift.
+            </div>
+          </div>
+        </article>
+
+        <article class="spread spread-2" id="story-2">
+          <div class="story-photo">
+            <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/a62b6eb169818f14c35b7a192af269e283f8fa93-1000x1000.svg" alt="Claude for Creative Work artwork from Anthropic" loading="lazy" />
+          </div>
+          <div>
+            <div class="spread-head">
+              <span class="story-count">02</span>
+              <span class="meta">Anthropic | Apr 28, 2026</span>
+            </div>
+            <h3 class="story-title">Claude chases the creative stack, not just the prompt</h3>
+            <div class="story-body">
+              <p>Claude for Creative Work is less a feature announcement than a land-grab around the tools creative teams already depend on. Anthropic is adding connectors for Adobe, Affinity by Canva, Autodesk Fusion, Blender, Ableton, SketchUp, Splice, and more, framing Claude as a bridge across complex production environments rather than a standalone chatbot.</p>
+              <p>That is strategically important. For design teams, the biggest waste still lives between apps: repetitive prep, file cleanup, translation between formats, and custom scripting no one has time to write. Anthropic is betting that the winning AI layer will be the one that shoulders those invisible handoffs, especially when creativity needs to scale without flattening taste.</p>
+            </div>
+            <div class="impact">
+              PMI lens: this is the infrastructure story behind “do more with the same team” without reducing design to generic output.
+            </div>
+            <a class="cta" href="https://www.anthropic.com/news/claude-for-creative-work">Read the full story</a>
+          </div>
+        </article>
+
+        <article class="spread spread-3" id="story-3">
+          <div class="spread-head">
+            <span class="story-count">03</span>
+            <span class="meta">OpenAI | Apr 21, 2026</span>
+          </div>
+          <div class="poster-grid">
+            <div class="poster-frame">
+              <img src="https://images.ctfassets.net/kftzwdyauwt9/3IdBQyOlVNdmSCdUjK0zYT/e05480b1b44cc06d6ff2b357c3f80855/introducingchatfinal.jpg?fm=webp&q=90&w=3840" alt="Poster-style artwork for ChatGPT Images 2.0" loading="lazy" />
+            </div>
+            <div class="right-panel">
+              <div>
+                <div class="accent-tag">Image generation</div>
+                <h3 class="story-title">ChatGPT Images 2.0 pushes image AI toward editorial utility</h3>
+                <div class="story-body">
+                  <p>OpenAI’s new image model is notable because it targets the exact places older generators broke trust with design teams: text, structure, multilingual accuracy, and visual reasoning. The product story is not just prettier pictures. It is about turning image generation into something that can support posters, infographics, brochures, layouts, and campaign mockups without collapsing under basic typography or instruction-following.</p>
+                  <p>For PMI’s team, that matters less as a replacement for crafted design and more as an acceleration layer for early rounds. When image generation can hold hierarchy, interpret intent, and produce cleaner market-facing artifacts, it becomes useful for exploration, concept proofing, and internal storytelling before human polish takes over.</p>
+                </div>
+                <a class="cta" href="https://openai.com/index/introducing-chatgpt-images-2-0/">Read the full story</a>
+              </div>
+              <div class="caption">
+                The strongest signal here is not novelty but reliability: image AI is finally being judged on production behavior, not spectacle.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="spread spread-4" id="story-4">
+          <div class="top-band">
+            <div class="wave-card">
+              <div class="spread-head">
+                <span class="story-count">04</span>
+                <span class="meta">OpenAI | May 7, 2026</span>
+              </div>
+              <h3 class="story-title">Realtime voice moves closer to live creative operations</h3>
+            </div>
+            <div class="story-photo">
+              <img src="https://images.ctfassets.net/kftzwdyauwt9/32pQSj9Ayvkt9QSZpOPdky/470716092a7230e92e9670dba0ad410d/OAI_GPT-Realtime-2_Three_ways_to_build_with_voice_AI_desktop-light.svg?q=90&w=3840" alt="Diagram showing OpenAI voice AI workflows" loading="lazy" />
+            </div>
+          </div>
+          <div class="lower-copy">
+            <div class="story-body">
+              <p>OpenAI’s new realtime voice stack is easy to misread as a developer-only update. In practice, it touches more of the creative pipeline than that. GPT-Realtime-2, GPT-Realtime-Translate, and GPT-Realtime-Whisper together point toward always-on captioning, multilingual event support, live transcription, voice-driven review, and faster localization workflows inside content programs that already run across teams and regions.</p>
+              <p>The design implication is operational: voice is becoming a production input, not just a consumer interface. If a model can listen, translate, transcribe, and stay context-aware in real time, creative teams gain a new path for turning meetings, presentations, interviews, and video sessions into assets while the work is still happening.</p>
+              <a class="cta" href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/">Read the full story</a>
+            </div>
+            <aside class="rail">
+              <div class="mini-kicker">Watchpoint</div>
+              The headline capability is translation across 70+ input languages into 13 output languages, which makes this especially relevant for global content systems rather than one-market publishing.
+            </aside>
+          </div>
+        </article>
+
+        <article class="spread spread-5" id="story-5">
+          <div class="film-card">
+            <div class="spread-head">
+              <span class="story-count">05</span>
+              <span class="meta">Google | Apr 2, 2026</span>
+            </div>
+            <h3 class="story-title">Google Vids gets cheaper, sharper, and harder to ignore</h3>
+            <div class="story-photo">
+              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Createeditandshare_Google_Vids_he.width-200.format-webp.webp" alt="Google Vids preview image from The Keyword" loading="lazy" />
+            </div>
+            <div class="caption">Google adds Veo-powered clip generation at no cost, plus music generation, avatars, screen recording, and direct YouTube publishing.</div>
+          </div>
+          <div>
+            <div class="story-body">
+              <p>Google Vids matters because it lowers the activation energy for internal video. Ten free Veo-powered generations a month for anyone with a Google account may not sound dramatic, but inside communications and design teams it turns video from “special project” into “quick output.” Add custom music, AI avatars, screen recording, and direct YouTube publishing, and the tool starts behaving like a lightweight content studio.</p>
+              <p>For PMI Creative Studio, the question is not whether Vids replaces edited brand work. It does not. The question is whether it becomes the new middle tier for recaps, explainers, internal launches, and fast-turn storytelling. That answer is starting to look like yes.</p>
+            </div>
+            <a class="cta" href="https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/">Read the full story</a>
+          </div>
+        </article>
+
+        <article class="spread spread-6" id="story-6">
+          <div class="left-column">
+            <div class="spread-head">
+              <span class="story-count">06</span>
+              <span class="meta">Google | Feb 26, 2026</span>
+            </div>
+            <h3 class="story-title">Nano Banana 2 is built for the messy center of design production</h3>
+            <div class="story-photo">
+              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/NB2_Hero.width-200.format-webp.webp" alt="Nano Banana 2 hero image from Google" loading="lazy" />
+            </div>
+            <div class="stat-strip">
+              <div class="stat"><strong>Flash speed</strong>Rapid edits and iteration</div>
+              <div class="stat"><strong>4K ready</strong>Production-friendly outputs</div>
+              <div class="stat"><strong>Cross-product</strong>Gemini, Search, Flow, Ads</div>
+            </div>
+          </div>
+          <div>
+            <div class="story-body">
+              <p>Google’s image update is strong precisely because it focuses on the annoying details. Nano Banana 2 promises faster iteration, but also better text rendering, translation inside images, subject consistency, data visualization support, and wider control over aspect ratios and resolution. Those are not vanity improvements. They are the exact things that make image generation useful in real campaign and comms work.</p>
+              <p>The more interesting move is distribution. Google is threading the same model through Gemini, Search, Ads, AI Studio, Cloud, and Flow. That puts one visual engine across ideation, search-grounded reference work, and media production. Design teams should read that as platform consolidation, not just a model upgrade.</p>
+            </div>
+            <a class="cta" href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/">Read the full story</a>
+          </div>
+        </article>
+
+        <article class="spread spread-7" id="story-7">
+          <div class="spread-head">
+            <span class="story-count">07</span>
+            <span class="meta">Canva | Apr 16, 2026</span>
+          </div>
+          <div class="story-core">
+            <div class="story-photo">
+              <img src="https://content-management-files.canva.com/dc68f557-6ae6-4f24-803d-8930eebf284b/CanvaAI2.0HeroCollage.png" alt="Canva AI 2.0 hero collage" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="story-title">Canva wants the whole creative loop, not just the template</h3>
+              <div class="story-body">
+                <p>Canva AI 2.0 is one of the most consequential design-tool announcements of the year because it reframes Canva as a conversational production environment. The launch bundles conversational design, agentic orchestration, layered object intelligence, memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0 into one system that starts with a brief and ends with editable output.</p>
+                <p>That matters to PMI’s team because Canva is making a very specific promise: speed without flattening structure. Fully layered results, brand application from the first draft, and connected workflows across the workday all point toward a future where “generate” is no longer separate from “edit,” “review,” or “publish.”</p>
+              </div>
+              <div class="side-note">
+                Biggest tell: Canva is no longer positioning AI as a magic button. It is positioning AI as the operating layer across research, scheduling, spreadsheets, code, and brand governance.
+              </div>
+              <a class="cta" href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Read the full story</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="spread spread-8" id="story-8">
+          <div>
+            <div class="spread-head">
+              <span class="story-count">08</span>
+              <span class="meta">Canva | Apr 17, 2026</span>
+            </div>
+            <h3 class="story-title">Canva slips inside Claude and makes AI artifacts editable</h3>
+            <div class="news-columns">
+              <p>Canva’s Anthropic partnership is more than distribution. It is a statement about where creative work should begin and how it should stay editable as it moves. Designs started in Claude can now land inside Canva as structured, collaborative outputs rather than flattened throwaways, which gives teams a cleaner path from AI draft to production-ready asset.</p>
+              <p>The second piece is just as important: HTML importing. Canva is explicitly targeting AI-generated artifacts, landing pages, widgets, and interactive outputs that used to get trapped in code or require regeneration every time someone wanted a small change. That is a subtle but meaningful shift toward mixed-format creative systems where documents, visuals, and interactive pieces can live in one editor.</p>
+            </div>
+            <div class="side-note">
+              PMI lens: the value is not novelty. It is editability, collaboration, and preserving momentum when work moves from idea space into stakeholder-ready refinement.
+            </div>
+            <a class="cta" href="https://www.canva.com/newsroom/news/canva-claude-design/">Read the full story</a>
+          </div>
+          <div class="story-photo">
+            <img src="https://content-management-files.canva.com/bf84efad-0a47-4ad2-9da9-8324e2a3fcc5/CanvaxClaudeDesign.png" alt="Canva integration inside Claude Design" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="spread spread-9" id="story-9">
+          <div class="story-photo">
+            <img src="https://blog.adobe.com/en/publish/2026/04/27/media_120f55e65ce82173a0e54777188bd1ce9cf51b27e.png?format=png&optimize=medium&width=750" alt="Adobe Firefly AI Assistant public beta interface" loading="lazy" />
+          </div>
+          <div class="stack-note">
+            <div>
+              <div class="spread-head">
+                <span class="story-count">09</span>
+                <span class="meta">Adobe | Apr 27, 2026</span>
+              </div>
+              <h3 class="story-title">Adobe’s creative agent finally lands in public beta</h3>
+              <div class="story-body">
+                <p>Firefly AI Assistant is Adobe’s clearest answer to the agentic moment: one conversational layer orchestrating workflows across Firefly, Photoshop, Premiere, Lightroom, Express, Illustrator, and beyond. The key promise is not mere generation but coordination, with Creative Skills acting like reusable workflow macros for real production tasks.</p>
+                <p>Adobe is also strengthening the broader ecosystem around that assistant. The public beta announcement quietly reinforces Firefly as a multi-model creative environment, calling out additions like OpenAI’s GPT Image 2 and Google’s Nano Banana 2. In other words, Adobe is positioning itself as the place where competing AI models become usable inside a pro-grade editing stack.</p>
+              </div>
+              <a class="cta" href="https://blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta">Read the full story</a>
+            </div>
+            <div class="stack-card">
+              <div class="mini-kicker">Editorial read</div>
+              Adobe’s edge is still control. The more agentic the market becomes, the more valuable editable native files and governed creative steps become.
+            </div>
+            <div class="stack-card">
+              <div class="mini-kicker">Workflow watch</div>
+              Social resizing, mockups, and cross-app orchestration are moving from tedious production labor into one prompted sequence.
+            </div>
+          </div>
+        </article>
+
+        <article class="spread spread-10" id="story-10">
+          <div class="deck-view">
+            <div class="spread-head">
+              <span class="story-count">10</span>
+              <span class="meta">Microsoft | Apr 22, 2026</span>
+            </div>
+            <h3 class="story-title">Copilot becomes an active editor inside PowerPoint</h3>
+            <div class="story-photo">
+              <img src="https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2026/04/Edit-with-Copilot-4.jpg" alt="Microsoft PowerPoint with Copilot editing panel open" loading="lazy" />
+            </div>
+          </div>
+          <div class="side-panel">
+            <div class="side-card">
+              <div class="story-body">
+                <p>Microsoft’s latest Copilot release matters because it pushes the assistant from sidecar advice into app-native action. In Word, Excel, and PowerPoint, Copilot now takes multi-step actions directly on the canvas, which is a very different proposition from chat-based suggestion. In presentations specifically, Microsoft is leaning into updates, restructuring, slide building, and brand-respecting output inside the deck itself.</p>
+                <p>For Creative Studio teams, this is the quiet productivity story worth watching. PowerPoint remains a core format in enterprise storytelling, and AI that can work with templates, current talking points, and existing decks is far more relevant than one-shot presentation generation. The future here is iterative deck maintenance, not just first-draft slide making.</p>
+              </div>
+              <a class="cta" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/">Read the full story</a>
+            </div>
+            <div class="side-card">
+              <div class="mini-kicker">PMI takeaway</div>
+              Branded presentation work is moving toward a model where AI handles first-pass structure and refresh labor while humans protect narrative sharpness and visual standards.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="editorial-sections">
+        <section class="section-block campaigns" id="campaigns-watch">
+          <header>
+            <div>
+              <div class="section-kicker">Section Two</div>
+              <h3>Campaigns to Watch</h3>
+            </div>
+            <p class="section-summary">Two current pieces of campaign craft worth the team’s attention for how they turn identity systems into living cultural signals.</p>
+          </header>
+          <div class="section-grid two-up">
+            <article class="section-card">
+              <div class="section-art offf">
+                <strong>OFFF Barcelona 2026</strong>
+              </div>
+              <div class="meta">It’s Nice That | 7 May 2026</div>
+              <h4>Uncommon turns biological traces into a campaign system for OFFF Barcelona</h4>
+              <p>Why it matters for PMI’s design team: this is a sharp example of a campaign idea becoming a full visual operating system, not just a clever visual. Uncommon’s identity for OFFF Barcelona uses mould grown from creative-community traces, then scales that living concept into typography, motion, texture, and atmosphere.</p>
+              <p>The useful takeaway is how completely the concept permeates the system. The work proves that a campaign gets stickier when the central metaphor shapes every layer of the design language, from forms and palette to movement and narrative framing.</p>
+              <a class="cta" href="https://www.itsnicethat.com/articles/uncommon-offf-barcelona-graphic-design-project-070526">Read the full story</a>
+            </article>
+
+            <article class="section-card">
+              <div class="section-art snl">
+                <strong>London as logotype material</strong>
+              </div>
+              <div class="meta">It’s Nice That | 12 May 2026</div>
+              <h4>Stink Studios builds SNL UK’s identity from real London signage</h4>
+              <p>Why it matters for PMI’s design team: this is a reminder that campaign distinctiveness often comes from finding a local, ownable source material and pushing it all the way through the rollout. For Saturday Night Live UK, Stink Studios built the mark from photographed S, N, and L letterforms gathered around London, then extended that logic into title sequence, socials, merch, and out-of-home.</p>
+              <p>The lesson is especially strong for launch work. Instead of producing a polished but generic entertainment logo, the team gave the system geographic texture and social recognisability from day one.</p>
+              <a class="cta" href="https://www.itsnicethat.com/articles/stink-studios-saturday-night-live-uk-graphic-design-project-120526">Read the full story</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block inspiration" id="inspiration">
+          <header>
+            <div>
+              <div class="section-kicker">Section Three</div>
+              <h3>Inspiration</h3>
+            </div>
+            <p class="section-summary">A compact reading stack for type, systems, and brand-world building that can sharpen presentation, campaign, and identity work inside Creative Studio.</p>
+          </header>
+          <div class="section-grid three-up">
+            <article class="section-card">
+              <div class="section-art ndf">
+                <strong>Heritage as type system</strong>
+              </div>
+              <div class="meta">Creative Boom | 23 Mar 2026</div>
+              <h4>Northern Design Festival uses a bespoke typeface to make place feel authored</h4>
+              <p>Why it matters for PMI’s design team: Northern Design Festival’s Lancer typeface shows how a custom display move can do more than decorate a moment. Here it links medieval heritage, freelance culture, and regional identity, then extends outward into a billboard system and event voice.</p>
+              <a class="cta" href="https://www.creativeboom.com/news/northern-design-festival-is-back-and-this-time-its-bringing-its-own-typeface/">Read the full story</a>
+            </article>
+
+            <article class="section-card">
+              <div class="section-art mews">
+                <strong>Enterprise can be loud</strong>
+              </div>
+              <div class="meta">Creative Boom | 22 Apr 2026</div>
+              <h4>Koto’s Mews rebrand is a useful lesson in bold B2B editoriality</h4>
+              <p>Why it matters for PMI’s design team: Koto’s work for Mews is a strong reference for any team trying to make complex enterprise content feel vivid, premium, and legible at once. The system uses ownable color, oversized typography, and a low-mid-high flexibility model to scale from product UI to campaign expression.</p>
+              <a class="cta" href="https://www.creativeboom.com/news/koto-just-proved-that-design-for-enterprise-platforms-doesnt-have-to-be-beige/">Read the full story</a>
+            </article>
+
+            <article class="section-card">
+              <div class="section-art casi">
+                <strong>Handmade motion logic</strong>
+              </div>
+              <div class="meta">It’s Nice That | 22 Apr 2026</div>
+              <h4>Templo’s Casi identity balances human mark-making with quiet typography</h4>
+              <p>Why it matters for PMI’s design team: the Casi system is a good reference for work that needs warmth without slipping into softness or cliché. Templo pairs handmade cut-out forms and hand-animated motion with restrained typography, proving that expressive brand worlds often work best when one element carries the emotion and the rest of the system stays disciplined.</p>
+              <a class="cta" href="https://www.itsnicethat.com/articles/templo-casi-branding-project-220426">Read the full story</a>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      Morning Edition is curated for internal Creative Studio use with a PMI brand lens: clear hierarchy, decisive voice, and practical relevance over trend-chasing.
+    </footer>
+  </div>
+</body>
+</html>
