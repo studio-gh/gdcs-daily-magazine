@@ -1,20 +1,20 @@
-name: Publish Weekly Edition
+name: Publish Morning Edition
 
 on:
   workflow_dispatch:
     inputs:
       run_date:
-        description: "Optional Friday date in YYYY-MM-DD"
+        description: "Optional weekday date in YYYY-MM-DD"
         required: false
         type: string
   schedule:
-    - cron: "0 13 * * 5"
+    - cron: "0 12 * * 1-5"
 
 permissions:
   contents: write
 
 concurrency:
-  group: publish-weekly-edition
+  group: publish-morning-edition
   cancel-in-progress: false
 
 jobs:
@@ -30,22 +30,22 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Generate weekly edition and summaries
+      - name: Generate daily edition and summaries
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MAGAZINE_DATE: ${{ github.event.inputs.run_date }}
           OPENAI_MODEL: gpt-5
-          EDITION_TYPE: weekly
+          EDITION_TYPE: daily
         run: node ./scripts/generate-magazine.mjs
 
       - name: Commit updated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add weekly weekly-summaries images
+          git add index.html archives summaries images
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Publish Weekly Edition for $(date -u +%F)"
+          git commit -m "Publish Morning Edition for ${MAGAZINE_DATE:-$(date -u +%F)}"
           git push
