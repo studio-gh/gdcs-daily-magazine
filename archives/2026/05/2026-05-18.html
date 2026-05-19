@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Studio Magazine · 2026-05-18</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --violet-900: #200f3b;
+      --violet-700: #32125f;
+      --violet-500: #4f17a8;
+      --violet-300: #a88dde;
+      --aqua-400: #05bfe0;
+      --tangerine-400: #ff610f;
+      --paper: #fcfaff;
+      --cream: #f1ecff;
+      --card: rgba(255, 255, 255, 0.92);
+      --ink: #1f1731;
+      --muted: #6d6288;
+      --line: rgba(79, 23, 168, 0.14);
+      --shadow: 0 24px 60px rgba(32, 15, 59, 0.12);
+      --max: 1280px;
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(5, 191, 224, 0.14), transparent 24%),
+        radial-gradient(circle at 86% 16%, rgba(255, 97, 15, 0.12), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, var(--paper) 44%, #ffffff 100%);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 28px), var(--max));
+      margin: 0 auto;
+      padding: 20px 0 48px;
+    }
+
+    .eyebrow,
+    .story-kicker,
+    .section-kicker,
+    .nav-kicker {
+      font-family: "Space Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(79, 23, 168, 0.98), rgba(32, 15, 59, 0.97)),
+        linear-gradient(90deg, rgba(5, 191, 224, 0.2), rgba(255, 97, 15, 0.14));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.42;
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 300px;
+      height: 300px;
+      top: -60px;
+      right: -40px;
+      background: radial-gradient(circle, rgba(5, 191, 224, 0.85), rgba(5, 191, 224, 0));
+    }
+
+    .hero::after {
+      width: 280px;
+      height: 280px;
+      left: -70px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(255, 97, 15, 0.78), rgba(255, 97, 15, 0));
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.3fr 0.85fr;
+      gap: 24px;
+      align-items: end;
+    }
+
+    .hero h1 {
+      margin: 16px 0 14px;
+      font-family: "Space Mono", monospace;
+      font-size: clamp(2.7rem, 6vw, 5.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 64ch;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1rem;
+    }
+
+    .hero-notes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-note {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-note strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .hero-note span {
+      display: block;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.92rem;
+    }
+
+    .jump-nav {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .jump-card {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(32, 15, 59, 0.06);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .jump-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(79, 23, 168, 0.3);
+    }
+
+    .jump-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.96rem;
+      line-height: 1.35;
+    }
+
+    .section-head {
+      margin: 14px 0 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--violet-900);
+      font-size: clamp(1.9rem, 3vw, 2.9rem);
+      line-height: 1.04;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 70ch;
+      color: var(--muted);
+    }
+
+    .story-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .story {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(32, 15, 59, 0.07);
+    }
+
+    .story-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      padding: 20px;
+      align-items: stretch;
+    }
+
+    .story.tone-a .story-copy { background: linear-gradient(180deg, rgba(241, 236, 255, 0.88), rgba(255,255,255,0.7)); }
+    .story.tone-b .story-copy { background: linear-gradient(180deg, rgba(238, 250, 255, 0.94), rgba(255,255,255,0.7)); }
+    .story.tone-c .story-copy { background: linear-gradient(180deg, rgba(255, 243, 236, 0.94), rgba(255,255,255,0.7)); }
+    .story.tone-d .story-copy { background: linear-gradient(180deg, rgba(247, 244, 255, 0.94), rgba(255,255,255,0.78)); }
+    .story.tone-e .story-copy { background: linear-gradient(180deg, rgba(239, 252, 249, 0.94), rgba(255,255,255,0.7)); }
+
+    .story.media-left .story-inner {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .story.media-left .story-copy {
+      order: 2;
+    }
+
+    .story.media-left .story-media {
+      order: 1;
+    }
+
+    .story-copy {
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .story-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: rgba(79, 23, 168, 0.12);
+      color: var(--violet-500);
+      font-family: "Space Mono", monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .story h3 {
+      margin: 0 0 12px;
+      color: var(--violet-900);
+      font-size: clamp(1.34rem, 2.4vw, 2.15rem);
+      line-height: 1.08;
+    }
+
+    .story .focus {
+      margin: 0 0 14px;
+      color: var(--violet-700);
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .story p {
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+    }
+
+    .story-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 14px;
+    }
+
+    .story-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      color: var(--violet-500);
+      font-weight: 700;
+    }
+
+    .story-link::after {
+      content: "↗";
+      font-size: 1rem;
+    }
+
+    .story-media {
+      position: relative;
+      min-height: 280px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(160deg, rgba(79, 23, 168, 0.14), rgba(5, 191, 224, 0.14));
+    }
+
+    .story-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story-source {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(32, 15, 59, 0.72);
+      color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .story-source strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.92rem;
+    }
+
+    .story-source span {
+      display: block;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .support-card {
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 16px 34px rgba(32, 15, 59, 0.06);
+    }
+
+    .support-card h3 {
+      margin: 10px 0 10px;
+      font-size: 1.1rem;
+      line-height: 1.25;
+      color: var(--violet-900);
+    }
+
+    .support-card p {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .support-card .support-link {
+      color: var(--violet-500);
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding: 18px 4px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .story-inner,
+      .story.media-left .story-inner,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story.media-left .story-copy,
+      .story.media-left .story-media {
+        order: initial;
+      }
+
+      .jump-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(calc(100% - 18px), var(--max));
+      }
+
+      .hero {
+        padding: 24px;
+        border-radius: 28px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 13vw, 4rem);
+      }
+
+      .jump-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .story-inner,
+      .story-copy,
+      .story-media,
+      .support-card {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Creative Studio Magazine · Morning Edition</div>
+          <h1>May 18, 2026</h1>
+          <p>
+            Today's issue leans hard into the operating layer of creative AI: shared context, design-system-aware generation,
+            governance, and the still-crucial human work of taste, trust, and storytelling. The throughline is clear: tools are
+            getting more agentic, but the winning teams are the ones tightening the loop between code, canvas, brand judgment,
+            and editorial feel.
+          </p>
+        </div>
+        <div class="hero-notes">
+          <div class="hero-note">
+            <strong>AI Latest</strong>
+            <span><span id="story-count">10</span> core stories with direct source links and real source imagery.</span>
+          </div>
+          <div class="hero-note">
+            <strong>Editorial Lens</strong>
+            <span>Less hype, more workflow impact: where new capabilities actually change how the studio works.</span>
+          </div>
+          <div class="hero-note">
+            <strong>Built For Sharing</strong>
+            <span>Single-file HTML, PMI-aligned palette, internal jump navigation, and quick scan structure for the team.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump-nav" aria-label="Jump navigation">
+      <a class="jump-card" href="#ai-latest">
+        <div class="nav-kicker">Section One</div>
+        <strong>AI Latest</strong>
+      </a>
+      <a class="jump-card" href="#campaigns">
+        <div class="nav-kicker">Section Two</div>
+        <strong>Campaigns to Watch</strong>
+      </a>
+      <a class="jump-card" href="#inspiration">
+        <div class="nav-kicker">Section Three</div>
+        <strong>Inspiration</strong>
+      </a>
+      <a class="jump-card" href="#notes">
+        <div class="nav-kicker">Closeout</div>
+        <strong>Editorial Notes</strong>
+      </a>
+    </nav>
+
+    <section id="ai-latest">
+      <div class="section-head">
+        <div class="section-kicker">Section One</div>
+        <h2>AI Latest</h2>
+        <p>
+          The 10 stories worth your attention first. The mix skews toward product realities the design team can use now:
+          design-to-code loops, context-aware generation, creative governance, and the places where speed is starting to expose brand and experience gaps.
+        </p>
+      </div>
+      <div class="story-list" id="story-list"></div>
+    </section>
+
+    <section id="campaigns">
+      <div class="section-head">
+        <div class="section-kicker">Section Two</div>
+        <h2>Campaigns to Watch</h2>
+        <p>
+          Three current campaign signals that feel especially useful right now: brand platforms behaving like systems, social-first storytelling that still has a point of view, and AI production that serves a clear idea instead of becoming the idea.
+        </p>
+      </div>
+      <div class="support-grid" id="campaign-list"></div>
+    </section>
+
+    <section id="inspiration">
+      <div class="section-head">
+        <div class="section-kicker">Section Three</div>
+        <h2>Inspiration</h2>
+        <p>
+          A short calibration set for identity and editorial craft. The connective tissue is controlled instability: marks that shift, systems that feel alive, and visual worlds that reward looking twice.
+        </p>
+      </div>
+      <div class="support-grid" id="inspiration-list"></div>
+    </section>
+
+    <section class="footer" id="notes">
+      Curated for PMI Creative Studio. Selection favored workflow change, presentation craft, design-system relevance, and visible creative consequences over general AI company noise.
+    </section>
+  </main>
+
+  <script>
+    const stories = [
+      {
+        title: "Figma's workflow lab makes the design-to-code roundtrip feel finally operational",
+        focus: "The useful bit is not the MCP headline - it is the concrete handoff pattern: get coded states onto the canvas fast enough that designers can still shape what ships.",
+        source: "Figma",
+        date: "Apr 30, 2026",
+        link: "https://www.figma.com/blog/workflow-lab-expanding-the-canvas-with-figma-mcp/",
+        image: "https://cdn.sanity.io/images/599r6htc/regionalized/2700987198b97be2fc753a14c3afa1914ae7893d-2160x1215.png?auto=format&fit=max&h=608&q=75&rect=1%2C0%2C2158%2C1215&w=1080",
+        imageAlt: "Figma visual diff audit comparing design and coded export dialog states.",
+        paragraphs: [
+          "Figma's newest workflow-lab piece does a good job of moving this conversation out of abstraction. Instead of promising that agents somehow solve alignment, it shows a specific pattern: code produces extra states, an agent turns those states into editable Figma frames, and the designer gets to work on the full experience rather than the sanitized four-frame version that existed at kickoff.",
+          "That matters because it changes where design effort lands. The article's strongest point is that the artifact is no longer a screenshot, ticket, or post-facto bug report - it is a shared visual surface where drift, hierarchy changes, missing recovery paths, and even possible brand moments can be discussed before they harden. For teams already prototyping in code, this is one of the clearest descriptions yet of how the canvas earns its place back in the loop."
+        ]
+      },
+      {
+        title: "FigJam is turning into the whiteboard layer for coding agents, not just humans",
+        focus: "Architecture thinking is starting to get a first-class place in agent workflows, which is useful for teams that need shared understanding before they commit to UI polish.",
+        source: "Figma",
+        date: "Apr 28, 2026",
+        link: "https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/",
+        image: "https://cdn.sanity.io/images/599r6htc/regionalized/8a3ce8f118e4296961e3d68a5bbb771912f5e1db-6400x3600.png?auto=format&fit=max&h=918&q=75&w=1632",
+        imageAlt: "Abstract colorful FigJam graphic with numbered blocks and an arrow.",
+        paragraphs: [
+          "Figma's latest FigJam update is easy to misread as a niche engineering note, but there is a bigger studio implication. The pitch is that as agents move faster through implementation, teams need a place where system logic, architecture sketches, and shared reasoning stay visible. FigJam is positioning itself as that layer, with MCP skills and layouts that help agents and humans externalize how a solution is supposed to work.",
+          "For design teams, the practical value is not that everyone suddenly becomes a systems architect. It is that diagrams, constraints, and tradeoffs can stay closer to the product conversation instead of disappearing into chat logs or code diffs. That makes FigJam less of a brainstorm-only surface and more of a live reasoning surface for cross-functional work."
+        ]
+      },
+      {
+        title: "Figma Make is getting grounded in real systems instead of pretty first drafts",
+        focus: "Make kits and attachments are a quiet but meaningful shift from generic prompt output toward prototypes that actually reflect component libraries, specs, and live project constraints.",
+        source: "Figma",
+        date: "Apr 2, 2026",
+        link: "https://www.figma.com/blog/introducing-make-kits-and-make-attachments/",
+        image: "https://cdn.sanity.io/images/599r6htc/regionalized/ae04571ad7f540060adede62d79d51ac22fcc3b6-3264x1836.png?auto=format&fit=max&h=918&q=75&w=1632",
+        imageAlt: "Figma Make prompt field surrounded by colorful attachment shapes.",
+        paragraphs: [
+          "The core problem Figma is addressing here is familiar: AI can produce a plausible interface in seconds, but the result often sits outside the actual design system, outside the real data, and outside the edge cases that teams eventually have to solve. Make kits and Make attachments are Figma's answer to that cleanup tax, bringing npm packages, library context, PDFs, datasets, screenshots, and other structured files directly into the generation step.",
+          "That may be one of the most important AI product moves of the month because it shifts the quality conversation. Instead of asking whether a generated draft looks impressive, teams can ask whether it starts close enough to production reality to deserve review time. Less translation work means more time spent evaluating the idea itself."
+        ]
+      },
+      {
+        title: "Canva's latest AI report says the adoption story is basically over - trust is now the real design brief",
+        focus: "The strongest signal in Canva's report is not usage growth. It is the widening gap between internal efficiency wins and how consumers feel the work lands.",
+        source: "Canva",
+        date: "May 14, 2026",
+        link: "https://www.canva.com/newsroom/news/marketing-ai-report-2026/",
+        image: "https://content-management-files.canva.com/bab99ed6-47e1-494d-a19f-76e4994a29e9/CanvaMarketingandAIReport2026.png.png",
+        imageAlt: "Canva marketing AI report hero graphic reading Human and machine.",
+        paragraphs: [
+          "Canva's newest State of Marketing & AI report is useful because it puts numbers behind a feeling many creative teams already have. On one side, AI is no longer experimental: Canva says 97% of marketing leaders use it in daily creative work and 99% plan to increase spend in 2026. On the other side, seven in ten consumers say AI-generated ads still feel like something is missing.",
+          "That tension should matter to Creative Studio because it reframes the role of design quality. The new differentiator is not whether a team can produce more assets faster. It is whether the work still carries enough emotional specificity, judgment, and human texture to feel worth attention. In other words: the quantity race is ending, and the taste race is starting."
+        ]
+      },
+      {
+        title: "Learn Grid shows Canva still wants AI to feel like infrastructure, not just output",
+        focus: "This is education on the surface, but structurally it is a broader sign that Canva wants AI-assisted creation to live inside a full operating environment with resources, delivery, and feedback loops.",
+        source: "Canva",
+        date: "May 11, 2026",
+        link: "https://www.canva.com/newsroom/news/learn-grid/",
+        image: "https://content-management-files.canva.com/6a201a0b-2ad9-4436-984c-dc8ed6234b5b/CanvaLearnGridCC26Education.png",
+        imageAlt: "Canva Learn Grid hero with educator portrait and lesson cards.",
+        paragraphs: [
+          "Learn Grid is pitched as Canva's biggest education investment yet, with more than 50,000 curriculum-mapped resources, AI activity generation across 30-plus activity types, and support for 16-plus languages. Even if education is not your lane, the pattern is worth watching: Canva is wrapping generation, templates, assignment, and response data into a single flow instead of leaving AI as a detached creation feature.",
+          "That matters because it hints at how the platform wants more categories to work. The more AI becomes part of a structured environment - with content systems, publishing pathways, and measurable response - the less it behaves like a novelty tool and the more it behaves like a durable studio layer."
+        ]
+      },
+      {
+        title: "Adobe's NVIDIA deal is really about precision, brand safety, and industrial-scale creative throughput",
+        focus: "The headline sounds technical, but the design implication is straightforward: Adobe is investing hard in AI systems that brands can trust for repeatable, high-volume production.",
+        source: "Adobe",
+        date: "Mar 16, 2026",
+        link: "https://news.adobe.com/news/2026/03/adobe-and-nvidia-announce-strategic-partnership",
+        image: "https://news.adobe.com/news/2026/03/media_140c2180d47466a638c74776720807b620f29ead9.png?format=png&optimize=medium&width=750",
+        imageAlt: "Adobe and NVIDIA partnership artwork with pollen-covered flower.",
+        paragraphs: [
+          "Adobe and NVIDIA are promising next-generation Firefly models, agentic workflows, and even a brand identity-preserving 3D digital twin system built on Omniverse libraries. That sounds like enterprise platform language because it is. But underneath it is a clear creative-production message: Adobe wants Firefly to be seen not just as a generator, but as a controllable, commercially safe engine for brand systems and campaign operations.",
+          "For internal teams, the interesting angle is not speculative 3D. It is the push toward more predictable, standards-aware output at scale. If that work lands, the question shifts from whether AI can make assets to whether it can make them without flattening the brand in the process."
+        ]
+      },
+      {
+        title: "Adobe's survey says creatives are not just tolerating AI - they are folding it into real craft decisions",
+        focus: "This is one of the clearest pieces of evidence so far that generative tools are moving from occasional assist to routine creative infrastructure.",
+        source: "Adobe Blog",
+        date: "Apr 17, 2026",
+        link: "https://blog.adobe.com/en/publish/2026/04/17/creatives-say-ai-helping-them-meet-growing-demand-content-improving-their-work",
+        image: "https://blog.adobe.com/en/publish/2026/04/17/media_17cb98e29aa511ede47d6ea79e8f9cd9763e2e93d.jpg?format=jpg&optimize=medium&width=750",
+        imageAlt: "Creative workstation with colorful AI-assisted artwork on a laptop screen.",
+        paragraphs: [
+          "Adobe says creative pros now use AI on more than 40% of the projects they produce, and nearly nine in ten surveyed creatives say generative AI has made their work better. That is notable less because it flatters the tools and more because it points to how quickly creative teams have normalized AI as part of everyday production rather than a special experiment.",
+          "The more revealing line is qualitative: respondents talk about AI helping them find new ways to display information, not just speed up execution. That suggests the stronger use case is still collaborative augmentation - giving teams more surface area for exploration - rather than fully automatic replacement of concepting or art direction."
+        ]
+      },
+      {
+        title: "Microsoft is repositioning Copilot as an agency multiplier, not just a clever side panel",
+        focus: "The Work Trend Index framing is heavy, but the meaningful bit for creative and presentation work is the shift from help text to app-native action inside Word, Excel, and PowerPoint.",
+        source: "Microsoft 365",
+        date: "May 5, 2026",
+        link: "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/microsoft-365-copilot-human-agency-and-the-opportunity-for-every-organization/",
+        image: "https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2026/05/Dynamics-365_Copilot-Cowork.jpg",
+        imageAlt: "Microsoft Copilot Cowork interface with plugin toggles and mobile tasks.",
+        paragraphs: [
+          "Microsoft's newest Copilot argument is that AI gives people more agency when it handles more of the execution layer. The supporting numbers are worth noting: the company says its 2026 Work Trend Index draws on trillions of productivity signals, 20,000 surveyed workers, and more than 100,000 Copilot chats, with 49% of those chats supporting cognitive work like analysis and problem solving.",
+          "What matters for the studio is where this shows up in practice. Microsoft's story is increasingly about Copilot taking app-native actions inside documents, spreadsheets, and presentations rather than merely suggesting what to do next. That keeps deck and document production closer to brand templates, real work signals, and existing team context."
+        ]
+      },
+      {
+        title: "OpenAI's image-generation guidance is a sign the conversation has moved from novelty to craft",
+        focus: "The notable shift is tonal as much as technical: the advice is about control, clarity, dense layouts, and polish, which is exactly how mature creative tooling starts to talk.",
+        source: "OpenAI Academy",
+        date: "Apr 10, 2026",
+        link: "https://openai.com/academy/image-generation/",
+        image: "https://images.ctfassets.net/kftzwdyauwt9/L0cSoOsBFybec07VSIDJw/27647c6494be7191e0e2168f5bf27044/projects.png?fm=webp&q=90&w=3840",
+        imageAlt: "OpenAI Academy cover image with soft gradient background and white icon marks.",
+        paragraphs: [
+          "OpenAI's new Academy guide on image creation is less of a splashy launch and more of a workflow marker. The recommendations are specific in the way experienced art direction is specific: keep prompts grounded, state constraints directly, guide revisions one variable at a time, and call out when dense text layouts may still need finishing work in dedicated design tools.",
+          "That is worth noting because it suggests the product conversation is maturing. Instead of pretending AI output should replace craft decisions, the guide treats image generation as one part of a broader creative process - useful for concept exploration, production-ready asset drafting, and format adaptation, but still strongest when paired with editorial judgment."
+        ]
+      },
+      {
+        title: "OpenAI's latest enterprise notes push remote creative operations closer to always-on",
+        focus: "This is a small release-note item with real operational significance: long-running AI work is becoming easier to supervise, redirect, and automate without living at the same desk.",
+        source: "OpenAI Help Center",
+        date: "May 14, 2026",
+        link: "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+        image: "https://help.openai.com/logo.png",
+        imageAlt: "OpenAI Help Center logo.",
+        paragraphs: [
+          "OpenAI's May 14 enterprise release notes add two practical capabilities worth flagging: Codex remote access from the ChatGPT mobile app and enterprise access tokens for trusted local automation. In plain language, that means longer-running work can keep moving on the host machine while someone checks status, reviews outputs, answers questions, or redirects execution from mobile.",
+          "That will not change the look of the final design by itself. What it can change is the rhythm of production, especially for teams experimenting with repeatable research, editorial prep, asset generation, or workflow automation. The more these systems can stay live, reviewable, and governed, the more they start to resemble production infrastructure instead of one-off experiments."
+        ]
+      }
+    ];
+
+    const campaigns = [
+      {
+        title: "Canva's 'Make Anything A Thing' platform behaves like a brand system, not just a campaign line",
+        source: "Campaign Brief",
+        blurb: "The interesting move is the bridge between absurd cultural spark and practical creation tooling. It sells the platform by dramatizing how an idea becomes a movement.",
+        link: "https://campaignbrief.com/canva-invites-anyone-to-make-anything-a-thing-in-new-brand-platform-via-quality-meats-chicago/"
+      },
+      {
+        title: "HelloFresh's K-Pop Dinner Hunters proves food marketing can borrow fandom mechanics without feeling borrowed",
+        source: "Campaign Brief",
+        blurb: "Worth watching for how it packages product utility inside a culture-first social system rather than a standard convenience message.",
+        link: "https://campaignbrief.com/hellofresh-dials-up-cultural-relevance-in-k-pop-dinner-hunters-campaign-via-we-are-different/"
+      },
+      {
+        title: "Four Seasons Naked Condoms uses AI production for spectacle in service of message cut-through",
+        source: "Campaign Brief",
+        blurb: "A good reminder that AI craft works best when it amplifies a sharp concept. The monsters are memorable because the underlying communication strategy is clear.",
+        link: "https://campaignbrief.com/four-seasons-naked-condoms-takes-on-rising-stis-in-new-ai-driven-campaign-via-emotive/"
+      }
+    ];
+
+    const inspiration = [
+      {
+        title: "Pentagram's identity for The Mosaic Rooms is a study in deliberate instability",
+        source: "Creative Boom",
+        blurb: "A useful reference for systems that need to feel alive and unresolved without becoming inconsistent or incoherent.",
+        link: "https://www.creativeboom.com/news/why-pentagrams-samar-maakaroun-designed-a-logo-that-just-wont-settle/"
+      },
+      {
+        title: "OFFF's DNA-driven identity is a reminder that provenance can become visual logic",
+        source: "Creative Boom",
+        blurb: "The project turns source material into form instead of treating storytelling and typography as separate layers.",
+        link: "https://www.creativeboom.com/news/offf-barcelonas-logo-is-built-on-its-attendees-dna-literally/"
+      },
+      {
+        title: "One Show's design winners are a strong short list for tone, restraint, and craft benchmarking",
+        source: "Campaign Brief",
+        blurb: "Especially worth scanning for the British Airways 'Reflections' mention - a good cue for premium travel storytelling that still feels contemporary.",
+        link: "https://campaignbrief.com/motion-sickness-takes-out-fusion-and-sustainable-development-goals-pencils-at-one-show-2026/"
+      }
+    ];
+
+    const tones = ["tone-a", "tone-b", "tone-c", "tone-d", "tone-e"];
+
+    const storyList = document.getElementById("story-list");
+    const campaignList = document.getElementById("campaign-list");
+    const inspirationList = document.getElementById("inspiration-list");
+    document.getElementById("story-count").textContent = stories.length;
+
+    stories.forEach((story, index) => {
+      const article = document.createElement("article");
+      article.className = `story ${tones[index % tones.length]} ${index % 2 === 1 ? "media-left" : ""}`;
+      article.innerHTML = `
+        <div class="story-inner">
+          <div class="story-copy">
+            <div class="story-kicker">Story ${index + 1}</div>
+            <div class="story-index">${String(index + 1).padStart(2, "0")}</div>
+            <h3>${story.title}</h3>
+            <p class="focus">${story.focus}</p>
+            ${story.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+            <div class="story-meta">
+              <span>${story.source}</span>
+              <span>${story.date}</span>
+            </div>
+            <a class="story-link" href="${story.link}" target="_blank" rel="noreferrer">Read the full story</a>
+          </div>
+          <div class="story-media">
+            <img src="${story.image}" alt="${story.imageAlt}" loading="lazy" />
+            <div class="story-source">
+              <strong>${story.source}</strong>
+              <span>${story.date}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      storyList.appendChild(article);
+    });
+
+    function renderSupportCards(items, mount) {
+      items.forEach((item, index) => {
+        const card = document.createElement("article");
+        card.className = "support-card";
+        card.innerHTML = `
+          <div class="section-kicker">${item.source}</div>
+          <h3>${item.title}</h3>
+          <p>${item.blurb}</p>
+          <a class="support-link" href="${item.link}" target="_blank" rel="noreferrer">Open source</a>
+        `;
+        mount.appendChild(card);
+      });
+    }
+
+    renderSupportCards(campaigns, campaignList);
+    renderSupportCards(inspiration, inspirationList);
+  </script>
+</body>
+</html>
