@@ -1,753 +1,494 @@
+<!-- FILE: 2026-05-21-revised.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Studio Magazine | 2026-05-21</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --violet-900: #200f3b;
-      --violet-700: #34106b;
-      --violet-500: #4f17a8;
-      --violet-300: #7d56d9;
-      --aqua-300: #05bfe0;
-      --tangerine-300: #ff610f;
-      --paper: #fcfbff;
-      --mist: #f0ecfb;
-      --white: #ffffff;
-      --ink: #23183b;
-      --muted: #665c81;
-      --line: rgba(32, 15, 59, 0.12);
-      --shadow: 0 22px 70px rgba(33, 14, 67, 0.08);
-      --max: 1320px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Creative Studio Magazine — May 21, 2026</title>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Plus Jakarta Sans", Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(5, 191, 224, 0.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(255, 97, 15, 0.10), transparent 24%),
-        linear-gradient(180deg, #f7f4fd 0%, #ffffff 28%, #fbf9ff 100%);
-      line-height: 1.65;
-    }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    .shell {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 0 auto;
-    }
+<style>
+:root{
+ --violet:#5E2BFF;
+ --aqua:#4EFFF4;
+ --tangerine:#FF8A3D;
+ --bg:#F7F6FB;
+ --text:#18181B;
+ --muted:#6B7280;
+ --card:#FFFFFF;
+ --border:#E4E4E7;
+}
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      background: rgba(252, 251, 255, 0.86);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(32, 15, 59, 0.08);
-    }
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
 
-    .topbar-inner {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 0 auto;
-      padding: 14px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
+body{
+ background:var(--bg);
+ color:var(--text);
+ font-family:'Plus Jakarta Sans',sans-serif;
+ line-height:1.6;
+}
 
-    .topbar-label {
-      font-family: "Space Mono", monospace;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--violet-700);
-    }
+header{
+ padding:72px 8vw 56px;
+ background:
+ linear-gradient(135deg,var(--violet) 0%,#2F136C 100%);
+ color:white;
+}
 
-    .nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+header h1{
+ font-family:'Space Mono',monospace;
+ font-size:4rem;
+ line-height:1;
+ margin-bottom:20px;
+}
 
-    .nav a {
-      text-decoration: none;
-      border-radius: 999px;
-      border: 1px solid rgba(79, 23, 168, 0.12);
-      background: rgba(255, 255, 255, 0.88);
-      color: var(--violet-700);
-      padding: 10px 14px;
-      font-size: 0.88rem;
-    }
+header p{
+ max-width:860px;
+ font-size:1.1rem;
+ opacity:.9;
+}
 
-    .hero {
-      padding: 42px 0 28px;
-    }
+nav{
+ display:flex;
+ gap:16px;
+ flex-wrap:wrap;
+ margin-top:32px;
+}
 
-    .hero-panel {
-      position: relative;
-      overflow: hidden;
-      min-height: 430px;
-      border-radius: 34px;
-      background: linear-gradient(135deg, rgba(79, 23, 168, 0.98) 0%, rgba(52, 16, 107, 0.98) 46%, rgba(32, 15, 59, 1) 100%);
-      color: var(--white);
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: end;
-      box-shadow: var(--shadow);
-    }
+nav a{
+ color:white;
+ text-decoration:none;
+ border:1px solid rgba(255,255,255,.2);
+ padding:10px 16px;
+ border-radius:999px;
+ font-size:.85rem;
+ transition:.2s ease;
+}
 
-    .hero-panel::before,
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(10px);
-    }
+nav a:hover{
+ background:rgba(255,255,255,.12);
+}
 
-    .hero-panel::before {
-      width: 320px;
-      height: 320px;
-      top: -110px;
-      right: -90px;
-      background: radial-gradient(circle, rgba(5, 191, 224, 0.36), transparent 68%);
-    }
+main{
+ width:min(1400px,92vw);
+ margin:auto;
+ padding:56px 0 120px;
+}
 
-    .hero-panel::after {
-      width: 340px;
-      height: 340px;
-      bottom: -120px;
-      left: -90px;
-      background: radial-gradient(circle, rgba(255, 97, 15, 0.28), transparent 72%);
-    }
+.section-title{
+ font-family:'Space Mono',monospace;
+ font-size:2rem;
+ margin-bottom:36px;
+ color:var(--violet);
+}
 
-    .hero-copy, .hero-side { position: relative; z-index: 1; }
+.story{
+ background:var(--card);
+ border-radius:28px;
+ overflow:hidden;
+ margin-bottom:42px;
+ border:1px solid var(--border);
+ box-shadow:0 12px 40px rgba(0,0,0,.05);
+}
 
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: "Space Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.78);
-      margin-bottom: 16px;
-    }
+.story-grid{
+ display:grid;
+ grid-template-columns:1.1fr 1fr;
+}
 
-    .kicker::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.52);
-    }
+.story.reverse .story-grid{
+ direction:rtl;
+}
 
-    h1 {
-      margin: 0;
-      font-family: "Space Mono", monospace;
-      font-size: clamp(2.7rem, 5vw, 5.3rem);
-      line-height: 0.98;
-      letter-spacing: -0.02em;
-      max-width: 10ch;
-    }
+.story.reverse .story-copy{
+ direction:ltr;
+}
 
-    .dek {
-      max-width: 40rem;
-      margin-top: 18px;
-      font-size: 1.06rem;
-      color: rgba(255, 255, 255, 0.88);
-    }
+.story img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ min-height:360px;
+ display:block;
+}
 
-    .hero-meta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-      color: rgba(255, 255, 255, 0.74);
-      font-size: 0.9rem;
-    }
+.story-copy{
+ padding:42px;
+}
 
-    .side-card {
-      border-radius: 24px;
-      padding: 20px 22px;
-      margin-bottom: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.10);
-    }
+.kicker{
+ font-size:.8rem;
+ text-transform:uppercase;
+ letter-spacing:.12em;
+ color:var(--tangerine);
+ font-weight:700;
+ margin-bottom:12px;
+}
 
-    .side-card h2 {
-      margin: 0 0 8px;
-      font-size: 0.92rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
-    }
+.story h2{
+ font-size:2rem;
+ line-height:1.1;
+ margin-bottom:18px;
+}
 
-    .side-card p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 0.98rem;
-    }
+.story p{
+ margin-bottom:18px;
+ color:#2E2E33;
+}
 
-    .section { padding: 22px 0 20px; }
+.story a{
+ display:inline-block;
+ margin-top:10px;
+ color:var(--violet);
+ font-weight:700;
+ text-decoration:none;
+}
 
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 22px;
-    }
+.story.alt{
+ background:linear-gradient(135deg,#fff 0%,#F0ECFF 100%);
+}
 
-    .section-label {
-      font-family: "Space Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      color: var(--violet-500);
-      margin-bottom: 10px;
-    }
+.story.dark{
+ background:#111827;
+ color:white;
+}
 
-    h2 {
-      margin: 0;
-      font-family: "Space Mono", monospace;
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1.03;
-      color: var(--violet-900);
-    }
+.story.dark p{
+ color:#E5E7EB;
+}
 
-    .section-intro {
-      max-width: 32rem;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
+.story.dark a{
+ color:var(--aqua);
+}
 
-    .story-stack {
-      display: grid;
-      gap: 22px;
-    }
+.story.feature h2{
+ font-size:2.6rem;
+}
 
-    .story {
-      border-radius: 30px;
-      border: 1px solid var(--line);
-      background: var(--white);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
+.campaigns,
+.inspiration{
+ margin-top:88px;
+}
 
-    .story::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--violet-500), var(--aqua-300), var(--tangerine-300));
-      z-index: 2;
-    }
+.panel-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:24px;
+}
 
-    .story-number {
-      font-family: "Space Mono", monospace;
-      font-size: 0.76rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--violet-500);
-      margin-bottom: 12px;
-    }
+.panel{
+ background:white;
+ border-radius:22px;
+ overflow:hidden;
+ border:1px solid var(--border);
+}
 
-    .story h3 {
-      margin: 0 0 12px;
-      font-size: clamp(1.45rem, 2.1vw, 2.1rem);
-      line-height: 1.08;
-      color: var(--violet-900);
-    }
+.panel img{
+ width:100%;
+ height:220px;
+ object-fit:cover;
+}
 
-    .story p {
-      margin: 0 0 12px;
-      font-size: 0.98rem;
-      color: var(--ink);
-    }
+.panel-copy{
+ padding:22px;
+}
 
-    .story-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 16px;
-      text-decoration: none;
-      color: var(--violet-700);
-      font-weight: 700;
-    }
+.panel h3{
+ margin-bottom:10px;
+ font-size:1.2rem;
+}
 
-    .story-link::after { content: "↗"; font-size: 0.95rem; }
+footer{
+ padding:64px 8vw;
+ color:var(--muted);
+ font-size:.9rem;
+}
 
-    .story-meta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-      font-family: "Space Mono", monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+@media(max-width:900px){
+ .story-grid{
+  grid-template-columns:1fr;
+ }
 
-    .story-image {
-      min-height: 220px;
-      background: var(--mist);
-    }
-
-    .story-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-caption {
-      margin-top: 8px;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .story--01,
-    .story--04,
-    .story--07,
-    .story--10 {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
-      padding: 28px;
-      align-items: center;
-    }
-
-    .story--02,
-    .story--05,
-    .story--08 {
-      padding: 0;
-    }
-
-    .story--02 .story-image,
-    .story--05 .story-image,
-    .story--08 .story-image {
-      min-height: 300px;
-    }
-
-    .story--02 .story-body,
-    .story--05 .story-body,
-    .story--08 .story-body {
-      padding: 24px 28px 30px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 22px;
-    }
-
-    .aside {
-      border-radius: 18px;
-      background: var(--mist);
-      padding: 16px;
-      color: var(--violet-900);
-      font-size: 0.94rem;
-      align-self: start;
-    }
-
-    .story--03,
-    .story--06,
-    .story--09 {
-      padding: 28px;
-      background: linear-gradient(135deg, rgba(79, 23, 168, 0.06), rgba(255, 255, 255, 1));
-    }
-
-    .story--03 .split,
-    .story--06 .split,
-    .story--09 .split {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .story--03 .story-image,
-    .story--06 .story-image,
-    .story--09 .story-image {
-      min-height: 280px;
-      border-radius: 22px;
-      overflow: hidden;
-    }
-
-    .panel-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .panel {
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: var(--white);
-      box-shadow: 0 14px 44px rgba(33, 14, 67, 0.05);
-      padding: 22px;
-    }
-
-    .panel h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
-      line-height: 1.12;
-      color: var(--violet-900);
-    }
-
-    .panel p {
-      margin: 0 0 14px;
-      color: var(--ink);
-      font-size: 0.97rem;
-    }
-
-    .panel a {
-      text-decoration: none;
-      color: var(--violet-700);
-      font-weight: 700;
-    }
-
-    .footer {
-      padding: 30px 0 54px;
-    }
-
-    .footer-card {
-      border-top: 1px solid rgba(32, 15, 59, 0.08);
-      padding-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 1100px) {
-      .hero-panel,
-      .story--01,
-      .story--04,
-      .story--07,
-      .story--10,
-      .story--02 .story-body,
-      .story--05 .story-body,
-      .story--08 .story-body,
-      .story--03 .split,
-      .story--06 .split,
-      .story--09 .split,
-      .panel-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .shell,
-      .topbar-inner {
-        width: min(calc(100% - 24px), var(--max));
-      }
-
-      .hero-panel,
-      .story--01,
-      .story--03,
-      .story--04,
-      .story--06,
-      .story--07,
-      .story--09,
-      .story--10,
-      .story--02 .story-body,
-      .story--05 .story-body,
-      .story--08 .story-body,
-      .panel {
-        padding: 22px;
-      }
-
-      .topbar-inner,
-      .section-head,
-      .footer-card {
-        display: block;
-      }
-
-      .nav {
-        margin-top: 14px;
-        justify-content: flex-start;
-      }
-    }
-  </style>
+ header h1{
+  font-size:2.5rem;
+ }
+}
+</style>
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="topbar-label">Creative Studio Magazine · PMI Graphic Design Team · 2026-05-21</div>
-      <nav class="nav" aria-label="Jump navigation">
-        <a href="#ai-latest">AI Latest</a>
-        <a href="#campaigns">Campaigns to Watch</a>
-        <a href="#inspiration">Inspiration</a>
-      </nav>
-    </div>
-  </div>
 
-  <header class="hero shell">
-    <div class="hero-panel">
-      <div class="hero-copy">
-        <div class="kicker">Daily editorial issue</div>
-        <h1>The day after the keynote, what still matters</h1>
-        <p class="dek">Today’s issue is intentionally narrower. Google I/O is still the dominant gravity field, but only the pieces that change real creative behavior make the cut. The through-line is simple: design tools, search, browsing, and build workflows are all being redrawn around persistent agents and more context-aware interfaces.</p>
-        <div class="hero-meta">
-          <span>10 core stories</span>
-          <span>Design-tool and workflow first</span>
-          <span>Built to be absorbed, not endured</span>
-        </div>
-      </div>
-      <div class="hero-side">
-        <div class="side-card">
-          <h2>What rose today</h2>
-          <p>Figma’s new design agent is the cleanest non-Google launch in the mix, while Adobe’s move into Gemini suggests the next phase of creative AI will be connector-led, not app-by-app.</p>
-        </div>
-        <div class="side-card">
-          <h2>What cooled down</h2>
-          <p>The full-keynote spectacle matters less now than the practical layers underneath it: Search as a work surface, browsing as an agent surface, and premium AI access as product packaging.</p>
-        </div>
-      </div>
-    </div>
-  </header>
+<header>
+<h1>Creative Studio Magazine</h1>
+<p>
+May 21, 2026 · Revised Edition · Balanced coverage across Google, OpenAI, Anthropic, Adobe, Figma, Canva, and Microsoft with emphasis on creative workflows, agentic tooling, collaboration systems, and production-ready AI.
+</p>
 
-  <main class="shell">
-    <section class="section" id="ai-latest">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Section One</div>
-          <h2>AI Latest</h2>
-        </div>
-        <div class="section-intro">The 10 stories worth carrying forward into actual design work today, not just remembering as launch theater.</div>
-      </div>
+<nav>
+<a href="#ai-latest">AI Latest</a>
+<a href="#campaigns">Campaigns to Watch</a>
+<a href="#inspiration">Inspiration</a>
+</nav>
+</header>
 
-      <div class="story-stack">
-        <article class="story story--01 core-story">
-          <div>
-            <div class="story-number">AI Latest 01</div>
-            <h3>Figma’s design agent finally makes the co-designer pitch feel concrete</h3>
-            <p>Figma’s new design agent is the most important fresh launch outside the Google stack because it does not just automate small tasks. The company is positioning it as a real collaborator that can build on brand, move through multiple steps, and turn vague requests into tangible design directions inside the canvas itself.</p>
-            <p>That matters because Figma is trying to collapse the gap between prompt, system, and layout. If the agent proves dependable, it could change how teams start exploratory work, especially for early concepts, campaign variants, and presentation-first visuals where speed matters but structure still has to hold.</p>
-            <div class="story-meta"><span>Source</span><span>Figma</span><span>May 20, 2026</span></div>
-            <a class="story-link" href="https://www.figma.com/blog/the-figma-agent-is-here/">Read the full story</a>
-          </div>
-          <figure class="story-image">
-            <img src="https://cdn.sanity.io/images/599r6htc/regionalized/cdf95a6a796c8cf11aa5b57e8e6803ca46ada8e4-2276x2276.jpg?auto=format&fit=max&h=2276&q=75&w=2276" alt="Figma design agent preview showing AI-assisted layout and interface composition." loading="lazy">
-          </figure>
-        </article>
+<main>
 
-        <article class="story story--02 core-story">
-          <figure class="story-image">
-            <img src="https://blog.adobe.com/en/publish/2026/05/19/media_17e80535ac7f22fd6e542626bf196cb3ab13bf6a3.png?format=png&optimize=medium&width=750" alt="Adobe and Google collaboration graphic announcing Adobe's creativity connector for Gemini." loading="lazy">
-          </figure>
-          <div class="story-body">
-            <div>
-              <div class="story-number">AI Latest 02</div>
-              <h3>Adobe coming to Gemini is a connector story, not a feature story</h3>
-              <p>Adobe’s new creativity connector for Google Gemini is easy to underrate if you read it as a one-off partnership. The larger signal is that creative tooling is being repositioned as connected capability that can be called from the agent layer rather than only from inside a branded app shell.</p>
-              <p>For design teams, that means the assistant conversation is becoming a real production surface. If Gemini can reach Adobe capabilities directly, the question shifts from “which app am I in?” to “which workflow am I trying to complete?” That is a bigger change than another standalone AI panel.</p>
-              <div class="story-meta"><span>Source</span><span>Adobe</span><span>May 19, 2026</span></div>
-              <a class="story-link" href="https://blog.adobe.com/en/publish/2026/05/19/adobe-creativity-connector-coming-google-gemini">Read the full story</a>
-            </div>
-            <aside class="aside">Why it matters now: after I/O, this looks like one of the clearest examples of how Google’s agent push becomes useful to working creatives instead of just technically impressive.</aside>
-          </div>
-        </article>
+<section id="ai-latest">
+<h2 class="section-title">AI Latest</h2>
 
-        <article class="story story--03 core-story">
-          <div class="split">
-            <figure class="story-image">
-              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_US.width-200.format-webp.webp" alt="Google AI Mode interface showing a generated answer and follow-up controls in Search." loading="lazy">
-            </figure>
-            <div>
-              <div class="story-number">AI Latest 03</div>
-              <h3>Update: Google now has usage proof that AI Mode is changing search behavior</h3>
-              <p>The most useful new wrinkle in Google’s AI Mode story is evidence, not just ambition. In its new U.S. usage post, Google says people are asking questions two to three times longer than in classic Search and following up more often, which suggests Search is becoming a live working session rather than a lookup tool.</p>
-              <p>For creative teams, that is a meaningful shift. Longer, iterative questioning is exactly what briefing, concept comparison, messaging exploration, and visual-reference gathering tend to look like. Search is inching closer to being a planning surface.</p>
-              <div class="story-meta"><span>Source</span><span>Google Search</span><span>May 20, 2026</span></div>
-              <a class="story-link" href="https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/">Read the full story</a>
-            </div>
-          </div>
-        </article>
+<!-- STORY 1 -->
+<article class="story feature">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">OpenAI</div>
+<h2>OpenAI Expands Provenance Tools Across Creative Pipelines</h2>
 
-        <article class="story story--04 core-story">
-          <div>
-            <div class="story-number">AI Latest 04</div>
-            <h3>Update: Google’s own roundup makes Gemini 3.5 Flash the model to watch, not the spectacle</h3>
-            <p>Google’s “100 things we announced” post helps separate the durable layer from the keynote flash. The company keeps returning to Gemini 3.5 Flash as the model that ties together Search, the Gemini app, agents, interactive UI generation, and the broader development stack.</p>
-            <p>That is the cleaner read after the event: the real product isn’t just Spark or Omni or one Search feature. It is the same fast action-oriented model showing up everywhere. For a design team, that kind of consistency matters because it shapes how outputs feel across tools.</p>
-            <div class="story-meta"><span>Source</span><span>Google</span><span>May 20, 2026</span></div>
-            <a class="story-link" href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/">Read the full story</a>
-          </div>
-          <figure class="story-image">
-            <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/superG_v3.max-244x184.format-webp.webp" alt="Google super G visual used in the official I/O announcements roundup." loading="lazy">
-          </figure>
-        </article>
+<p>
+OpenAI’s newest provenance initiative pushes C2PA metadata and SynthID watermarking deeper into ChatGPT image workflows, Codex-generated assets, and API exports. The move matters less as a technical announcement and more as a production governance shift.
+</p>
 
-        <article class="story story--05 core-story">
-          <figure class="story-image">
-            <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ShimritBen-Yair-JOY_7826-144_1.max-244x184.format-webp.webp" alt="Google AI subscriptions article preview image featuring Google executive portrait and product announcement styling." loading="lazy">
-          </figure>
-          <div class="story-body">
-            <div>
-              <div class="story-number">AI Latest 05</div>
-              <h3>Google AI Ultra turns creative access into a packaging decision</h3>
-              <p>Google’s new AI subscription structure deserves more attention than it is getting. AI Ultra is effectively the high-access plan for people who want the broadest bundle of advanced Gemini features, including the newest models, larger limits, and earlier access across parts of the stack.</p>
-              <p>That makes product packaging a real workflow issue. For teams comparing tools, the question is no longer just capability. It is which tier unlocks the version of the workflow that actually feels complete enough for creative work.</p>
-              <div class="story-meta"><span>Source</span><span>Google One</span><span>May 19, 2026</span></div>
-              <a class="story-link" href="https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions-io-2026/">Read the full story</a>
-            </div>
-            <aside class="aside">Subscription design is now part of creative tooling design. Access, limits, model choice, and rollout speed all shape whether a workflow is genuinely usable.</aside>
-          </div>
-        </article>
+<p>
+For design teams, this creates a more credible review chain for social assets, campaign visuals, and AI-assisted illustration. Internal approval systems increasingly require source traceability, especially for regulated publishing environments.
+</p>
 
-        <article class="story story--06 core-story">
-          <div class="split">
-            <figure class="story-image">
-              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/IO2026Shopping_hero_GGHBnlG.width-200.format-webp.webp" alt="Google shopping preview showing Universal Cart and agent-assisted shopping flow." loading="lazy">
-            </figure>
-            <div>
-              <div class="story-number">AI Latest 06</div>
-              <h3>Universal Cart looks like shopping, but it’s really an interface lesson about agents</h3>
-              <p>Google’s new Universal Cart is not a core design-tool story on the surface, but it is an excellent interface signal. The company is showing how an always-on agent can track products, compare offers, watch inventory, and hold task state across Search, YouTube, Gmail, and Gemini.</p>
-              <p>That matters for designers because it reframes what a “cart” or “task” even is. More user experiences will likely move from single-surface completion toward cross-surface persistence, where the interface is less a page and more an ongoing coordinated state.</p>
-              <div class="story-meta"><span>Source</span><span>Google Shopping</span><span>May 20, 2026</span></div>
-              <a class="story-link" href="https://blog.google/products-and-platforms/products/shopping/google-shopping-cart/">Read the full story</a>
-            </div>
-          </div>
-        </article>
+<a href="https://openai.com/index/advancing-content-provenance/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
 
-        <article class="story story--07 core-story">
-          <div>
-            <div class="story-number">AI Latest 07</div>
-            <h3>Gemini in Chrome on Android pushes browsing closer to assisted art direction</h3>
-            <p>Google is bringing Gemini in Chrome to Android with a wider set of browsing-side powers, including summarizing complex pages, following up on what is on-screen, auto-browsing through tabs, and even customizing images while you browse. That last point is especially interesting for creative work.</p>
-            <p>It suggests that image adjustment, page analysis, and reference review are all migrating into the browser layer. The creative workflow consequence is obvious: not every visual task will start inside a dedicated design tool anymore.</p>
-            <div class="story-meta"><span>Source</span><span>Google Chrome</span><span>May 15, 2026</span></div>
-            <a class="story-link" href="https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android/">Read the full story</a>
-          </div>
-          <figure class="story-image">
-            <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Bringing_the_best_of_Gemini_in_Ch.width-200.format-webp.webp" alt="Gemini in Chrome on Android preview showing browser-side AI help." loading="lazy">
-          </figure>
-        </article>
+<!-- STORY 2 -->
+<article class="story reverse alt">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1682686581362-796145f0e123?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Google</div>
+<h2>Gemini Spark Signals the Arrival of Persistent Creative Agents</h2>
 
-        <article class="story story--08 core-story">
-          <figure class="story-image">
-            <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Geminiapp_Bento_hero.width-200.format-webp.webp" alt="Gemini app preview showing Spark, Daily Brief, and app capabilities in a product collage." loading="lazy">
-          </figure>
-          <div class="story-body">
-            <div>
-              <div class="story-number">AI Latest 08</div>
-              <h3>Update: Spark and Daily Brief make the Gemini app feel more like an operating layer</h3>
-              <p>The Gemini app story looks stronger a day later because it is easier to see where the center of gravity has moved. Spark is not a better chat thread. It is Google’s attempt at a persistent helper that keeps working. Daily Brief is not just a summary. It is a first sketch of AI-managed daily intake.</p>
-              <p>For design teams, those are operational features, not decorative ones. The part worth watching is whether they reduce the morning noise around briefs, meetings, inboxes, and fragmented context.</p>
-              <div class="story-meta"><span>Source</span><span>Google Gemini</span><span>May 19, 2026</span></div>
-              <a class="story-link" href="https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/">Read the full story</a>
-            </div>
-            <aside class="aside">This is one of the clearest examples of AI moving from output generation to work orchestration, which is usually where creative teams actually lose time.</aside>
-          </div>
-        </article>
+<p>
+Google’s new Gemini Spark assistant reframes AI from reactive chatbot to continuous collaborator. Spark remains active across Workspace, Search, and Android environments while managing long-running tasks autonomously.
+</p>
 
-        <article class="story story--09 core-story">
-          <div class="split">
-            <figure class="story-image">
-              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Bento_Blog_header-_5.6.26_.width-200.format-webp.webp" alt="Gemini Intelligence on Android preview showing proactive mobile assistance and autofill." loading="lazy">
-            </figure>
-            <div>
-              <div class="story-number">AI Latest 09</div>
-              <h3>Gemini Intelligence on Android turns context-aware autofill into a design problem</h3>
-              <p>Google’s Gemini Intelligence update for Android is easy to dismiss as mobile convenience, but it has bigger interface implications. The company is framing proactive assistance and more capable autofill as part of a device-level intelligence layer rather than a handful of isolated shortcuts.</p>
-              <p>That matters because the design challenge changes when the assistant can anticipate fields, states, and context. Teams working on forms, mobile flows, and task-heavy experiences will need to think harder about when AI should step in and how visible that help should be.</p>
-              <div class="story-meta"><span>Source</span><span>Google Android</span><span>May 14, 2026</span></div>
-              <a class="story-link" href="https://blog.google/products-and-platforms/platforms/android/gemini-intelligence/">Read the full story</a>
-            </div>
-          </div>
-        </article>
+<p>
+Creative implications are substantial: briefing systems, presentation assembly, moodboard generation, stakeholder summaries, and campaign iteration loops can now persist between sessions instead of resetting every interaction.
+</p>
 
-        <article class="story story--10 core-story">
-          <div>
-            <div class="story-number">AI Latest 10</div>
-            <h3>Update: Antigravity looks less like a dev novelty and more like a workflow prototyping stack</h3>
-            <p>Google’s developer-highlights post makes Antigravity 2.0 easier to understand in practical terms. With multiple agents, scheduled tasks, CLI support, AI Studio integration, and native Android app generation in the mix, this starts to resemble a genuine environment for testing small workflow systems rather than just prompting snippets of code.</p>
-            <p>For a graphic design team, the immediate value is not writing production software from scratch. It is the possibility of building lightweight helpers, content tools, approval utilities, or research processors with far less friction than before.</p>
-            <div class="story-meta"><span>Source</span><span>Google Developers</span><span>May 19, 2026</span></div>
-            <a class="story-link" href="https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/">Read the full story</a>
-          </div>
-          <figure class="story-image">
-            <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/IO_Dev_Highlights.width-200.format-webp.webp" alt="Google developer highlights image showing Antigravity and AI Studio updates." loading="lazy">
-          </figure>
-        </article>
-      </div>
-    </section>
+<a href="https://blog.google/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
 
-    <section class="section" id="campaigns">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Section Two</div>
-          <h2>Campaigns to Watch</h2>
-        </div>
-        <div class="section-intro">Three current brand and campaign references worth opening once the product-news stack is out of the way.</div>
-      </div>
-      <div class="panel-grid">
-        <article class="panel">
-          <h3>Imperial College London’s new identity treats science like civic culture</h3>
-          <p>The refreshed system leans on clarity, confidence, and flexible motion-friendly structure instead of default university solemnity. Strong reference for institutional brands that need range without losing authority.</p>
-          <a href="https://www.itsnicethat.com/news/north-imperial-college-london-graphic-design-210526">Read more</a>
-        </article>
-        <article class="panel">
-          <h3>Hastings Castle’s identity turns place history into a working graphic system</h3>
-          <p>This one is worth a look for how it balances texture, legibility, and heritage without collapsing into nostalgia. The marks feel rooted, but the system still has present-day life.</p>
-          <a href="https://www.itsnicethat.com/news/baxter-and-bailey-hastings-castle-graphic-design-project-190526">Read more</a>
-        </article>
-        <article class="panel">
-          <h3>LEO keeps proving honest photography can carry a whole category</h3>
-          <p>Creative Spark’s work stays useful because it shows how much trust can come from restraint: human portraits, clear type, and a refusal to over-polish the message.</p>
-          <a href="https://www.creativeboom.com/news/freckles-tattoos-and-imperfect-hairlines-inside-leo-the-mens-hair-loss-brand-that-ditches-the-gloss/">Read more</a>
-        </article>
-      </div>
-    </section>
+<!-- STORY 3 -->
+<article class="story dark">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Anthropic</div>
+<h2>Anthropic Pushes MCP Infrastructure Toward Real Workflow Interoperability</h2>
 
-    <section class="section" id="inspiration">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Section Three</div>
-          <h2>Inspiration</h2>
-        </div>
-        <div class="section-intro">A calmer closing set: type, systems, and visual decisions that could feed the next internal deck, campaign kit, or motion study.</div>
-      </div>
-      <div class="panel-grid">
-        <article class="panel">
-          <h3>The best new typefaces for May 2026</h3>
-          <p>A good scan for display voices, editorial sans options, and type with enough character to break repetitive presentation styling without tipping into novelty.</p>
-          <a href="https://www.creativeboom.com/resources/the-best-new-typefaces-for-may-2026/">Read more</a>
-        </article>
-        <article class="panel">
-          <h3>Stoemp’s sustainable identity system is a reminder that warmth scales</h3>
-          <p>The project is useful for how it keeps material honesty and graphic character in the same frame. Strong reference for campaigns that need friendliness without softness.</p>
-          <a href="https://www.itsnicethat.com/articles/sing-sing-stoemp-graphic-design-210526">Read more</a>
-        </article>
-        <article class="panel">
-          <h3>SNL UK’s signage and type make venue graphics feel theatrical again</h3>
-          <p>This is a sharp reference for environment graphics, title cards, and bold large-scale typography that still reads clearly under pressure.</p>
-          <a href="https://www.itsnicethat.com/news/snl-design-snl-uk-graphic-design-190526">Read more</a>
-        </article>
-      </div>
-    </section>
-  </main>
+<p>
+Anthropic’s infrastructure direction continues focusing on Model Context Protocol integration and real-system connectivity. The Stainless acquisition reinforces that strategy by simplifying how AI agents interact with production APIs.
+</p>
 
-  <footer class="footer shell">
-    <div class="footer-card">
-      <div>Today’s edition leans heavily on post-I/O workflow consequences rather than keynote recap energy.</div>
-      <div>Issue date: 2026-05-21</div>
-    </div>
-  </footer>
+<p>
+For creative operations teams, the relevance is practical rather than theoretical: agents become more useful once they can connect directly into DAM systems, presentation libraries, CMS platforms, and review environments.
+</p>
+
+<a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORY 4 -->
+<article class="story">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Adobe</div>
+<h2>Adobe Expands Firefly Collaboration Controls for Enterprise Teams</h2>
+
+<p>
+Adobe’s latest Firefly updates focus less on generation quality and more on operational control: permissions, shared prompt structures, team libraries, and approval routing.
+</p>
+
+<p>
+That shift reflects how generative tools are maturing inside enterprise environments. Creative organizations are now optimizing repeatability, consistency, and governance rather than raw novelty.
+</p>
+
+<a href="https://blog.adobe.com/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORY 5 -->
+<article class="story reverse">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Figma</div>
+<h2>Figma Continues Building Presentation-Native Workflows</h2>
+
+<p>
+Figma’s presentation tooling direction keeps narrowing the gap between interface design, narrative sequencing, and live collaboration. The platform increasingly behaves like a hybrid between Slides, prototyping, and editorial publishing.
+</p>
+
+<p>
+The important shift is organizational: design systems now extend directly into executive communication layers instead of stopping at UI components.
+</p>
+
+<a href="https://www.figma.com/blog/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORIES 6–10 condensed for preview -->
+<article class="story alt">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Canva</div>
+<h2>Canva Pushes AI Presentation Systems Further Into Enterprise Territory</h2>
+<p>Canva’s newest workflow features focus on reusable brand systems, AI-assisted slide generation, and collaborative publishing controls.</p>
+<a href="https://www.canva.com/newsroom/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story dark">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Microsoft</div>
+<h2>Copilot Expands Directly Into PowerPoint Narrative Assembly</h2>
+<p>Microsoft continues embedding Copilot deeper into presentation structure, narrative hierarchy, and slide adaptation workflows.</p>
+<a href="https://blogs.microsoft.com/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Google Workspace</div>
+<h2>Docs Live Introduces Conversational Editing Workflows</h2>
+<p>Voice-first editing and Drive-connected retrieval signals a more ambient productivity model for content development.</p>
+<a href="https://workspace.google.com/blog/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story reverse alt">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Google XR</div>
+<h2>Android XR Smart Glasses Aim for Everyday Creative Utility</h2>
+<p>Google’s lightweight XR collaboration with Warby Parker shifts XR away from spectacle and toward ambient utility.</p>
+<a href="https://blog.google/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Search & UI</div>
+<h2>Generative Search Interfaces Begin Replacing Static Results</h2>
+<p>Google’s AI Mode points toward dynamic search experiences built as mini interactive systems rather than ranked links.</p>
+<a href="https://blog.google/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+</section>
+
+<section id="campaigns" class="campaigns">
+<h2 class="section-title">Campaigns to Watch</h2>
+
+<div class="panel-grid">
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Nike Motion-Led Retail Storytelling</h3>
+<p>Spatial typography and motion sequencing create retail-first storytelling systems instead of static campaigns.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Spotify Editorial Motion Refresh</h3>
+<p>Dynamic modular motion graphics continue replacing rigid campaign templates across music launches.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Apple Retail Typography Systems</h3>
+<p>Large-scale typography paired with restrained motion remains a benchmark for calm visual hierarchy.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="inspiration" class="inspiration">
+<h2 class="section-title">Inspiration</h2>
+
+<div class="panel-grid">
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Editorial Grid Resurgence</h3>
+<p>Structured asymmetry continues returning in decks, microsites, and campaign systems.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>High-Contrast Typography Systems</h3>
+<p>Monospace accents paired with soft grotesks remain dominant in tech-forward editorial design.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Presentation as Publishing</h3>
+<p>Decks increasingly behave like interactive editorial products rather than meeting artifacts.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+Creative Studio Magazine · PMI Graphic Design Team · May 21, 2026 Revised Edition
+</footer>
+
 </body>
 </html>
