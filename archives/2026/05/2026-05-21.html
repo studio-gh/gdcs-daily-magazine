@@ -1,0 +1,494 @@
+<!-- FILE: 2026-05-21-revised.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Creative Studio Magazine — May 21, 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --violet:#5E2BFF;
+ --aqua:#4EFFF4;
+ --tangerine:#FF8A3D;
+ --bg:#F7F6FB;
+ --text:#18181B;
+ --muted:#6B7280;
+ --card:#FFFFFF;
+ --border:#E4E4E7;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ background:var(--bg);
+ color:var(--text);
+ font-family:'Plus Jakarta Sans',sans-serif;
+ line-height:1.6;
+}
+
+header{
+ padding:72px 8vw 56px;
+ background:
+ linear-gradient(135deg,var(--violet) 0%,#2F136C 100%);
+ color:white;
+}
+
+header h1{
+ font-family:'Space Mono',monospace;
+ font-size:4rem;
+ line-height:1;
+ margin-bottom:20px;
+}
+
+header p{
+ max-width:860px;
+ font-size:1.1rem;
+ opacity:.9;
+}
+
+nav{
+ display:flex;
+ gap:16px;
+ flex-wrap:wrap;
+ margin-top:32px;
+}
+
+nav a{
+ color:white;
+ text-decoration:none;
+ border:1px solid rgba(255,255,255,.2);
+ padding:10px 16px;
+ border-radius:999px;
+ font-size:.85rem;
+ transition:.2s ease;
+}
+
+nav a:hover{
+ background:rgba(255,255,255,.12);
+}
+
+main{
+ width:min(1400px,92vw);
+ margin:auto;
+ padding:56px 0 120px;
+}
+
+.section-title{
+ font-family:'Space Mono',monospace;
+ font-size:2rem;
+ margin-bottom:36px;
+ color:var(--violet);
+}
+
+.story{
+ background:var(--card);
+ border-radius:28px;
+ overflow:hidden;
+ margin-bottom:42px;
+ border:1px solid var(--border);
+ box-shadow:0 12px 40px rgba(0,0,0,.05);
+}
+
+.story-grid{
+ display:grid;
+ grid-template-columns:1.1fr 1fr;
+}
+
+.story.reverse .story-grid{
+ direction:rtl;
+}
+
+.story.reverse .story-copy{
+ direction:ltr;
+}
+
+.story img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ min-height:360px;
+ display:block;
+}
+
+.story-copy{
+ padding:42px;
+}
+
+.kicker{
+ font-size:.8rem;
+ text-transform:uppercase;
+ letter-spacing:.12em;
+ color:var(--tangerine);
+ font-weight:700;
+ margin-bottom:12px;
+}
+
+.story h2{
+ font-size:2rem;
+ line-height:1.1;
+ margin-bottom:18px;
+}
+
+.story p{
+ margin-bottom:18px;
+ color:#2E2E33;
+}
+
+.story a{
+ display:inline-block;
+ margin-top:10px;
+ color:var(--violet);
+ font-weight:700;
+ text-decoration:none;
+}
+
+.story.alt{
+ background:linear-gradient(135deg,#fff 0%,#F0ECFF 100%);
+}
+
+.story.dark{
+ background:#111827;
+ color:white;
+}
+
+.story.dark p{
+ color:#E5E7EB;
+}
+
+.story.dark a{
+ color:var(--aqua);
+}
+
+.story.feature h2{
+ font-size:2.6rem;
+}
+
+.campaigns,
+.inspiration{
+ margin-top:88px;
+}
+
+.panel-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:24px;
+}
+
+.panel{
+ background:white;
+ border-radius:22px;
+ overflow:hidden;
+ border:1px solid var(--border);
+}
+
+.panel img{
+ width:100%;
+ height:220px;
+ object-fit:cover;
+}
+
+.panel-copy{
+ padding:22px;
+}
+
+.panel h3{
+ margin-bottom:10px;
+ font-size:1.2rem;
+}
+
+footer{
+ padding:64px 8vw;
+ color:var(--muted);
+ font-size:.9rem;
+}
+
+@media(max-width:900px){
+ .story-grid{
+  grid-template-columns:1fr;
+ }
+
+ header h1{
+  font-size:2.5rem;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Creative Studio Magazine</h1>
+<p>
+May 21, 2026 · Revised Edition · Balanced coverage across Google, OpenAI, Anthropic, Adobe, Figma, Canva, and Microsoft with emphasis on creative workflows, agentic tooling, collaboration systems, and production-ready AI.
+</p>
+
+<nav>
+<a href="#ai-latest">AI Latest</a>
+<a href="#campaigns">Campaigns to Watch</a>
+<a href="#inspiration">Inspiration</a>
+</nav>
+</header>
+
+<main>
+
+<section id="ai-latest">
+<h2 class="section-title">AI Latest</h2>
+
+<!-- STORY 1 -->
+<article class="story feature">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">OpenAI</div>
+<h2>OpenAI Expands Provenance Tools Across Creative Pipelines</h2>
+
+<p>
+OpenAI’s newest provenance initiative pushes C2PA metadata and SynthID watermarking deeper into ChatGPT image workflows, Codex-generated assets, and API exports. The move matters less as a technical announcement and more as a production governance shift.
+</p>
+
+<p>
+For design teams, this creates a more credible review chain for social assets, campaign visuals, and AI-assisted illustration. Internal approval systems increasingly require source traceability, especially for regulated publishing environments.
+</p>
+
+<a href="https://openai.com/index/advancing-content-provenance/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORY 2 -->
+<article class="story reverse alt">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1682686581362-796145f0e123?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Google</div>
+<h2>Gemini Spark Signals the Arrival of Persistent Creative Agents</h2>
+
+<p>
+Google’s new Gemini Spark assistant reframes AI from reactive chatbot to continuous collaborator. Spark remains active across Workspace, Search, and Android environments while managing long-running tasks autonomously.
+</p>
+
+<p>
+Creative implications are substantial: briefing systems, presentation assembly, moodboard generation, stakeholder summaries, and campaign iteration loops can now persist between sessions instead of resetting every interaction.
+</p>
+
+<a href="https://blog.google/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORY 3 -->
+<article class="story dark">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Anthropic</div>
+<h2>Anthropic Pushes MCP Infrastructure Toward Real Workflow Interoperability</h2>
+
+<p>
+Anthropic’s infrastructure direction continues focusing on Model Context Protocol integration and real-system connectivity. The Stainless acquisition reinforces that strategy by simplifying how AI agents interact with production APIs.
+</p>
+
+<p>
+For creative operations teams, the relevance is practical rather than theoretical: agents become more useful once they can connect directly into DAM systems, presentation libraries, CMS platforms, and review environments.
+</p>
+
+<a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORY 4 -->
+<article class="story">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Adobe</div>
+<h2>Adobe Expands Firefly Collaboration Controls for Enterprise Teams</h2>
+
+<p>
+Adobe’s latest Firefly updates focus less on generation quality and more on operational control: permissions, shared prompt structures, team libraries, and approval routing.
+</p>
+
+<p>
+That shift reflects how generative tools are maturing inside enterprise environments. Creative organizations are now optimizing repeatability, consistency, and governance rather than raw novelty.
+</p>
+
+<a href="https://blog.adobe.com/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORY 5 -->
+<article class="story reverse">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Figma</div>
+<h2>Figma Continues Building Presentation-Native Workflows</h2>
+
+<p>
+Figma’s presentation tooling direction keeps narrowing the gap between interface design, narrative sequencing, and live collaboration. The platform increasingly behaves like a hybrid between Slides, prototyping, and editorial publishing.
+</p>
+
+<p>
+The important shift is organizational: design systems now extend directly into executive communication layers instead of stopping at UI components.
+</p>
+
+<a href="https://www.figma.com/blog/" target="_blank">
+Read the full story →
+</a>
+</div>
+</div>
+</article>
+
+<!-- STORIES 6–10 condensed for preview -->
+<article class="story alt">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Canva</div>
+<h2>Canva Pushes AI Presentation Systems Further Into Enterprise Territory</h2>
+<p>Canva’s newest workflow features focus on reusable brand systems, AI-assisted slide generation, and collaborative publishing controls.</p>
+<a href="https://www.canva.com/newsroom/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story dark">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Microsoft</div>
+<h2>Copilot Expands Directly Into PowerPoint Narrative Assembly</h2>
+<p>Microsoft continues embedding Copilot deeper into presentation structure, narrative hierarchy, and slide adaptation workflows.</p>
+<a href="https://blogs.microsoft.com/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Google Workspace</div>
+<h2>Docs Live Introduces Conversational Editing Workflows</h2>
+<p>Voice-first editing and Drive-connected retrieval signals a more ambient productivity model for content development.</p>
+<a href="https://workspace.google.com/blog/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story reverse alt">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Google XR</div>
+<h2>Android XR Smart Glasses Aim for Everyday Creative Utility</h2>
+<p>Google’s lightweight XR collaboration with Warby Parker shifts XR away from spectacle and toward ambient utility.</p>
+<a href="https://blog.google/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+<article class="story">
+<div class="story-grid">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="">
+<div class="story-copy">
+<div class="kicker">Search & UI</div>
+<h2>Generative Search Interfaces Begin Replacing Static Results</h2>
+<p>Google’s AI Mode points toward dynamic search experiences built as mini interactive systems rather than ranked links.</p>
+<a href="https://blog.google/" target="_blank">Read the full story →</a>
+</div>
+</div>
+</article>
+
+</section>
+
+<section id="campaigns" class="campaigns">
+<h2 class="section-title">Campaigns to Watch</h2>
+
+<div class="panel-grid">
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Nike Motion-Led Retail Storytelling</h3>
+<p>Spatial typography and motion sequencing create retail-first storytelling systems instead of static campaigns.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Spotify Editorial Motion Refresh</h3>
+<p>Dynamic modular motion graphics continue replacing rigid campaign templates across music launches.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Apple Retail Typography Systems</h3>
+<p>Large-scale typography paired with restrained motion remains a benchmark for calm visual hierarchy.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="inspiration" class="inspiration">
+<h2 class="section-title">Inspiration</h2>
+
+<div class="panel-grid">
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Editorial Grid Resurgence</h3>
+<p>Structured asymmetry continues returning in decks, microsites, and campaign systems.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>High-Contrast Typography Systems</h3>
+<p>Monospace accents paired with soft grotesks remain dominant in tech-forward editorial design.</p>
+</div>
+</div>
+
+<div class="panel">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="panel-copy">
+<h3>Presentation as Publishing</h3>
+<p>Decks increasingly behave like interactive editorial products rather than meeting artifacts.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+Creative Studio Magazine · PMI Graphic Design Team · May 21, 2026 Revised Edition
+</footer>
+
+</body>
+</html>
