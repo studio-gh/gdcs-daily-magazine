@@ -1,801 +1,655 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Studio Magazine | 2026-05-28</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creative Studio Magazine - May 29, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --violet-700: #3d0d85;
-      --violet-600: #4f17a8;
-      --violet-500: #6f39cf;
-      --aqua-400: #05bfe0;
-      --aqua-200: #d8fbff;
-      --tangerine-400: #ff610f;
-      --tangerine-200: #ffe0cf;
-      --ink: #200f3b;
-      --paper: #fffdfb;
-      --mist: #f4f1fb;
-      --fog: #ece7f7;
-      --line: rgba(32, 15, 59, 0.12);
+      --violet: #4f17a8;
+      --violet-900: #200f3b;
+      --violet-100: #f0e9ff;
+      --aqua: #05bfe0;
+      --tangerine: #ff610f;
+      --paper: #fffaf3;
       --white: #ffffff;
-      --shadow: 0 18px 48px rgba(48, 19, 94, 0.12);
-      --max: 1180px;
-      --radius-lg: 28px;
-      --radius-md: 20px;
-      --radius-sm: 14px;
+      --ink: #200f3b;
+      --muted: #665875;
+      --line: rgba(79, 23, 168, 0.18);
+      --shadow: 0 24px 70px rgba(32, 15, 59, 0.13);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Plus Jakarta Sans", sans-serif;
+      background: var(--paper);
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(5, 191, 224, 0.14), transparent 26%),
-        radial-gradient(circle at top right, rgba(255, 97, 15, 0.10), transparent 20%),
-        linear-gradient(180deg, #f7f3ff 0%, #fffdfb 34%, #fff9f5 100%);
-      line-height: 1.62;
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
+      line-height: 1.6;
     }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: var(--violet-700);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 3px;
-    }
-
-    .shell {
-      width: min(calc(100% - 32px), var(--max));
+    .issue {
+      max-width: 1480px;
       margin: 0 auto;
+      background: linear-gradient(180deg, #fffaf3 0%, #ffffff 36%, #fffaf3 100%);
     }
 
-    .hero {
-      padding: 38px 0 28px;
-    }
-
-    .hero-panel {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(79, 23, 168, 0.98), rgba(61, 13, 133, 0.98));
+    .masthead {
+      min-height: 84vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      gap: 42px;
+      padding: 54px clamp(22px, 4vw, 72px) 42px;
+      background:
+        linear-gradient(135deg, rgba(79, 23, 168, 0.96), rgba(32, 15, 59, 0.94)),
+        radial-gradient(circle at 74% 20%, rgba(5, 191, 224, 0.34), transparent 32%),
+        radial-gradient(circle at 88% 86%, rgba(255, 97, 15, 0.26), transparent 28%);
       color: var(--white);
-      border-radius: 34px;
-      padding: 34px;
-      box-shadow: var(--shadow);
+      border-bottom: 10px solid var(--aqua);
     }
 
-    .hero-panel::before,
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      pointer-events: none;
-    }
-
-    .hero-panel::before {
-      width: 260px;
-      height: 260px;
-      right: -64px;
-      top: -80px;
-      background: rgba(5, 191, 224, 0.18);
-    }
-
-    .hero-panel::after {
-      width: 220px;
-      height: 220px;
-      left: -56px;
-      bottom: -98px;
-      background: rgba(255, 97, 15, 0.14);
-    }
-
-    .eyebrow,
-    .story-kicker,
-    .section-kicker,
-    .source,
-    .update-flag {
+    .kicker, .meta, .label, .story-number, .tag, nav a, .caption {
       font-family: "Space Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0;
     }
 
-    .eyebrow {
+    .kicker {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.78rem;
+      gap: 12px;
       padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.38);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      margin-bottom: 18px;
+      font-size: 13px;
+      text-transform: uppercase;
     }
 
-    h1,
-    h2,
-    h3 {
+    .kicker::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--aqua);
+      box-shadow: 18px 0 0 var(--tangerine);
+    }
+
+    h1, h2, h3 {
       margin: 0;
-      line-height: 1.05;
+      line-height: 1.02;
+      letter-spacing: 0;
     }
 
     h1 {
+      max-width: 930px;
+      margin-top: 86px;
       font-family: "Space Mono", monospace;
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
-      max-width: 12ch;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1.35fr 0.9fr;
-      align-items: end;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-copy p,
-    .intro-note p,
-    .story-body p,
-    .section-body p,
-    .inspo-body p {
-      margin: 0;
-      font-size: 1.01rem;
-    }
-
-    .hero-copy p + p,
-    .story-body p + p,
-    .section-body p + p,
-    .inspo-body p + p {
-      margin-top: 14px;
-    }
-
-    .hero-aside {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 24px;
-      padding: 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-aside ul {
-      margin: 12px 0 0;
-      padding-left: 18px;
-    }
-
-    .hero-aside li + li {
-      margin-top: 10px;
-    }
-
-    .jump-nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(255, 253, 251, 0.86);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .jump-wrap {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      flex-wrap: wrap;
-    }
-
-    .jump-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .jump-links a {
-      text-decoration: none;
-      color: var(--ink);
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 0.92rem;
+      font-size: clamp(56px, 8vw, 128px);
       font-weight: 700;
     }
 
-    .jump-links a:hover,
-    .read-link:hover {
-      color: var(--violet-600);
+    .dek {
+      max-width: 760px;
+      margin-top: 28px;
+      font-size: clamp(18px, 1.5vw, 24px);
+      color: rgba(255,255,255,0.84);
     }
 
-    main {
-      padding: 30px 0 56px;
+    .edition-card {
+      align-self: end;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.26);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(18px);
     }
 
-    section + section {
-      margin-top: 56px;
+    .edition-card .meta { color: var(--aqua); font-size: 13px; text-transform: uppercase; }
+    .edition-card p { margin: 18px 0 0; color: rgba(255,255,255,0.86); }
+
+    nav.jump {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px clamp(22px, 4vw, 72px);
+      background: rgba(255,250,243,0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    nav.jump a {
+      text-decoration: none;
+      font-size: 13px;
+      color: var(--violet-900);
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
     }
 
+    section { padding: 72px clamp(22px, 4vw, 72px); }
     .section-head {
       display: grid;
-      gap: 16px;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: end;
-      margin-bottom: 26px;
-    }
-
-    .section-kicker {
-      color: var(--violet-600);
-      font-size: 0.82rem;
-      margin-bottom: 10px;
-    }
-
-    .section-head h2 {
-      font-family: "Space Mono", monospace;
-      font-size: clamp(1.85rem, 4vw, 3rem);
-    }
-
-    .stories {
-      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
       gap: 26px;
+      align-items: end;
+      margin-bottom: 38px;
     }
+    .section-head .label { color: var(--violet); font-weight: 700; text-transform: uppercase; }
+    .section-head h2 { font-family: "Space Mono", monospace; font-size: clamp(42px, 5vw, 74px); }
+    .section-head p { max-width: 760px; margin: 16px 0 0; color: var(--muted); font-size: 18px; }
 
     .story {
-      overflow: hidden;
-      border-radius: var(--radius-lg);
+      position: relative;
+      margin: 0 0 34px;
+      border: 1px solid var(--line);
       background: var(--white);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(61, 13, 133, 0.08);
+      overflow: hidden;
+      min-height: 500px;
     }
-
-    .story-grid {
-      display: grid;
-      min-height: 100%;
-    }
-
-    .story-media {
-      position: relative;
-      min-height: 280px;
-      background: linear-gradient(135deg, var(--fog), #ffffff);
-    }
-
-    .story-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-text {
-      padding: 24px 24px 26px;
+    .story-inner { position: relative; z-index: 1; height: 100%; }
+    .story-media { min-height: 260px; background: var(--violet-100); overflow: hidden; }
+    .story-content { padding: clamp(24px, 3vw, 44px); }
+    .story-topline {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
       justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 22px;
     }
-
-    .story-top {
-      display: grid;
-      gap: 14px;
-    }
-
-    .story-kicker {
-      font-size: 0.76rem;
-      color: var(--violet-500);
-    }
-
-    .update-flag {
-      display: inline-block;
-      font-size: 0.73rem;
-      color: var(--tangerine-400);
-      background: rgba(255, 97, 15, 0.10);
+    .story-number { color: var(--violet); font-size: 14px; font-weight: 700; text-transform: uppercase; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 10px;
       border-radius: 999px;
-      padding: 6px 10px;
-      width: fit-content;
+      background: var(--violet-100);
+      color: var(--violet);
+      font-size: 12px;
+      font-weight: 700;
     }
-
-    .story h3 {
-      font-size: clamp(1.5rem, 2.5vw, 2.4rem);
-      max-width: 16ch;
-    }
-
-    .source {
-      font-size: 0.76rem;
-      color: rgba(32, 15, 59, 0.72);
-    }
-
-    .read-link {
+    h3 { font-family: "Space Mono", monospace; font-size: clamp(28px, 3.6vw, 54px); }
+    .story p { margin: 14px 0 0; max-width: 700px; color: #352248; font-size: 16px; line-height: 1.55; }
+    .story-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--violet);
       font-weight: 800;
-      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 3px solid var(--aqua);
+    }
+    .story-link::after { content: "->"; font-family: "Space Mono", monospace; color: var(--tangerine); }
+    .caption {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      max-width: calc(100% - 36px);
+      padding: 7px 10px;
+      background: rgba(32,15,59,0.76);
+      color: var(--white);
+      font-size: 11px;
+      border-radius: 999px;
     }
 
-    .variant-1 .story-grid { grid-template-columns: 1.15fr 1fr; }
-    .variant-2 .story-grid { grid-template-columns: 1fr 1.2fr; }
-    .variant-2 .story-media { order: 2; }
-    .variant-3 .story-grid { grid-template-columns: 1fr; }
-    .variant-3 .story-media { min-height: 360px; }
-    .variant-4 .story-grid { grid-template-columns: 0.92fr 1.08fr; }
-    .variant-5 .story-grid { grid-template-columns: 1.05fr 0.95fr; }
-    .variant-5 .story-media { min-height: 340px; }
-    .variant-6 .story-grid { grid-template-columns: 1fr 1fr; }
-    .variant-7 .story-grid { grid-template-columns: 1.25fr 0.95fr; }
-    .variant-7 .story-media { order: 2; }
-    .variant-8 .story-grid { grid-template-columns: 0.88fr 1.12fr; }
-    .variant-9 .story-grid { grid-template-columns: 1fr; }
-    .variant-9 .story-text { background: linear-gradient(180deg, rgba(216, 251, 255, 0.25), transparent); }
-    .variant-10 .story-grid { grid-template-columns: 1.12fr 0.88fr; }
+    .layout-01 .story-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; }
+    .layout-01 .story-media { min-height: 560px; order: 2; clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%); }
+    .layout-01 .story-content { align-self: center; padding-right: 24px; }
 
-    .variant-1 .story-text { background: linear-gradient(180deg, rgba(216, 251, 255, 0.28), transparent); }
-    .variant-2 .story-text { background: linear-gradient(180deg, rgba(255, 224, 207, 0.22), transparent); }
-    .variant-4 .story-text { background: linear-gradient(180deg, rgba(111, 57, 207, 0.07), transparent); }
-    .variant-6 .story-text { background: linear-gradient(180deg, rgba(255, 224, 207, 0.16), transparent); }
-    .variant-7 .story-text { background: linear-gradient(180deg, rgba(216, 251, 255, 0.22), transparent); }
-    .variant-8 .story-text { background: linear-gradient(180deg, rgba(111, 57, 207, 0.08), transparent); }
-    .variant-10 .story-text { background: linear-gradient(180deg, rgba(255, 224, 207, 0.18), transparent); }
+    .layout-02 { border-radius: 42px 42px 8px 8px; }
+    .layout-02 .story-inner { display: grid; grid-template-columns: 0.82fr 1.18fr; }
+    .layout-02 .story-media { min-height: 560px; }
+    .layout-02 h3 { color: var(--violet); }
 
-    .section-card-grid,
-    .inspo-grid {
+    .layout-03 { background: var(--violet-900); color: var(--white); }
+    .layout-03 .story-inner { display: grid; grid-template-columns: 1fr 1fr; }
+    .layout-03 .story-content { align-self: center; color: var(--white); }
+    .layout-03 p { color: rgba(255,255,255,0.9); }
+    .layout-03 h3, .layout-03 .story-number { color: var(--white); }
+    .layout-03 .tag { background: var(--aqua); color: var(--violet-900); }
+    .layout-03 .story-link { color: var(--white); border-bottom-color: var(--aqua); }
+
+    .layout-04 .story-inner { display: grid; grid-template-rows: 360px auto; }
+    .layout-04 .story-media { border-bottom: 12px solid var(--tangerine); }
+    .layout-04 .story-content { columns: 2 330px; column-gap: 48px; }
+    .layout-04 .story-topline, .layout-04 h3, .layout-04 .story-link { break-inside: avoid; }
+
+    .layout-05 { border-radius: 8px 72px 8px 8px; }
+    .layout-05 .story-inner { display: grid; grid-template-columns: 1fr 1fr; }
+    .layout-05 .story-media { margin: 26px 26px 26px 0; min-height: 508px; border-radius: 999px 0 0 999px; }
+    .layout-05 .story-content { align-self: center; }
+
+    .layout-06 { background: linear-gradient(90deg, #fff 0 55%, var(--violet-100) 55% 100%); }
+    .layout-06 .story-inner { display: grid; grid-template-columns: 1.15fr 0.85fr; }
+    .layout-06 .story-media { min-height: 560px; order: 2; margin: 28px; border: 10px solid var(--white); box-shadow: 0 18px 40px rgba(32,15,59,0.16); }
+
+    .layout-07 .story-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; }
+    .layout-07 .story-media { min-height: 560px; clip-path: ellipse(74% 68% at 42% 50%); }
+    .layout-07 .story-content { align-self: center; }
+
+    .layout-08 { border-radius: 8px; }
+    .layout-08::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5,191,224,0.18), transparent 38%), linear-gradient(315deg, rgba(255,97,15,0.18), transparent 42%); }
+    .layout-08 .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .layout-08 .story-content { align-self: center; }
+    .layout-08 .story-media { min-height: 560px; padding: 28px; background: transparent; }
+    .layout-08 .story-media img { border-radius: 26px; }
+
+    .layout-09 .story-inner { display: grid; grid-template-columns: 1fr; }
+    .layout-09 .story-media { min-height: 420px; }
+    .layout-09 .story-content { display: grid; grid-template-columns: 0.85fr 1fr; gap: 36px; align-items: start; }
+
+    .layout-10 { background: #fbf7ff; }
+    .layout-10 .story-inner { display: grid; grid-template-columns: 0.7fr 1.3fr; }
+    .layout-10 .story-media { min-height: 560px; padding: 90px; background: var(--violet-900); }
+    .layout-10 .story-media img { object-fit: contain; image-rendering: auto; }
+    .layout-10 h3 { color: var(--violet); }
+
+    .brief-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 18px;
     }
-
-    .section-card,
-    .inspo-card {
+    .brief-card {
       background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 22px;
       border: 1px solid var(--line);
-      box-shadow: 0 14px 36px rgba(48, 19, 94, 0.08);
+      border-top: 8px solid var(--violet);
+      padding: 24px;
+      min-height: 260px;
+      box-shadow: 0 16px 42px rgba(32,15,59,0.08);
     }
+    .brief-card:nth-child(2) { border-top-color: var(--aqua); }
+    .brief-card:nth-child(3) { border-top-color: var(--tangerine); }
+    .brief-card h3 { font-size: 25px; margin-bottom: 14px; }
+    .brief-card p { margin: 0 0 18px; color: var(--muted); }
+    .brief-card a { color: var(--violet); font-weight: 800; text-decoration-thickness: 3px; text-decoration-color: var(--aqua); }
 
-    .section-card {
-      position: relative;
-      overflow: hidden;
+    .inspiration-list {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      align-items: stretch;
     }
+    .inspo-panel {
+      background: var(--violet-900);
+      color: var(--white);
+      padding: clamp(28px, 4vw, 56px);
+      border-radius: 8px;
+      min-height: 420px;
+    }
+    .inspo-panel h3 { color: var(--aqua); font-size: clamp(34px, 4vw, 64px); }
+    .inspo-panel p { max-width: 760px; color: rgba(255,255,255,0.92); font-size: 18px; }
+    .inspo-notes { display: grid; gap: 16px; }
+    .note {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 22px;
+      border-radius: 8px;
+    }
+    .note .label { color: var(--tangerine); font-size: 12px; text-transform: uppercase; font-weight: 700; }
+    .note p { margin: 8px 0 0; color: var(--muted); }
 
-    .section-card::after {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      right: -28px;
-      bottom: -50px;
-      background: rgba(5, 191, 224, 0.08);
-      pointer-events: none;
+    .week-section {
+      background: var(--white);
+      border-top: 1px solid var(--line);
     }
-
-    .section-card h3,
-    .inspo-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      max-width: 18ch;
+    .week-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+      gap: 24px;
+      align-items: start;
     }
-
-    .section-card .story-kicker,
-    .inspo-card .story-kicker {
-      margin-bottom: 10px;
+    .week-list, .trend-list {
+      display: grid;
+      gap: 12px;
     }
+    .week-item, .trend-item {
+      border: 1px solid var(--line);
+      background: #fffaf3;
+      padding: 18px 20px;
+      border-radius: 8px;
+    }
+    .week-item strong, .trend-item strong { display: block; color: var(--violet-900); margin-bottom: 4px; }
+    .week-item p, .trend-item p { margin: 0; color: var(--muted); }
+    .trend-item a { color: var(--violet); font-weight: 800; text-decoration-thickness: 3px; text-decoration-color: var(--aqua); }
 
     footer {
-      padding: 18px 0 56px;
-    }
-
-    .footer-note {
+      padding: 46px clamp(22px, 4vw, 72px) 70px;
+      color: var(--muted);
       border-top: 1px solid var(--line);
-      padding-top: 18px;
-      color: rgba(32, 15, 59, 0.76);
-      font-size: 0.92rem;
     }
 
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .section-head,
-      .variant-1 .story-grid,
-      .variant-2 .story-grid,
-      .variant-4 .story-grid,
-      .variant-5 .story-grid,
-      .variant-6 .story-grid,
-      .variant-7 .story-grid,
-      .variant-8 .story-grid,
-      .variant-10 .story-grid,
-      .section-card-grid,
-      .inspo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .variant-2 .story-media,
-      .variant-7 .story-media {
-        order: 0;
-      }
+    @media (max-width: 980px) {
+      .masthead, .section-head, .story-inner, .layout-01 .story-inner, .layout-02 .story-inner, .layout-03 .story-inner, .layout-05 .story-inner, .layout-06 .story-inner, .layout-07 .story-inner, .layout-08 .story-inner, .layout-10 .story-inner, .inspiration-list, .week-wrap { grid-template-columns: 1fr; }
+      .masthead { min-height: auto; }
+      h1 { margin-top: 52px; }
+      .layout-01 .story-media, .layout-06 .story-media { order: 0; clip-path: none; margin: 0; }
+      .layout-05 .story-media { margin: 0; border-radius: 0; }
+      .layout-09 .story-content, .brief-grid { grid-template-columns: 1fr; }
+      .story, .layout-02 { border-radius: 8px; }
+      .layout-04 .story-content { columns: 1; }
     }
 
-    @media (max-width: 680px) {
-      .hero-panel {
-        padding: 24px;
-        border-radius: 26px;
-      }
-
-      .story-text,
-      .section-card,
-      .inspo-card {
-        padding: 20px;
-      }
-
-      .story-media,
-      .variant-3 .story-media,
-      .variant-5 .story-media {
-        min-height: 220px;
-      }
+    @media (max-width: 620px) {
+      section { padding-top: 54px; padding-bottom: 54px; }
+      .story { min-height: auto; }
+      .story-media, .layout-01 .story-media, .layout-02 .story-media, .layout-03 .story-media, .layout-05 .story-media, .layout-06 .story-media, .layout-07 .story-media, .layout-08 .story-media, .layout-10 .story-media { min-height: 270px; padding: 0; }
+      .layout-10 .story-media { padding: 72px; }
+      .story p { font-size: 16px; }
+      nav.jump { position: static; }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="shell">
-      <div class="hero-panel">
-        <div class="eyebrow">Creative Studio Magazine • PMI Graphic Design Team • 28 May 2026</div>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1>AI workflows got more practical. Design systems got louder.</h1>
-            <p>This revised issue keeps the signal tighter: fewer familiar &ldquo;AI made another thing&rdquo; beats, and more attention on the workflow shifts that change review cycles, brand control, publishing, and visual production inside real teams.</p>
-            <p>The through-line today is operational craft. The useful stories are the ones turning AI from abstract promise into repeatable collaboration, system stewardship, and better handoffs across design, presentations, and content production.</p>
-          </div>
-          <aside class="hero-aside">
-            <div class="story-kicker">Today&rsquo;s Read</div>
-            <p>The opening section is the main event, followed by a short campaign radar and a compact inspiration board so the team can stay current without feeling like they are reading yesterday all over again.</p>
-            <ul>
-              <li>10 exact core stories in <strong>AI Latest</strong></li>
-              <li>Campaigns that sharpen brand and system thinking</li>
-              <li>Inspiration tuned to type, motion, layout, and editorial craft</li>
-            </ul>
-          </aside>
-        </div>
+  <main class="issue">
+    <header class="masthead" id="top">
+      <div>
+        <div class="kicker">Creative Studio Magazine</div>
+        <h1>AI tools are getting closer to the craft table.</h1>
+        <p class="dek">A calm, selective briefing for PMI's Graphic Design Team on the design-software shifts, creative AI updates, and visual-production moves worth absorbing today.</p>
       </div>
-    </div>
-  </header>
+      <aside class="edition-card" aria-label="Issue details">
+        <div class="meta">Daily issue / May 29, 2026</div>
+        <p>Friday edition: the week's clearest AI and design-tool moves, followed by campaigns, inspiration, and a short trend-report scan.</p>
+      </aside>
+    </header>
 
-  <nav class="jump-nav" aria-label="Jump navigation">
-    <div class="shell jump-wrap">
-      <div class="story-kicker">Jump To</div>
-      <div class="jump-links">
-        <a href="#ai-latest">AI Latest</a>
-        <a href="#campaigns">Campaigns to Watch</a>
-        <a href="#inspiration">Inspiration</a>
-      </div>
-    </div>
-  </nav>
+    <nav class="jump" aria-label="Jump navigation">
+      <a href="#ai-latest">AI Latest</a>
+      <a href="#campaigns">Campaigns to Watch</a>
+      <a href="#inspiration">Inspiration</a>
+      <a href="#week-highlights">Week Highlights</a>
+      <a href="#top">Back to Top</a>
+    </nav>
 
-  <main class="shell">
     <section id="ai-latest" aria-labelledby="ai-latest-title">
       <div class="section-head">
+        <div class="label">Section One</div>
         <div>
-          <div class="section-kicker">Section One</div>
           <h2 id="ai-latest-title">AI Latest</h2>
-        </div>
-        <div class="intro-note">
-          <p>These ten stories are the core editorial stack for today. They favor concrete changes to design tooling, creative systems, and visual workflow over generic company noise.</p>
+          <p>Ten current stories, edited for quick Friday scanning: what changed, why designers should care, and where to read more.</p>
         </div>
       </div>
 
-      <div class="stories">
-        <article class="story variant-1">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://www.anthropic.com/_next/image?q=75&amp;url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F499e91975d880b35eac6e48ad43161de7d10416c-2876x1614.jpg&amp;w=3840" alt="Anthropic Claude Design interface preview">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Anthropic • Design Workflow</div>
-                <h3>Claude Design is less a chatbot stunt than a bid to become a real first-draft surface for decks, prototypes, and one-pagers.</h3>
-                <div class="story-body">
-                  <p>Anthropic&rsquo;s design product matters because it is explicitly aiming at creative work products, not only ideation. The positioning around slides, presentations, mockups, and export to formats like PPTX and Canva makes it much more relevant to studio teams than generic agent news.</p>
-                  <p>For PMI, the important shift is where the first draft gets born. If more rough visual work starts inside conversational tools, the design team&rsquo;s leverage moves toward direction, refinement, and system control rather than being the sole origin point of every frame.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Anthropic • 17 April 2026</div>
-                <a class="read-link" href="https://www.anthropic.com/news/claude-design-anthropic-labs?lang=us">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-01 core-story" id="story-01">
+        <div class="story-inner">
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 01</span><span class="tag">Update / Figma</span></div>
+            <h3>Figma Make moves from prototype playground toward local code.</h3>
+            <p>Figma Make now connects to local code, captures visual edits and annotations, and keeps work in branches before a pull request.</p>
+            <p>Why it matters: the design review loop gets closer to real implementation without asking designers to own the whole engineering workflow.</p>
+            <a class="story-link" href="https://www.figma.com/blog/figma-make-now-on-your-local-code/" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+          <figure class="story-media">
+            <img src="https://cdn.sanity.io/images/599r6htc/regionalized/1497b0697daf21331c9091faeaaf0f2e207d8f4a-914x918.jpg?auto=format&fit=max&h=918&q=75&w=914" alt="Figma source image from the Figma Make local code announcement page">
+            <figcaption class="caption">Source image: Figma blog</figcaption>
+          </figure>
+        </div>
+      </article>
 
-        <article class="story variant-2">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://help.figma.com/hc/article_attachments/38974032856727" alt="Figma Make comments interface">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Figma • Review Workflow</div>
-                <h3>Commenting in Figma Make turns live prototypes into reviewable design objects, not just generated experiments.</h3>
-                <div class="story-body">
-                  <p>This rollout is more meaningful than it looks. Figma is adapting one of its core collaboration habits, comments, to an AI-generated environment where the output is interactive, versioned, and constantly in flux.</p>
-                  <p>The design implication is strong: feedback stays anchored to visible states, review history becomes easier to preserve, and AI prototyping starts behaving more like a shareable team artifact. That makes Make less isolated from established design practice and much more usable inside studio critique cycles.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Figma Learn • Rolling out now</div>
-                <a class="read-link" href="https://help.figma.com/hc/en-us/articles/38701587731735-Add-comments-in-Figma-Make">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-02 core-story" id="story-02">
+        <div class="story-inner">
+          <figure class="story-media">
+            <img src="https://content-management-files.canva.com/78cefba4-480b-4c32-9650-bbb941e118e2/CanvaAI2.0launch.png" alt="Canva AI 2.0 launch image showing generated creative outputs and interface cards">
+            <figcaption class="caption">Source image: Canva Newsroom</figcaption>
+          </figure>
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 02</span><span class="tag">Canva</span></div>
+            <h3>Canva AI 2.0 is pitching editable output, not flat generation.</h3>
+            <p>Canva's Design Model is aimed at layered, editable output that understands hierarchy, objects, and layout instead of producing a flat image.</p>
+            <p>Why it matters: prompt output becomes easier to revise, critique, and align to brand systems.</p>
+            <a class="story-link" href="https://www.canva.com/newsroom/news/canva-create-2026-ai/" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="story variant-3">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://help.figma.com/hc/article_attachments/31864910398871" alt="Figma Make social sharing image preview">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Figma • Publishing</div>
-                <h3>Figma Make is quietly becoming a publishing surface, with metadata, access control, and share-image settings that feel closer to product launch than mockup handoff.</h3>
-                <div class="story-body">
-                  <p>The publishing controls around Figma Make deserve attention because they push AI-made work past internal experiment status. Titles, meta descriptions, internal-only access, password protection, favicons, social sharing images, and custom domains all signal a more mature output layer.</p>
-                  <p>For Creative Studio, that changes the threshold for what can be prototyped and circulated early. Designers can now think about shareability, discoverability, and editorial framing much earlier in the process, instead of treating those as downstream finishing tasks.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Figma Learn • Current</div>
-                <a class="read-link" href="https://help.figma.com/hc/en-us/articles/31304586129559-Publish-update-or-unpublish-a-Figma-Make-file">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-03 core-story" id="story-03">
+        <div class="story-inner">
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 03</span><span class="tag">OpenAI</span></div>
+            <h3>ChatGPT Images 2.0 puts editorial layout back in the image conversation.</h3>
+            <p>OpenAI's Images 2.0 examples include posters, infographics, multilingual type, spreads, and production-aware formats.</p>
+            <p>Why it matters: image generation is moving closer to composition, typography, and formatted communication, not just scene creation.</p>
+            <a class="story-link" href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+          <figure class="story-media">
+            <img src="https://images.ctfassets.net/kftzwdyauwt9/3IdBQyOlVNdmSCdUjK0zYT/e05480b1b44cc06d6ff2b357c3f80855/introducingchatfinal.jpg?fm=webp&q=90&w=3840" alt="OpenAI poster-style image introducing ChatGPT Images 2.0 with bold editorial typography and geometric forms">
+            <figcaption class="caption">Source image: OpenAI</figcaption>
+          </figure>
+        </div>
+      </article>
 
-        <article class="story variant-4">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://support.content.office.net/en-us/media/717b8531-f4b6-443f-b457-0986f7db8c7e.png" alt="Microsoft 365 Copilot brand kit interface">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Microsoft Copilot • Brand Systems</div>
-                <h3>Official brand kits inside Copilot make on-brand PowerPoint and visual generation feel more like infrastructure than a nice extra.</h3>
-                <div class="story-body">
-                  <p>This feature matters because it brings governance right into the generation layer. Microsoft is not just giving people a place to store logos and colors; it is building a framework that can shape posters, banners, images, and presentations by default.</p>
-                  <p>That is highly relevant to PMI&rsquo;s design team. As more presentation and communications work gets drafted by non-designers, brand kits become one of the clearest ways to protect hierarchy, voice, picture treatment, and layout behavior without slowing everything down.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Microsoft Support • Current</div>
-                <a class="read-link" href="https://support.microsoft.com/en-us/Microsoft-365-Copilot/create-and-manage-official-brand-kits-in-the-microsoft-365-copilot-app">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-04 core-story" id="story-04">
+        <div class="story-inner">
+          <figure class="story-media">
+            <img src="https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2026/05/M365Copilot_Hero_BannerImage_1920x1080.webp" alt="Microsoft 365 Copilot redesigned interface shown on desktop and mobile">
+            <figcaption class="caption">Source image: Microsoft 365 Blog</figcaption>
+          </figure>
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 04</span><span class="tag">Microsoft Copilot</span></div>
+            <h3>Microsoft redesigns Copilot as a task-aware workspace.</h3>
+            <p>Microsoft is turning Copilot from a small prompt field into a larger, task-aware workspace across Microsoft 365 apps.</p>
+            <p>Why it matters: PowerPoint workflows are becoming more canvas-native, with AI controls appearing where deck work actually happens.</p>
+            <a class="story-link" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/28/introducing-a-new-design-for-microsoft-365-copilot/" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="story variant-5">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjA7a5usHp15FZzWh6sVCz2N37avqGviC98lYqwUhePzCYJBzlSoLcdb7sEtfj4NuPKniEZVX4ChxKvm7pM514v1TBR5Jrv1cMVuQ8M2PgrEJkU6JxVTBmqygwE6r8Vv7yn8P2O7fNrgrqfhzdQ2M2A7Shv5Ohdo7zY8D3Q0DRgMP0WFff42aTlZUN75yk/s0/default_blue.svg" alt="Google Workspace icon refresh preview">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Google Workspace • Visual Identity</div>
-                <h3>Google&rsquo;s Workspace icon refresh is one of today&rsquo;s clearest reminders that system clarity still matters in an AI-saturated tool stack.</h3>
-                <div class="story-body">
-                  <p>Not every important design story is a feature drop. As generative tools make products busier and blur the boundaries between apps, clear iconography becomes more valuable because it helps users orient themselves faster and trust the system around them.</p>
-                  <p>For Creative Studio, this is a useful watch item precisely because it is small. When product families evolve quickly, visual identity work has to carry more usability weight, not less. That is a lesson worth borrowing for internal ecosystems and slide-library systems too.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Google Workspace Updates • 27 May 2026</div>
-                <a class="read-link" href="https://workspaceupdates.googleblog.com/2026/05/introducing-fresh-visual-identity-for-Google-Workspace-app-icons.html">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-05 core-story" id="story-05">
+        <div class="story-inner">
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 05</span><span class="tag">Adobe Firefly</span></div>
+            <h3>Firefly custom models make brand style more reusable.</h3>
+            <p>Firefly custom models let teams train around illustration, character, and photographic styles.</p>
+            <p>Why it matters: style becomes a reusable production asset, not a one-off prompt result.</p>
+            <a class="story-link" href="https://blog.adobe.com/en/publish/2026/03/19/adobe-firefly-expands-video-image-creation-with-new-ai-capabilities-custom-models" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+          <figure class="story-media">
+            <img src="https://blog.adobe.com/en/publish/2026/03/19/media_13006d926799bc866df08ba9c17cd4c7358bc273a.jpg?format=jpg&optimize=medium&width=750" alt="Adobe Firefly custom models image with illustration style thumbnails and a prompt card">
+            <figcaption class="caption">Source image: Adobe Blog</figcaption>
+          </figure>
+        </div>
+      </article>
 
-        <article class="story variant-6">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pics_Output_Image_Blog.width-100.format-webp.webp" alt="Google Workspace update preview with image-generation workflow">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Google Workspace • Google Pics</div>
-                <h3>Google is pushing image generation and editing directly toward Workspace, starting with the kinds of visual tasks that usually spill into Slides.</h3>
-                <div class="story-body">
-                  <p>The newest Workspace update matters because Google Pics is not being framed as a standalone toy. Google is explicitly integrating image generation and editing into Workspace apps, beginning with Slides and Drive, which puts visual work much closer to the day-to-day presentation flow.</p>
-                  <p>That means more image drafting will happen inside productivity software before design ever sees it. The design response should not be panic; it should be stronger standards for what gets elevated, what needs polish, and where brand-quality visuals still need expert intervention.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Google Blog • 19 May 2026</div>
-                <a class="read-link" href="https://blog.google/products-and-platforms/products/workspace/workspace-updates/">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-06 core-story" id="story-06">
+        <div class="story-inner">
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 06</span><span class="tag">Update / Adobe + Claude</span></div>
+            <h3>Adobe's Claude connector turns multi-step creative tasks into chat-directed workflows.</h3>
+            <p>Adobe's Claude connector brings 50-plus creative actions into chat, including retouching, resizing, animation, and social asset work.</p>
+            <p>Why it matters: natural-language direction can route into familiar Adobe tools, where designers still finish the craft.</p>
+            <a class="story-link" href="https://blog.adobe.com/en/publish/2026/04/28/adobe-for-creativity-connector" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+          <figure class="story-media">
+            <img src="https://blog.adobe.com/en/publish/2026/04/28/media_1038868fb51fdc36ea564d2d7ddb08e8779720c16.png?format=png&optimize=medium&width=750" alt="Adobe for creativity connector shown inside Claude with social design templates">
+            <figcaption class="caption">Source image: Adobe Blog</figcaption>
+          </figure>
+        </div>
+      </article>
 
-        <article class="story variant-7">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Vids_Avatar_Hero.width-1300.format-webp.webp" alt="Google Vids video generation and avatar preview">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Google Vids • Motion Workflow</div>
-                <h3>Google Vids is making motion content cheaper to try, which could change who shows up to review with video instead of slides.</h3>
-                <div class="story-body">
-                  <p>Google Vids is becoming more relevant to creative teams because the barrier to trying motion is getting lower. Free generations, custom music, directable avatars, and browser capture make it easier for non-specialists to bring moving assets into everyday communications.</p>
-                  <p>That raises a design question PMI&rsquo;s team should care about: when do fast AI video drafts improve a story, and when do they simply add movement without meaning? As more stakeholders can make motion, the bar for editorial judgment becomes more important, not less.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Google Blog • 2 April 2026</div>
-                <a class="read-link" href="https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-07 core-story" id="story-07">
+        <div class="story-inner">
+          <figure class="story-media">
+            <img src="https://www.anthropic.com/_next/image?q=75&url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F499e91975d880b35eac6e48ad43161de7d10416c-2876x1614.jpg&w=3840" alt="Claude Design interface with visual editing controls over a prototype">
+            <figcaption class="caption">Source image: Anthropic</figcaption>
+          </figure>
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 07</span><span class="tag">Anthropic</span></div>
+            <h3>Claude Design treats brand systems as part of the AI surface.</h3>
+            <p>Claude Design is a research preview for prototypes, slides, one-pagers, and collateral that can learn from design files and codebases.</p>
+            <p>Why it matters: AI output is being judged by whether it can respect an existing system, not just make a polished-looking mockup.</p>
+            <a class="story-link" href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="story variant-8">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://content-management-files.canva.com/c2848b2a-374a-41f1-be4a-15ec9cede18a/WhatsNewCanvaFeb2026.png" alt="Canva What's New feature collage">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Canva • Workflow Design</div>
-                <h3>Canva&rsquo;s latest release bundle is interesting because it mixes AI with the less glamorous workflow fixes teams actually feel every day.</h3>
-                <div class="story-body">
-                  <p>Style Match, image-to-video, present-mode cleanup, grouped-element refinement, and easier publishing do not all carry the same weight, but together they point in one direction: Canva wants to be a more complete, end-to-end system for presentation, brand, and social output.</p>
-                  <p>That blend matters for designers because real software adoption rarely turns on one hero feature. It turns on whether the rough edges around editing, presenting, and distributing work keep getting removed while the AI layer becomes more useful.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Canva Newsroom • February 2026</div>
-                <a class="read-link" href="https://www.canva.com/newsroom/news/whats-new-february-2026/">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-08 core-story" id="story-08">
+        <div class="story-inner">
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 08</span><span class="tag">Canva + Claude</span></div>
+            <h3>Canva and Claude make AI artifacts editable instead of disposable.</h3>
+            <p>Canva's Claude Design integration turns generated HTML artifacts into editable Canva designs.</p>
+            <p>Why it matters: rough coded concepts can become collaborative assets without restarting every revision.</p>
+            <a class="story-link" href="https://www.canva.com/newsroom/news/canva-claude-design/" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
+          <figure class="story-media">
+            <img src="https://content-management-files.canva.com/bf84efad-0a47-4ad2-9da9-8324e2a3fcc5/CanvaxClaudeDesign.png" alt="Canva and Claude Design interface image showing send to Canva export menu">
+            <figcaption class="caption">Source image: Canva Newsroom</figcaption>
+          </figure>
+        </div>
+      </article>
 
-        <article class="story variant-9">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://blog.adobe.com/en/publish/2026/05/20/media_1ab6f220e3bb42f31f446f0f299bef5f15d57cc0b.png?width=750&amp;format=png&amp;optimize=medium" alt="Adobe Substance 3D workflow update preview">
+      <article class="story layout-09 core-story" id="story-09">
+        <div class="story-inner">
+          <figure class="story-media">
+            <img src="https://content-management-files.canva.com/b0cb517c-857b-4bdc-9bf5-4ebf7bd706fa/CanvaOfflineLearnGridProDesignandPrintShop2026.png" alt="Canva Create 2026 image showing offline design, interactive learning, and Affinity brand system panels">
+            <figcaption class="caption">Source image: Canva Newsroom</figcaption>
+          </figure>
+          <div class="story-content">
+            <div>
+              <div class="story-topline"><span class="story-number">AI Latest 09</span><span class="tag">Canva Pro Design</span></div>
+              <h3>Canva's professional suite push is really about workflow continuity.</h3>
             </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Adobe • 3D Pipeline</div>
-                <h3>Adobe Substance 3D is getting closer to the kind of connected pipeline that makes 3D feel usable beyond specialist teams.</h3>
-                <div class="story-body">
-                  <p>This update matters because Adobe is not selling 3D as an isolated hero discipline. The emphasis is on faster workflows, more precise control, and a more connected production chain, which is exactly what makes adjacent teams more likely to actually use it.</p>
-                  <p>For Creative Studio, that creates a wider lane for event visuals, product scenes, motion support assets, and richer presentation imagery. The easier 3D becomes to route through a reliable pipeline, the more often it will appear in mainstream communication work.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Adobe Blog • 20 May 2026</div>
-                <a class="read-link" href="https://blog.adobe.com/en/publish/2026/05/20/faster-workflows-precise-creative-control-more-connected-3d-pipeline-whats-new-substance-3d">Read the full story</a>
-              </div>
+            <div>
+              <p>Canva Create adds Offline mode, Learn Grid, Print Shop, Affinity Brand System, and new professional integrations.</p>
+              <p>Why it matters: Canva is pushing toward continuity across brand, layout, print, motion, and collaboration.</p>
+              <a class="story-link" href="https://www.canva.com/newsroom/news/canva-create-2026-launches/" target="_blank" rel="noopener noreferrer">Read the full story</a>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="story variant-10">
-          <div class="story-grid">
-            <div class="story-media">
-              <img src="https://blog.adobe.com/en/publish/2026/04/17/media_1cf15b1d42e4eff4ee6fb053aa2ffc7348fb606ed.jpg?format=jpg&amp;optimize=medium&amp;width=750" alt="Adobe AI productivity survey chart">
-            </div>
-            <div class="story-text">
-              <div class="story-top">
-                <div class="story-kicker">Adobe • Creative Practice</div>
-                <h3>Adobe&rsquo;s latest creative-work survey is a useful read because it treats AI as workload reality, not a philosophical abstraction.</h3>
-                <div class="story-body">
-                  <p>The headline is simple: creative teams say AI is helping them move faster, handle rising content demand, and improve output. Surveys always deserve caution, but this one is still valuable because it reflects how practitioners are already stitching multiple models into everyday production.</p>
-                  <p>For PMI, the real takeaway is less about excitement and more about operating assumptions. If AI is now part of routine throughput across the industry, the team&rsquo;s competitive edge comes from deciding where human judgment most improves the work and where automation can safely carry the load.</p>
-                </div>
-              </div>
-              <div>
-                <div class="source">Source: Adobe Blog • 17 April 2026</div>
-                <a class="read-link" href="https://blog.adobe.com/en/publish/2026/04/17/creatives-say-ai-helping-them-meet-growing-demand-content-improving-their-work">Read the full story</a>
-              </div>
-            </div>
+      <article class="story layout-10 core-story" id="story-10">
+        <div class="story-inner">
+          <figure class="story-media">
+            <img src="https://workspaceupdates.googleblog.com/favicon.ico" alt="Google Workspace Updates source icon">
+            <figcaption class="caption">Source image: Google Workspace Updates</figcaption>
+          </figure>
+          <div class="story-content">
+            <div class="story-topline"><span class="story-number">AI Latest 10</span><span class="tag">NotebookLM</span></div>
+            <h3>NotebookLM's automatic Drive syncing fixes a quiet source-of-truth problem.</h3>
+            <p>NotebookLM now supports automatic Drive syncing for Docs, Sheets, and Slides sources.</p>
+            <p>Why it matters: briefs, decks, and research notebooks stay closer to the current source of truth.</p>
+            <a class="story-link" href="https://workspaceupdates.googleblog.com/2026/05/keep-your-sources-up-to-date-with-automatic-Drive-syncing-in-NotebookLM.html" target="_blank" rel="noopener noreferrer">Read the full story</a>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
 
     <section id="campaigns" aria-labelledby="campaigns-title">
       <div class="section-head">
+        <div class="label">Section Two</div>
         <div>
-          <div class="section-kicker">Section Two</div>
           <h2 id="campaigns-title">Campaigns to Watch</h2>
-        </div>
-        <div class="intro-note">
-          <p>Three current pieces of brand and campaign work that reward attention for system thinking, art direction, and how identity behaves once it hits the world.</p>
+          <p>A short creative scan: campaign ideas with clear visual behavior, not just broad awareness.</p>
         </div>
       </div>
-      <div class="section-card-grid">
-        <article class="section-card">
-          <div class="story-kicker">Museum Identity</div>
-          <h3>Koto&rsquo;s Norton Museum of Art rebrand shows how warmth and ambition can coexist.</h3>
-          <div class="section-body">
-            <p>This is worth watching for the balance of cultural seriousness and public openness. The system appears to resist the coldness that often arrives with institutional &ldquo;modernization,&rdquo; which makes it especially relevant for any team working on audience-facing prestige communications.</p>
-          </div>
-          <p><a class="read-link" href="https://www.creativeboom.com/news/koto-rebrands-the-norton-museum-of-art-with-an-identity-where-art-truly-meets-life/">Read the full story</a></p>
+      <div class="brief-grid">
+        <article class="brief-card">
+          <h3>Primark turns summer value into a heist film.</h3>
+          <p>Worth watching for how a value brand borrows luxury codes without losing the price punchline.</p>
+          <a href="https://lbbonline.com/news/Primark-The-Get-Away" target="_blank" rel="noopener noreferrer">Read the campaign note</a>
         </article>
-
-        <article class="section-card">
-          <div class="story-kicker">B2B Branding</div>
-          <h3>Koto&rsquo;s Mews work is a smart reminder that enterprise platform branding does not need to disappear into software beige.</h3>
-          <div class="section-body">
-            <p>The useful lesson here is not just visual boldness. It is how campaign language, typography, and product positioning are working together to make a category feel more emotionally legible and commercially alive.</p>
-          </div>
-          <p><a class="read-link" href="https://www.creativeboom.com/news/koto-just-proved-that-design-for-enterprise-platforms-doesnt-have-to-be-beige/">Read the full story</a></p>
+        <article class="brief-card">
+          <h3>OFFF Barcelona's living identity makes process the story.</h3>
+          <p>The useful lesson: make the identity mechanism inseparable from the community it represents.</p>
+          <a href="https://www.creativebloq.com/design/branding/revealed-offf-2026s-visual-identity-was-harvested-from-actual-people" target="_blank" rel="noopener noreferrer">Read the identity story</a>
         </article>
-
-        <article class="section-card">
-          <div class="story-kicker">Festival Campaign</div>
-          <h3>OFFF Barcelona&rsquo;s identity built from designers&rsquo; DNA is a sharp reminder that a campaign needs an idea, not just an aesthetic.</h3>
-          <div class="section-body">
-            <p>Even if the stunt is intentionally theatrical, the campaign earns attention because the concept is memorable, explainable, and visually expandable. It is a useful benchmark for any campaign brief that risks settling for mood before meaning.</p>
-          </div>
-          <p><a class="read-link" href="https://www.creativeboom.com/news/offf-barcelonas-logo-is-built-on-its-attendees-dna-literally/">Read the full story</a></p>
+        <article class="brief-card">
+          <h3>4Creative's refreshed identity uses archive as a design material.</h3>
+          <p>The transferable idea is simple: let a brand's existing culture become the graphic system.</p>
+          <a href="https://www.itsnicethat.com/media/campaign" target="_blank" rel="noopener noreferrer">Browse current campaigns</a>
         </article>
       </div>
     </section>
 
     <section id="inspiration" aria-labelledby="inspiration-title">
       <div class="section-head">
+        <div class="label">Section Three</div>
         <div>
-          <div class="section-kicker">Section Three</div>
           <h2 id="inspiration-title">Inspiration</h2>
-        </div>
-        <div class="intro-note">
-          <p>A short visual reset for the team: references that can feed typography, editorial pacing, presentation rhythm, and more tactile graphic decisions.</p>
+          <p>Three craft prompts for translating the week's tool news into stronger editorial and presentation work.</p>
         </div>
       </div>
-      <div class="inspo-grid">
-        <article class="inspo-card">
-          <div class="story-kicker">Publication Design</div>
-          <h3>Reset treats the gaming magazine like a fashion object, and that tension is exactly why it lands.</h3>
-          <div class="inspo-body">
-            <p>The appeal here is the pacing: editorial confidence, strict blue-led world-building, and a willingness to let publication design elevate subject matter that could easily have been handled as disposable content.</p>
-          </div>
-          <p><a class="read-link" href="https://www.itsnicethat.com/articles/simon-sweeney-kepler-interactive-reset-magazine-publication-graphic-design-project-110526">Read the full story</a></p>
+      <div class="inspiration-list">
+        <article class="inspo-panel">
+          <h3>Use AI speed to protect human texture.</h3>
+          <p>The through-line this week is editable, structured output: layers, brand systems, reusable sources, and tool connectors.</p>
+          <p>Use that saved production time to make one deliberate human choice: a sharper crop, a more tactile type treatment, or motion that clarifies structure.</p>
         </article>
-
-        <article class="inspo-card">
-          <div class="story-kicker">Layout Rhythm</div>
-          <h3>Jiyung Lee&rsquo;s catalogue-like illustrations are a sharp prompt for grid systems that still feel poetic.</h3>
-          <div class="inspo-body">
-            <p>There is a lot to borrow here about repetition, grouping, and visual restraint. It is a good reference for presentations or reports that need quiet structure without losing personality.</p>
-          </div>
-          <p><a class="read-link" href="https://www.creativeboom.com/inspiration/jiyung-lees-illustrations-of-everyday-items-are-organised-almost-like-a-catalogue-layout/">Read the full story</a></p>
-        </article>
-
-        <article class="inspo-card">
-          <div class="story-kicker">Color Confidence</div>
-          <h3>Gina Guasch Studio is a useful reminder that point of view can be louder than trend fluency.</h3>
-          <div class="inspo-body">
-            <p>The value here is not only palette. It is the confidence of a studio language that carries through flyers, identities, and music-adjacent work without smoothing itself into generic versatility.</p>
-          </div>
-          <p><a class="read-link" href="https://www.creativeboom.com/inspiration/gina-guasch-studios-designs-go-beyond-trends-and-are-full-of-colour-and-life/">Read the full story</a></p>
-        </article>
+        <div class="inspo-notes">
+          <article class="note">
+            <div class="label">Typography</div>
+            <p>Use bold monospace labels against generous sans body copy for clean, technical hierarchy.</p>
+          </article>
+          <article class="note">
+            <div class="label">Layout</div>
+            <p>Give each spread one dominant visual decision: crop, rhythm, frame, edge, or full-width media.</p>
+          </article>
+          <article class="note">
+            <div class="label">Motion</div>
+            <p>For slides, reveal source first, then structure, then the final editorial takeaway.</p>
+          </article>
+        </div>
       </div>
     </section>
-  </main>
 
-  <footer class="shell">
-    <div class="footer-note">
-      Creative Studio Magazine is curated for selective internal reading. The aim is not total coverage; it is a calmer editorial read on the design developments most likely to change how the team works, presents, and makes.
-    </div>
-  </footer>
+    <section id="week-highlights" class="week-section" aria-labelledby="week-title">
+      <div class="section-head">
+        <div class="label">Friday Scan</div>
+        <div>
+          <h2 id="week-title">Top stories of the week</h2>
+          <p>A quick readout of the week's biggest creative implications, plus trend reports to keep nearby.</p>
+        </div>
+      </div>
+      <div class="week-wrap">
+        <div class="week-list" aria-label="Top weekly highlights">
+          <article class="week-item">
+            <strong>1. Editable AI output is the week's clearest theme.</strong>
+            <p>Canva, Claude, Figma, and OpenAI are all moving away from disposable generations and toward layered, revisable, system-aware work.</p>
+          </article>
+          <article class="week-item">
+            <strong>2. The design-to-code gap is getting more visual.</strong>
+            <p>Figma Make's local-code update makes the handoff loop feel less like translation and more like shared inspection.</p>
+          </article>
+          <article class="week-item">
+            <strong>3. Presentation AI is becoming canvas-native.</strong>
+            <p>Microsoft's Copilot redesign and NotebookLM source syncing both point to AI living closer to the deck, brief, and source file.</p>
+          </article>
+          <article class="week-item">
+            <strong>4. Brand systems are becoming machine-readable.</strong>
+            <p>Custom models, Brand System in Affinity, and Claude Design all suggest the next advantage is governed style, not sheer generation volume.</p>
+          </article>
+        </div>
+        <aside class="trend-list" aria-label="Relevant design and AI trend reports">
+          <article class="trend-item">
+            <strong>Canva Marketing & AI Report 2026</strong>
+            <p>Useful for the trust gap: marketers are adopting AI fast, while audiences still want more human texture. <a href="https://www.canva.com/newsroom/news/marketing-ai-report-2026/" target="_blank" rel="noopener noreferrer">Read the report</a></p>
+          </article>
+          <article class="trend-item">
+            <strong>Canva Design Trends 2026</strong>
+            <p>A practical visual-language scan around texture, imperfection, and authored presence. <a href="https://www.canva.com/newsroom/news/design-trends-2026/" target="_blank" rel="noopener noreferrer">Read the trends</a></p>
+          </article>
+          <article class="trend-item">
+            <strong>Adobe creative AI survey</strong>
+            <p>Helpful evidence that AI is becoming routine creative infrastructure, not just a novelty layer. <a href="https://blog.adobe.com/en/publish/2026/04/17/creatives-say-ai-helping-them-meet-growing-demand-content-improving-their-work" target="_blank" rel="noopener noreferrer">Read the findings</a></p>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      Creative Studio Magazine is curated for PMI's Graphic Design Team. This issue prioritizes design-tool news and creative workflow shifts over generic AI headlines. Accessibility notes are directional from static review and should be verified in implementation where needed.
+    </footer>
+  </main>
 </body>
 </html>
