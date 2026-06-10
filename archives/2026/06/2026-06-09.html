@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creative Studio Magazine - June 9, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;650;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet-800: #200f3b;
+      --violet-700: #32105f;
+      --violet-500: #4f17a8;
+      --violet-100: #f1eafa;
+      --aqua: #05bfe0;
+      --aqua-soft: #dff8fb;
+      --tangerine: #ff610f;
+      --ink: #221935;
+      --muted: #6d6379;
+      --line: #ded7e7;
+      --paper: #fffdf8;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0 0, rgba(5, 191, 224, .16), transparent 28rem),
+        linear-gradient(180deg, #fffaf2 0%, #ffffff 38%, #f8f5fb 100%);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      line-height: 1.58;
+    }
+    a { color: inherit; }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: var(--violet-100);
+    }
+    .issue {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 22px 64px;
+    }
+    .kicker, .eyebrow, .story-number, .source, .nav a, .meta {
+      font-family: "Space Mono", monospace;
+      letter-spacing: 0;
+    }
+    header.hero {
+      min-height: 72vh;
+      display: grid;
+      align-items: end;
+      padding: 34px 0 44px;
+      border-bottom: 2px solid var(--violet-800);
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+      gap: 36px;
+      align-items: end;
+    }
+    .kicker {
+      color: var(--violet-500);
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: "Space Mono", monospace;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: .94;
+      margin: 0;
+      color: var(--violet-800);
+      letter-spacing: 0;
+    }
+    .dek {
+      max-width: 660px;
+      margin: 24px 0 0;
+      font-size: 1.18rem;
+      color: var(--violet-700);
+    }
+    .issue-card {
+      border: 2px solid var(--violet-800);
+      padding: 22px;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 10px 10px 0 var(--aqua);
+    }
+    .issue-card strong { display: block; font-size: 1.05rem; }
+    .issue-card p { margin: 10px 0 0; color: var(--muted); }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+      background: rgba(255, 253, 248, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav a {
+      text-decoration: none;
+      border: 1px solid var(--violet-800);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: .82rem;
+      background: var(--white);
+    }
+    .nav a:hover { background: var(--violet-800); color: var(--white); }
+    section { padding: 58px 0 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, .55fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-family: "Space Mono", monospace;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      margin: 0;
+      color: var(--violet-800);
+      letter-spacing: 0;
+    }
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .ai-latest {
+      display: grid;
+      gap: 18px;
+      counter-reset: story;
+    }
+    .story {
+      counter-increment: story;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 0;
+      position: relative;
+      box-shadow: 0 8px 22px rgba(32,15,59,.055);
+    }
+    .story::before {
+      content: counter(story, decimal-leading-zero);
+      position: absolute;
+      z-index: 2;
+      top: 18px;
+      left: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      background: var(--violet-800);
+      color: var(--white);
+      border: 2px solid var(--aqua);
+    }
+    .story-inner {
+      display: block;
+      min-height: 0;
+    }
+    .media {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      z-index: 2;
+      width: 112px;
+      height: 82px;
+      min-height: 0;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: linear-gradient(135deg, var(--violet-100), #fff);
+      overflow: hidden;
+    }
+    .media::after {
+      content: attr(data-source);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 3px 5px;
+      color: #fff;
+      background: rgba(32,15,59,.88);
+      font: 700 .52rem "Space Mono", monospace;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .media img {
+      width: auto;
+      height: auto;
+      max-width: 82%;
+      max-height: 54px;
+      object-fit: contain;
+    }
+    .story-copy {
+      padding: 76px 160px 30px 34px;
+    }
+    .source {
+      color: var(--violet-500);
+      font-size: .8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+    h3 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.35vw, 2.15rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--violet-800);
+    }
+    .focus {
+      margin: 15px 0 0;
+      font-weight: 800;
+      color: var(--violet-700);
+    }
+    .story-copy p:not(.source):not(.focus) {
+      margin: 14px 0 0;
+      color: #3a3147;
+    }
+    .read {
+      display: inline-flex;
+      margin-top: 18px;
+      font-weight: 800;
+      color: var(--violet-500);
+      text-decoration-color: var(--aqua);
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+    .story.feature { border-top: 5px solid var(--violet-500); }
+    .story.feature .story-copy { padding: 82px 166px 32px 34px; }
+    .story.feature h3 { font-size: clamp(1.85rem, 3.4vw, 3.35rem); max-width: 820px; }
+    .story.band { border-left: 6px solid var(--aqua); }
+    .story.band .story-copy { padding-left: 34px; }
+    .story.split .story-copy { background: linear-gradient(135deg, var(--violet-100), var(--white)); }
+    .story.poster { border-left: 6px solid var(--tangerine); background: #fff7f1; }
+    .story.poster .media { background: linear-gradient(135deg, var(--violet-100), #fff); }
+    .story.poster img { object-fit: contain; background: transparent; }
+    .story.editorial { border-top: 5px solid var(--aqua); }
+    .story.note {
+      background: var(--white);
+      color: var(--ink);
+      border-top: 5px solid var(--tangerine);
+    }
+    .story.note h3,
+    .story.note .focus,
+    .story.note p,
+    .story.note .source { color: inherit; }
+    .story.note .source { color: var(--violet-500); }
+    .story.note .focus { color: var(--violet-700); }
+    .story.note .read { color: var(--violet-500); }
+    .story.rail { border-top: 5px solid var(--violet-500); }
+    .story.rail .story-copy { padding-left: 34px; }
+    .story.marker::before { background: var(--tangerine); border-color: var(--violet-800); }
+    .story.marker { background: var(--aqua-soft); }
+    .story.quiet { background: #fcfbff; }
+    .story.wide { background: linear-gradient(135deg, #fff, #f4effc); border-top: 5px solid var(--violet-500); }
+    .source-preview img {
+      object-fit: contain;
+      padding: 0;
+      background: transparent;
+    }
+
+    .campaign-grid, .inspiration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .mini-card {
+      border-top: 5px solid var(--violet-500);
+      background: var(--white);
+      border-radius: 8px;
+      padding: 22px;
+      min-height: 260px;
+      box-shadow: 0 0 0 1px var(--line);
+    }
+    .mini-card:nth-child(2) { border-top-color: var(--aqua); }
+    .mini-card:nth-child(3) { border-top-color: var(--tangerine); }
+    .mini-card h3 {
+      font-size: 1.25rem;
+      line-height: 1.18;
+    }
+    .mini-card p { color: var(--muted); margin: 12px 0 0; }
+    .mini-card a {
+      display: inline-flex;
+      margin-top: 14px;
+      font-weight: 800;
+      color: var(--violet-500);
+    }
+    footer {
+      margin-top: 58px;
+      padding-top: 24px;
+      border-top: 2px solid var(--violet-800);
+      color: var(--muted);
+    }
+    @media (max-width: 860px) {
+      .hero-grid, .section-head,
+      .campaign-grid, .inspiration-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-inner {
+        display: flex;
+        flex-direction: column;
+      }
+      .media,
+      .story.feature .media,
+      .story.band .media,
+      .story.split .media,
+      .story.poster .media,
+      .story.editorial .media,
+      .story.note .media,
+      .story.rail .media,
+      .story.marker .media,
+      .story.quiet .media,
+      .story.wide .media {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: 84px;
+        order: -1;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .story-copy,
+      .story.feature .story-copy,
+      .story.note .story-copy {
+        padding: 74px 22px 26px;
+      }
+      .story.band .story-copy { border-left: 0; border-top: 10px solid var(--tangerine); }
+      header.hero { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="issue">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">Creative Studio Magazine / Daily Issue / June 9, 2026</div>
+          <h1>Fresh signals for the design desk.</h1>
+          <p class="dek">Today’s corrected issue widens the lens: not another round of tool-connectors, but distinct shifts in data storytelling, typography, provenance, on-device intelligence, expressive interfaces, layered generation, and design-specific AI evaluation.</p>
+        </div>
+        <aside class="issue-card" aria-label="Editorial brief">
+          <strong>Editorial temperature</strong>
+          <p>Selective, practical, and design-led. The signal is not “more AI”; it is where creative systems are becoming more measurable, editable, accountable, and visually expressive.</p>
+        </aside>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Jump navigation">
+      <a href="#ai-latest">AI Latest</a>
+      <a href="#campaigns-to-watch">Campaigns to Watch</a>
+      <a href="#inspiration">Inspiration</a>
+    </nav>
+
+    <section id="ai-latest" aria-labelledby="ai-latest-title">
+      <div class="section-head">
+        <h2 id="ai-latest-title">AI Latest</h2>
+        <p class="section-note">Ten core stories first. This corrected edition deliberately avoids the repeated Canva/Claude/Copilot connector loop from recent issues.</p>
+      </div>
+
+      <div class="ai-latest">
+        <article class="story feature core-story">
+          <div class="story-inner">
+            <div class="story-copy">
+              <p class="source">Canva Newsroom / Data design</p>
+              <h3>Canva Sheets moves spreadsheets closer to designed storytelling.</h3>
+              <p class="focus">Canva Sheets combines spreadsheet structure with Magic Charts, Magic Insights, Magic Formulas, and Magic Studio at scale so teams can turn datasets into visual content instead of static tables.</p>
+              <p>This is a more useful Canva story than another AI-assistant integration. The shift is about visual communication: data can become a deck chart, social post, report visual, or campaign proof point without being rebuilt by hand in a separate design file.</p>
+              <p>For PMI, the opportunity is cleaner insight packaging. If Creative Studio can define chart conventions, caption standards, and source-footnote patterns, tools like this become a faster path from project evidence to branded narrative.</p>
+              <a class="read" href="https://www.canva.com/newsroom/news/introducing-canva-sheets/">Read the full story</a>
+            </div>
+            <figure class="media source-preview" data-source="Canva">
+              <img src="https://www.canva.com/favicon.ico" alt="Canva Sheets source preview">
+            </figure>
+          </div>
+        </article>
+
+        <article class="story band core-story">
+          <div class="story-inner">
+            <figure class="media" data-source="Ideogram">
+              <img src="https://ideogram.ai/apple-touch-icon.png" alt="Ideogram 4.0 source preview">
+            </figure>
+            <div class="story-copy">
+              <p class="source">Ideogram / Image model</p>
+              <h3>Ideogram 4.0 argues that design generation should ship as layers, not flat frames.</h3>
+              <p class="focus">The open-weight release emphasizes production typography, bounding-box layout control, 2K output, transparent layers today, and editable text and movable image layers in a follow-up release.</p>
+              <p>This is a sharp design-specific counterpoint to generic image-model news. Ideogram is naming the hard parts Creative Studio actually cares about: headline accuracy, logo placement, brand fidelity, compositional control, and the ability to keep editing after generation.</p>
+              <p>The takeaway is not to adopt a new model immediately. It is to raise the standard for every visual AI tool: if the output cannot return useful components, it is still only a concept sketch.</p>
+              <a class="read" href="https://ideogram.ai/news/ideogram-4.0/">Read the full story</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="story split core-story">
+          <div class="story-inner">
+            <div class="story-copy">
+              <p class="source">Creative Bloq / Typography</p>
+              <h3>Monotype’s natural-language font search gives typography a more human entry point.</h3>
+              <p class="focus">Monotype’s AI search lets creatives describe intent in plain language, such as warm but modern or confident but not aggressive, instead of translating a brief into rigid font filters.</p>
+              <p>This is a useful typography story because it respects how type decisions are actually made. Designers often search from tone, audience, and brand posture first; classification vocabulary comes later.</p>
+              <p>For Creative Studio, the bigger idea is searchable brand intent. If a tool can understand typographic feeling, our own libraries and templates should also describe why a type choice is right, not only what font file it uses.</p>
+              <a class="read" href="https://www.creativebloq.com/design/fonts-typography/the-process-was-a-creativity-killer-how-monotypes-new-ai-search-tool-is-changing-design-for-the-better">Read the full story</a>
+            </div>
+            <figure class="media source-preview" data-source="Creative Bloq">
+              <img src="https://www.creativebloq.com/favicon.ico" alt="Creative Bloq Monotype source preview">
+            </figure>
+          </div>
+        </article>
+
+        <article class="story poster core-story">
+          <div class="story-inner">
+            <figure class="media" data-source="Adobe">
+              <img src="https://www.adobe.com/favicon.ico" alt="Adobe Content Authenticity source preview">
+            </figure>
+            <div class="story-copy">
+              <p class="source">Adobe / Provenance</p>
+              <h3>Adobe Content Authenticity makes provenance part of the creative handoff.</h3>
+              <p class="focus">Adobe’s free beta lets creators apply Content Credentials, attach verified identity and social accounts, inspect credentials, and request that supporting AI models do not train on or use their work.</p>
+              <p>This belongs in a design briefing because attribution is becoming a production behavior, not just a legal afterthought. As more assets are generated, edited, screenshotted, and recirculated, provenance needs to travel with the file.</p>
+              <p>For PMI, this points to a future asset checklist: source rights, AI-use preference, creator attribution, edit history, and publication context. The design file is becoming part of the trust system.</p>
+              <a class="read" href="https://contentauthenticity.adobe.com/">Read the full story</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="story editorial core-story">
+          <div class="story-inner">
+            <div class="story-copy">
+              <p class="source">Apple Developer / On-device AI</p>
+              <h3>Apple’s Foundation Models framework makes private visual intelligence a design-platform question.</h3>
+              <p class="focus">Apple’s latest developer guidance adds multimodal prompts, model swapping, visual tools like OCR, dynamic profiles, evaluation workflows, and Image Playground APIs for high-quality image generation in apps.</p>
+              <p>This matters because creative workflows may move into apps that can reason about images locally, act on what is visible, and generate visuals without a cloud round trip. That changes expectations for review, privacy, and lightweight creative assistance.</p>
+              <p>For Creative Studio, the signal is indirect but real: more stakeholder tools will gain private AI features. Our design systems need to assume AI assistance will happen inside many surfaces, not only in named creative apps.</p>
+              <a class="read" href="https://developer.apple.com/apple-intelligence/whats-new/">Read the full story</a>
+            </div>
+            <figure class="media source-preview" data-source="Apple">
+              <img src="https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202110180743" alt="Apple Intelligence source preview">
+            </figure>
+          </div>
+        </article>
+
+        <article class="story note core-story">
+          <div class="story-inner">
+            <figure class="media" data-source="Google">
+              <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Material 3 Expressive source preview">
+            </figure>
+            <div class="story-copy">
+              <p class="source">Google Blog / Interface systems</p>
+              <h3>Material 3 Expressive puts motion, type, and personalization back in the system conversation.</h3>
+              <p class="focus">Google’s Android and Wear OS refresh emphasizes springy motion, haptics, dynamic color themes, responsive components, emphasized typography, and glanceable controls.</p>
+              <p>This is not AI news, but it is important design-tool context: expressive systems are moving from decorative layer to operating principle. Motion, shape, and type are expected to carry hierarchy and usability, not just mood.</p>
+              <p>For PMI, it is a useful prompt for presentation and campaign systems. A brand can be consistent and still feel alive if motion, component behavior, and information density are designed as part of the system.</p>
+              <a class="read" href="https://blog.google/products-and-platforms/platforms/android/material-3-expressive-android-wearos-launch/">Read the full story</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="story rail core-story">
+          <div class="story-inner">
+            <figure class="media" data-source="arXiv">
+              <img src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png" alt="TASTE dataset arXiv source preview">
+            </figure>
+            <div class="story-copy">
+              <p class="source">arXiv / Design evaluation</p>
+              <h3>TASTE gives AI-generated design a more designer-shaped scorecard.</h3>
+              <p class="focus">The TASTE dataset asks professional designers to rank generated graphic designs across nine criteria, including typography, aesthetics, spatial quality, tone, and hallucination flags.</p>
+              <p>This is the kind of research that makes AI design critique less hand-wavy. It recognizes that a single “preference” score collapses the actual ways designers judge visual work.</p>
+              <p>For Creative Studio, the immediate use is a review rubric: separate typography, hierarchy, spatial logic, color harmony, tone, and factual visual accuracy before deciding whether an AI output is usable.</p>
+              <a class="read" href="https://arxiv.org/abs/2605.20731">Read the full story</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="story marker core-story">
+          <div class="story-inner">
+            <div class="story-copy">
+              <p class="source">arXiv / Benchmark</p>
+              <h3>Graphic-Design-Bench tests AI on layout, typography, infographics, vectors, and animation.</h3>
+              <p class="focus">The benchmark includes 50 tasks organized around layout, typography, infographics, template semantics, and animation, grounded in real-world layered design templates.</p>
+              <p>The most useful finding is sober: current models still struggle with spatial reasoning, vector validity, typographic perception, and temporal decomposition. That matches what designers feel when a generated layout looks plausible but breaks under editing.</p>
+              <p>For PMI, this gives language for AI quality assurance. The bar is not “looks nice at a glance”; it is whether a system can preserve structure, hierarchy, text fidelity, and motion logic.</p>
+              <a class="read" href="https://arxiv.org/abs/2604.04192">Read the full story</a>
+            </div>
+            <figure class="media source-preview" data-source="arXiv">
+              <img src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png" alt="Graphic-Design-Bench arXiv source preview">
+            </figure>
+          </div>
+        </article>
+
+        <article class="story quiet core-story">
+          <div class="story-inner">
+            <figure class="media source-preview" data-source="arXiv">
+              <img src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png" alt="Brief2Design arXiv source preview">
+            </figure>
+            <div class="story-copy">
+              <p class="source">arXiv / Prompt workflow</p>
+              <h3>Brief2Design suggests AI should help structure the brief before drawing the layout.</h3>
+              <p class="focus">The system extracts requirements, recommends missing design details, explores elements separately, then lets designers recombine objects, backgrounds, text, typography, and composition.</p>
+              <p>This is a useful antidote to instant-output fatigue. The paper finds structured workflows can improve requirement clarification and prompt diversity, even when they take longer than a simple conversational baseline.</p>
+              <p>For Creative Studio, that tradeoff feels right. Better AI design work may start by slowing down the first minute: clarify audience, constraint, tone, and message before generating visual options.</p>
+              <a class="read" href="https://arxiv.org/abs/2604.11019">Read the full story</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="story wide core-story">
+          <div class="story-inner">
+            <div class="story-copy">
+              <p class="source">arXiv / PSD workflows</p>
+              <h3>PSDesigner studies what happens when AI learns the operation traces behind PSD files.</h3>
+              <p class="focus">The research introduces CreativePSD, a dataset of high-quality PSD files annotated with design operation traces, so models can learn tool-use procedures instead of only producing flattened imagery.</p>
+              <p>This is a fresh angle because it treats graphic design as a sequence of decisions: collect theme assets, manipulate layers, integrate elements, and refine weak parts. That is much closer to how designers actually work.</p>
+              <p>For PMI, the implication is practical. The next meaningful AI design assistant may be one that can explain and replay its edits, not one that produces the glossiest single image.</p>
+              <a class="read" href="https://arxiv.org/abs/2603.25738">Read the full story</a>
+            </div>
+            <figure class="media source-preview" data-source="arXiv">
+              <img src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png" alt="PSDesigner arXiv source preview">
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="campaigns-to-watch" aria-labelledby="campaigns-title">
+      <div class="section-head">
+        <h2 id="campaigns-title">Campaigns to Watch</h2>
+        <p class="section-note">Complementary work worth discussing in critique, especially where brand systems meet production pressure.</p>
+      </div>
+      <div class="campaign-grid">
+        <article class="mini-card">
+          <p class="source">IIDA</p>
+          <h3>IIDA’s “Beyond” campaign makes atmosphere the identity system.</h3>
+          <p>The Chicago Design Week campaign uses hand-built aura graphics and a flexible visual language to make an event identity feel immersive without becoming over-explained.</p>
+          <a href="https://iida.org/articles/behind-the-design-iidas-beyond-campaign">Read the reference</a>
+        </article>
+        <article class="mini-card">
+          <p class="source">Fast Company</p>
+          <h3>J.Crew’s “Camp Crew” turns nostalgia into a graphic operating system.</h3>
+          <p>The campaign leans into camp signage, badges, pennants, color, scale, and proportion, which makes it a useful reference for campaign worlds built from recognizable visual artifacts.</p>
+          <a href="https://www.fastcompany.com/91552683/j-crew-summer-camp-campaign">Read the reference</a>
+        </article>
+        <article class="mini-card">
+          <p class="source">People of Print</p>
+          <h3>OFFF Barcelona’s Cultured identity grows from community traces.</h3>
+          <p>The festival identity uses biological traces from its creative community as a living design material, a rare example of concept, process, and typography reinforcing one another.</p>
+          <a href="https://peopleofprint.com/graphic-design/built-from-the-people-who-make-it-offf-barcelona-and-uncommon-launch-cultured/">Read the reference</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="inspiration" aria-labelledby="inspiration-title">
+      <div class="section-head">
+        <h2 id="inspiration-title">Inspiration</h2>
+        <p class="section-note">Three quiet prompts for today’s studio practice.</p>
+      </div>
+      <div class="inspiration-grid">
+        <article class="mini-card">
+          <p class="source">Interface</p>
+          <h3>Use motion as hierarchy, not garnish.</h3>
+          <p>Material 3 Expressive is a reminder that motion can explain state, priority, and continuity. Bring that thinking into decks, social systems, and campaign transitions.</p>
+        </article>
+        <article class="mini-card">
+          <p class="source">Trust</p>
+          <h3>Add provenance to the handoff checklist.</h3>
+          <p>For AI-era assets, source, rights, authorship, edit history, and AI-use preference are part of the creative brief’s afterlife.</p>
+        </article>
+        <article class="mini-card">
+          <p class="source">Critique</p>
+          <h3>Score AI output across separate design dimensions.</h3>
+          <p>Typography, hierarchy, spatial logic, tone, color, and hallucination risk should be reviewed separately before an output is called “good.”</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p class="meta">Prepared for PMI Creative Studio. Sources are linked story by story. Static accessibility review only; live behavior and assistive-technology support require separate validation.</p>
+    </footer>
+  </main>
+</body>
+</html>
