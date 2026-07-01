@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PMI Weekly Magazine - June 25, 2026</title>
+  <title>PMI Weekly Magazine - July 1, 2026</title>
   <style>
     :root {
       --violet-50: #efedf3;
@@ -506,9 +506,7 @@
         gap: 8px;
       }
 
-      .department h2 {
-        font-size: 48px;
-      }
+      .department h2 { font-size: 48px; }
     }
 
     @media print {
@@ -519,217 +517,213 @@
       }
 
       .magazine {
-        width: 8.5in;
-        min-height: 11in;
+        width: 100%;
         box-shadow: none;
       }
 
-      @page {
-        size: letter portrait;
-        margin: 0;
-      }
+      .story,
+      .watch-item { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
-  <main class="magazine" aria-labelledby="issue-title">
+  <main class="magazine">
     <div class="topbar">
-      <span>PMI Weekly Edition</span>
-      <span>June 25, 2026</span>
+      <span>PMI Weekly Magazine</span>
+      <span>July 1, 2026</span>
     </div>
 
     <header class="masthead">
       <div>
-        <p class="label">Creative Studio Briefing</p>
-        <h1 id="issue-title">The canvas gets an operating system</h1>
-        <p class="dek">A delayed-week edition on Figma’s expanding surface, Cannes Lions’ AI-and-culture signal, Claude’s visible design taste, and research tools that now want to make the deck.</p>
+        <p class="label">This Week's Edition</p>
+        <h1>The Editable AI Stack</h1>
+        <p class="dek">This week, the creative software story is not just generation. It is editability, context, brand control, and the return of the canvas as the place where teams decide what is worth making.</p>
       </div>
-      <div class="issue-mark" aria-label="Issue delayed"><span>DX</span></div>
+      <div class="issue-mark" aria-hidden="true"><span>07.01</span></div>
     </header>
 
-    <section class="thesis" aria-label="Issue thesis">
-      <p><strong>Issue spine:</strong> This week is about creative infrastructure. Figma moves code, motion, agents, and shaders into the design canvas; PowerPoint and NotebookLM keep pulling AI into presentation work; Cannes shows brands trying to make AI, sport, and emotion feel human at scale.</p>
-      <p class="status"><strong>Package status:</strong> Ten selected stories are assembled from the June 18-25 catch-up list. Campaigns to Watch focuses on Cannes winners and brand systems; Inspiration closes with Claude Design’s aesthetic problem and practical presentation/research prompts for Creative Studio.</p>
+    <section class="thesis">
+      <div>
+        <p><strong>Editorial thesis:</strong> AI is moving deeper into the actual surfaces of creative work: slides, canvases, timelines, type systems, image layers, and brand libraries. The winning updates this week do not promise effortless magic; they promise drafts that can be questioned, edited, governed, and pushed further by people with taste.</p>
+      </div>
+      <div class="status">
+        <p><strong>Publishing note:</strong> Built for the July 1 weekly edition, with 10 core stories followed by Campaigns to Watch and Inspiration for Creative Studio. Best published with AI and design workflow news leading the issue.</p>
+      </div>
     </section>
 
-    <section class="stories" aria-label="Core stories">
+    <section class="stories">
       <div class="section-head">
         <h2>Core Stories</h2>
-        <span>Selected for the delayed June 18-25 issue</span>
+        <span>AI, design tools, presentation workflows, and creative production</span>
       </div>
 
       <div class="story-list">
-        <article class="story" style="--i:1">
+        <article class="story" style="--i: 1">
           <div>
-            <h3>Cannes Lions frames the week around AI, sport, and human emotion</h3>
-            <p class="meta">Industry signal / Cannes Lions</p>
-            <p>The festival’s early framing makes the week feel less like a tech rollout and more like a creative-industry referendum: how do brands use AI without losing feeling, timing, culture, and human judgment?</p>
-            <a class="read-link" href="https://www.canneslions.com/" target="_blank" rel="noopener">Read source</a>
+            <h3>Gemini in Slides now builds editable presentations from one prompt</h3>
+            <p class="meta">Google Slides / Presentation AI / Workflow</p>
+            <p>Google's June 30 update gives Gemini in Slides a practical new job: generate a full multi-slide deck, ground it in Drive files, match another presentation's style, and leave the result as editable native slides. For design teams, the interesting part is not the prompt; it is the style-reference loop. Presentation AI is getting closer to the real production brief: use our context, respect our look, and give us something we can still art-direct.</p>
+            <a class="read-link" href="https://workspaceupdates.googleblog.com/2026/06/create-fully-native-and-editable-presentations-with-Gemini-in-Google-Slides.html">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:2">
+        <article class="story" style="--i: 2">
           <div>
-            <h3>The Ordinary and AB InBev show the value of disciplined brand systems</h3>
-            <p class="meta">Cannes Day 1 / Brand craft</p>
-            <p>ADWEEK’s Day 1 Cannes coverage gives us two useful poles: The Ordinary winning through sharp category behavior and AB InBev being recognized for sustained creative brand building at global scale.</p>
-            <a class="read-link" href="https://www.adweek.com/creativity/the-ordinary-wins-big-among-8-grand-prix-winners-from-cannes-lions-2026-day-1/" target="_blank" rel="noopener">Read source</a>
+            <h3>Figma turns the canvas into a place for code, motion, shaders, and agents</h3>
+            <p class="meta">Figma Config / Canvas / Expressive Systems</p>
+            <p>Config 2026 was unusually clear about Figma's ambition: the canvas is no longer just a layout surface. It is becoming a live workshop for code layers, motion, shader effects, generative plugins, Weave tools, and AI agents. The editorial angle for Creative Studio is that Figma is reframing code as a design material, not a handoff destination. That changes where experimentation happens and who gets to participate.</p>
+            <a class="read-link" href="https://www.figma.com/blog/config-2026-recap/">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:3">
+        <article class="story" style="--i: 3">
           <div>
-            <h3>Adidas turns Oasis nostalgia into a cultural timing machine</h3>
-            <p class="meta">Campaign / Entertainment Grand Prix</p>
-            <p>The “Original Forever” win is a strong Campaigns to Watch lead: music memory, fashion, football culture, and product storytelling all arrive in one brand-clean package.</p>
-            <a class="read-link" href="https://www.adweek.com/creativity/adidas-oasis-homage-among-8-grand-prix-winners-from-cannes-lions-2026-day-2/" target="_blank" rel="noopener">Read source</a>
+            <h3>Figma's agent gets more context, custom tools, and real team memory</h3>
+            <p class="meta">Figma Agent / Plugins / Team Workflows</p>
+            <p>Figma's design agent is moving beyond one-off prompting toward context-aware collaboration. The June 24 update emphasizes custom tools, skills, playground files, and agent actions that can generate plugins, code layers, shaders, and accessibility checks directly on the canvas. This is a useful distinction for designers: a generic assistant produces; a team-aware agent can start to understand how a studio actually works.</p>
+            <a class="read-link" href="https://www.figma.com/blog/agent-custom-tools-context-skills/">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:4">
+        <article class="story" style="--i: 4">
           <div>
-            <h3>Figma Config makes the design canvas feel like a production surface</h3>
-            <p class="meta">Lead / Design tools</p>
-            <p>Code layers, Figma Motion, shaders, generative plugins, Weave tools, and expanded AI features point to a bigger shift: Figma wants the canvas to hold design, behavior, automation, and production logic together.</p>
-            <a class="read-link" href="https://www.figma.com/blog/config-2026-recap/" target="_blank" rel="noopener">Read source</a>
+            <h3>Adobe brings its creative agent into Photoshop, Illustrator, InDesign, Premiere, and Frame.io</h3>
+            <p class="meta">Adobe Creative Cloud / Agentic Production / Craft</p>
+            <p>Adobe's most important June move is less about a single flashy output and more about orchestration. AI Assistant is now in public beta across Premiere, Photoshop, Illustrator, Frame.io, and InDesign, with examples that include batch background removal, layer organization, versioned Illustrator files from spreadsheet data, print-readiness checks, and surfacing feedback across revisions. Adobe is making the case that agentic AI belongs in production plumbing, where creative teams lose hours.</p>
+            <a class="read-link" href="https://blog.adobe.com/en/publish/2026/06/18/more-time-spend-on-your-craft-adobe-brings-power-creative-agent-creative-cloud-apps">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:5">
+        <article class="story" style="--i: 5">
           <div>
-            <h3>Figma’s design agent gets closer to team-specific creative labor</h3>
-            <p class="meta">Agentic design / Custom tools</p>
-            <p>Custom tools, context, and design-system-aware agent behavior suggest a future where AI does not just generate generic screens; it learns the constraints, plugins, assets, and habits of a particular studio.</p>
-            <a class="read-link" href="https://www.figma.com/blog/agent-custom-tools-context-skills/" target="_blank" rel="noopener">Read source</a>
+            <h3>Adobe's Creative Cloud updates target the tedious middle of making</h3>
+            <p class="meta">Adobe / Lightroom / Premiere / Illustrator</p>
+            <p>The June 15 Creative Cloud update is full of small but consequential friction removals: Assisted Culling in Lightroom, Photo to Video powered by Firefly and Google Veo, object masking and single-word captioning in Premiere, object matte tools in After Effects, reflection removal in Photoshop, and Concept to Vector in Illustrator. The through-line is control. Adobe is betting designers will accept AI when it turns rough or repetitive work into editable material rather than finished-looking mush.</p>
+            <a class="read-link" href="https://blog.adobe.com/en/publish/2026/06/15/from-culling-to-compositing-new-creative-cloud-innovations-across-every-stage-of-your-workflow">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:6">
+        <article class="story" style="--i: 6">
           <div>
-            <h3>The Claude Design aesthetic becomes impossible to unsee</h3>
-            <p class="meta">Design culture / Taste risk</p>
-            <p>The New Yorker’s read on Claude Design captures an important creative problem: when AI tools make layout easy, they may also make a recognizable house style spread faster than anyone expects.</p>
-            <a class="read-link" href="https://www.newyorker.com/the-ai-design-aesthetic-thats-taking-over-the-internet" target="_blank" rel="noopener">Read source</a>
+            <h3>PowerPoint adds stronger AI image generation and broader brand-asset access</h3>
+            <p class="meta">Microsoft 365 Copilot / PowerPoint / Brand Systems</p>
+            <p>Microsoft's June 16 Copilot release notes add Black Forest Labs' FLUX.2 Flex model inside PowerPoint, with improved text and layout rendering for generated visuals. Just as important for enterprise creative teams: Copilot for PowerPoint can now draw from multiple SharePoint Organizational Asset Libraries when creating presentations. That makes the AI deck workflow more brand-real, because approved imagery and visual governance are part of the system instead of an afterthought.</p>
+            <a class="read-link" href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:7">
+        <article class="story" style="--i: 7">
           <div>
-            <h3>PowerPoint and Copilot keep moving AI into the slide-review layer</h3>
-            <p class="meta">Presentation design / Microsoft 365</p>
-            <p>Recent Copilot release notes point to more image model control and richer explanation of visual elements. For presentation teams, the useful question is what happens when AI can both make and critique the slide.</p>
-            <a class="read-link" href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" target="_blank" rel="noopener">Read source</a>
+            <h3>NotebookLM becomes a deeper research-to-output studio</h3>
+            <p class="meta">Google NotebookLM / Research / Editorial Production</p>
+            <p>Google's June 8 NotebookLM upgrade gives the research tool more advanced reasoning, code execution, source discovery, and the ability to generate reports, charts, spreadsheets, and slide decks. For editorial and design teams, this is worth watching because research synthesis is becoming a production surface. The tool is not just summarizing source material; it is starting to help package arguments, evidence, and visual outputs from the same notebook.</p>
+            <a class="read-link" href="https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:8">
+        <article class="story" style="--i: 8">
           <div>
-            <h3>Dylan Field argues AI raises the premium on taste</h3>
-            <p class="meta">Interview / Design leadership</p>
-            <p>Field’s post-Config conversation is useful as analysis, not just CEO commentary: if AI makes average design easier, the real creative advantage moves toward judgment, point of view, and team taste.</p>
-            <a class="read-link" href="https://stratechery.com/2026/an-interview-with-figma-ceo-dylan-field-about-design-and-ai/" target="_blank" rel="noopener">Read source</a>
+            <h3>OpenAI positions Codex for creative production and product design workflows</h3>
+            <p class="meta">OpenAI Codex / Creative Plugins / Prototyping</p>
+            <p>OpenAI's June 2 Codex update expands the product beyond software development with role-specific plugins. The creative production plugin is aimed at turning briefs into reviewable assets: campaign boards, display ad variations, product lifestyle shots, and ecommerce-ready image sets using tools including Figma, Canva, Shutterstock, Picsart, and Fal. The product design plugin focuses on early prototypes, live URL audits, and interactive screenshots. The signal is clear: AI workspaces want to sit upstream of design tools, not beside them.</p>
+            <a class="read-link" href="https://openai.com/index/codex-for-every-role-tool-workflow/">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:9">
+        <article class="story" style="--i: 9">
           <div>
-            <h3>Cannes Day 3 turns sports, AI discovery, and storytelling into one conversation</h3>
-            <p class="meta">Industry temperature / Cannes Day 3</p>
-            <p>ADWEEK’s Day 3 roundup captures the mood: sports are everywhere, AI discovery is changing how brands get found, and storytelling is still the room’s favorite word for making technology feel less cold.</p>
-            <a class="read-link" href="https://www.adweek.com/creativity/cannes-lions-2026-gallery-day-3/" target="_blank" rel="noopener">Read source</a>
+            <h3>Canva and Claude make AI artifacts editable instead of disposable</h3>
+            <p class="meta">Canva / Claude Design / HTML Editing</p>
+            <p>Canva's integration with Claude Design is an important bridge between generative output and everyday design editing. Claude can draft visual work, then Canva turns it into fully editable, structured designs. Canva is also importing AI-generated HTML into its drag-and-drop editor, so landing pages, widgets, and interactive artifacts can be moved, recolored, updated, embedded, or published without regenerating the whole thing. That is the key shift: AI artifacts are becoming working files.</p>
+            <a class="read-link" href="https://www.canva.com/newsroom/news/canva-claude-design/">Source</a>
           </div>
         </article>
 
-        <article class="story" style="--i:10">
+        <article class="story" style="--i: 10">
           <div>
-            <h3>NotebookLM becomes a research agent with deck-shaped ambitions</h3>
-            <p class="meta">Research workflow / Google</p>
-            <p>NotebookLM’s agentic research upgrade matters for creative teams because source-grounded research can now move toward reports, charts, spreadsheets, and slide decks. Faster synthesis still needs editorial judgment.</p>
-            <a class="read-link" href="https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/" target="_blank" rel="noopener">Read source</a>
+            <h3>Figma's AI report says the real change is multiplayer, not personal productivity</h3>
+            <p class="meta">Figma Research / Collaboration / Design Strategy</p>
+            <p>Figma's 2026 AI report gives the week's product announcements a useful frame. Based on 8,403 survey responses and 639 interviews, the report says AI is now changing team collaboration more than individual output. Designers are participating more in development, developers are doing more design work, and 76% of product builders say at least half their work happens on the canvas. The takeaway for Creative Studio: AI raises the importance of taste, shared spaces, and decision-making, not just speed.</p>
+            <a class="read-link" href="https://www.figma.com/blog/2026-ai-report/">Source</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="departments" aria-label="Departments">
-      <div class="department">
+    <section class="departments">
+      <article class="department">
         <h2>Campaigns to Watch</h2>
-        <p class="department-intro">Three campaign signals from the week worth studying for system design, cultural timing, and the way brands package participation.</p>
-
+        <p class="department-intro">The strongest campaign references this week use cultural specificity and brand-native systems rather than generic seasonal participation.</p>
         <div class="watch-list">
-          <article class="watch-item">
-            <p class="watch-kicker">Editor’s pick<br>Adidas / Oasis</p>
+          <div class="watch-item">
+            <p class="watch-kicker">IKEA Canada / Dentsu Creative</p>
             <div>
-              <h3>“Original Forever” makes nostalgia operational</h3>
-              <p><strong>Why it matters:</strong> The campaign works because the Oasis reunion is not treated as a borrowed reference. Adidas turns cultural timing into a product-and-story system with clear emotional ownership.</p>
-              <p><strong>What to watch:</strong> The balance between memory and merch. Nostalgia can flatten fast unless the campaign gives fans something specific to recognize, wear, share, and argue about.</p>
-              <a class="source-link" href="https://www.adweek.com/creativity/adidas-oasis-homage-among-8-grand-prix-winners-from-cannes-lions-2026-day-2/" target="_blank" rel="noopener">Source: ADWEEK</a>
+              <h3>Assemble the World turns product recognition into a World Cup guessing game</h3>
+              <p><strong>Why it matters:</strong> IKEA Canada uses everyday objects as national-flag components for the 2026 World Cup, turning familiar product forms into playful visual puzzles. It is social-first, recognizably IKEA, and clever without abandoning the brand's retail vocabulary.</p>
+              <p><strong>Creative Studio takeaway:</strong> This is a useful model for campaign systems built from owned assets. The product catalog becomes the design kit.</p>
+              <a class="source-link" href="https://www.creativebloq.com/design/branding/ikea-turns-everyday-objects-into-ingenious-world-cup-guessing-game">Source</a>
             </div>
-          </article>
+          </div>
 
-          <article class="watch-item">
-            <p class="watch-kicker">Brand system<br>The Ordinary</p>
+          <div class="watch-item">
+            <p class="watch-kicker">Levi's / Pride 2026</p>
             <div>
-              <h3>The Ordinary keeps proving that restraint can be loud</h3>
-              <p><strong>Why it matters:</strong> The brand’s Cannes recognition is a reminder that distinctive systems are not always maximal. A disciplined voice, recognizable visual behavior, and category tension can carry the work.</p>
-              <p><strong>What to watch:</strong> How the brand keeps translating scientific plainness into cultural presence without becoming generic wellness minimalism.</p>
-              <a class="source-link" href="https://www.adweek.com/creativity/the-ordinary-wins-big-among-8-grand-prix-winners-from-cannes-lions-2026-day-1/" target="_blank" rel="noopener">Source: ADWEEK</a>
+              <h3>Levi's Pride work leans into queer biker history, not rainbow surface treatment</h3>
+              <p><strong>Why it matters:</strong> Creative Bloq's Pride roundup highlights Levi's 2026 Pride collection for drawing from queer biker clubs and leather culture, while continuing support for LGBTQ+ advocacy groups. The lesson is specificity: subculture, material history, and action read stronger than seasonal decoration.</p>
+              <p><strong>Creative Studio takeaway:</strong> When designing around identity or community, start with a real visual archive and a real support mechanism.</p>
+              <a class="source-link" href="https://www.creativebloq.com/design/advertising/from-sesame-street-to-levis-these-are-the-best-pride-ads-of-2026">Source</a>
             </div>
-          </article>
+          </div>
 
-          <article class="watch-item">
-            <p class="watch-kicker">Gaming behavior<br>Clash Royale</p>
+          <div class="watch-item">
+            <p class="watch-kicker">Adweek / Cannes Lions 2026</p>
             <div>
-              <h3>“Copycats Welcome” turns imitation into participation</h3>
-              <p><strong>Why it matters:</strong> Clash Royale’s Cannes recognition shows a smart inversion: instead of simply defending against copycats, the campaign treats imitation as a behavior that can reactivate attention.</p>
-              <p><strong>What to watch:</strong> The idea is strongest when it stays playful and self-aware. The lesson for creative teams is to look for the audience behavior hiding inside the annoyance.</p>
-              <a class="source-link" href="https://www.adweek.com/creativity/adidas-oasis-homage-among-8-grand-prix-winners-from-cannes-lions-2026-day-2/" target="_blank" rel="noopener">Source: ADWEEK</a>
+              <h3>Cannes contenders show the craft counterweight to AI spectacle</h3>
+              <p><strong>Why it matters:</strong> Adweek's Cannes forecast argues that the most admired work, even in a year shaped by AI, is winning attention through human feeling, storytelling, and craft rather than technological novelty. That is a useful corrective for every AI-heavy production conversation.</p>
+              <p><strong>Creative Studio takeaway:</strong> Use AI to accelerate variants and production, but keep the winning idea rooted in emotion, behavior, and cultural tension.</p>
+              <a class="source-link" href="https://www.adweek.com/creativity/creative-leaders-place-their-bets-on-19-campaigns-to-win-at-cannes-lions-2026/">Source</a>
             </div>
-          </article>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <div class="department">
+      <article class="department">
         <h2>Inspiration</h2>
-        <p class="department-intro">Visual and workflow prompts for Creative Studio: not just what happened, but what to notice when these tools start shaping taste, files, and decks.</p>
-
+        <p class="department-intro">Bookmark these visual directions for Creative Studio: expressive type, editable systems, tactile resistance to AI gloss, and motion as a brand behavior.</p>
         <div class="watch-list">
-          <article class="watch-item">
-            <p class="watch-kicker">Visual pattern<br>Claude Design</p>
+          <div class="watch-item">
+            <p class="watch-kicker">Typography</p>
             <div>
-              <h3>Audit the “AI-designed” look before it audits you</h3>
-              <p><strong>Why it resonates:</strong> Warm neutrals, serif headlines, tracked labels, soft UI primitives, and familiar component libraries can now become a default aesthetic at machine speed.</p>
-              <p><strong>Studio prompt:</strong> Build a small “avoid list” for AI-generated layout work: default palettes, stock component rhythms, generic type pairings, and over-polished landing-page symmetry.</p>
-              <a class="source-link" href="https://www.newyorker.com/the-ai-design-aesthetic-thats-taking-over-the-internet" target="_blank" rel="noopener">Source: The New Yorker</a>
+              <h3>June type releases favor range: workhorse monospace, luxury stencil, and heavy display systems</h3>
+              <p>Creative Boom's June type roundup is especially useful for editorial and brand work because it spans practical data-facing families and display faces with serious poster presence. Watch the contrast between strict constructed type and softer, high-contrast serif experiments.</p>
+              <a class="source-link" href="https://www.creativeboom.com/resources/the-best-new-typefaces-for-june-2026/">Source</a>
             </div>
-          </article>
+          </div>
 
-          <article class="watch-item">
-            <p class="watch-kicker">Canvas prompt<br>Figma Config</p>
+          <div class="watch-item">
+            <p class="watch-kicker">Visual Trend</p>
             <div>
-              <h3>Treat motion, code, and agents as one design review</h3>
-              <p><strong>Why it resonates:</strong> Figma’s new surface suggests design review can no longer stop at static frames. Motion logic, coded behavior, shader texture, and agent-generated variants need critique too.</p>
-              <p><strong>Studio prompt:</strong> Add one review pass called “behavior and automation”: what moves, what is generated, what is editable, and what the system might repeat poorly.</p>
-              <a class="source-link" href="https://www.figma.com/blog/config-2026-recap/" target="_blank" rel="noopener">Source: Figma</a>
+              <h3>Anti-AI craft is becoming a mainstream design response</h3>
+              <p>The broad 2026 trend conversation keeps returning to texture, collage, imperfection, expressive type, and warm human marks. Treat this less as nostalgia and more as a balancing system: precision from AI, evidence of touch from design direction.</p>
+              <a class="source-link" href="https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026">Source</a>
             </div>
-          </article>
+          </div>
 
-          <article class="watch-item">
-            <p class="watch-kicker">Research prompt<br>NotebookLM</p>
+          <div class="watch-item">
+            <p class="watch-kicker">Motion Systems</p>
             <div>
-              <h3>Let the research agent draft; make the editor decide</h3>
-              <p><strong>Why it resonates:</strong> NotebookLM can reduce the blank-page drag between source gathering and presentation structure, but the work still needs hierarchy, skepticism, and visual pacing.</p>
-              <p><strong>Studio prompt:</strong> For every AI-generated deck outline, ask: what is sourced, what is inferred, what is missing, and where does the audience need a visual proof point?</p>
-              <a class="source-link" href="https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/" target="_blank" rel="noopener">Source: Google</a>
+              <h3>Motion is now part of identity, not decoration after the fact</h3>
+              <p>As Figma Motion and shader tools land on the same canvas as layout and code, brand systems should define behavior as carefully as color and type. Glow, blink, pulse, reveal, drag, and transition styles are becoming recognizable brand assets.</p>
+              <a class="source-link" href="https://www.figma.com/blog/config-2026-recap/">Source</a>
             </div>
-          </article>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
     <footer class="footer-note">
-      <p><strong>Production note:</strong> This delayed edition covers the selected June 18-25 story set. It is formatted as an upload-ready weekly magazine front page with source links embedded per story.</p>
-      <p><strong>Reader promise:</strong> Less tool-chasing, more editorial judgment: what designers should notice as AI moves into the canvas, the campaign room, the research workflow, and the slide deck.</p>
+      <p><strong>Suggested headline:</strong> The Editable AI Stack. <br>Use this when publishing as a weekly issue focused on AI tooling, creative production, and design workflow.</p>
+      <p><strong>Editor notes:</strong> Keep the lead on Google Slides and Figma because both directly affect collaborative design and presentation work this week. Adobe and Microsoft should anchor the production and brand-governance thread.</p>
     </footer>
   </main>
 </body>
