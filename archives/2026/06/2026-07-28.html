@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Premium Edition: Editable AI Becomes the Creative Workflow</title>
+  <meta name="description" content="A premium magazine-style editorial edition for creative teams covering Canva, Adobe, Figma, Google Workspace, Google Vids, and campaigns to watch.">
+  <style>
+    :root {
+      --paper: #f7f7f2;
+      --ink: #121212;
+      --muted: #62625b;
+      --line: rgba(18, 18, 18, 0.16);
+      --accent: #caff3a;
+      --red: #d93025;
+      --white: #ffffff;
+      --max: 1180px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(18, 18, 18, 0.35);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      text-decoration-color: var(--red);
+    }
+
+    .progress {
+      position: fixed;
+      inset: 0 0 auto;
+      height: 4px;
+      transform-origin: left;
+      transform: scaleX(0);
+      background: var(--accent);
+      z-index: 20;
+    }
+
+    .masthead {
+      min-height: 96svh;
+      display: grid;
+      place-items: stretch;
+      border-bottom: 1px solid var(--ink);
+      background:
+        linear-gradient(90deg, rgba(202, 255, 58, 0.85) 0 12%, transparent 12%),
+        linear-gradient(180deg, rgba(217, 48, 37, 0.12), transparent 42%),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .masthead-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.62fr);
+      gap: clamp(28px, 5vw, 88px);
+      align-items: end;
+      padding: clamp(28px, 5vw, 64px) 0;
+    }
+
+    .issue-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding: 12px 0;
+      margin-bottom: clamp(40px, 8vw, 104px);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 10.6ch;
+      font-family: var(--serif);
+      font-size: clamp(58px, 13vw, 172px);
+      line-height: 0.82;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+
+    .dek {
+      max-width: 700px;
+      margin: clamp(24px, 4vw, 44px) 0 0;
+      font-size: clamp(20px, 2.2vw, 32px);
+      line-height: 1.12;
+      font-weight: 700;
+    }
+
+    .hero-aside {
+      align-self: stretch;
+      display: grid;
+      align-content: space-between;
+      gap: 36px;
+      min-height: 520px;
+      border-left: 1px solid var(--ink);
+      padding-left: clamp(22px, 3vw, 42px);
+    }
+
+    .edition-mark {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--ink);
+      background:
+        repeating-linear-gradient(90deg, transparent 0 24px, rgba(18, 18, 18, 0.07) 24px 25px),
+        radial-gradient(circle at 48% 42%, var(--accent) 0 18%, transparent 18.4%),
+        var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edition-mark::before,
+    .edition-mark::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border: 1px solid var(--ink);
+      transform: rotate(12deg);
+    }
+
+    .edition-mark::after {
+      inset: 30%;
+      background: var(--red);
+      transform: rotate(-8deg);
+      mix-blend-mode: multiply;
+    }
+
+    .edition-mark span {
+      position: relative;
+      z-index: 1;
+      font-family: var(--serif);
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 0.85;
+      text-align: center;
+    }
+
+    .brief-list {
+      display: grid;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .brief-list strong {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: 2px;
+    }
+
+    main {
+      overflow: clip;
+    }
+
+    .section {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(52px, 8vw, 108px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 80px);
+      align-items: start;
+      margin-bottom: clamp(30px, 5vw, 64px);
+    }
+
+    .kicker {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--red);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 6vw, 88px);
+      line-height: 0.93;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 850px;
+      margin: 22px 0 0;
+      font-size: clamp(18px, 2vw, 26px);
+      line-height: 1.22;
+      color: #2f2f2b;
+    }
+
+    .story-stack {
+      display: grid;
+      gap: 0;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr) minmax(260px, 0.44fr);
+      gap: clamp(18px, 3vw, 48px);
+      padding: clamp(28px, 4vw, 52px) 0;
+      border-top: 1px solid var(--line);
+      transition: background 180ms ease, padding-inline 180ms ease;
+    }
+
+    .story:hover {
+      background: rgba(202, 255, 58, 0.18);
+      padding-inline: 14px;
+    }
+
+    .num {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 0.9;
+      color: var(--red);
+    }
+
+    h3 {
+      margin: 0 0 14px;
+      max-width: 740px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4.2vw, 58px);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .story-copy p,
+    .campaign-copy p {
+      max-width: 730px;
+      margin: 0 0 16px;
+      font-size: 17px;
+      color: #2d2d29;
+    }
+
+    .story-note {
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .story-note strong {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .source {
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .campaigns {
+      background: #121212;
+      color: var(--paper);
+    }
+
+    .campaigns .section {
+      border-bottom-color: rgba(247, 247, 242, 0.2);
+    }
+
+    .campaigns .kicker,
+    .campaigns .num {
+      color: var(--accent);
+    }
+
+    .campaigns .lead,
+    .campaigns .story-copy p,
+    .campaigns .campaign-copy p,
+    .campaigns .story-note,
+    .campaigns .source {
+      color: rgba(247, 247, 242, 0.76);
+    }
+
+    .campaigns h3,
+    .campaigns .story-note strong {
+      color: var(--paper);
+    }
+
+    .campaigns .story {
+      border-top-color: rgba(247, 247, 242, 0.2);
+    }
+
+    .campaigns .story:hover {
+      background: rgba(202, 255, 58, 0.08);
+    }
+
+    .campaigns a {
+      text-decoration-color: rgba(202, 255, 58, 0.52);
+    }
+
+    .campaigns a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .inspiration-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+    }
+
+    .signal {
+      min-height: 220px;
+      background: var(--paper);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .signal:hover {
+      background: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .signal span {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--red);
+    }
+
+    .signal h3 {
+      margin: 22px 0;
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
+    .signal p {
+      margin: 0;
+      font-size: 14px;
+      color: #30302d;
+    }
+
+    .package {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.42fr);
+      gap: clamp(28px, 5vw, 78px);
+    }
+
+    .headline-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: headline;
+      border-top: 1px solid var(--line);
+    }
+
+    .headline-list li {
+      counter-increment: headline;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1;
+    }
+
+    .headline-list li::before {
+      content: counter(headline, decimal-leading-zero);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--red);
+    }
+
+    .editor-notes {
+      padding: 24px;
+      border: 1px solid var(--ink);
+      background: var(--white);
+    }
+
+    .editor-notes h3 {
+      margin-bottom: 18px;
+      font-size: 32px;
+    }
+
+    .editor-notes p {
+      margin: 0 0 14px;
+      color: #30302d;
+      font-size: 15px;
+    }
+
+    .sources {
+      columns: 2;
+      column-gap: 42px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .sources p {
+      break-inside: avoid;
+      margin: 0 0 12px;
+    }
+
+    footer {
+      padding: 36px 20px 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .masthead-inner,
+      .section-header,
+      .story,
+      .package {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        min-height: auto;
+        border-left: 0;
+        border-top: 1px solid var(--ink);
+        padding-left: 0;
+        padding-top: 24px;
+      }
+
+      .edition-mark {
+        max-width: 360px;
+      }
+
+      .story {
+        gap: 18px;
+      }
+
+      .inspiration-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sources {
+        columns: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media print {
+      .progress {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .masthead {
+        min-height: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div>
+        <div class="issue-label">
+          <span>Premium Editorial Edition</span>
+          <span>Creative Studio Briefing</span>
+          <span>July 2026</span>
+        </div>
+        <h1>Editable AI Becomes the Creative Workflow</h1>
+        <p class="dek">The week's strongest design-tool updates point in one direction: AI outputs that can be revised, branded, grounded in real files, and carried through production without starting over.</p>
+      </div>
+      <aside class="hero-aside" aria-label="Edition summary">
+        <div class="edition-mark" aria-hidden="true"><span>AI<br>EDIT</span></div>
+        <div class="brief-list">
+          <div><strong>Lead idea</strong> The prompt is no longer the artifact. It is the first editable layer.</div>
+          <div><strong>Core coverage</strong> Canva, Adobe Illustrator, Figma Make, Figma Auto Layout, Google Slides, Google Vids.</div>
+          <div><strong>Campaign lens</strong> Typography, cultural memory, archival identity, cinematic product storytelling, and AI-era creative systems.</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reveal">
+      <div class="section-header">
+        <p class="kicker">Editorial Note</p>
+        <div>
+          <h2>Generation is becoming less interesting than what happens after.</h2>
+          <p class="lead">Across Canva, Adobe, Figma, and Google Workspace, the center of gravity is shifting from impressive one-shot output toward tools that stay editable, structured, and useful inside actual creative operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="core-stories">
+      <div class="section-header">
+        <p class="kicker">Core Stories</p>
+        <div>
+          <h2>Seven updates changing the shape of design work.</h2>
+          <p class="lead">The practical opportunity is less dead-end AI output and more material a designer can critique, adapt, and ship.</p>
+        </div>
+      </div>
+
+      <div class="story-stack">
+        <article class="story reveal">
+          <div class="num">01</div>
+          <div class="story-copy">
+            <h3>Canva Code 2.0 turns prompt-built experiences into editable design projects</h3>
+            <p>Canva Code 2.0 is the opener because it captures the week's cleanest AI-for-design shift: generated interactive work that can still behave like a Canva project. Canva says Code can start from prompts, templates, or imported HTML, then produce interactive experiences that can be edited inside Canva with brand colors, text, images, and the company's asset library.</p>
+            <p>For designers, the important part is not simply that Canva can generate websites, apps, games, or interactive pages. It is that the output is positioned as editable design material rather than a frozen AI result.</p>
+            <div class="source">Sources: <a href="https://www.canva.com/newsroom/news/Canva-Code/">Canva Newsroom</a>; <a href="https://www.techradar.com/pro/canva-wants-you-to-have-full-control-over-the-design-code-2-0-just-does-the-heavy-lifting-for-you">TechRadar</a></div>
+          </div>
+          <aside class="story-note"><strong>Editorial angle</strong> Prompt-to-interface tools are maturing only when they become editable enough for art direction.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">02</div>
+          <div class="story-copy">
+            <h3>Adobe Illustrator AI Assistant focuses on production, not vague creativity</h3>
+            <p>Adobe's Illustrator release notes frame AI Assistant around production tasks, and that is the point. The June 2026 Illustrator update also includes pragmatic improvements such as relinking all instances of a linked image, custom keyboard shortcuts for Align and Distribute, recording those commands as actions, and previewing spacing changes before applying them.</p>
+            <p>The story is less glamorous than generative imagery, which makes it more useful. Illustrator is treating AI as a helper for the repetitive, precision-heavy work that accumulates around vector production.</p>
+            <div class="source">Sources: <a href="https://helpx.adobe.com/illustrator/desktop/new-features/release-notes.html">Adobe Illustrator release notes</a>; Adobe Help</div>
+          </div>
+          <aside class="story-note"><strong>Why it matters</strong> Production friction is where hours disappear. AI that helps with setup, alignment, repetition, and maintenance may have more daily value than another blank-canvas ideation tool.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">03</div>
+          <div class="story-copy">
+            <h3>Canva moves design creation into Gemini and AI Search</h3>
+            <p>Canva is extending the creation surface beyond Canva itself. Its Google integration lets users work with Canva across Gemini and AI Search, including flows that can move a generated image into Canva for editable layout work through Magic Layers.</p>
+            <p>That matters because the design task is starting earlier in the search and assistant layer. Users may begin with a question, prompt, or generated image, then send that material into a structured editor.</p>
+            <div class="source">Sources: <a href="https://www.canva.com/newsroom/news/google-gemini/">Canva Newsroom</a>; <a href="https://www.canva.com/newsroom/news/magic-layers-ai-assistants/">Canva Magic Layers</a></div>
+          </div>
+          <aside class="story-note"><strong>Editorial angle</strong> Canva is trying to become the editing layer for AI-generated visual ideas, wherever those ideas begin.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">04</div>
+          <div class="story-copy">
+            <h3>Figma Make adds GPT-5.6 for faster idea-to-prototype work</h3>
+            <p>Figma says GPT-5.6 is now available in Figma Make, with early tests improving both quality and speed on a first pass. The company's framing is direct: faster movement from rough sketch to polished prototype, including cleaner UI, responsive layouts, and higher-fidelity interactions.</p>
+            <p>The useful design reading is that AI prototyping is becoming less about novelty and more about narrowing the distance between intent and behavior.</p>
+            <div class="source">Sources: <a href="https://www.figma.com/blog/gpt-5-6-is-now-available-in-figma-make/">Figma Blog</a>; <a href="https://www.figma.com/release-notes/">Figma release notes</a></div>
+          </div>
+          <aside class="story-note"><strong>Why it matters</strong> Better first-pass prototypes let teams critique flow, responsiveness, and interaction earlier.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">05</div>
+          <div class="story-copy">
+            <h3>Gemini in Google Slides can generate native, editable decks from Drive context</h3>
+            <p>Google's Slides update is a strong presentation-design workflow story. Gemini can now create full, multi-slide presentations from a prompt, ground them in files from Google Drive, match the style of another presentation, and produce slides that remain editable.</p>
+            <p>For a design team, the key word is native. A deck that can be edited slide by slide is far more useful than a flat generated output.</p>
+            <div class="source">Sources: <a href="https://workspaceupdates.googleblog.com/2026/06/create-fully-native-and-editable-presentations-with-Gemini-in-Google-Slides.html">Google Workspace Updates</a>; <a href="https://workspace.google.com/blog/product-announcements/create-on-brand-presentations-in-minutes-with-gemini-in-google-slides">Google Workspace Blog</a></div>
+          </div>
+          <aside class="story-note"><strong>Editorial angle</strong> Presentation AI becomes more valuable when it understands both the files behind the story and the visual system of the deck it is joining.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">06</div>
+          <div class="story-copy">
+            <h3>Figma auto layout moves closer to CSS</h3>
+            <p>Figma's July 24 release note says updated auto layout closes small gaps between Figma layout behavior and CSS, reducing the workarounds developers need during handoff. Existing frames stay on the legacy version unless updated; new frames get the updated version automatically, with the option to switch back to legacy until January 2027.</p>
+            <p>Auto layout has always been more than a convenience feature. It is one of the places where design intent becomes implementation logic.</p>
+            <div class="source">Source: <a href="https://www.figma.com/release-notes/">Figma release notes</a></div>
+          </div>
+          <aside class="story-note"><strong>Why it matters</strong> Better alignment between design layout and web layout can reduce rework for responsive systems, product UI, component libraries, and handoff-heavy teams.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">07</div>
+          <div class="story-copy">
+            <h3>Google Vids gets Gemini Omni for prompt-based video generation and editing</h3>
+            <p>Google Vids now has Gemini Omni directly inside the product. Google says the update improves AI-generated video quality and unlocks prompt-based edits to existing video, letting users ask for changes rather than manually rebuilding every clip.</p>
+            <p>For creative teams, this is less about replacing motion designers and more about the expansion of editable AI media inside everyday workplace tools.</p>
+            <div class="source">Source: <a href="https://workspaceupdates.googleblog.com/2026/07/generate-higher-quality-ai-video-clips-and-edit-any-video-with-Gemini-Omni-in-Vids.html">Google Workspace Updates</a></div>
+          </div>
+          <aside class="story-note"><strong>Editorial angle</strong> Prompt-based video editing will raise the volume of moving-image work; creative teams will need stronger taste systems to keep it from becoming visual noise.</aside>
+        </article>
+      </div>
+    </section>
+
+    <div class="campaigns" id="campaigns">
+      <section class="section reveal">
+        <div class="section-header">
+          <p class="kicker">Campaigns to Watch</p>
+          <div>
+            <h2>Five campaign lessons in type, systems, and cultural read.</h2>
+            <p class="lead">The campaign stories echo the tool stories: the best creative work is not only an asset, but a system of signals, constraints, and decisions.</p>
+          </div>
+        </div>
+
+        <article class="story reveal">
+          <div class="num">A</div>
+          <div class="campaign-copy">
+            <h3>Coca-Cola typography backlash: when type, color, and cultural memory collide</h3>
+            <p>Coca-Cola's refreshed visual system has triggered a sharp typographic response, with Creative Bloq reporting that many online observers see echoes of Marlboro in the new type treatment. The comparison appears to come from a broader visual association: red and white, bold serif energy, and the cultural memory attached to another iconic packaged-goods identity.</p>
+            <div class="source">Source: <a href="https://www.creativebloq.com/design/fonts-typography/everyones-saying-the-same-thing-about-coca-colas-new-font">Creative Bloq</a></div>
+          </div>
+          <aside class="story-note"><strong>Studio takeaway</strong> Audit type systems not only for beauty and ownability, but for accidental neighbors.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">B</div>
+          <div class="campaign-copy">
+            <h3>Horniman Museum builds a type system from collected visual material</h3>
+            <p>Anatomy's Horniman Museum campaign is built around a bespoke typeface foraged from the museum's collections and gardens, according to It's Nice That. The visual system uses the institution's own material world as the source of its identity language.</p>
+            <div class="source">Source: <a href="https://www.itsnicethat.com/articles/anatomy-horniman-museum-graphic-design-project-230726">It's Nice That</a></div>
+          </div>
+          <aside class="story-note"><strong>Studio takeaway</strong> For cultural brands, archives and collections can become more than content. They can become the grammar of the design system.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">C</div>
+          <div class="campaign-copy">
+            <h3>Shinola turns time anxiety into a cinematic product story</h3>
+            <p>Adweek reports that Shinola's first brand campaign, "The Restaurant," puts Nicholas Braun behind the camera for a meditation on time. The campaign reframes watch advertising around pace, pressure, and attention rather than simply product polish.</p>
+            <div class="source">Source: <a href="https://www.adweek.com/creativity/shinola-puts-successions-nicholas-braun-behind-the-camera-for-a-meditation-on-time/">Adweek</a></div>
+          </div>
+          <aside class="story-note"><strong>Studio takeaway</strong> When a product is familiar, the freshest route may be emotional architecture: what pressure, habit, or contradiction does the object help dramatize?</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">D</div>
+          <div class="campaign-copy">
+            <h3>Small Batch Studio turns food rituals into a design system for connection</h3>
+            <p>Creative Boom profiles Small Batch Studio, a Seoul-based food experience design studio using workshops, installations, and research projects to explore how cooking and eating can bring people closer together.</p>
+            <div class="source">Source: <a href="https://www.creativeboom.com/inspiration/from-tea-rituals-to-fluorescent-toolkits-small-batch-studio-uses-food-to-design-relationships/">Creative Boom</a></div>
+          </div>
+          <aside class="story-note"><strong>Studio takeaway</strong> Brand experiences can learn from ritual design: sequence, material, sensory cues, and participation can become the system.</aside>
+        </article>
+
+        <article class="story reveal">
+          <div class="num">E</div>
+          <div class="campaign-copy">
+            <h3>Adweek reframes AI-era campaigns as creative infrastructure</h3>
+            <p>Adweek's AI-era creative infrastructure story argues that brands need connected systems to turn speed into relevance. The framing is useful because it moves the conversation away from isolated AI stunts and toward durable campaign operations.</p>
+            <div class="source">Source: <a href="https://www.adweek.com/creativity/how-brands-can-build-creative-infrastructure-for-the-ai-era/">Adweek</a></div>
+          </div>
+          <aside class="story-note"><strong>Studio takeaway</strong> AI output quality depends on the infrastructure around it: brand memory, modular assets, source material, review loops, and human taste.</aside>
+        </article>
+      </section>
+    </div>
+
+    <section class="section reveal">
+      <div class="section-header">
+        <p class="kicker">Inspiration</p>
+        <div>
+          <h2>Signals for Creative Studio.</h2>
+          <p class="lead">Use these as prompts for critique, planning, and weekly design discussion.</p>
+        </div>
+      </div>
+
+      <div class="inspiration-grid">
+        <div class="signal reveal">
+          <span>01</span>
+          <h3>Editable-first AI</h3>
+          <p>Treat generated work as a starting layer, not a final asset.</p>
+        </div>
+        <div class="signal reveal">
+          <span>02</span>
+          <h3>Production-aware assistance</h3>
+          <p>Watch for tools that help with alignment, relinking, responsive behavior, deck structure, and file grounding.</p>
+        </div>
+        <div class="signal reveal">
+          <span>03</span>
+          <h3>Type as cultural signal</h3>
+          <p>Typeface choices carry borrowed histories whether a brand intends them or not.</p>
+        </div>
+        <div class="signal reveal">
+          <span>04</span>
+          <h3>Archives as identity material</h3>
+          <p>Collections, objects, places, and found visual evidence can become system grammar.</p>
+        </div>
+        <div class="signal reveal">
+          <span>05</span>
+          <h3>Campaigns as systems</h3>
+          <p>Speed only helps when there is a creative infrastructure to steer it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="package">
+        <div>
+          <p class="kicker">Editorial Package</p>
+          <h2>Headline options</h2>
+          <ol class="headline-list">
+            <li>Editable AI Is Becoming the Creative Workflow</li>
+            <li>The Prompt Is Only the First Draft Now</li>
+            <li>Design Tools Move From Generation to Production</li>
+            <li>AI Gets More Useful When Designers Can Still Edit</li>
+            <li>This Week, Creative AI Learned to Stay Editable</li>
+          </ol>
+        </div>
+        <aside class="editor-notes">
+          <h3>Editor notes</h3>
+          <p><strong>Dek:</strong> The week's strongest design-tool updates point in one direction: AI outputs that can be revised, branded, grounded in real files, and carried through production without starting over.</p>
+          <p>The Coca-Cola item should be framed as public commentary and visual association, not as a claim of intentional similarity.</p>
+          <p>The Figma Make item should avoid overclaiming performance beyond Figma's own positioning: quality, speed, responsive layouts, and higher-fidelity interactions.</p>
+          <p>The Adobe Illustrator item should be presented as beta or production-task support where relevant, based on Adobe's help and release-note language.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-header">
+        <p class="kicker">Sources</p>
+        <div>
+          <h2>Reference trail</h2>
+          <p class="lead">Primary and editorial sources used for this edition.</p>
+        </div>
+      </div>
+      <div class="sources">
+        <p><a href="https://www.canva.com/newsroom/news/Canva-Code/">Canva Newsroom: Canva Code 2.0</a></p>
+        <p><a href="https://www.techradar.com/pro/canva-wants-you-to-have-full-control-over-the-design-code-2-0-just-does-the-heavy-lifting-for-you">TechRadar: Canva Code 2.0</a></p>
+        <p><a href="https://helpx.adobe.com/illustrator/desktop/new-features/release-notes.html">Adobe Illustrator release notes</a></p>
+        <p><a href="https://www.canva.com/newsroom/news/google-gemini/">Canva across Google Gemini and AI Search</a></p>
+        <p><a href="https://www.figma.com/blog/gpt-5-6-is-now-available-in-figma-make/">Figma Make GPT-5.6</a></p>
+        <p><a href="https://www.figma.com/release-notes/">Figma release notes</a></p>
+        <p><a href="https://workspaceupdates.googleblog.com/2026/06/create-fully-native-and-editable-presentations-with-Gemini-in-Google-Slides.html">Google Slides Gemini editable decks</a></p>
+        <p><a href="https://workspaceupdates.googleblog.com/2026/07/generate-higher-quality-ai-video-clips-and-edit-any-video-with-Gemini-Omni-in-Vids.html">Google Vids Gemini Omni</a></p>
+        <p><a href="https://www.creativebloq.com/design/fonts-typography/everyones-saying-the-same-thing-about-coca-colas-new-font">Creative Bloq: Coca-Cola typography response</a></p>
+        <p><a href="https://www.itsnicethat.com/articles/anatomy-horniman-museum-graphic-design-project-230726">It's Nice That: Horniman Museum campaign</a></p>
+        <p><a href="https://www.adweek.com/creativity/shinola-puts-successions-nicholas-braun-behind-the-camera-for-a-meditation-on-time/">Adweek: Shinola campaign</a></p>
+        <p><a href="https://www.creativeboom.com/inspiration/from-tea-rituals-to-fluorescent-toolkits-small-batch-studio-uses-food-to-design-relationships/">Creative Boom: Small Batch Studio</a></p>
+        <p><a href="https://www.adweek.com/creativity/how-brands-can-build-creative-infrastructure-for-the-ai-era/">Adweek: Creative infrastructure for the AI era</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built as a standalone editorial HTML edition for team sharing.
+  </footer>
+
+  <script>
+    const progress = document.querySelector(".progress");
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const amount = max > 0 ? window.scrollY / max : 0;
+      progress.style.transform = `scaleX(${amount})`;
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+  </script>
+</body>
+</html>
