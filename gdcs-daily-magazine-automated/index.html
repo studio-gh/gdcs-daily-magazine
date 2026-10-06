@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a0503">
+  <meta name="description" content="Creative Studio Magazine, Week 40: The Work Stays Open.">
+  <title>The Work Stays Open | Creative Studio Magazine</title>
+  <link rel="preload" href="assets/creative-intelligence-cover.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <header class="site-header">
+    <a class="wordmark" href="#cover" aria-label="Creative Studio Magazine home">
+      <span>CSM</span><small>Creative Studio Magazine</small>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="issue-nav">
+      <span></span><span></span><span class="sr-only">Open issue navigation</span>
+    </button>
+    <nav id="issue-nav" aria-label="Issue sections">
+      <a href="#cover-story">Cover story</a>
+      <a href="#tool-radar">Tool radar</a>
+      <a href="#studio-signals">Studio signals</a>
+      <a href="#moodboard">Moodboard</a>
+      <a href="#source-desk">Sources</a>
+    </nav>
+    <button class="print-button" type="button" title="Print this issue" aria-label="Print this issue">↗</button>
+  </header>
+
+  <main>
+    <section class="cover" id="cover" aria-labelledby="cover-title">
+      <img src="assets/creative-intelligence-cover.png" alt="Layered acetate, paper and metal form an abstract editable working-file sculpture." fetchpriority="high">
+      <div class="cover-shade"></div>
+      <div class="cover-meta">
+        <p>Week 40 <span>Sep 4–Oct 5, 2026</span></p>
+        <p>26 selected signals</p>
+      </div>
+      <div class="cover-copy">
+        <p class="kicker">Creative intelligence for design teams</p>
+        <h1 id="cover-title">The Work<br>Stays Open</h1>
+        <p class="dek">The new premium is not instant polish. It is the right to revise: layers, rules, motion and authorship that survive generation.</p>
+      </div>
+      <ol class="cover-lines" aria-label="Inside this issue">
+        <li><span>01</span>Adobe enters the chat, but keeps the layers</li>
+        <li><span>02</span>Motion becomes design-system infrastructure</li>
+        <li><span>03</span>A global shoot finds three production lanes</li>
+        <li><span>04</span>What happens when comments become paid media?</li>
+      </ol>
+      <a class="scroll-cue" href="#letter" aria-label="Read the issue"><span></span>Read the issue</a>
+    </section>
+
+    <section class="letter ruled-section" id="letter">
+      <div class="section-index">Editor’s letter <span>01</span></div>
+      <div class="letter-layout reveal">
+        <h2>Polish is cheap.<br>Revision is power.</h2>
+        <div class="prose">
+          <p class="dropcap">This week’s most useful releases share a stubborn idea: creative work should remain alive after the prompt. Adobe is carrying editable production into Gemini and Claude. Canva is recovering layers from generated images. Figma is turning motion and generative frames into governed, reusable infrastructure.</p>
+          <p>The pattern extends beyond software. Stone Island’s collectors keep their own voices inside a strict visual grammar. HSBC scales global photography without making every market look interchangeable. Even the strongest packaging work treats the vessel, label and product as one revisable system.</p>
+          <p>For studios, the question is no longer whether an image looks finished. Ask what remains open one minute later: Can the team adjust it, localize it, trace the decision, and hand it to somebody else without starting over?</p>
+          <p class="signoff">— The Creative Intelligence Desk</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cover-story ruled-section" id="cover-story">
+      <div class="section-index">Cover story <span>02</span></div>
+      <div class="story-lead reveal">
+        <p class="eyebrow">The editable system</p>
+        <h2>Generation gets useful when the working file survives.</h2>
+        <p class="standfirst">Three platform shifts redraw the boundary between a clever demo and accountable studio production.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-main reveal">
+          <p class="story-number">01 / Adobe</p>
+          <h3>The chatbot becomes a production surface.</h3>
+          <p>Photoshop, Lightroom, Express and Firefly now run through Gemini, while Claude gains Acrobat, a layer-based Express editor and more than 80 Adobe tools. The headline is not the assistant. It is the route back into editable layers, pages and channel variants.</p>
+          <blockquote>“The premium feature is not magic. It is recoverable structure.”</blockquote>
+          <a class="text-link" href="https://blog.adobe.com/en/publish/2026/09/24/adobe-comes-to-gemini-expands-what-you-can-do-in-claude" target="_blank" rel="noreferrer">Read Adobe’s announcement <span>↗</span></a>
+        </article>
+        <aside class="feature-notes reveal">
+          <p class="story-number">02 / Canva</p>
+          <h3>Flat images get their layers back.</h3>
+          <p>Magic Layers converts images made in ChatGPT and Gemini into editable Canva designs. Stress-test text, masks, shadows and brand-editing speed before calling the handoff complete.</p>
+          <a class="text-link" href="https://www.canva.com/newsroom/news/magic-layers-ai-assistants/" target="_blank" rel="noreferrer">Open source <span>↗</span></a>
+          <p class="story-number">03 / Figma</p>
+          <h3>Motion becomes governed infrastructure.</h3>
+          <p>Reusable motion styles, audio, editable text animation, agent access and Lottie export give behavior the same portability as type and color tokens.</p>
+          <a class="text-link" href="https://www.figma.com/release-notes/" target="_blank" rel="noreferrer">Open release notes <span>↗</span></a>
+        </aside>
+      </div>
+      <div class="studio-takeaway reveal">
+        <span>Studio takeaway</span>
+        <p>Evaluate generative tools with a handoff test: revise the copy, swap the brand asset, localize the format, expose the rules, and give the file to someone who did not make it.</p>
+      </div>
+    </section>
+
+    <section class="radar ruled-section dark-section" id="tool-radar">
+      <div class="section-index">Tool radar <span>03</span></div>
+      <div class="section-intro reveal">
+        <h2>Seven releases worth putting through a real brief.</h2>
+        <p>Not a feature parade. Each item carries a studio test.</p>
+      </div>
+      <div class="radar-list" id="radar-list"></div>
+    </section>
+
+    <section class="signals ruled-section" id="studio-signals">
+      <div class="section-index">Studio signals <span>04</span></div>
+      <div class="signals-heading reveal">
+        <h2>Culture moves through a rule.</h2>
+        <p>Six projects where one clear device holds an entire system together.</p>
+      </div>
+      <div class="signal-list" id="signal-list"></div>
+    </section>
+
+    <section class="move-section ruled-section" id="steal-this-move">
+      <div class="section-index">Steal this move <span>05</span></div>
+      <div class="move-grid reveal">
+        <div>
+          <p class="eyebrow">HSBC / We’re There</p>
+          <h2>Split global production into three lanes.</h2>
+        </div>
+        <div class="move-steps">
+          <article><span>01</span><h3>Hero</h3><p>Commission the images that must set the master tone.</p></article>
+          <article><span>02</span><h3>Local author</h3><p>Give city-specific photographers room to make culturally precise work.</p></article>
+          <article><span>03</span><h3>Licensed</h3><p>Fill the system with existing work that already has lived-in credibility.</p></article>
+        </div>
+        <div class="move-copy">
+          <p>HSBC produced 70 stills across 10 cities using hero shoots, local commissions and licensed imagery from a 14-photographer network. The structure balances control, specificity and cost without forcing every market through one camera.</p>
+          <p class="prompt"><strong>Try this:</strong> Label every planned asset hero, local-author or licensed before the estimate is approved. Then write one non-negotiable and one freedom for each lane.</p>
+          <a class="text-link" href="https://lbbonline.com/news/hsbc-we-re-there-untold-fable" target="_blank" rel="noreferrer">See the production model <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="debate ruled-section" id="debate">
+      <div class="section-index">Debate item <span>06</span></div>
+      <div class="debate-title reveal">
+        <p class="eyebrow">PENNY / Comment Coupons</p>
+        <h2>When the audience writes the good line, who owns the creative value?</h2>
+      </div>
+      <div class="debate-sides">
+        <article class="reveal"><span>For</span><h3>Pay the co-creator.</h3><p>Rewarding entertaining comments acknowledges that audience language is cultural production, not engagement residue. Coupons and outdoor placements make the exchange visible.</p></article>
+        <article class="reveal"><span>Against</span><h3>Do not automate taste.</h3><p>AI scoring can turn vernacular wit into a promotion mechanic, with opaque judgments and pressure to perform for a brand. Moderation and attribution become part of the creative system.</p></article>
+      </div>
+      <a class="text-link debate-link" href="https://lbbonline.com/news/penny-recognises-commenters-as-co-creators-and-rewards-entertaining-comments" target="_blank" rel="noreferrer">Bring this to critique <span>↗</span></a>
+    </section>
+
+    <section class="moodboard ruled-section dark-section" id="moodboard">
+      <div class="section-index">Moodboard fuel <span>07</span></div>
+      <div class="section-intro reveal">
+        <h2>Eight references. Eight things to look at.</h2>
+        <p>Save the move, not just the image.</p>
+      </div>
+      <div class="moodboard-grid" id="moodboard-grid"></div>
+    </section>
+
+    <section class="watchlist ruled-section" id="watchlist">
+      <div class="section-index">Watchlist <span>08</span></div>
+      <div class="watch-grid reveal">
+        <h2>Keep the file open.</h2>
+        <ol>
+          <li><span>01</span><div><strong>Round-trip fidelity</strong><p>Can assistant-led edits return to the source tool without flattening typography, masks or components?</p></div></li>
+          <li><span>02</span><div><strong>Motion governance</strong><p>Will teams document timing and behavior as rigorously as color and type?</p></div></li>
+          <li><span>03</span><div><strong>Proof-aware art direction</strong><p>Anti-greenwashing literacy is turning substantiation into a design input.</p></div></li>
+          <li><span>04</span><div><strong>Process publishing</strong><p>Figma Riffs may give experiments a healthier public life than polished case studies.</p></div></li>
+          <li><span>05</span><div><strong>Composable social formats</strong><p>User photography and transparent overlays are replacing the locked share card.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="actions ruled-section" id="actions">
+      <div class="section-index">Team actions <span>09</span></div>
+      <div class="actions-grid reveal">
+        <h2>Four things to do before the next issue.</h2>
+        <ol>
+          <li><span>01</span>Run one generated asset through the five-step handoff test.</li>
+          <li><span>02</span>Draft hero, local-author and licensed lanes for an active campaign.</li>
+          <li><span>03</span>Add one motion behavior to the design-system critique.</li>
+          <li><span>04</span>Attach evidence to every environmental cue in a live review.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sources ruled-section" id="source-desk">
+      <div class="section-index">Source desk <span>10</span></div>
+      <div class="sources-heading reveal">
+        <h2>26 selected stories.<br>No duplicates.</h2>
+        <p>Every record used for Week 40, linked to its original source.</p>
+      </div>
+      <div class="source-list" id="source-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="#cover"><span>CSM</span><small>Creative Studio Magazine</small></a>
+    <p>Week 40 · The Work Stays Open</p>
+    <a href="#cover">Back to cover ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
