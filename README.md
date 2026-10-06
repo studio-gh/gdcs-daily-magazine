@@ -1,32 +1,21 @@
-# Netlify + GitHub site update bundle
+# Creative Studio Magazine
 
-This bundle is designed to fix the live site so:
+Week 40, **The Work Stays Open**. A dependency-free editorial website built from the 26 stories selected in the Creative Intelligence Brief workflow.
 
-- the homepage opens the latest edition
-- the current issue includes an archive link at the bottom
-- previous editions are reachable through an archive page
+## Run locally
 
-## Upload these paths into your GitHub repo
+```bash
+python -m http.server 4173
+```
 
-- `index.html`
-- `archives/index.html`
-- `archives/2026/05/index.html`
-- `archives/2026/04/index.html`
-- `magazines/2026/05-01.html`
-- `magazines/2026/04-30.html`
+Then open `http://localhost:4173`.
 
-## Why this should fix the live site
+## Deploy
 
-- `index.html` sends the Netlify homepage to the latest issue at `/magazines/2026/05-01.html`
-- `/archives/` becomes the archive landing page
-- the two magazine files now include an archive link at the bottom
+The site is static and can be deployed directly to Netlify or GitHub Pages. No build command is required; publish the repository root.
 
-## Important note
+## Editorial system
 
-Yes, if you want a year/month archive structure, a May folder should exist here:
-
-- `archives/2026/05/`
-
-And an April folder should exist here:
-
-- `archives/2026/04/`
+- Visual thesis: a tactile, tangerine working-file aesthetic with strong magazine typography.
+- Content plan: cover, editor's letter, cover story, tool radar, studio signals, practical move, debate, moodboard, watchlist, actions and source desk.
+- Interaction thesis: reading progress, restrained section reveals and active issue navigation.
