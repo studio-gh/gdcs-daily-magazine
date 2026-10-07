@@ -1,0 +1,16 @@
+[
+  {"name":"Creative Boom","url":"https://www.creativeboom.com/feed/","category":"design-culture","tier":3},
+  {"name":"It's Nice That","url":"https://www.itsnicethat.com/rss","category":"design-culture","tier":3},
+  {"name":"Dezeen","url":"https://www.dezeen.com/feed/","category":"design-culture","tier":2},
+  {"name":"Design Week","url":"https://www.designweek.co.uk/feed/","category":"branding","tier":3},
+  {"name":"PRINT Magazine","url":"https://www.printmag.com/feed/","category":"graphic-design","tier":3},
+  {"name":"The Verge","url":"https://www.theverge.com/rss/index.xml","category":"creative-technology","tier":2},
+  {"name":"Product Hunt","url":"https://www.producthunt.com/feed","category":"creative-tools","tier":2},
+  {"name":"Adobe Blog","url":"https://blog.adobe.com/en/feed.xml","category":"creative-tools","tier":3},
+  {"name":"Canva Newsroom","url":"https://www.canva.com/newsroom/news/rss.xml","category":"creative-tools","tier":3},
+  {"name":"Google News: design systems","url":"https://news.google.com/rss/search?q=%28graphic+design+OR+typography+OR+brand+identity+OR+packaging+design+OR+motion+design%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen","category":"graphic-design","tier":1},
+  {"name":"Google News: creative tools","url":"https://news.google.com/rss/search?q=%28Figma+OR+Adobe+OR+Canva+OR+Framer+OR+Webflow+OR+Rive%29+%28design+OR+creative%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen","category":"creative-tools","tier":1},
+  {"name":"Google News: creative AI","url":"https://news.google.com/rss/search?q=%28OpenAI+OR+Anthropic+OR+Runway+OR+Midjourney+OR+Krea%29+%28designer+OR+creative+workflow+OR+image+OR+video%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen","category":"creative-ai","tier":1},
+  {"name":"Google News: campaigns","url":"https://news.google.com/rss/search?q=%28campaign+OR+rebrand+OR+packaging%29+%28creative+agency+OR+design+studio+OR+brand%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen","category":"campaigns","tier":1},
+  {"name":"Google News: presentation tools","url":"https://news.google.com/rss/search?q=%28PowerPoint+OR+Google+Slides+OR+presentation+design+OR+NotebookLM%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen","category":"presentations","tier":1}
+]
