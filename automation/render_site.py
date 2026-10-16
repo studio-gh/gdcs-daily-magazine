@@ -23,19 +23,53 @@ def safe_url(value: object) -> str:
     return raw if urlsplit(raw).scheme in {"http", "https"} else "#"
 
 
-def image_url(story: dict, base: str = "") -> str:
+def source_image_url(story: dict, base: str = "") -> str:
     raw = str(story.get("image") or "")
     if urlsplit(raw).scheme in {"http", "https"}:
         return raw
     if raw.startswith("assets/"):
         return f"{base}{raw}"
-    return f"{base}assets/creative-intelligence-cover.png"
+    return ""
+
+
+def image_url(story: dict, base: str = "") -> str:
+    """Return a source image when available, or the one-off cover artwork."""
+    return source_image_url(story, base) or f"{base}assets/creative-intelligence-cover.png"
+
+
+def beat_slug(value: object) -> str:
+    beat = str(value or "Tools + workflow")
+    return {
+        "Graphic design": "graphic-design",
+        "Motion + video": "motion-video",
+        "Social + campaigns": "social-campaigns",
+        "Tools + workflow": "tools-workflow",
+    }.get(beat, "tools-workflow")
+
+
+def visual_word(story: dict) -> str:
+    label = story.get("title") or story.get("company") or story.get("source") or story.get("publication") or "Studio signal"
+    return str(label).strip()[:42]
+
+
+def story_visual(story: dict, base: str = "", loading: str = "lazy", caption: str = "") -> str:
+    """Render a real story image over a beat-specific editorial fallback panel."""
+    beat = str(story.get("beat") or "Tools + workflow")
+    source = source_image_url(story, base)
+    image = ""
+    if source:
+        image = f'<img src="{esc(source)}" alt="" loading="{esc(loading)}" referrerpolicy="no-referrer" onerror="this.remove()">'
+    credit = caption or str(story.get("source") or "")
+    figcaption = f"<figcaption>{esc(credit)}</figcaption>" if credit else ""
+    return f'''<figure class="story-visual visual-{beat_slug(beat)}">
+      <span class="visual-kicker">{esc(beat)}</span><strong class="visual-word">{esc(visual_word(story))}</strong>{image}{figcaption}
+    </figure>'''
 
 
 def story_rows(stories: list[dict], base: str = "") -> str:
     return "\n".join(
         f'''<a class="department-story reveal" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer">
-          <figure><img src="{esc(image_url(story, base))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><figcaption>{esc(story.get('source'))}</figcaption></figure>
+          {story_visual(story, base)}
           <div class="department-copy"><p class="story-label">{esc(story.get('flag'))}</p><h3>{esc(story.get('title'))}</h3><p>{esc(story.get('summary'))}</p><p class="studio-move">{esc(story.get('practical'))}</p></div>
           <span class="story-arrow">↗</span>
         </a>'''
@@ -46,7 +80,7 @@ def story_rows(stories: list[dict], base: str = "") -> str:
 def mood_rows(stories: list[dict], base: str = "") -> str:
     return "\n".join(
         f'''<a class="mood-item reveal" data-index="{index:02d}" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer">
-          <img src="{esc(image_url(story, base))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><span class="mood-shade"></span>
+          {story_visual(story, base)}<span class="mood-shade"></span>
           <div><p>{esc(story.get('source'))}</p><h3>{esc(story.get('title'))}</h3><small>{esc(story.get('why'))}</small></div>
         </a>'''
         for index, story in enumerate(stories, 1)
@@ -76,7 +110,7 @@ def render_issue(issue: dict, base: str = "") -> str:
         departments.setdefault(story.get("beat") or "Tools + workflow", []).append(story)
     lead_image = image_url(lead or {}, base)
     front_html = "".join(
-        f'''<a class="front-story reveal" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer"><figure><img src="{esc(image_url(story, base))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"></figure><p class="story-label">{esc(story.get('beat'))}</p><h3>{esc(story.get('title'))}</h3><p>{esc(story.get('why'))}</p></a>'''
+        f'''<a class="front-story reveal" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer">{story_visual(story, base)}<p class="story-label">{esc(story.get('beat'))}</p><h3>{esc(story.get('title'))}</h3><p>{esc(story.get('why'))}</p></a>'''
         for story in front
     )
     department_html = "".join(
@@ -99,7 +133,7 @@ def render_issue(issue: dict, base: str = "") -> str:
       <div class="cover-copy"><p class="kicker">Creative intelligence for visual teams</p><h1 id="cover-title">{esc(issue.get('issue_title'))}</h1><p class="dek">{esc(lead.get('title') if lead else issue.get('editor_note'))}</p></div><a class="scroll-cue" href="#letter"><span></span>Open today’s issue</a>
     </section>
     <section class="letter ruled-section" id="letter"><div class="section-inner"><div class="section-index"><span>01</span><p>Editor’s note</p></div><div class="letter-layout reveal"><h2>A sharper read on visual culture.</h2><div class="prose"><p class="dropcap">{esc(issue.get('editor_note'))}</p><p class="signoff">Edited from {esc(issue.get('candidate_count'))} candidates · {esc(issue.get('generation_method'))}</p></div></div></div></section>
-    <section class="visual-front ruled-section" id="visual-front"><div class="section-inner"><div class="section-index"><span>02</span><p>The visual front</p></div><article class="lead-story reveal"><figure><img src="{esc(lead_image)}" alt="" loading="eager" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><figcaption>{esc(lead.get('source') if lead else '')}</figcaption></figure><div><p class="story-label">Cover story · {esc(lead.get('beat') if lead else '')}</p><h2>{esc(lead.get('title') if lead else 'A selective day')}</h2><p class="lead-dek">{esc(lead.get('why') if lead else 'No story cleared the lead threshold.')}</p><p>{esc(lead.get('summary') if lead else '')}</p><p class="studio-move">{esc(lead.get('practical') if lead else '')}</p><a class="text-link" href="{esc(safe_url(lead.get('url') if lead else ''))}" target="_blank" rel="noreferrer">Read original source <span>↗</span></a></div></article><div class="front-grid">{front_html}</div></div></section>
+    <section class="visual-front ruled-section" id="visual-front"><div class="section-inner"><div class="section-index"><span>02</span><p>The visual front</p></div><article class="lead-story reveal">{story_visual(lead or {}, base, "eager")}<div><p class="story-label">Cover story · {esc(lead.get('beat') if lead else '')}</p><h2>{esc(lead.get('title') if lead else 'A selective day')}</h2><p class="lead-dek">{esc(lead.get('why') if lead else 'No story cleared the lead threshold.')}</p><p>{esc(lead.get('summary') if lead else '')}</p><p class="studio-move">{esc(lead.get('practical') if lead else '')}</p><a class="text-link" href="{esc(safe_url(lead.get('url') if lead else ''))}" target="_blank" rel="noreferrer">Read original source <span>↗</span></a></div></article><div class="front-grid">{front_html}</div></div></section>
     {department_html}
     <section class="moodboard ruled-section dark-section" id="inspiration"><div class="section-inner"><div class="section-index"><span>07</span><p>Moodboard fuel</p></div><div class="section-intro reveal"><h2>Look closely.</h2><p>References selected for their typography, image-making, motion, composition or art direction.</p></div><div class="moodboard-grid">{mood_rows(inspiration, base)}</div></div></section>
     <section class="watchlist ruled-section" id="watchlist"><div class="section-inner"><div class="section-index"><span>08</span><p>What to watch next</p></div><div class="watch-grid reveal"><h2>Signals still taking shape.</h2><ol>{watch_items}</ol></div></div></section>
@@ -110,17 +144,17 @@ def render_issue(issue: dict, base: str = "") -> str:
 
 def render_weekly(weekly: dict, issue_date: str, base: str = "../../") -> str:
     fallback = f"{base}assets/creative-intelligence-cover.png"
-    tool_rows = "".join(f'<a class="department-story" href="{esc(safe_url(row.get("url")))}"><figure><img src="{fallback}" alt=""><figcaption>Tool radar</figcaption></figure><div class="department-copy"><p class="story-label">{esc(row.get("recommendation"))}</p><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("note"))}</p></div><span class="story-arrow">↗</span></a>' for row in weekly.get("tool_radar", []))
-    signal_rows = "".join(f'<a class="department-story" href="{esc(safe_url(row.get("url")))}"><figure><img src="{fallback}" alt=""><figcaption>Studio signal</figcaption></figure><div class="department-copy"><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("move"))} {esc(row.get("lesson"))}</p></div><span class="story-arrow">↗</span></a>' for row in weekly.get("studio_signals", []))
+    tool_rows = "".join(f'<a class="department-story" href="{esc(safe_url(row.get("url")))}">{story_visual({**row, "beat": "Tools + workflow"}, base, caption="Tool radar")}<div class="department-copy"><p class="story-label">{esc(row.get("recommendation"))}</p><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("note"))}</p></div><span class="story-arrow">↗</span></a>' for row in weekly.get("tool_radar", []))
+    signal_rows = "".join(f'<a class="department-story" href="{esc(safe_url(row.get("url")))}">{story_visual({**row, "beat": "Graphic design"}, base, caption="Studio signal")}<div class="department-copy"><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("move"))} {esc(row.get("lesson"))}</p></div><span class="story-arrow">↗</span></a>' for row in weekly.get("studio_signals", []))
     actions = "".join(f'<li><span>{index:02d}</span><div><strong>{esc(item)}</strong></div></li>' for index, item in enumerate(weekly.get("team_actions", []), 1))
     watch = "".join(f'<li><span>{index:02d}</span><div><strong>{esc(item)}</strong></div></li>' for index, item in enumerate(weekly.get("watchlist", []), 1))
-    mood = "".join(f'<a class="mood-item" href="{esc(safe_url(row.get("url")))}"><img src="{fallback}" alt=""><span class="mood-shade"></span><div><p>Moodboard fuel</p><h3>{esc(row.get("title"))}</h3><small>{esc(row.get("look_at"))}</small></div></a>' for row in weekly.get("moodboard", []))
+    mood = "".join(f'<a class="mood-item" href="{esc(safe_url(row.get("url")))}">{story_visual({**row, "beat": "Motion + video"}, base)}<span class="mood-shade"></span><div><p>Moodboard fuel</p><h3>{esc(row.get("title"))}</h3><small>{esc(row.get("look_at"))}</small></div></a>' for row in weekly.get("moodboard", []))
     cover = weekly.get("cover_story", {})
     debate = weekly.get("debate", {})
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(weekly.get('title'))} | Creative Studio Magazine</title><link rel="stylesheet" href="{base}styles.css"></head><body><main>
     <section class="cover"><img src="{fallback}" alt="Abstract layered working-file sculpture."><div class="cover-shade"></div><div class="cover-meta"><p>Weekly edition <span>{esc(issue_date)}</span></p></div><div class="cover-copy"><p class="kicker">Creative Studio Magazine</p><h1>{esc(weekly.get('title'))}</h1><p class="dek">{esc(weekly.get('theme'))}</p></div></section>
     <section class="letter ruled-section"><div class="section-inner"><div class="section-index"><span>01</span><p>Editor’s letter</p></div><div class="letter-layout"><h2>The week, edited.</h2><div class="prose"><p class="dropcap">{esc(weekly.get('editors_letter'))}</p></div></div></div></section>
-    <section class="visual-front ruled-section"><div class="section-inner"><div class="section-index"><span>02</span><p>Cover story</p></div><article class="lead-story"><figure><img src="{fallback}" alt=""></figure><div><p class="story-label">The week’s creative shift</p><h2>{esc(cover.get('headline'))}</h2><p class="lead-dek">{esc(cover.get('dek'))}</p><p>{esc(cover.get('body'))}</p><p class="studio-move">{esc(cover.get('takeaway'))}</p></div></article></div></section>
+    <section class="visual-front ruled-section"><div class="section-inner"><div class="section-index"><span>02</span><p>Cover story</p></div><article class="lead-story">{story_visual({**cover, "title": cover.get("headline"), "beat": "Social + campaigns"}, base)}<div><p class="story-label">The week’s creative shift</p><h2>{esc(cover.get('headline'))}</h2><p class="lead-dek">{esc(cover.get('dek'))}</p><p>{esc(cover.get('body'))}</p><p class="studio-move">{esc(cover.get('takeaway'))}</p></div></article></div></section>
     <section class="department ruled-section"><div class="section-inner"><div class="section-index"><span>03</span><p>Tool radar</p></div><div class="department-heading"><h2>Tools worth a real brief.</h2></div><div class="department-list">{tool_rows}</div></div></section>
     <section class="department ruled-section"><div class="section-inner"><div class="section-index"><span>04</span><p>Studio signals</p></div><div class="department-heading"><h2>Moves worth studying.</h2></div><div class="department-list">{signal_rows}</div></div></section>
     <section class="letter ruled-section"><div class="section-inner"><div class="section-index"><span>05</span><p>Debate item</p></div><div class="letter-layout"><h2>{esc(debate.get('question'))}</h2><div class="prose"><p><strong>One side:</strong> {esc(debate.get('side_a'))}</p><p><strong>The other:</strong> {esc(debate.get('side_b'))}</p><p class="studio-move">{esc(debate.get('position'))}</p></div></div></div></section>

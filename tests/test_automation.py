@@ -2,7 +2,7 @@ import unittest
 
 from automation.fetch_candidates import image_of
 from automation.normalize_curation import beat_from, deterministic_issue, extract_json, magazine_worthy, validate_ai
-from automation.render_site import render_issue, render_weekly
+from automation.render_site import render_issue, render_weekly, story_visual
 import xml.etree.ElementTree as ET
 
 
@@ -22,6 +22,23 @@ class AutomationTests(unittest.TestCase):
         output = render_issue(issue)
         self.assertIn("Creative Studio Magazine", output)
         self.assertIn("feed.xml", output)
+
+    def test_missing_story_images_use_distinct_editorial_panels(self):
+        output = "".join(story_visual({"title": beat, "beat": beat}) for beat in (
+            "Graphic design", "Motion + video", "Social + campaigns", "Tools + workflow"
+        ))
+        self.assertIn("visual-graphic-design", output)
+        self.assertIn("visual-motion-video", output)
+        self.assertIn("visual-social-campaigns", output)
+        self.assertIn("visual-tools-workflow", output)
+        self.assertNotIn("creative-intelligence-cover.png", output)
+
+    def test_broken_source_image_reveals_panel_instead_of_cover(self):
+        issue = deterministic_issue(self.candidates, "2026-10-06", False)
+        issue["top_stories"][0]["image"] = "https://example.com/missing.jpg"
+        output = render_issue(issue)
+        self.assertIn('onerror="this.remove()"', output)
+        self.assertNotIn("this.onerror=null;this.src='assets/creative-intelligence-cover.png'", output.split('<section class="visual-front', 1)[1])
 
     def test_ai_output_rejects_unknown_urls(self):
         story = {"title": "Invented", "url": "https://invalid.example/story", "summary": "x", "why": "x", "practical": "x", "fingerprint": "x", "company": "x", "flag": "x"}
