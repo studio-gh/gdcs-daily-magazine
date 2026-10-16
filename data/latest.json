@@ -1,0 +1,453 @@
+{
+  "date": "2026-10-16",
+  "issue_title": "The Daily Edit",
+  "editor_note": "Today’s issue favors concrete workflow changes, visual systems and studio references over generic technology news. Automated fallback selection was used, so the source desk remains the final authority.",
+  "top_stories": [
+    {
+      "title": "Atelier",
+      "source_title": "Atelier",
+      "url": "https://www.producthunt.com/products/atelier-9",
+      "source": "Product Hunt",
+      "company": "Product Hunt",
+      "summary": "The studio your AI coding agents work in Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-atelier-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "The new Apple TV 4K just got its first (very small) discount",
+      "source_title": "The new Apple TV 4K just got its first (very small) discount",
+      "url": "https://www.theverge.com/gadgets/1012962/apple-tv-4k-fourth-generation-fanttik-s1-pro-deal-sale",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "Earlier this week, Apple announced its new Apple TV 4K, which costs nearly twice as much as the 2022 model did at launch. Amazon is now offering the first discount on the forthcoming streaming box (coming out on November 13th), just days after discounting Apple’s new smart display for the first time. Right now, you […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-the-new-apple-tv-4k-just-got-its-first-very-small-discount-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "Apple’s HomeView has an app problem",
+      "source_title": "Apple’s HomeView has an app problem",
+      "url": "https://www.theverge.com/podcast/1012911/apple-homeview-apps-carplay-vergecast",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "It's been a couple of days since Apple's big smart home announcement, and we have some more information - and a bunch of new questions - about the Apple HomeView. The device has plenty of computing oomph, is always connected to power, and looks like a perfect place to run a bunch of apps. And […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-apple-s-homeview-has-an-app-problem-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "Analogue is re-releasing its SNES and Genesis consoles with some nice upgrades",
+      "source_title": "Analogue is re-releasing its SNES and Genesis consoles with some nice upgrades",
+      "url": "https://www.theverge.com/tech/1012901/analogue-retro-console-supern-nt-plus-nintendo-sega-genesis-mega-plus",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "Analogue announced new versions of its Super Nt and Mega Sg retro consoles today with a \"reworked industrial design\" and built-in wireless connectivity for controllers and accessories. Like the original versions, the new Super Nt Plus and Mega Sg Plus are able to play Nintendo and Sega Genesis cartridges using an FPGA processor that perfectly […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-analogue-is-re-releasing-its-snes-and-genesis-consoles-with-some-nice-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "The incredible flying Tesla Roadster is just for show",
+      "source_title": "The incredible flying Tesla Roadster is just for show",
+      "url": "https://www.theverge.com/transportation/1012783/tesla-roadster-flying-stunt-production-reality-musk",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "Last night, Elon Musk gave the people what they want: a car driving vertically up a multi-story ramp, launching off the edge, executing a mid-air \"kickflip\" over a lineup of Teslas, and landing via cold-gas thrusters. That's what the people want, right? \"We were promised flying cars,\" sure, but isn't the operative word in that […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-the-incredible-flying-tesla-roadster-is-just-for-show-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops",
+      "source_title": "A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops",
+      "url": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "Nvidia's RTX Spark N1X processor is finally here, and we've been collectively testing a small fortune's worth of powerful laptops sporting this new \"superchip.\" RTX Spark is designed to be a high-performing Arm-based SoC for laptops and small desktop computers, rivaling the best from Apple, Intel, AMD, and Qualcomm. It has loads of cores, Nvidia […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-a-week-with-rtx-spark-everything-we-ve-learned-using-nvidia-s-new-lap-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "Meta’s new terms may allow it to train AI on news sites for free",
+      "source_title": "Meta’s new terms may allow it to train AI on news sites for free",
+      "url": "https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "Meta's new terms appear to give it permission to crawl and scrape websites \"associated\" with the businesses that use its platforms - including online publishers, according to a report from Nieman Lab. The new terms, which go into effect on October 30th, say Meta can use this outside content to \"develop, improve, research,\" and \"train\" […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-meta-s-new-terms-may-allow-it-to-train-ai-on-news-sites-for-free-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "A fake WhatsApp clone is showing up before the real version on the Play Store",
+      "source_title": "A fake WhatsApp clone is showing up before the real version on the Play Store",
+      "url": "https://www.theverge.com/tech/1012918/google-play-store-fake-whatsapp-android",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "After a Chrome clone was spotted on the Play Store earlier this week, a user on Reddit says they're seeing a fake version of WhatsApp in a \"sponsored\" slot above the real version. As reported earlier by Android Authority, the WhatsApp dupe has racked up over 500,000 downloads and, at the time of writing, its […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-a-fake-whatsapp-clone-is-showing-up-before-the-real-version-on-the-pla-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "This stretchy MagSafe storage pouch gives your phone a sizable trunk",
+      "source_title": "This stretchy MagSafe storage pouch gives your phone a sizable trunk",
+      "url": "https://www.theverge.com/tech/1012828/ninja-labs-magsafe-flex-pouch-silicone-smartphone-storage",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "There's a new storage upgrade option for smartphones compatible with wireless chargers and other magnetic accessories, but it won't help if you've run out of room for apps, pics, and videos. The MagSafe Flex Pouch looks like a magnetic wallet for pairing a small stack of credit cards to your phone, but its storage capacity […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-this-stretchy-magsafe-storage-pouch-gives-your-phone-a-sizable-trunk-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "iPhone Duo orders are already delayed into 2027",
+      "source_title": "iPhone Duo orders are already delayed into 2027",
+      "url": "https://www.theverge.com/tech/1012805/apple-iphone-duo-preorder-delay",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "Delivery estimates for the iPhone Duo slipped into next year in less than an hour after Apple opened preorders for it at 8AM ET on Friday. At the time of writing we are seeing late January delivery dates for every configuration on Apple's website. The foldable is slated to launch in stores on October 23rd, […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-iphone-duo-orders-are-already-delayed-into-2027-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "The Sony Xperia 10 VI won’t be getting a promised update to Android 17",
+      "source_title": "The Sony Xperia 10 VI won’t be getting a promised update to Android 17",
+      "url": "https://www.theverge.com/tech/1012789/sony-xperia-10-vi-smartphone-android-17-update-security",
+      "source": "The Verge",
+      "company": "The Verge",
+      "summary": "When the midrange Sony Xperia 10 VI was announced over two years ago with a Qualcomm Snapdragon 6 Gen 1 chipset and Android 14, Sony promised three major OS updates which would have included this year's Android 17 release. However, according to a notice posted to the company's UK support site, the Xperia 10 VI […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-verge-the-sony-xperia-10-vi-won-t-be-getting-a-promised-update-to-android-17-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "Tesla Roadster",
+      "source_title": "Tesla Roadster",
+      "url": "https://www.producthunt.com/products/tesla-roadster",
+      "source": "Product Hunt",
+      "company": "Product Hunt",
+      "summary": "The hypercar that flies Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-tesla-roadster-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "GBrain Tools",
+      "source_title": "GBrain Tools",
+      "url": "https://www.producthunt.com/products/gbrain",
+      "source": "Product Hunt",
+      "company": "Product Hunt",
+      "summary": "A password manager for AI Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-gbrain-tools-2026-10-16",
+      "flag": "Tool test"
+    },
+    {
+      "title": "Muse Spark Open",
+      "source_title": "Muse Spark Open",
+      "url": "https://www.producthunt.com/products/muse-spark-open",
+      "source": "Product Hunt",
+      "company": "Product Hunt",
+      "summary": "The most capable US open weights model to date Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-muse-spark-open-2026-10-16",
+      "flag": "Tool test"
+    }
+  ],
+  "campaigns": [
+    {
+      "title": "ELC Announces the Beauty&You India Winners - Beauty Packaging",
+      "source_title": "ELC Announces the Beauty&You India Winners - Beauty Packaging",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOY0NHdi1wY0RvRm1ZOUE2bkNLaDdKVXRGcGEzWjJTNnAzT3QzdmdFZ0trSWMtTVg3NkNaMk5iZnAwakx3ZHFjSGRwMVZHMFE0S3pjOV9DeUdDTUVoVTJKVVQtSzZSdWE1ZE9WNzRKZ0txZDE5QlFRUFEtT1VDd0ZzelZzY3h5THA4RjAzSVdFVTJVQQ?oc=5",
+      "source": "Beauty Packaging",
+      "company": "Beauty Packaging",
+      "summary": "ELC Announces the Beauty&You India Winners Beauty Packaging",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "beauty-packaging-elc-announces-the-beauty-you-india-winners-beauty-packaging-2026-10-16",
+      "flag": "Client reference"
+    },
+    {
+      "title": "FlyteVu Launches Marketing Campaign for Ashley Starring the Brand’s First Chief Mood Officer, Teddy Swims - Marketing Communication News",
+      "source_title": "FlyteVu Launches Marketing Campaign for Ashley Starring the Brand’s First Chief Mood Officer, Teddy Swims - Marketing Communication News",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbVMwSmJJM3JrQ094ZzJicWxFWlVLbjR0S1JmUzNlZzJ0TlczNkFoaTBFQ2hIN2JJZVhEWG5zRGNQUlVFcGRTTmhKZkpiY3Jzc2lsQi1aWDNpWEVfN01nR0ZMeXdiYTVFTDUwMnhZY3ozQ0dyMllCTHVvWUFkczRoZ05uVmxqbDVFYUNpRmlSOWRUVFd4N2h4TXBoM3ROLW5sTnVUUjBUZElsVU82WEdIblBLbklhdkdJejltR0xfWGs4el9tcmQw?oc=5",
+      "source": "Marketing Communication News",
+      "company": "Marketing Communication News",
+      "summary": "FlyteVu Launches Marketing Campaign for Ashley Starring the Brand’s First Chief Mood Officer, Teddy Swims Marketing Communication News",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "marketing-communication-news-flytevu-launches-marketing-campaign-for-ashley-starring-the-brand-s-fi-2026-10-16",
+      "flag": "Client reference"
+    },
+    {
+      "title": "Top 10 AI Video Generators Trusted by Marketing Agencies and Brand Teams - The Hype Magazine",
+      "source_title": "Top 10 AI Video Generators Trusted by Marketing Agencies and Brand Teams - The Hype Magazine",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUUpmUGNrMHA3YUZNZWMtRnctOTZ4LUg5RWN1djZrMm5hN1JIbUd0OHNfYm9CVW04bm9BQklwYXE1eXVCc0FHNXI0Y2RuRWtuYWNsemg2UE4zOUJLOUpJdHYwclNMWXhIb3BWT3RBRTlwcGxsV3FFRlJVTHBaRUJNQ3JtY2JOdkdMRGUyS1pPMVFIcTF6OHVXbHpnSy1iVEdhOFEzcUx6eVFMb0h3TXE2VEhma3pIdnM?oc=5",
+      "source": "The Hype Magazine",
+      "company": "The Hype Magazine",
+      "summary": "Top 10 AI Video Generators Trusted by Marketing Agencies and Brand Teams The Hype Magazine",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "the-hype-magazine-top-10-ai-video-generators-trusted-by-marketing-agencies-and-brand-tea-2026-10-16",
+      "flag": "Client reference"
+    },
+    {
+      "title": "Pernod Ricard UK appoints PR agency for Xmas brief - PR Week UK",
+      "source_title": "Pernod Ricard UK appoints PR agency for Xmas brief - PR Week UK",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeGxBcWsxNHBTaDdRVjh4MHEtT2ttS0p2Tk84b2k3QlFKYWRXTUczVExXZ0w3SGVHaDJhemxaRjdVSE1NZzNCSUlfM1FndDdJNTZpWm11VTFVTE1PNmMybFBYUHhZR2JJbzR6R19tVnZhMmE2TzJXSmpac2tXQTRhNDlBT285MnBvN2ZWWlNITmE?oc=5",
+      "source": "PR Week UK",
+      "company": "PR Week UK",
+      "summary": "Pernod Ricard UK appoints PR agency for Xmas brief PR Week UK",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "pr-week-uk-pernod-ricard-uk-appoints-pr-agency-for-xmas-brief-pr-week-uk-2026-10-16",
+      "flag": "Client reference"
+    },
+    {
+      "title": "adidas Splashes Colour Against Concrete in ‘Go Beyond the Grey’ — LBB - LBB - Little Black Book",
+      "source_title": "adidas Splashes Colour Against Concrete in ‘Go Beyond the Grey’ — LBB - LBB - Little Black Book",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYWg1LXVuS0JpSTRIOTZoTFJURUJ2M3JWZk9CZGdWU21EbEZFZnUtWVRiYjVYbE12OFA4a2VraXBoeEhsdW1GUFhYbEhtNVp3UnBxYU14eEhVNXA0RE5pY3VFcXFmTzV1VEZIcnB0V00tWFFnMHZ0bTNaR3UyZjFWM1hmVFRuRkt6dFh3TnZCZTJnZzU0dnVGMQ?oc=5",
+      "source": "LBB - Little Black Book",
+      "company": "LBB - Little Black Book",
+      "summary": "adidas Splashes Colour Against Concrete in ‘Go Beyond the Grey’ — LBB LBB - Little Black Book",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "lbb-little-black-book-adidas-splashes-colour-against-concrete-in-go-beyond-the-grey-lbb-2026-10-16",
+      "flag": "Client reference"
+    }
+  ],
+  "inspiration": [
+    {
+      "title": "How two simple dots gave Pictoplasma a fresh personality for 2026",
+      "source_title": "How two simple dots gave Pictoplasma a fresh personality for 2026",
+      "url": "https://www.creativeboom.com/work/how-two-simple-dots-gave-pictoplasma-a-face-after-20-years-of-neutral-design",
+      "source": "Creative Boom",
+      "company": "Creative Boom",
+      "summary": "andstudio gives Berlin's character design festival a brand new look, built entirely from type. From childhood, most of us will be familiar with seeing a man in the moon. When you analyse it logically,...",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-boom-how-two-simple-dots-gave-pictoplasma-a-fresh-personality-for-2026-2026-10-16",
+      "flag": "Moodboard fuel"
+    },
+    {
+      "title": "Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue",
+      "source_title": "Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue",
+      "url": "https://www.creativeboom.com/news/pregnant-then-screwed-makes-clever-use-of-simple-design-to-highlight-a-vital-gender-issue",
+      "source": "Creative Boom",
+      "company": "Creative Boom",
+      "summary": "The campaigning charity is helping to expose how the UK pension system undervalues mothers who take time off work. The neon starburst is one of the most familiar graphic devices in retail. Loud, tacky...",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-boom-pregnant-then-screwed-subverts-the-conventions-of-retail-design-to-hig-2026-10-16",
+      "flag": "Moodboard fuel"
+    },
+    {
+      "title": "David Smalling turns mattresses, pearls and instruments into something unsettling and uneasy",
+      "source_title": "David Smalling turns mattresses, pearls and instruments into something unsettling and uneasy",
+      "url": "https://www.creativeboom.com/work/david-smalling-turns-mattress-pearls-and-instruments-into-something-unsettling-and-uneasy",
+      "source": "Creative Boom",
+      "company": "Creative Boom",
+      "summary": "The Jamaican-born painter stacks beds and hangs pearls around candelabra in oil paintings that look gorgeous until you get closer. David Smalling's painterly world is full of things you'd expect to fi...",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-boom-david-smalling-turns-mattresses-pearls-and-instruments-into-something-2026-10-16",
+      "flag": "Moodboard fuel"
+    },
+    {
+      "title": "Caroline Tremlett is bringing the Victorian jelly back, one wobble at a time",
+      "source_title": "Caroline Tremlett is bringing the Victorian jelly back, one wobble at a time",
+      "url": "https://www.creativeboom.com/work/caroline-tremlett-is-bringing-the-victorian-jelly-back-one-wobble-at-a-time",
+      "source": "Creative Boom",
+      "company": "Creative Boom",
+      "summary": "By day she advises international law firms. By night, the antique-mould collector shapes crowns, castles and sea serpents out of jelly. There was a time when your jelly said more about you than your w...",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-boom-caroline-tremlett-is-bringing-the-victorian-jelly-back-one-wobble-at-2026-10-16",
+      "flag": "Moodboard fuel"
+    },
+    {
+      "title": "André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band",
+      "source_title": "André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band",
+      "url": "https://www.creativeboom.com/work/andre-britz-draws-landscapes-from-memory-in-a-book-held-together-with-an-elastic-band",
+      "source": "Creative Boom",
+      "company": "Creative Boom",
+      "summary": "The German graphic designer's project is designed to feel unfinished. We've all got a place that's dear to our heart, that we visited years ago, and which we have a clear picture of in our mind. It mi...",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-boom-andr-britz-draws-dimly-remembered-landscapes-in-a-book-held-together-2026-10-16",
+      "flag": "Moodboard fuel"
+    },
+    {
+      "title": "AI-Powered PS & PR Revolution: Is the Photography Post-Production Software Industry on the Verge of a Major Shakeup? - 36Kr",
+      "source_title": "AI-Powered PS & PR Revolution: Is the Photography Post-Production Software Industry on the Verge of a Major Shakeup? - 36Kr",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1qc09RUXVCRWpEaEEyMXZqZUtUa1dfR2NLWEYtNlRPWmdzd1RzMnU4YnIxM2tHTDE2T2xCc2tWUm1FX0FSOVVfV3MxVnNxT2piNzFR?oc=5",
+      "source": "36Kr",
+      "company": "36Kr",
+      "summary": "AI-Powered PS & PR Revolution: Is the Photography Post-Production Software Industry on the Verge of a Major Shakeup? 36Kr",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "36kr-ai-powered-ps-pr-revolution-is-the-photography-post-production-soft-2026-10-16",
+      "flag": "Moodboard fuel"
+    }
+  ],
+  "watchlist": [
+    "Parallax",
+    "Maybloc",
+    "Toad",
+    "Nemotron 3.5 Super VL",
+    "Harness by Autonomous",
+    "Tetriz Harness",
+    "BOSS Console"
+  ],
+  "weekly_issue": {
+    "title": "The Week Stayed Open",
+    "theme": "The strongest creative signals favored usable systems and specific visual decisions over novelty alone.",
+    "editors_letter": "This automated holding edition preserves the week’s strongest verified signals. Its selections passed source, freshness and duplicate checks even though the AI editorial pass was unavailable.",
+    "cover_story": {
+      "headline": "Atelier",
+      "dek": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "body": "The studio your AI coding agents work in Discussion | Link",
+      "takeaway": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief."
+    },
+    "tool_radar": [
+      {
+        "title": "Atelier",
+        "recommendation": "Watch",
+        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.producthunt.com/products/atelier-9"
+      },
+      {
+        "title": "The new Apple TV 4K just got its first (very small) discount",
+        "recommendation": "Watch",
+        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.theverge.com/gadgets/1012962/apple-tv-4k-fourth-generation-fanttik-s1-pro-deal-sale"
+      },
+      {
+        "title": "Apple’s HomeView has an app problem",
+        "recommendation": "Watch",
+        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.theverge.com/podcast/1012911/apple-homeview-apps-carplay-vergecast"
+      },
+      {
+        "title": "Analogue is re-releasing its SNES and Genesis consoles with some nice upgrades",
+        "recommendation": "Watch",
+        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.theverge.com/tech/1012901/analogue-retro-console-supern-nt-plus-nintendo-sega-genesis-mega-plus"
+      },
+      {
+        "title": "The incredible flying Tesla Roadster is just for show",
+        "recommendation": "Watch",
+        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.theverge.com/transportation/1012783/tesla-roadster-flying-stunt-production-reality-musk"
+      }
+    ],
+    "studio_signals": [
+      {
+        "title": "ELC Announces the Beauty&You India Winners - Beauty Packaging",
+        "move": "ELC Announces the Beauty&You India Winners Beauty Packaging",
+        "lesson": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOY0NHdi1wY0RvRm1ZOUE2bkNLaDdKVXRGcGEzWjJTNnAzT3QzdmdFZ0trSWMtTVg3NkNaMk5iZnAwakx3ZHFjSGRwMVZHMFE0S3pjOV9DeUdDTUVoVTJKVVQtSzZSdWE1ZE9WNzRKZ0txZDE5QlFRUFEtT1VDd0ZzelZzY3h5THA4RjAzSVdFVTJVQQ?oc=5"
+      },
+      {
+        "title": "FlyteVu Launches Marketing Campaign for Ashley Starring the Brand’s First Chief Mood Officer, Teddy Swims - Marketing Communication News",
+        "move": "FlyteVu Launches Marketing Campaign for Ashley Starring the Brand’s First Chief Mood Officer, Teddy Swims Marketing Communication News",
+        "lesson": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbVMwSmJJM3JrQ094ZzJicWxFWlVLbjR0S1JmUzNlZzJ0TlczNkFoaTBFQ2hIN2JJZVhEWG5zRGNQUlVFcGRTTmhKZkpiY3Jzc2lsQi1aWDNpWEVfN01nR0ZMeXdiYTVFTDUwMnhZY3ozQ0dyMllCTHVvWUFkczRoZ05uVmxqbDVFYUNpRmlSOWRUVFd4N2h4TXBoM3ROLW5sTnVUUjBUZElsVU82WEdIblBLbklhdkdJejltR0xfWGs4el9tcmQw?oc=5"
+      },
+      {
+        "title": "Top 10 AI Video Generators Trusted by Marketing Agencies and Brand Teams - The Hype Magazine",
+        "move": "Top 10 AI Video Generators Trusted by Marketing Agencies and Brand Teams The Hype Magazine",
+        "lesson": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUUpmUGNrMHA3YUZNZWMtRnctOTZ4LUg5RWN1djZrMm5hN1JIbUd0OHNfYm9CVW04bm9BQklwYXE1eXVCc0FHNXI0Y2RuRWtuYWNsemg2UE4zOUJLOUpJdHYwclNMWXhIb3BWT3RBRTlwcGxsV3FFRlJVTHBaRUJNQ3JtY2JOdkdMRGUyS1pPMVFIcTF6OHVXbHpnSy1iVEdhOFEzcUx6eVFMb0h3TXE2VEhma3pIdnM?oc=5"
+      },
+      {
+        "title": "Pernod Ricard UK appoints PR agency for Xmas brief - PR Week UK",
+        "move": "Pernod Ricard UK appoints PR agency for Xmas brief PR Week UK",
+        "lesson": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeGxBcWsxNHBTaDdRVjh4MHEtT2ttS0p2Tk84b2k3QlFKYWRXTUczVExXZ0w3SGVHaDJhemxaRjdVSE1NZzNCSUlfM1FndDdJNTZpWm11VTFVTE1PNmMybFBYUHhZR2JJbzR6R19tVnZhMmE2TzJXSmpac2tXQTRhNDlBT285MnBvN2ZWWlNITmE?oc=5"
+      },
+      {
+        "title": "adidas Splashes Colour Against Concrete in ‘Go Beyond the Grey’ — LBB - LBB - Little Black Book",
+        "move": "adidas Splashes Colour Against Concrete in ‘Go Beyond the Grey’ — LBB LBB - Little Black Book",
+        "lesson": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYWg1LXVuS0JpSTRIOTZoTFJURUJ2M3JWZk9CZGdWU21EbEZFZnUtWVRiYjVYbE12OFA4a2VraXBoeEhsdW1GUFhYbEhtNVp3UnBxYU14eEhVNXA0RE5pY3VFcXFmTzV1VEZIcnB0V00tWFFnMHZ0bTNaR3UyZjFWM1hmVFRuRkt6dFh3TnZCZTJnZzU0dnVGMQ?oc=5"
+      }
+    ],
+    "steal_this_move": {
+      "title": "Preserve editability",
+      "origin": "This week’s tool signals",
+      "method": "Test what remains changeable after generation.",
+      "exercise": "Hand one generated asset to a teammate and measure the revision cost."
+    },
+    "debate": {
+      "question": "Is finished-looking output hiding production debt?",
+      "side_a": "Speed expands exploration.",
+      "side_b": "Flattened output moves cost downstream.",
+      "position": "Judge the working file, not only the preview."
+    },
+    "moodboard": [
+      {
+        "title": "How two simple dots gave Pictoplasma a fresh personality for 2026",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.creativeboom.com/work/how-two-simple-dots-gave-pictoplasma-a-face-after-20-years-of-neutral-design"
+      },
+      {
+        "title": "Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.creativeboom.com/news/pregnant-then-screwed-makes-clever-use-of-simple-design-to-highlight-a-vital-gender-issue"
+      },
+      {
+        "title": "David Smalling turns mattresses, pearls and instruments into something unsettling and uneasy",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.creativeboom.com/work/david-smalling-turns-mattress-pearls-and-instruments-into-something-unsettling-and-uneasy"
+      },
+      {
+        "title": "Caroline Tremlett is bringing the Victorian jelly back, one wobble at a time",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.creativeboom.com/work/caroline-tremlett-is-bringing-the-victorian-jelly-back-one-wobble-at-a-time"
+      },
+      {
+        "title": "André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.creativeboom.com/work/andre-britz-draws-landscapes-from-memory-in-a-book-held-together-with-an-elastic-band"
+      },
+      {
+        "title": "AI-Powered PS & PR Revolution: Is the Photography Post-Production Software Industry on the Verge of a Major Shakeup? - 36Kr",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1qc09RUXVCRWpEaEEyMXZqZUtUa1dfR2NLWEYtNlRPWmdzd1RzMnU4YnIxM2tHTDE2T2xCc2tWUm1FX0FSOVVfV3MxVnNxT2piNzFR?oc=5"
+      }
+    ],
+    "watchlist": [
+      "A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops",
+      "Meta’s new terms may allow it to train AI on news sites for free",
+      "A fake WhatsApp clone is showing up before the real version on the Play Store",
+      "This stretchy MagSafe storage pouch gives your phone a sizable trunk",
+      "iPhone Duo orders are already delayed into 2027"
+    ],
+    "team_actions": [
+      "Test one tool on a live brief.",
+      "Save one visual reference with a written reason.",
+      "Discuss the debate question in critique."
+    ]
+  },
+  "generation_method": "deterministic-fallback",
+  "candidate_count": 60
+}
