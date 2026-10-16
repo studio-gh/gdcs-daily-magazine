@@ -49,6 +49,31 @@ def strip_markup(value: str) -> str:
     return " ".join(value.split())[:1000]
 
 
+def image_of(node: ET.Element, raw_description: str) -> str:
+    """Return the best feed-provided image without fetching the article page."""
+    for child in node.iter():
+        name = local_name(child.tag)
+        if name not in {"thumbnail", "content", "enclosure"}:
+            continue
+        candidate = (child.attrib.get("url") or child.attrib.get("href") or "").strip()
+        media_type = child.attrib.get("type", "").lower()
+        medium = child.attrib.get("medium", "").lower()
+        if candidate.startswith("//"):
+            candidate = "https:" + candidate
+        if candidate.startswith(("http://", "https://")) and (
+            name == "thumbnail" or medium == "image" or media_type.startswith("image/")
+        ):
+            return candidate
+    match = re.search(r"<img[^>]+src=[\"']([^\"']+)[\"']", html.unescape(raw_description or ""), re.I)
+    if match:
+        candidate = match.group(1)
+        if candidate.startswith("//"):
+            candidate = "https:" + candidate
+        if candidate.startswith(("http://", "https://")):
+            return candidate
+    return ""
+
+
 def parse_date(value: str) -> datetime | None:
     if not value:
         return None
@@ -95,7 +120,8 @@ def fetch_source(source: dict, cutoff: datetime) -> list[dict]:
         published = parse_date(published_raw)
         if published and published.astimezone(timezone.utc) < cutoff:
             continue
-        description = strip_markup(text_of(node, {"description", "summary", "content", "encoded"}))
+        raw_description = text_of(node, {"description", "summary", "content", "encoded"})
+        description = strip_markup(raw_description)
         item_source = strip_markup(text_of(node, {"source"})) or source["name"]
         norm = normalized_title(title)
         fingerprint = hashlib.sha1(f"{norm}|{url}".encode()).hexdigest()[:16]
@@ -108,6 +134,7 @@ def fetch_source(source: dict, cutoff: datetime) -> list[dict]:
             "source_tier": source["tier"],
             "published": published.astimezone(timezone.utc).isoformat() if published else "",
             "summary": description,
+            "image": image_of(node, raw_description),
             "candidate_fingerprint": fingerprint,
         })
     return results

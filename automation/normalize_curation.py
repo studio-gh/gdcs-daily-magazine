@@ -15,6 +15,25 @@ SECTION_LIMITS = {"top_stories": 16, "campaigns": 7, "inspiration": 7}
 CAMPAIGN_TERMS = {"campaign", "brand", "rebrand", "identity", "packaging", "ooh", "advertising"}
 INSPIRATION_TERMS = {"typography", "illustration", "editorial", "studio", "exhibition", "photography", "motion", "culture"}
 TOOL_TERMS = {"figma", "adobe", "canva", "framer", "webflow", "runway", "midjourney", "openai", "powerpoint", "slides"}
+MOTION_TERMS = {"motion", "animation", "film", "video", "vfx", "3d", "cinematic", "title sequence"}
+SOCIAL_TERMS = {"social", "tiktok", "instagram", "reels", "creator", "content", "community", "influencer"}
+GRAPHIC_TERMS = {"graphic", "typography", "typeface", "identity", "branding", "editorial", "poster", "packaging", "illustration"}
+CREATIVE_WORK_TERMS = GRAPHIC_TERMS | MOTION_TERMS | SOCIAL_TERMS | TOOL_TERMS | {
+    "art direction", "campaign", "creative", "design system", "designer", "image", "layout", "logo", "photography", "presentation", "rebrand", "website"
+}
+DESIGN_NATIVE_FEEDS = {"Creative Boom", "It's Nice That", "Design Week", "PRINT Magazine", "BP&O", "Motionographer"}
+
+
+def beat_from(item: dict) -> str:
+    text = f"{item.get('title', '')} {item.get('summary', '')} {item.get('category', '')}".lower()
+    category = item.get("category", "")
+    if category == "motion-video" or any(term in text for term in MOTION_TERMS):
+        return "Motion + video"
+    if category in {"social-creative", "campaigns"} or any(term in text for term in SOCIAL_TERMS):
+        return "Social + campaigns"
+    if category in {"graphic-design", "branding", "design-culture"} or any(term in text for term in GRAPHIC_TERMS):
+        return "Graphic design"
+    return "Tools + workflow"
 
 
 def extract_json(raw: str) -> dict | None:
@@ -56,6 +75,8 @@ def fallback_story(item: dict, date: str, flag: str) -> dict:
         "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
         "fingerprint": f"{slug[:110]}-{date}",
         "flag": flag,
+        "image": item.get("image", ""),
+        "beat": beat_from(item),
     }
 
 
@@ -70,6 +91,19 @@ def candidate_score(item: dict) -> float:
     return score
 
 
+def magazine_worthy(item: dict) -> bool:
+    text = f"{item.get('title', '')} {item.get('summary', '')}".lower()
+    feed = item.get("feed") or item.get("publication") or ""
+    category = item.get("category", "")
+    if feed in DESIGN_NATIVE_FEEDS:
+        return True
+    if category in {"graphic-design", "branding", "motion-video", "campaigns", "social-creative", "presentations"}:
+        return any(term in text for term in CREATIVE_WORK_TERMS)
+    if category in {"creative-tools", "creative-ai", "creative-technology"}:
+        return any(term in text for term in CREATIVE_WORK_TERMS - {"content", "community"})
+    return False
+
+
 def deterministic_issue(candidates: list[dict], date: str, friday: bool) -> dict:
     ranked = sorted(candidates, key=candidate_score, reverse=True)
     used: set[str] = set()
@@ -77,7 +111,7 @@ def deterministic_issue(candidates: list[dict], date: str, friday: bool) -> dict
     def take(predicate, count: int, flag: str) -> list[dict]:
         result = []
         for item in ranked:
-            if item["url"] in used or not predicate(item):
+            if item["url"] in used or not magazine_worthy(item) or not predicate(item):
                 continue
             used.add(item["url"])
             result.append(fallback_story(item, date, flag))
@@ -85,9 +119,17 @@ def deterministic_issue(candidates: list[dict], date: str, friday: bool) -> dict
                 break
         return result
 
-    campaigns = take(lambda row: row.get("category") == "campaigns" or any(term in row["title"].lower() for term in CAMPAIGN_TERMS), 6, "Client reference")
-    inspiration = take(lambda row: row.get("category") in {"design-culture", "graphic-design"} or any(term in row["title"].lower() for term in INSPIRATION_TERMS), 6, "Moodboard fuel")
-    top = take(lambda row: True, 14, "Tool test")
+    groups = [
+        take(lambda row: beat_from(row) == "Graphic design", 5, "Feature candidate"),
+        take(lambda row: beat_from(row) == "Motion + video", 3, "Feature candidate"),
+        take(lambda row: beat_from(row) == "Social + campaigns", 3, "Client reference"),
+        take(lambda row: beat_from(row) == "Tools + workflow", 3, "Tool test"),
+    ]
+    top = [group[index] for index in range(max(map(len, groups), default=0)) for group in groups if index < len(group)]
+    if len(top) < 14:
+        top += take(lambda row: magazine_worthy(row), 14 - len(top), "Design-ops lesson")
+    campaigns = take(lambda row: row.get("category") in {"campaigns", "social-creative"} or any(term in row["title"].lower() for term in CAMPAIGN_TERMS | SOCIAL_TERMS), 6, "Client reference")
+    inspiration = take(lambda row: row.get("category") in {"design-culture", "graphic-design", "branding", "motion-video"} or any(term in row["title"].lower() for term in INSPIRATION_TERMS | GRAPHIC_TERMS | MOTION_TERMS), 6, "Moodboard fuel")
     weekly = None
     if friday:
         lead = (top + campaigns + inspiration)[:1]
@@ -130,6 +172,8 @@ def validate_ai(issue: dict, candidates: list[dict], date: str) -> dict | None:
             story["source_title"] = candidate["title"]
             story["url"] = candidate["url"]
             story["source"] = story.get("source") or candidate.get("publication") or candidate.get("feed")
+            story["image"] = candidate.get("image", "")
+            story["beat"] = beat_from(candidate)
             for field in ("title", "company", "summary", "why", "practical", "fingerprint", "flag"):
                 story[field] = str(story.get(field, "")).strip()
             if not all(story[field] for field in ("title", "summary", "why", "practical", "fingerprint")):

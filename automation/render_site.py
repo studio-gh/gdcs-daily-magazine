@@ -23,21 +23,31 @@ def safe_url(value: object) -> str:
     return raw if urlsplit(raw).scheme in {"http", "https"} else "#"
 
 
-def story_rows(stories: list[dict]) -> str:
+def image_url(story: dict, base: str = "") -> str:
+    raw = str(story.get("image") or "")
+    if urlsplit(raw).scheme in {"http", "https"}:
+        return raw
+    if raw.startswith("assets/"):
+        return f"{base}{raw}"
+    return f"{base}assets/creative-intelligence-cover.png"
+
+
+def story_rows(stories: list[dict], base: str = "") -> str:
     return "\n".join(
-        f'''<a class="signal-item reveal" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer">
-          <h3>{esc(story.get('title'))}</h3>
-          <div><p>{esc(story.get('summary'))}</p><p class="practical"><strong>Studio move:</strong> {esc(story.get('practical'))}</p></div>
-          <span>↗</span>
+        f'''<a class="department-story reveal" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer">
+          <figure><img src="{esc(image_url(story, base))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><figcaption>{esc(story.get('source'))}</figcaption></figure>
+          <div class="department-copy"><p class="story-label">{esc(story.get('flag'))}</p><h3>{esc(story.get('title'))}</h3><p>{esc(story.get('summary'))}</p><p class="studio-move">{esc(story.get('practical'))}</p></div>
+          <span class="story-arrow">↗</span>
         </a>'''
         for story in stories
-    ) or '<p class="empty-state">No story cleared the editorial bar for this section today.</p>'
+    ) or '<p class="empty-state">No story cleared the editorial bar for this department today.</p>'
 
 
-def mood_rows(stories: list[dict]) -> str:
+def mood_rows(stories: list[dict], base: str = "") -> str:
     return "\n".join(
         f'''<a class="mood-item reveal" data-index="{index:02d}" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer">
-          <h3>{esc(story.get('title'))}</h3><p>{esc(story.get('why'))}</p>
+          <img src="{esc(image_url(story, base))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><span class="mood-shade"></span>
+          <div><p>{esc(story.get('source'))}</p><h3>{esc(story.get('title'))}</h3><small>{esc(story.get('why'))}</small></div>
         </a>'''
         for index, story in enumerate(stories, 1)
     ) or '<p class="empty-state">No visual reference cleared the editorial bar today.</p>'
@@ -58,50 +68,64 @@ def render_issue(issue: dict, base: str = "") -> str:
     campaigns = issue.get("campaigns", [])
     inspiration = issue.get("inspiration", [])
     lead = top[0] if top else None
-    remaining = top[1:] if lead else []
+    front = top[1:5] if lead else top[:4]
+    department_pool = top[5:] + campaigns if lead else top[4:] + campaigns
     total = len(top) + len(campaigns) + len(inspiration)
-    lead_html = ""
-    if lead:
-        lead_html = f'''<div class="feature-grid">
-          <article class="feature-main reveal"><p class="story-number">01 / {esc(lead.get('company'))}</p><h3>{esc(lead.get('title'))}</h3><p>{esc(lead.get('summary'))}</p><blockquote>{esc(lead.get('why'))}</blockquote><a class="text-link" href="{esc(safe_url(lead.get('url')))}" target="_blank" rel="noreferrer">Read the source <span>↗</span></a></article>
-          <aside class="feature-notes reveal"><p class="story-number">Studio implication</p><h3>{esc(lead.get('practical'))}</h3><p>{esc(lead.get('flag'))}</p></aside>
-        </div>'''
+    departments = {beat: [] for beat in ("Graphic design", "Motion + video", "Social + campaigns", "Tools + workflow")}
+    for story in department_pool:
+        departments.setdefault(story.get("beat") or "Tools + workflow", []).append(story)
+    lead_image = image_url(lead or {}, base)
+    front_html = "".join(
+        f'''<a class="front-story reveal" href="{esc(safe_url(story.get('url')))}" target="_blank" rel="noreferrer"><figure><img src="{esc(image_url(story, base))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"></figure><p class="story-label">{esc(story.get('beat'))}</p><h3>{esc(story.get('title'))}</h3><p>{esc(story.get('why'))}</p></a>'''
+        for story in front
+    )
+    department_html = "".join(
+        f'''<section class="department ruled-section" id="{beat.lower().replace(' + ', '-').replace(' ', '-')}"><div class="section-inner"><div class="section-index"><span>{index:02d}</span><p>{esc(beat)}</p></div><div class="department-heading"><h2>{esc(beat)}</h2><p>{esc({"Graphic design": "Identity, type, packaging and visual systems with something precise to study.", "Motion + video": "Sequences, films and moving systems that expand the visual language.", "Social + campaigns": "Platform-native ideas, campaigns and cultural moves built to travel.", "Tools + workflow": "Software shifts worth testing against a real brief, not a demo."}[beat])}</p></div><div class="department-list">{story_rows(departments.get(beat, []), base)}</div></div></section>'''
+        for index, beat in enumerate(departments, 3)
+    )
     watch_items = "".join(f"<li><span>{index:02d}</span><div><strong>{esc(item)}</strong></div></li>" for index, item in enumerate(issue.get("watchlist", []), 1))
     return f'''<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#1a0503"><meta name="description" content="Creative Intelligence Magazine for {esc(issue.get('date'))}.">
   <meta property="og:title" content="{esc(issue.get('issue_title'))} | Creative Studio Magazine"><meta property="og:description" content="{esc(issue.get('editor_note'))}"><meta property="og:image" content="{SITE_URL}/assets/creative-intelligence-cover.png">
   <title>{esc(issue.get('issue_title'))} | Creative Studio Magazine</title><link rel="alternate" type="application/rss+xml" title="Creative Intelligence Magazine" href="{SITE_URL}/feed.xml">
-  <link rel="preload" href="{base}assets/creative-intelligence-cover.png" as="image"><link rel="stylesheet" href="{base}styles.css">
+  <link rel="preload" href="{esc(lead_image)}" as="image"><link rel="stylesheet" href="{base}styles.css">
 </head><body>
   <div class="progress" aria-hidden="true"><span></span></div><header class="site-header"><a class="wordmark" href="{base}index.html"><span>CSM</span><small>Creative Studio Magazine</small></a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="issue-nav"><span></span><span></span><span class="sr-only">Open issue navigation</span></button>
-    <nav id="issue-nav" aria-label="Issue sections"><a href="#top-stories">Top stories</a><a href="#campaigns">Campaigns</a><a href="#inspiration">Inspiration</a><a href="#watchlist">Watchlist</a><a href="#source-desk">Sources</a><a href="{base}archive/">Index</a></nav><button class="print-button" type="button" title="Print this issue" aria-label="Print this issue">↗</button>
+    <nav id="issue-nav" aria-label="Issue sections"><a href="#visual-front">Front</a><a href="#graphic-design">Design</a><a href="#motion-video">Motion</a><a href="#social-campaigns">Social</a><a href="#inspiration">Moodboard</a><a href="{base}archive/">Index</a></nav><button class="print-button" type="button" title="Print this issue" aria-label="Print this issue">↗</button>
   </header><main>
-    <section class="cover" id="cover" aria-labelledby="cover-title"><img src="{base}assets/creative-intelligence-cover.png" alt="Layered acetate, paper and metal form an abstract editable working-file sculpture." fetchpriority="high"><div class="cover-shade"></div><div class="cover-meta"><p>Daily edition <span>{esc(issue.get('date'))}</span></p><p>{total} selected signals</p></div>
-      <div class="cover-copy"><p class="kicker">Creative intelligence for design teams</p><h1 id="cover-title">{esc(issue.get('issue_title'))}</h1><p class="dek">{esc(issue.get('editor_note'))}</p></div><ol class="cover-lines" aria-label="Inside this issue">{''.join(f'<li><span>{i:02d}</span>{esc(story.get("title"))}</li>' for i, story in enumerate((top + campaigns)[:4], 1))}</ol><a class="scroll-cue" href="#letter"><span></span>Read the issue</a>
+    <section class="cover" id="cover" aria-labelledby="cover-title"><img src="{esc(lead_image)}" alt="" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><div class="cover-shade"></div><div class="cover-meta"><p>Daily edition <span>{esc(issue.get('date'))}</span></p><p>{total} selected signals</p></div>
+      <div class="cover-copy"><p class="kicker">Creative intelligence for visual teams</p><h1 id="cover-title">{esc(issue.get('issue_title'))}</h1><p class="dek">{esc(lead.get('title') if lead else issue.get('editor_note'))}</p></div><a class="scroll-cue" href="#letter"><span></span>Open today’s issue</a>
     </section>
-    <section class="letter ruled-section" id="letter"><div class="section-index">Editor’s note <span>01</span></div><div class="letter-layout reveal"><h2>The day,<br>edited.</h2><div class="prose"><p class="dropcap">{esc(issue.get('editor_note'))}</p><p class="signoff">Generated from {esc(issue.get('candidate_count'))} candidates · {esc(issue.get('generation_method'))}</p></div></div></section>
-    <section class="cover-story ruled-section" id="top-stories"><div class="section-index">Top stories <span>02</span></div><div class="story-lead reveal"><p class="eyebrow">Today’s lead</p><h2>{esc(lead.get('title') if lead else 'A selective day')}</h2><p class="standfirst">{esc(lead.get('why') if lead else 'No story cleared the lead threshold.')}</p></div>{lead_html}<div class="signal-list secondary-stories">{story_rows(remaining)}</div></section>
-    <section class="signals ruled-section" id="campaigns"><div class="section-index">Campaigns to watch <span>03</span></div><div class="signals-heading reveal"><h2>Ideas that became systems.</h2><p>Brand, campaign, packaging and visual-language work worth opening.</p></div><div class="signal-list">{story_rows(campaigns)}</div></section>
-    <section class="moodboard ruled-section dark-section" id="inspiration"><div class="section-index">Inspiration signals <span>04</span></div><div class="section-intro reveal"><h2>Save the move,<br>not just the image.</h2><p>Visual references with a concrete reason to keep them.</p></div><div class="moodboard-grid">{mood_rows(inspiration)}</div></section>
-    <section class="watchlist ruled-section" id="watchlist"><div class="section-index">What to watch next <span>05</span></div><div class="watch-grid reveal"><h2>Keep the file open.</h2><ol>{watch_items}</ol></div></section>
-    <section class="sources ruled-section" id="source-desk"><div class="section-index">Source desk <span>06</span></div><div class="sources-heading reveal"><h2>{total} stories.<br>No duplicates.</h2><p>Original reporting and primary sources used in this issue.</p></div><div class="source-list">{source_rows(issue)}</div></section>
+    <section class="letter ruled-section" id="letter"><div class="section-inner"><div class="section-index"><span>01</span><p>Editor’s note</p></div><div class="letter-layout reveal"><h2>A sharper read on visual culture.</h2><div class="prose"><p class="dropcap">{esc(issue.get('editor_note'))}</p><p class="signoff">Edited from {esc(issue.get('candidate_count'))} candidates · {esc(issue.get('generation_method'))}</p></div></div></div></section>
+    <section class="visual-front ruled-section" id="visual-front"><div class="section-inner"><div class="section-index"><span>02</span><p>The visual front</p></div><article class="lead-story reveal"><figure><img src="{esc(lead_image)}" alt="" loading="eager" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{base}assets/creative-intelligence-cover.png'"><figcaption>{esc(lead.get('source') if lead else '')}</figcaption></figure><div><p class="story-label">Cover story · {esc(lead.get('beat') if lead else '')}</p><h2>{esc(lead.get('title') if lead else 'A selective day')}</h2><p class="lead-dek">{esc(lead.get('why') if lead else 'No story cleared the lead threshold.')}</p><p>{esc(lead.get('summary') if lead else '')}</p><p class="studio-move">{esc(lead.get('practical') if lead else '')}</p><a class="text-link" href="{esc(safe_url(lead.get('url') if lead else ''))}" target="_blank" rel="noreferrer">Read original source <span>↗</span></a></div></article><div class="front-grid">{front_html}</div></div></section>
+    {department_html}
+    <section class="moodboard ruled-section dark-section" id="inspiration"><div class="section-inner"><div class="section-index"><span>07</span><p>Moodboard fuel</p></div><div class="section-intro reveal"><h2>Look closely.</h2><p>References selected for their typography, image-making, motion, composition or art direction.</p></div><div class="moodboard-grid">{mood_rows(inspiration, base)}</div></div></section>
+    <section class="watchlist ruled-section" id="watchlist"><div class="section-inner"><div class="section-index"><span>08</span><p>What to watch next</p></div><div class="watch-grid reveal"><h2>Signals still taking shape.</h2><ol>{watch_items}</ol></div></div></section>
+    <section class="sources ruled-section" id="source-desk"><div class="section-inner"><div class="section-index"><span>09</span><p>Source desk</p></div><div class="sources-heading reveal"><h2>{total} stories. No repeats.</h2><p>Original reporting and primary sources behind the issue.</p></div><div class="source-list">{source_rows(issue)}</div></div></section>
   </main><footer><a class="wordmark" href="#cover"><span>CSM</span><small>Creative Studio Magazine</small></a><p>{esc(issue.get('date'))} · {esc(issue.get('issue_title'))}</p><a href="{base}archive/index.html">Archive ↗</a></footer><script src="{base}script.js"></script>
 </body></html>'''
 
 
 def render_weekly(weekly: dict, issue_date: str, base: str = "../../") -> str:
-    tool_rows = "".join(f'<a class="signal-item" href="{esc(safe_url(row.get("url")))}"><h3>{esc(row.get("title"))}</h3><p><strong>{esc(row.get("recommendation"))}:</strong> {esc(row.get("note"))}</p><span>↗</span></a>' for row in weekly.get("tool_radar", []))
-    signal_rows = "".join(f'<a class="signal-item" href="{esc(safe_url(row.get("url")))}"><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("move"))} {esc(row.get("lesson"))}</p><span>↗</span></a>' for row in weekly.get("studio_signals", []))
-    actions = "".join(f"<li>{esc(item)}</li>" for item in weekly.get("team_actions", []))
+    fallback = f"{base}assets/creative-intelligence-cover.png"
+    tool_rows = "".join(f'<a class="department-story" href="{esc(safe_url(row.get("url")))}"><figure><img src="{fallback}" alt=""><figcaption>Tool radar</figcaption></figure><div class="department-copy"><p class="story-label">{esc(row.get("recommendation"))}</p><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("note"))}</p></div><span class="story-arrow">↗</span></a>' for row in weekly.get("tool_radar", []))
+    signal_rows = "".join(f'<a class="department-story" href="{esc(safe_url(row.get("url")))}"><figure><img src="{fallback}" alt=""><figcaption>Studio signal</figcaption></figure><div class="department-copy"><h3>{esc(row.get("title"))}</h3><p>{esc(row.get("move"))} {esc(row.get("lesson"))}</p></div><span class="story-arrow">↗</span></a>' for row in weekly.get("studio_signals", []))
+    actions = "".join(f'<li><span>{index:02d}</span><div><strong>{esc(item)}</strong></div></li>' for index, item in enumerate(weekly.get("team_actions", []), 1))
+    watch = "".join(f'<li><span>{index:02d}</span><div><strong>{esc(item)}</strong></div></li>' for index, item in enumerate(weekly.get("watchlist", []), 1))
+    mood = "".join(f'<a class="mood-item" href="{esc(safe_url(row.get("url")))}"><img src="{fallback}" alt=""><span class="mood-shade"></span><div><p>Moodboard fuel</p><h3>{esc(row.get("title"))}</h3><small>{esc(row.get("look_at"))}</small></div></a>' for row in weekly.get("moodboard", []))
     cover = weekly.get("cover_story", {})
+    debate = weekly.get("debate", {})
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(weekly.get('title'))} | Creative Studio Magazine</title><link rel="stylesheet" href="{base}styles.css"></head><body><main>
-    <section class="cover"><img src="{base}assets/creative-intelligence-cover.png" alt="Abstract layered working-file sculpture."><div class="cover-shade"></div><div class="cover-meta"><p>Weekly edition <span>{esc(issue_date)}</span></p></div><div class="cover-copy"><p class="kicker">Creative Studio Magazine</p><h1>{esc(weekly.get('title'))}</h1><p class="dek">{esc(weekly.get('theme'))}</p></div></section>
-    <section class="letter ruled-section"><div class="section-index">Editor’s letter <span>01</span></div><div class="letter-layout"><h2>The week,<br>edited.</h2><div class="prose"><p class="dropcap">{esc(weekly.get('editors_letter'))}</p></div></div></section>
-    <section class="cover-story ruled-section"><div class="section-index">Cover story <span>02</span></div><div class="story-lead"><h2>{esc(cover.get('headline'))}</h2><p class="standfirst">{esc(cover.get('dek'))}</p></div><div class="prose"><p>{esc(cover.get('body'))}</p><blockquote>{esc(cover.get('takeaway'))}</blockquote></div></section>
-    <section class="signals ruled-section"><div class="section-index">Tool radar <span>03</span></div><div class="signal-list">{tool_rows}</div></section><section class="signals ruled-section"><div class="section-index">Studio signals <span>04</span></div><div class="signal-list">{signal_rows}</div></section>
-    <section class="actions ruled-section"><div class="section-index">Team actions <span>05</span></div><div class="actions-grid"><h2>Take it into the studio.</h2><ol>{actions}</ol></div></section></main><footer><a class="wordmark" href="{base}index.html"><span>CSM</span><small>Creative Studio Magazine</small></a><p>{esc(weekly.get('title'))}</p><a href="{base}archive/index.html">Archive ↗</a></footer></body></html>'''
+    <section class="cover"><img src="{fallback}" alt="Abstract layered working-file sculpture."><div class="cover-shade"></div><div class="cover-meta"><p>Weekly edition <span>{esc(issue_date)}</span></p></div><div class="cover-copy"><p class="kicker">Creative Studio Magazine</p><h1>{esc(weekly.get('title'))}</h1><p class="dek">{esc(weekly.get('theme'))}</p></div></section>
+    <section class="letter ruled-section"><div class="section-inner"><div class="section-index"><span>01</span><p>Editor’s letter</p></div><div class="letter-layout"><h2>The week, edited.</h2><div class="prose"><p class="dropcap">{esc(weekly.get('editors_letter'))}</p></div></div></div></section>
+    <section class="visual-front ruled-section"><div class="section-inner"><div class="section-index"><span>02</span><p>Cover story</p></div><article class="lead-story"><figure><img src="{fallback}" alt=""></figure><div><p class="story-label">The week’s creative shift</p><h2>{esc(cover.get('headline'))}</h2><p class="lead-dek">{esc(cover.get('dek'))}</p><p>{esc(cover.get('body'))}</p><p class="studio-move">{esc(cover.get('takeaway'))}</p></div></article></div></section>
+    <section class="department ruled-section"><div class="section-inner"><div class="section-index"><span>03</span><p>Tool radar</p></div><div class="department-heading"><h2>Tools worth a real brief.</h2></div><div class="department-list">{tool_rows}</div></div></section>
+    <section class="department ruled-section"><div class="section-inner"><div class="section-index"><span>04</span><p>Studio signals</p></div><div class="department-heading"><h2>Moves worth studying.</h2></div><div class="department-list">{signal_rows}</div></div></section>
+    <section class="letter ruled-section"><div class="section-inner"><div class="section-index"><span>05</span><p>Debate item</p></div><div class="letter-layout"><h2>{esc(debate.get('question'))}</h2><div class="prose"><p><strong>One side:</strong> {esc(debate.get('side_a'))}</p><p><strong>The other:</strong> {esc(debate.get('side_b'))}</p><p class="studio-move">{esc(debate.get('position'))}</p></div></div></div></section>
+    <section class="moodboard ruled-section dark-section"><div class="section-inner"><div class="section-index"><span>06</span><p>Moodboard fuel</p></div><div class="moodboard-grid">{mood}</div></div></section>
+    <section class="watchlist ruled-section"><div class="section-inner"><div class="section-index"><span>07</span><p>Watchlist + team actions</p></div><div class="watch-grid"><div><h2>Keep watching.</h2><ol>{watch}</ol></div><div><h2>Take it into the studio.</h2><ol>{actions}</ol></div></div></div></section></main><footer><a class="wordmark" href="{base}index.html"><span>CSM</span><small>Creative Studio Magazine</small></a><p>{esc(weekly.get('title'))}</p><a href="{base}archive/index.html">Archive ↗</a></footer></body></html>'''
 
 
 def update_history(issue: dict, history_path: Path) -> dict:
@@ -124,11 +148,11 @@ def update_history(issue: dict, history_path: Path) -> dict:
 
 def render_archive(history: dict, path: Path) -> None:
     rows = "".join(
-        f'<a class="signal-item" href="{esc("../" + row["url_path"] if row.get("url_path") else row["date"] + "/")}"><h3>{esc(row["title"])}</h3><p>{esc(row["date"])}</p><span>↗</span></a>'
+        f'<a class="archive-row" href="{esc("../" + row["url_path"] if row.get("url_path") else row["date"] + "/")}"><span>{esc(row["date"])}</span><h3>{esc(row["title"])}</h3><strong>Read issue ↗</strong></a>'
         for row in reversed(history.get("issues", []))
     )
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Archive | Creative Studio Magazine</title><link rel="stylesheet" href="../styles.css"></head><body><main><section class="signals ruled-section"><div class="section-index">Daily archive <span>{len(history.get("issues", [])):02d}</span></div><div class="signals-heading"><h2>Every edit,<br>kept open.</h2><p>Daily Creative Intelligence issues.</p></div><div class="signal-list">{rows}</div></section></main><footer><a class="wordmark" href="../index.html"><span>CSM</span><small>Creative Studio Magazine</small></a><p>Daily archive</p><a href="../feed.xml">RSS ↗</a></footer></body></html>')
+    path.write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Archive | Creative Studio Magazine</title><link rel="stylesheet" href="../styles.css"></head><body><main><section class="ruled-section archive"><div class="section-inner"><div class="section-index"><span>{len(history.get("issues", [])):02d}</span><p>Daily archive</p></div><div class="department-heading"><h2>Every edit, kept open.</h2><p>Daily creative intelligence for design, motion and social teams.</p></div><div class="archive-list">{rows}</div></div></section></main><footer><a class="wordmark" href="../index.html"><span>CSM</span><small>Creative Studio Magazine</small></a><p>Daily archive</p><a href="../feed.xml">RSS ↗</a></footer></body></html>')
 
 
 def render_rss(history: dict, path: Path) -> None:
