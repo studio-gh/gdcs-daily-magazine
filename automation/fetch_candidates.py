@@ -159,7 +159,7 @@ def fetch_source(source: dict, cutoff: datetime) -> list[dict]:
         raw_description = text_of(node, {"description", "summary", "content", "encoded"})
         description = strip_markup(raw_description)
         item_source = strip_markup(text_of(node, {"source"})) or source["name"]
-        if urlsplit(item_source).scheme or re.search(r"\.(?:avif|gif|jpe?g|png|webp)(?:\?|$)", item_source, re.I):
+        if urllib.parse.urlsplit(item_source).scheme or re.search(r"\.(?:avif|gif|jpe?g|png|webp)(?:\?|$)", item_source, re.I):
             item_source = source["name"]
         norm = normalized_title(title)
         fingerprint = hashlib.sha1(f"{norm}|{url}".encode()).hexdigest()[:16]
