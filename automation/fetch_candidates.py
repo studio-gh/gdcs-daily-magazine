@@ -12,6 +12,7 @@ import sys
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -72,6 +73,41 @@ def image_of(node: ET.Element, raw_description: str) -> str:
         if candidate.startswith(("http://", "https://")):
             return candidate
     return ""
+
+
+def image_from_html(payload: str) -> str:
+    """Extract the strongest social-preview image from an article document."""
+    for tag in re.findall(r"<meta\\b[^>]*>", payload or "", re.I):
+        attributes = {
+            key.lower(): html.unescape(value.strip())
+            for key, _, value in re.findall(r"""([:\\w-]+)\\s*=\\s*(["'])(.*?)\\2""", tag, re.I | re.S)
+        }
+        marker = (attributes.get("property") or attributes.get("name") or "").lower()
+        if marker in {"og:image", "og:image:url", "twitter:image", "twitter:image:src"}:
+            candidate = attributes.get("content", "")
+            if candidate.startswith("//"):
+                candidate = "https:" + candidate
+            if candidate.startswith(("http://", "https://")):
+                return candidate
+    return ""
+
+
+def article_image(url: str) -> str:
+    """Fetch only enough article HTML to recover its declared preview artwork."""
+    try:
+        request = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "text/html,application/xhtml+xml",
+            },
+        )
+        with urllib.request.urlopen(request, timeout=8) as response:
+            payload = response.read(900_000)
+            charset = response.headers.get_content_charset() or "utf-8"
+        return urllib.parse.urljoin(url, image_from_html(payload.decode(charset, errors="replace")))
+    except Exception:
+        return ""
 
 
 def parse_date(value: str) -> datetime | None:
@@ -170,6 +206,14 @@ def main() -> int:
         unique.append(item)
         if len(unique) >= args.max_candidates:
             break
+
+    missing_images = [item for item in unique if not item.get("image")]
+    if missing_images:
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            recovered = pool.map(article_image, (item["url"] for item in missing_images))
+            for item, recovered_image in zip(missing_images, recovered):
+                if recovered_image:
+                    item["image"] = recovered_image
 
     output = {"generated_at": datetime.now(timezone.utc).isoformat(), "candidate_count": len(unique), "failures": failures, "candidates": unique}
     path = Path(args.output)

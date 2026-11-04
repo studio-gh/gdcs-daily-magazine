@@ -1,6 +1,6 @@
 import unittest
 
-from automation.fetch_candidates import image_of
+from automation.fetch_candidates import image_from_html, image_of
 from automation.normalize_curation import beat_from, deterministic_issue, extract_json, magazine_worthy, validate_ai
 from automation.render_site import render_issue, render_weekly, story_visual
 import xml.etree.ElementTree as ET
@@ -23,7 +23,7 @@ class AutomationTests(unittest.TestCase):
         self.assertIn("Creative Studio Magazine", output)
         self.assertIn("feed.xml", output)
 
-    def test_missing_story_images_use_distinct_editorial_panels(self):
+    def test_missing_story_images_use_quiet_editorial_panels(self):
         output = "".join(story_visual({"title": beat, "beat": beat}) for beat in (
             "Graphic design", "Motion + video", "Social + campaigns", "Tools + workflow"
         ))
@@ -31,6 +31,8 @@ class AutomationTests(unittest.TestCase):
         self.assertIn("visual-motion-video", output)
         self.assertIn("visual-social-campaigns", output)
         self.assertIn("visual-tools-workflow", output)
+        self.assertIn("is-placeholder", output)
+        self.assertNotIn("visual-word", output)
         self.assertNotIn("creative-intelligence-cover.png", output)
 
     def test_broken_source_image_reveals_panel_instead_of_cover(self):
@@ -48,6 +50,10 @@ class AutomationTests(unittest.TestCase):
     def test_extracts_feed_image(self):
         node = ET.fromstring('<item><description><![CDATA[<p>Story</p><img src="https://example.com/art.jpg">]]></description></item>')
         self.assertEqual(image_of(node, node.find("description").text), "https://example.com/art.jpg")
+
+    def test_extracts_article_preview_image(self):
+        markup = '<meta property="og:image" content="https://example.com/preview.jpg">'
+        self.assertEqual(image_from_html(markup), "https://example.com/preview.jpg")
 
     def test_assigns_creative_beats(self):
         self.assertEqual(beat_from({"title": "A kinetic title sequence", "category": "motion-video"}), "Motion + video")

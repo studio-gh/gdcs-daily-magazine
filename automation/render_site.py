@@ -47,22 +47,23 @@ def beat_slug(value: object) -> str:
     }.get(beat, "tools-workflow")
 
 
-def visual_word(story: dict) -> str:
-    label = story.get("title") or story.get("company") or story.get("source") or story.get("publication") or "Studio signal"
-    return str(label).strip()[:42]
-
-
 def story_visual(story: dict, base: str = "", loading: str = "lazy", caption: str = "") -> str:
-    """Render a real story image over a beat-specific editorial fallback panel."""
+    """Render source artwork, with a quiet non-typographic panel when none is available."""
     beat = str(story.get("beat") or "Tools + workflow")
     source = source_image_url(story, base)
+    placeholder_class = "" if source else " is-placeholder"
     image = ""
     if source:
-        image = f'<img src="{esc(source)}" alt="" loading="{esc(loading)}" referrerpolicy="no-referrer" onerror="this.remove()">'
+        image = (
+            f'<img src="{esc(source)}" alt="" loading="{esc(loading)}" '
+            'referrerpolicy="no-referrer" '
+            'onerror="this.parentElement.classList.add(\'is-placeholder\');this.remove()">'
+        )
     credit = caption or str(story.get("source") or "")
-    figcaption = f"<figcaption>{esc(credit)}</figcaption>" if credit else ""
-    return f'''<figure class="story-visual visual-{beat_slug(beat)}">
-      <span class="visual-kicker">{esc(beat)}</span><strong class="visual-word">{esc(visual_word(story))}</strong>{image}{figcaption}
+    figcaption = f"<figcaption>{esc(credit)}</figcaption>" if source and credit else ""
+    label = f"{beat} artwork unavailable" if not source else beat
+    return f'''<figure class="story-visual visual-{beat_slug(beat)}{placeholder_class}" aria-label="{esc(label)}">
+      {image}{figcaption}
     </figure>'''
 
 
