@@ -39,7 +39,7 @@ class AutomationTests(unittest.TestCase):
         issue = deterministic_issue(self.candidates, "2026-10-06", False)
         issue["top_stories"][0]["image"] = "https://example.com/missing.jpg"
         output = render_issue(issue)
-        self.assertIn('onerror="this.remove()"', output)
+        self.assertIn("classList.add('is-placeholder');this.remove()", output)
         self.assertNotIn("this.onerror=null;this.src='assets/creative-intelligence-cover.png'", output.split('<section class="visual-front', 1)[1])
 
     def test_ai_output_rejects_unknown_urls(self):

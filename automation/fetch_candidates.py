@@ -77,10 +77,10 @@ def image_of(node: ET.Element, raw_description: str) -> str:
 
 def image_from_html(payload: str) -> str:
     """Extract the strongest social-preview image from an article document."""
-    for tag in re.findall(r"<meta\\b[^>]*>", payload or "", re.I):
+    for tag in re.findall(r"<meta\b[^>]*>", payload or "", re.I):
         attributes = {
             key.lower(): html.unescape(value.strip())
-            for key, _, value in re.findall(r"""([:\\w-]+)\\s*=\\s*(["'])(.*?)\\2""", tag, re.I | re.S)
+            for key, _, value in re.findall(r"""([:\w-]+)\s*=\s*(["'])(.*?)\2""", tag, re.I | re.S)
         }
         marker = (attributes.get("property") or attributes.get("name") or "").lower()
         if marker in {"og:image", "og:image:url", "twitter:image", "twitter:image:src"}:
