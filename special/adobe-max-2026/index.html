@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160704">
+  <meta name="description" content="A design-studio briefing on the most important Adobe MAX 2026 announcements from Miami Beach.">
+  <title>The Native File Fights Back | Adobe MAX 2026 Special Edition</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+    :root {
+      --ink: #160704;
+      --paper: #f7f3ec;
+      --white: #fffdf8;
+      --red: #ed2c1c;
+      --acid: #d7ff38;
+      --cyan: #8eefff;
+      --muted: #776d66;
+      --line: rgba(22, 7, 4, .18);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --mono: "DM Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .progress { position: fixed; z-index: 20; inset: 0 0 auto; height: 4px; background: transparent; }
+    .progress span { display: block; width: 0; height: 100%; background: var(--acid); }
+    .topbar { position: fixed; z-index: 15; inset: 4px 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 22px; color: white; mix-blend-mode: difference; }
+    .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; font-weight: 800; }
+    .brand small, .topbar nav { font: 500 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .topbar nav { display: flex; gap: 18px; }
+    .topbar nav a { text-decoration: none; }
+    .hero { min-height: 92vh; position: relative; display: grid; align-items: end; overflow: hidden; color: white; background: #3d110b; }
+    .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.05); }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,7,4,.08), rgba(22,7,4,.18) 38%, rgba(22,7,4,.92)); }
+    .hero-grid { position: relative; z-index: 2; width: min(1440px, 100%); margin: auto; padding: 120px 5vw 52px; }
+    .eyebrow { margin: 0 0 20px; font: 500 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    h1 { max-width: 1100px; margin: 0; font: 700 clamp(58px, 10vw, 156px)/.84 var(--serif); letter-spacing: 0; }
+    h1 em { color: var(--acid); }
+    .hero-bottom { display: grid; grid-template-columns: 1.4fr .6fr; gap: 40px; align-items: end; margin-top: 30px; border-top: 1px solid rgba(255,255,255,.45); padding-top: 18px; }
+    .dek { max-width: 760px; margin: 0; font-size: clamp(18px, 2.1vw, 30px); line-height: 1.25; }
+    .dateline { margin: 0; text-align: right; font: 400 12px/1.6 var(--mono); text-transform: uppercase; }
+    .ticker { display: flex; overflow: hidden; border-block: 1px solid var(--ink); background: var(--acid); }
+    .ticker p { flex: 0 0 auto; margin: 0; padding: 11px 24px; font: 500 12px/1 var(--mono); text-transform: uppercase; animation: crawl 22s linear infinite; }
+    @keyframes crawl { to { transform: translateX(-100%); } }
+    .section { border-bottom: 1px solid var(--ink); }
+    .inner { width: min(1320px, 90vw); margin: auto; padding: 88px 0; }
+    .section-head { display: grid; grid-template-columns: 140px 1fr; gap: 32px; margin-bottom: 52px; }
+    .section-no { font: 500 12px/1.4 var(--mono); text-transform: uppercase; }
+    h2 { max-width: 900px; margin: 0; font: 700 clamp(42px, 6.2vw, 92px)/.96 var(--serif); letter-spacing: 0; }
+    .intro { display: grid; grid-template-columns: 1.05fr .95fr; gap: 7vw; }
+    .intro .standfirst { margin: 0; font: 700 clamp(28px, 4vw, 56px)/1.05 var(--serif); }
+    .prose { font-size: 18px; line-height: 1.65; }
+    .prose p:first-child { margin-top: 0; }
+    .dropcap::first-letter { float: left; margin: .05em .12em 0 0; color: var(--red); font: 700 5.3em/.72 var(--serif); }
+    .callout { margin-top: 34px; padding-top: 18px; border-top: 6px solid var(--red); font: 600 20px/1.4 var(--sans); }
+    .shift { background: var(--ink); color: var(--white); }
+    .shift h2 em { color: var(--cyan); }
+    .manifesto { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,.25); border: 1px solid rgba(255,255,255,.25); }
+    .manifesto article { min-height: 270px; padding: 34px; background: var(--ink); }
+    .tag { display: inline-block; margin-bottom: 42px; color: var(--acid); font: 500 11px/1 var(--mono); text-transform: uppercase; }
+    .manifesto h3 { margin: 0 0 14px; font: 700 34px/1 var(--serif); }
+    .manifesto p { margin: 0; color: #cfc6be; line-height: 1.55; }
+    .feature-image { position: relative; min-height: 580px; background: #45160e; overflow: hidden; }
+    .feature-image img { width: 100%; height: 100%; min-height: 580px; object-fit: cover; }
+    .feature-image figcaption { position: absolute; right: 18px; bottom: 14px; padding: 7px 10px; color: white; background: rgba(22,7,4,.78); font: 400 10px/1 var(--mono); }
+    .app-list { display: grid; grid-template-columns: repeat(12, 1fr); border-top: 1px solid var(--ink); }
+    .app { grid-column: span 6; display: grid; grid-template-columns: 72px 1fr; gap: 22px; padding: 36px 26px 38px 0; border-bottom: 1px solid var(--ink); }
+    .app:nth-child(odd) { border-right: 1px solid var(--ink); padding-right: 34px; }
+    .app:nth-child(even) { padding-left: 34px; }
+    .app-badge { width: 58px; height: 58px; display: grid; place-items: center; color: white; background: var(--red); border-radius: 6px; font-weight: 800; }
+    .app:nth-child(2) .app-badge { background: #4b46ff; }
+    .app:nth-child(3) .app-badge { background: #1278ef; }
+    .app:nth-child(4) .app-badge { background: #ff8b00; }
+    .app:nth-child(5) .app-badge { background: #e9338c; }
+    .app h3 { margin: 0 0 10px; font: 700 28px/1.1 var(--serif); }
+    .app p { margin: 0; line-height: 1.55; color: #4e4540; }
+    .availability { background: var(--red); color: white; }
+    .status-table { border-top: 1px solid rgba(255,255,255,.6); }
+    .status-row { display: grid; grid-template-columns: 160px 1fr 1.3fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.4); align-items: start; }
+    .status { font: 500 11px/1.4 var(--mono); text-transform: uppercase; }
+    .status-row strong { font-size: 18px; }
+    .status-row p { margin: 0; line-height: 1.5; }
+    .firefly { background: var(--white); }
+    .firefly-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 7vw; align-items: start; }
+    .firefly-visual { position: sticky; top: 60px; }
+    .firefly-visual img { min-height: 560px; object-fit: cover; }
+    .firefly-list { counter-reset: tool; }
+    .firefly-item { position: relative; padding: 0 0 34px 72px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+    .firefly-item::before { counter-increment: tool; content: counter(tool, decimal-leading-zero); position: absolute; left: 0; top: 5px; font: 500 12px/1 var(--mono); }
+    .firefly-item h3 { margin: 0 0 8px; font: 700 30px/1.05 var(--serif); }
+    .firefly-item p { margin: 0; color: #504741; line-height: 1.55; }
+    .sneaks { background: #c7edff; }
+    .sneak-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--ink); }
+    .sneak { min-height: 230px; padding: 22px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .sneak:nth-child(5n) { border-right: 0; }
+    .sneak:nth-child(n+6) { border-bottom: 0; }
+    .sneak small { font: 500 10px/1 var(--mono); text-transform: uppercase; }
+    .sneak h3 { margin: 52px 0 10px; font: 700 23px/1 var(--serif); }
+    .sneak p { margin: 0; font-size: 13px; line-height: 1.45; }
+    .signals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--ink); border: 1px solid var(--ink); }
+    .signal { padding: 28px; background: var(--paper); }
+    .signal h3 { margin: 60px 0 12px; font: 700 28px/1 var(--serif); }
+    .signal p { margin: 0; line-height: 1.5; }
+    .playbook { background: var(--acid); }
+    .play-list { counter-reset: move; }
+    .move { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 30px; padding: 34px 0; border-top: 1px solid var(--ink); }
+    .move::before { counter-increment: move; content: counter(move, decimal-leading-zero); font: 500 13px/1 var(--mono); }
+    .move h3 { margin: 0; font: 700 32px/1 var(--serif); }
+    .move p { margin: 0; line-height: 1.55; }
+    .sources { background: var(--ink); color: white; }
+    .source-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 34px; }
+    .source-list a { display: flex; justify-content: space-between; gap: 20px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.25); text-decoration: none; }
+    .source-list a:hover { color: var(--acid); }
+    .source-list span { font: 400 11px/1.4 var(--mono); color: #aaa; }
+    footer { display: flex; justify-content: space-between; gap: 30px; padding: 26px 5vw; background: var(--ink); color: #aaa; font: 400 10px/1.5 var(--mono); text-transform: uppercase; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: .6s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+    @media (max-width: 900px) {
+      .topbar nav { display: none; }
+      .hero { min-height: 86vh; }
+      .hero-bottom, .intro, .firefly-grid { grid-template-columns: 1fr; }
+      .dateline { text-align: left; }
+      .section-head { grid-template-columns: 1fr; gap: 12px; }
+      .manifesto { grid-template-columns: 1fr; }
+      .app { grid-column: span 12; border-right: 0 !important; padding: 28px 0 !important; }
+      .status-row { grid-template-columns: 1fr; gap: 8px; }
+      .firefly-visual { position: relative; top: 0; }
+      .sneak-grid { grid-template-columns: repeat(2, 1fr); }
+      .sneak, .sneak:nth-child(5n), .sneak:nth-child(n+6) { border: 0; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+      .sneak:nth-child(even) { border-right: 0; }
+      .signals { grid-template-columns: 1fr 1fr; }
+      .move { grid-template-columns: 50px 1fr; }
+      .move p { grid-column: 2; }
+      .source-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      h1 { font-size: 56px; }
+      .hero-grid { padding-inline: 22px; }
+      .inner { width: calc(100% - 36px); padding: 64px 0; }
+      .app { grid-template-columns: 56px 1fr; }
+      .app-badge { width: 48px; height: 48px; }
+      .sneak-grid, .signals { grid-template-columns: 1fr; }
+      .sneak, .sneak:nth-child(even) { border-right: 0; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ticker p { animation: none; } .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <header class="topbar">
+    <a class="brand" href="#top">CSM <small>Special edition</small></a>
+    <nav aria-label="Issue sections"><a href="#shift">The shift</a><a href="#apps">Creative Cloud</a><a href="#firefly">Firefly</a><a href="#sneaks">Sneaks</a><a href="#playbook">Studio playbook</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-media" src="https://blog.adobe.com/en/publish/2026/11/10/media_14a1dbcfab3a3c86b7a786087b6466fc8879a70a7.jpg?format=jpg&amp;optimize=medium&amp;width=2000" alt="Adobe Creative Cloud updates shown at Adobe MAX 2026">
+      <div class="hero-grid">
+        <p class="eyebrow">Adobe MAX 2026 / Miami Beach / Special report</p>
+        <h1>The native file <em>fights back.</em></h1>
+        <div class="hero-bottom">
+          <p class="dek">Agents arrive inside Creative Cloud, Firefly becomes a full creative studio, and Adobe makes editability its line in the sand.</p>
+          <p class="dateline">November 12, 2026<br>Miami Beach, Florida<br>Edited for visual teams</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><p>Photoshop Relight · Premiere Color Mode · InDesign Co-editing · Firefly Graph · Local MCP · Ten Sneaks · </p><p>Photoshop Relight · Premiere Color Mode · InDesign Co-editing · Firefly Graph · Local MCP · Ten Sneaks · </p></div>
+
+    <section class="section">
+      <div class="inner intro reveal">
+        <p class="standfirst">The headline is not “more AI.” It is a new production argument: delegate the busy work, keep the working file.</p>
+        <div class="prose">
+          <p class="dropcap">Adobe MAX returned to Miami Beach with a release slate that reaches from one-click image repair to always-on agents. The most consequential move is architectural. Adobe is putting its Creative Agent across flagship apps and previewing local MCP integrations that let third-party agents act on Photoshop, Illustrator, Premiere and After Effects files.</p>
+          <p>The guardrail is also the pitch: the output stays inside native, editable project structures. For studios nervous about flattened AI artifacts, that matters more than another prompt box. It reframes the agent as production support rather than a replacement surface.</p>
+          <p class="callout">Editor’s take: Adobe is trying to own the handoff between generative possibility and production reality.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shift" id="shift">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">01 / The big shift</p><h2>From assistant to <em>operator.</em></h2></div>
+        <div class="manifesto reveal">
+          <article><span class="tag">Creative Agent</span><h3>Multi-step work, inside the app</h3><p>AI Assistants in Premiere, Illustrator, InDesign, After Effects and Frame.io can interpret a goal and orchestrate multiple steps. In Premiere, Adobe says the agent can apply effects across a sequence, track masked subjects and adjust color and exposure across the cut.</p></article>
+          <article><span class="tag">Local MCP / Preview</span><h3>Bring your own agent</h3><p>Photoshop, Illustrator, Premiere and After Effects are being opened to preferred third-party agents through local MCP integrations. The project stays on the user’s computer and native structures remain editable. Private beta is planned for early 2027.</p></article>
+          <article><span class="tag">Plan Mode</span><h3>Approval before action</h3><p>Firefly’s Creative Agent adds customization, a reviewable Plan Mode and a Model Selector. That makes process visibility and model choice part of the interface rather than a hidden system decision.</p></article>
+          <article><span class="tag">Always-on / Preview</span><h3>Work continues in the background</h3><p>Adobe previewed recurring agents for jobs such as organizing incoming footage, removing duplicates and flagging quality problems. A central dashboard keeps approvals and intervention points visible. Beta is expected in early 2027.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <figure class="feature-image">
+      <img src="https://blog.adobe.com/en/publish/2026/11/10/media_1b912cadb58e43976a6912d655df946011c606f41.jpg?format=jpg&amp;optimize=medium&amp;width=2000" alt="Adobe Firefly and Premiere mobile products presented at MAX 2026">
+      <figcaption>Adobe / MAX 2026</figcaption>
+    </figure>
+
+    <section class="section" id="apps">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">02 / Creative Cloud</p><h2>The updates worth opening the app for.</h2></div>
+        <div class="app-list reveal">
+          <article class="app"><span class="app-badge">Ps</span><div><h3>Photoshop</h3><p><strong>Relight</strong> adds adjustable light sources; <strong>Generative Restyle</strong> converts a prompted variation into a layer with an intensity slider. Related-elements removal catches shadows and reflections, while Quick Compare adds an on-canvas before/after view. Beta work includes Mockups, Camera Angles, Generative Recompose, Convert to Text Layers, Timelapse and ambient-effect removal.</p></div></article>
+          <article class="app"><span class="app-badge">Pr</span><div><h3>Premiere</h3><p><strong>Color Mode</strong> is now generally available. Generative Media puts video, music, sound effects and soundscapes in the timeline with Adobe and partner models. Enhance Audio, Separate Crosstalk and Separate Sound Source attack difficult recordings; Generative Remove is in beta for tracked object removal.</p></div></article>
+          <article class="app"><span class="app-badge">Lr</span><div><h3>Lightroom</h3><p><strong>Glow</strong> adds cinematic diffusion and halation. Blemish Removal moves from mobile into the broader Lightroom workflow with finer controls. Camera Tethering expands across desktop and iPad. <strong>Open Eyes</strong>, in public beta, repairs a blink using a reference image of the same person.</p></div></article>
+          <article class="app"><span class="app-badge">Ai</span><div><h3>Illustrator</h3><p>Refreshed libraries add brushes, graphic styles, patterns and gradients. New on-canvas <strong>Blend controls</strong> keep a persistent control panel and live preview close to the artwork, a quieter update with everyday value.</p></div></article>
+          <article class="app"><span class="app-badge">Id</span><div><h3>InDesign</h3><p><strong>Co-editing</strong> enters public beta for simultaneous layout work. Flex Layout dynamically resizes text frames, while Check Document and Rewrite surface editorial and accessibility issues before the file leaves the layout.</p></div></article>
+          <article class="app"><span class="app-badge">Tz</span><div><h3>Topaz models</h3><p>Following Adobe’s acquisition of Topaz Labs, Wonder 4 combines upscaling, denoising, deblurring and sharpening. Image HDR converts standard images to HDR with greater brightness and detail. Both are positioned as optional enhancement models.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section availability">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">Reality check</p><h2>What ships now, and what does not.</h2></div>
+        <div class="status-table reveal">
+          <div class="status-row"><span class="status">Available / GA</span><strong>Premiere Color Mode · Firefly Quick Actions · Premiere mobile music on iPhone</strong><p>Licensed UMG and WMG tracks are for personal, non-commercial videos; Android support is coming later.</p></div>
+          <div class="status-row"><span class="status">Beta</span><strong>Firefly Design · Firefly Graph · InDesign Co-editing · Lightroom Open Eyes · Creative Cloud AI Assistants</strong><p>Useful for structured testing, but not yet a default production dependency.</p></div>
+          <div class="status-row"><span class="status">Private beta</span><strong>Firefly Builder · Premiere mobile agentic editing</strong><p>Builder previews natural-language prototypes for sites, presentations and apps; mobile Quick Cut produces editable first cuts.</p></div>
+          <div class="status-row"><span class="status">Early 2027</span><strong>Local MCP integrations · Always-on agents</strong><p>The most strategically important workflow changes are previews, not shipping defaults.</p></div>
+          <div class="status-row"><span class="status">Research preview</span><strong>Adobe MAX Sneaks</strong><p>Sneaks show research directions. Two projects, Deep Brush and Hands On, can be explored through Adobe Labs Playground.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section firefly" id="firefly">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">03 / Firefly</p><h2>Adobe turns the model shelf into a studio floor.</h2></div>
+        <div class="firefly-grid">
+          <figure class="firefly-visual reveal"><img src="https://blog.adobe.com/en/publish/2026/11/10/media_18c8aa6a1fb7c5e1e58ba68703712bd15986cb3a6.jpg?format=jpg&amp;optimize=medium&amp;width=1200" alt="Adobe Firefly interface shown at MAX 2026"></figure>
+          <div class="firefly-list reveal">
+            <article class="firefly-item"><h3>Firefly Video</h3><p>A narrative-to-timeline workflow for scenes, clips, captions, generated transitions and missing b-roll. It puts planning and finishing closer together.</p></article>
+            <article class="firefly-item"><h3>Firefly Design / beta</h3><p>Illustration, raster editing, animation, 3D and print share one canvas. Adobe pitches a single file from brand identity or package concept through client review.</p></article>
+            <article class="firefly-item"><h3>Firefly Image</h3><p>Edit Object, Edit Text, Relight and Retouch aim for localized change without disturbing the rest of the image.</p></article>
+            <article class="firefly-item"><h3>Firefly Graph / beta</h3><p>A node-based environment for repeatable workflows across Adobe tools and third-party models. An assistant can help build and optimize the graph.</p></article>
+            <article class="firefly-item"><h3>Firefly Builder / private beta</h3><p>Natural-language design-to-code for on-brand websites, presentations and apps, with direct canvas editing and a design system keeping components coherent.</p></article>
+            <article class="firefly-item"><h3>Model choice</h3><p>Firefly expands its shelf across Adobe, Topaz Labs, Google, OpenAI, Kling, ByteDance, ElevenLabs and others. The strategic shift is from one house model to a controlled model marketplace.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sneaks" id="sneaks">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">04 / MAX Sneaks</p><h2>Ten research signals, from scene-wide edits to gestural vectors.</h2></div>
+        <div class="sneak-grid reveal">
+          <article class="sneak"><small>Video / continuity</small><h3>Scene Sweep</h3><p>Apply one edit consistently across cuts and camera angles in a sequence.</p></article>
+          <article class="sneak"><small>Video / character</small><h3>Screen Test</h3><p>Build a fictional character, then converse with it to explore personality and scenes.</p></article>
+          <article class="sneak"><small>Video / live direction</small><h3>Live Set</h3><p>Change subject, environment or camera while a scene continues to play.</p></article>
+          <article class="sneak"><small>Video / timing</small><h3>On Cue</h3><p>Draw or extract a timing signal so generated events land at a precise moment.</p></article>
+          <article class="sneak"><small>Audio / control</small><h3>Sound Bender</h3><p>Extract, vary and direct sound on an interactive canvas, then match it to motion.</p></article>
+          <article class="sneak"><small>Image / brush</small><h3>Deep Brush</h3><p>Paint with awareness of surface shape, color and lighting.</p></article>
+          <article class="sneak"><small>Image / space</small><h3>Sight Span</h3><p>Turn one image into a navigable environment with new viewpoints.</p></article>
+          <article class="sneak"><small>Image / direct manipulation</small><h3>Hands On</h3><p>Create scene-aware controls directly on the canvas.</p></article>
+          <article class="sneak"><small>Image / repetition</small><h3>Rinse Repeat</h3><p>Recreate an edit elsewhere using native, still-editable Photoshop operations.</p></article>
+          <article class="sneak"><small>Vector / gesture</small><h3>Link Up</h3><p>Use a drag gesture to infer perspective, scale and style in editable vector art.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">05 / Wider signals</p><h2>The platform story extends beyond Adobe’s own canvas.</h2></div>
+        <div class="signals reveal">
+          <article class="signal"><span class="tag" style="color:var(--red)">Google</span><h3>Models in, tools out</h3><p>Google’s frontier models move deeper into Adobe products, while Adobe tools expand into Workspace, Gemini and AI Mode. Adobe and DeepMind will also explore Photoshop editing capabilities.</p></article>
+          <article class="signal"><span class="tag" style="color:var(--red)">Microsoft</span><h3>Arm-native pro apps</h3><p>Optimized Photoshop, Premiere, After Effects and Substance 3D Painter are coming to high-performance Arm Windows PCs. Express capabilities move into Microsoft Photos.</p></article>
+          <article class="signal"><span class="tag" style="color:var(--red)">Disney</span><h3>Custom models meet IP</h3><p>A multi-year alliance makes Adobe an official AI innovation partner. Disney Imagineering is already using a custom sketch-to-image model in concept development.</p></article>
+          <article class="signal"><span class="tag" style="color:var(--red)">GenStudio</span><h3>Brand context as infrastructure</h3><p>CX Enterprise Coworker, Brand Intelligence, intelligent adaptation and governed Firefly Graph workflows aim to make scale less destructive to brand consistency.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section playbook" id="playbook">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">06 / Studio playbook</p><h2>Four tests for Monday morning.</h2></div>
+        <div class="play-list reveal">
+          <article class="move"><h3>Run a native-file audit</h3><p>List every AI-assisted handoff that produces a flattened asset. Identify where a native, editable output would remove rework or approval risk.</p></article>
+          <article class="move"><h3>Build one repeatable graph</h3><p>Use a low-risk adaptation task, such as product crops or campaign sizes, to test Firefly Graph without letting automation choose the creative direction.</p></article>
+          <article class="move"><h3>Benchmark the quiet upgrades</h3><p>Time a real job with Premiere Color Mode, InDesign Flex Layout or Photoshop Quick Compare. The useful release may be the one with the least theatrical demo.</p></article>
+          <article class="move"><h3>Write the approval map first</h3><p>Before testing agents, define which steps can run unattended, which require review and which must remain entirely manual. Plan Mode is only useful if the team has a plan.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sources">
+      <div class="inner">
+        <div class="section-head reveal"><p class="section-no">Source desk</p><h2>Primary reporting from Adobe.</h2></div>
+        <div class="source-list reveal">
+          <a href="https://news.adobe.com/news/2026/11/adobe-powers-new-era-of-creativity" target="_blank" rel="noreferrer">Adobe MAX 2026 umbrella announcement <span>Nov 10</span></a>
+          <a href="https://news.adobe.com/news/2026/11/adobe-transforms-creative-cloud-tools" target="_blank" rel="noreferrer">Creative Cloud release and availability <span>Nov 10</span></a>
+          <a href="https://blog.adobe.com/en/publish/2026/11/10/explore-new-ways-create-across-creative-cloud-adobe-firefly-while-advancing-craft-precision-choice-control" target="_blank" rel="noreferrer">What’s new across Creative Cloud <span>Nov 10</span></a>
+          <a href="https://blog.adobe.com/en/publish/2026/11/10/adobe-firefly-premiere-mobile-ways-create-videos-edit-content-perfect-soundtrack-stories" target="_blank" rel="noreferrer">Firefly and Premiere mobile <span>Nov 10</span></a>
+          <a href="https://blog.adobe.com/en/publish/2026/11/11/adobe-max-sneaks" target="_blank" rel="noreferrer">Adobe MAX Sneaks: ten projects <span>Nov 11</span></a>
+          <a href="https://news.adobe.com/news/2026/11/adobe-and-google-deepen-partnership" target="_blank" rel="noreferrer">Adobe and Google partnership <span>Nov 10</span></a>
+          <a href="https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance" target="_blank" rel="noreferrer">Adobe and Disney alliance <span>Nov 9</span></a>
+          <a href="https://news.adobe.com/news/2026/11/adobe-agentic-ai-content-supply-chain" target="_blank" rel="noreferrer">GenStudio and CX Enterprise Coworker <span>Nov 10</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Creative Studio Magazine / Adobe MAX 2026 special edition</span><span>Facts checked against Adobe sources through Nov 12, 2026</span></footer>
+  <script>
+    const bar = document.querySelector('.progress span');
+    const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('on');
+    }), { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => reveal.observe(el));
+    addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+    }, { passive: true });
+  </script>
+</body>
+</html>
