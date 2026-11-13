@@ -18,62 +18,6 @@
       "beat": "Graphic design"
     },
     {
-      "title": "This French New Wave take on Sabrina Carpenter is genius in a bottle",
-      "source_title": "This French New Wave take on Sabrina Carpenter is genius in a bottle",
-      "url": "https://www.creativeboom.com/news/this-french-new-wave-take-on-sabrina-carpenter-is-genius-in-a-bottle",
-      "source": "Creative Boom",
-      "company": "Creative Boom",
-      "summary": "La La Land director Damien Chazelle brings a playful, 60s-tinged cinematic style to this ad for Johnny Walker. As a 56-year-old straight white male, I sometimes get funny looks from people when I rhap...",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-boom-this-french-new-wave-take-on-sabrina-carpenter-is-genius-in-a-bottle-2026-11-13",
-      "flag": "Feature candidate",
-      "image": "https://media.creativeboom.com/90239ff2-9596-47a6-93dc-49d2097531f3/conversions/9fdff567969d465f62870868548791b2539c46c6-medium.webp",
-      "beat": "Motion + video"
-    },
-    {
-      "title": "This identity for a women's sports community swaps cheerleading for real talk",
-      "source_title": "This identity for a women's sports community swaps cheerleading for real talk",
-      "url": "https://www.creativeboom.com/news/this-new-identity-for-a-womens-sports-community-swaps-cheerleading-for-real-talk",
-      "source": "Creative Boom",
-      "company": "Creative Boom",
-      "summary": "New Zealand studio Essential Viewing crafted an identity for Woven that turns triathlon's three disciplines into a braided symbol. The word Ironman might make you think of superhero movies. But it's a...",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-boom-this-identity-for-a-women-s-sports-community-swaps-cheerleading-for-re-2026-11-13",
-      "flag": "Client reference",
-      "image": "https://media.creativeboom.com/98052d5c-7048-40c6-bbf8-cf1bab1ead0b/conversions/993960a1da74f054727c6beb7346d5613589b5e3-medium.webp",
-      "beat": "Social + campaigns"
-    },
-    {
-      "title": "Replicate",
-      "source_title": "Replicate",
-      "url": "https://www.producthunt.com/products/replicate-10",
-      "source": "Product Hunt",
-      "company": "Product Hunt",
-      "summary": "Turn Webflow/Framer app into a Claude/Codex project for free Discussion | Link",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "product-hunt-replicate-2026-11-13",
-      "flag": "Tool test",
-      "image": "",
-      "beat": "Tools + workflow"
-    },
-    {
-      "title": "Koto points Giffgaff towards its next chapter with a signpost-led rebrand",
-      "source_title": "Koto points Giffgaff towards its next chapter with a signpost-led rebrand",
-      "url": "https://www.creativeboom.com/news/koto-points-giffgaff-towards-its-next-chapter-with-an-arrow-led-rebrand",
-      "source": "Creative Boom",
-      "company": "Creative Boom",
-      "summary": "The global agency gives the challenger telecoms brand a bolder, greener identity built around a simple signpost. Giffgaff is a UK-based mobile operator that has gradually grown into a broadband provid...",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-boom-koto-points-giffgaff-towards-its-next-chapter-with-a-signpost-led-rebr-2026-11-13",
-      "flag": "Feature candidate",
-      "image": "https://media.creativeboom.com/4f65ec68-9090-4951-b27a-072e666ad48e/conversions/14e4f4cda141f601d5a633fd942b521b42fb7b5d-medium.webp",
-      "beat": "Graphic design"
-    },
-    {
       "title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
       "source_title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
       "url": "https://www.creativebloq.com/deals/adobes-black-friday-deal-is-its-biggest-in-years-with-57-percent-off-creative-cloud-pro",
@@ -100,6 +44,20 @@
       "flag": "Client reference",
       "image": "https://cdn.mos.cms.futurecdn.net/QSGhCsJMHv4NJvJGvQuHa5-1920-80.png",
       "beat": "Social + campaigns"
+    },
+    {
+      "title": "Replicate",
+      "source_title": "Replicate",
+      "url": "https://www.producthunt.com/products/replicate-10",
+      "source": "Product Hunt",
+      "company": "Product Hunt",
+      "summary": "Turn Webflow/Framer app into a Claude/Codex project for free Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-replicate-2026-11-13",
+      "flag": "Tool test",
+      "image": "",
+      "beat": "Tools + workflow"
     },
     {
       "title": "Swedes Love Fish. Just Not All Year.",
@@ -158,6 +116,34 @@
       "beat": "Graphic design"
     },
     {
+      "title": "Four video tracks and a doughnut shop – how Dispatch got its start",
+      "source_title": "Four video tracks and a doughnut shop – how Dispatch got its start",
+      "url": "https://www.creativebloq.com/features/four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start",
+      "source": "Creative Bloq",
+      "company": "Creative Bloq",
+      "summary": "A year ago, Dispatch released a game that surprised many people, including me. It's a superhero game about managing reformed villains from behind a desk, launched on PC and PlayStation 5. It has since garnered over five million players, and a mobile version arrives on iOS and Android on 9 December, following October's Dispatch anniversary Deluxe Edition . Dispatch was made in Unreal Engine and stars Breaking Bad's Aa",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start-2026-11-13",
+      "flag": "Feature candidate",
+      "image": "https://cdn.mos.cms.futurecdn.net/BUHZpUMBKEZcvoDHtSBJ5j-1920-80.jpg",
+      "beat": "Motion + video"
+    },
+    {
+      "title": "WHOOP Humans",
+      "source_title": "WHOOP Humans",
+      "url": "https://www.producthunt.com/products/whoop",
+      "source": "Product Hunt",
+      "company": "Product Hunt",
+      "summary": "WHOOP's social network built around real health data Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-whoop-humans-2026-11-13",
+      "flag": "Client reference",
+      "image": "",
+      "beat": "Social + campaigns"
+    },
+    {
       "title": "Tanmay Saxena on leaving a banking job to make surreal photographs about life's stranger moments",
       "source_title": "Tanmay Saxena on leaving a banking job to make surreal photographs about life's stranger moments",
       "url": "https://www.creativeboom.com/inspiration/tanmay-saxena-on-leaving-a-banking-job-to-make-surreal-photographs-about-lifes-stranger-moments",
@@ -181,7 +167,7 @@
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
       "fingerprint": "print-magazine-the-daily-heller-what-the-best-dressed-voters-are-wearing-2026-11-13",
-      "flag": "Design-ops lesson",
+      "flag": "Feature candidate",
       "image": "https://www.printmag.com/wp-content/uploads/2026/11/image0.png",
       "beat": "Graphic design"
     },
@@ -198,10 +184,7 @@
       "flag": "Design-ops lesson",
       "image": "https://www.printmag.com/wp-content/uploads/2026/11/00-Massey-1-intro.jpg",
       "beat": "Graphic design"
-    }
-  ],
-  "campaigns": [],
-  "inspiration": [
+    },
     {
       "title": "The Daily Heller: No Kings! But Plenty of Monarchs",
       "source_title": "The Daily Heller: No Kings! But Plenty of Monarchs",
@@ -212,10 +195,13 @@
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
       "fingerprint": "print-magazine-the-daily-heller-no-kings-but-plenty-of-monarchs-2026-11-13",
-      "flag": "Moodboard fuel",
+      "flag": "Design-ops lesson",
       "image": "https://i0.wp.com/www.printmag.com/wp-content/uploads/2026/11/Best-Photo-Op1-scaled.jpg?fit=2438%2C2560&quality=89&ssl=1",
       "beat": "Graphic design"
-    },
+    }
+  ],
+  "campaigns": [],
+  "inspiration": [
     {
       "title": "Nvidia chaos and why the AI industry is suddenly on the back foot",
       "source_title": "Nvidia chaos and why the AI industry is suddenly on the back foot",
@@ -229,20 +215,6 @@
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/asScaCKZHcYekGGc8D2y2H-1920-80.jpg",
       "beat": "Graphic design"
-    },
-    {
-      "title": "Four video tracks and a doughnut shop – how Dispatch got its start",
-      "source_title": "Four video tracks and a doughnut shop – how Dispatch got its start",
-      "url": "https://www.creativebloq.com/features/four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start",
-      "source": "Creative Bloq",
-      "company": "Creative Bloq",
-      "summary": "A year ago, Dispatch released a game that surprised many people, including me. It's a superhero game about managing reformed villains from behind a desk, launched on PC and PlayStation 5. It has since garnered over five million players, and a mobile version arrives on iOS and Android on 9 December, following October's Dispatch anniversary Deluxe Edition . Dispatch was made in Unreal Engine and stars Breaking Bad's Aa",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start-2026-11-13",
-      "flag": "Moodboard fuel",
-      "image": "https://cdn.mos.cms.futurecdn.net/BUHZpUMBKEZcvoDHtSBJ5j-1920-80.jpg",
-      "beat": "Motion + video"
     },
     {
       "title": "Prusa CORE One+ review: Built to last and grow with you",
@@ -285,6 +257,20 @@
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/43PYejaaknyFMnCCJj2dKf-1920-80.jpg",
       "beat": "Motion + video"
+    },
+    {
+      "title": "Don’t go anywhere without these 8 essential creative travel gadgets",
+      "source_title": "Don’t go anywhere without these 8 essential creative travel gadgets",
+      "url": "https://www.creativebloq.com/deals/dont-go-anywhere-without-these-8-essential-creative-travel-gadgets",
+      "source": "Creative Bloq",
+      "company": "Creative Bloq",
+      "summary": "Technology has made it easier for creative professionals to work from anywhere at anytime, but travel can still bring some challenges. Running out of battery when you need to finish a piece of work out in the field is a common one, and passing through an airport with a bag full of tech can still be a hassle. Fortunately, there are eight travel accessories that could all potentially save the day at some point during a",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-don-t-go-anywhere-without-these-8-essential-creative-travel-gadgets-2026-11-13",
+      "flag": "Moodboard fuel",
+      "image": "https://cdn.mos.cms.futurecdn.net/TjympcuzbSvBnE6QLxWMtB-1920-80.jpg",
+      "beat": "Graphic design"
     }
   ],
   "watchlist": [
@@ -314,16 +300,16 @@
         "url": "https://bpando.org/2026/11/12/smk-statens-museum-for-kunst-etypes-brand-identity-design"
       },
       {
-        "title": "This French New Wave take on Sabrina Carpenter is genius in a bottle",
+        "title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
         "recommendation": "Watch",
         "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativeboom.com/news/this-french-new-wave-take-on-sabrina-carpenter-is-genius-in-a-bottle"
+        "url": "https://www.creativebloq.com/deals/adobes-black-friday-deal-is-its-biggest-in-years-with-57-percent-off-creative-cloud-pro"
       },
       {
-        "title": "This identity for a women's sports community swaps cheerleading for real talk",
+        "title": "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
         "recommendation": "Watch",
         "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativeboom.com/news/this-new-identity-for-a-womens-sports-community-swaps-cheerleading-for-real-talk"
+        "url": "https://www.creativebloq.com/inspiration/how-do-you-redesign-a-cult-kids-product-i-asked-yotos-new-designers"
       },
       {
         "title": "Replicate",
@@ -332,10 +318,10 @@
         "url": "https://www.producthunt.com/products/replicate-10"
       },
       {
-        "title": "Koto points Giffgaff towards its next chapter with a signpost-led rebrand",
+        "title": "Swedes Love Fish. Just Not All Year.",
         "recommendation": "Watch",
         "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativeboom.com/news/koto-points-giffgaff-towards-its-next-chapter-with-an-arrow-led-rebrand"
+        "url": "https://bpando.org/2026/11/11/swedes-love-fish"
       }
     ],
     "studio_signals": [],
@@ -353,19 +339,9 @@
     },
     "moodboard": [
       {
-        "title": "The Daily Heller: No Kings! But Plenty of Monarchs",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.printmag.com/daily-heller/the-daily-heller-no-kings-but-plenty-of-monarchs"
-      },
-      {
         "title": "Nvidia chaos and why the AI industry is suddenly on the back foot",
         "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
         "url": "https://www.creativebloq.com/news/nvidia-chaos-and-why-the-ai-industry-is-suddenly-on-the-back-foot"
-      },
-      {
-        "title": "Four video tracks and a doughnut shop – how Dispatch got its start",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/features/four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start"
       },
       {
         "title": "Prusa CORE One+ review: Built to last and grow with you",
@@ -381,14 +357,19 @@
         "title": "Does Nvidia need a new logo as well as a new CEO?",
         "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
         "url": "https://www.creativebloq.com/news/does-nvidia-need-a-new-logo-as-well-as-a-new-ceo"
+      },
+      {
+        "title": "Don’t go anywhere without these 8 essential creative travel gadgets",
+        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+        "url": "https://www.creativebloq.com/deals/dont-go-anywhere-without-these-8-essential-creative-travel-gadgets"
       }
     ],
     "watchlist": [
-      "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
-      "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
-      "Swedes Love Fish. Just Not All Year.",
       "You know that butter bot from Rick and Morty? You can buy that now",
-      "Ads of the Week: 12 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK"
+      "Ads of the Week: 12 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK",
+      "What 50 years in business has taught Springetts about building brands that thrive",
+      "Four video tracks and a doughnut shop – how Dispatch got its start",
+      "WHOOP Humans"
     ],
     "team_actions": [
       "Test one tool on a live brief.",
