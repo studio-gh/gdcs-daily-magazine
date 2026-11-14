@@ -116,17 +116,17 @@
       "beat": "Tools + workflow"
     },
     {
-      "title": "Tanmay Saxena on leaving a banking job to make surreal photographs about life's stranger moments",
-      "source_title": "Tanmay Saxena on leaving a banking job to make surreal photographs about life's stranger moments",
-      "url": "https://www.creativeboom.com/inspiration/tanmay-saxena-on-leaving-a-banking-job-to-make-surreal-photographs-about-lifes-stranger-moments",
-      "source": "Creative Boom",
-      "company": "Creative Boom",
-      "summary": "From superheroes experiencing creative slumps to braids that trace generations of womanhood, the London-based artist draws on memories and the unexpected things he encounters while wandering. Even sup...",
+      "title": "The Daily Heller: What the Best-Dressed Voters Are Wearing",
+      "source_title": "The Daily Heller: What the Best-Dressed Voters Are Wearing",
+      "url": "https://www.printmag.com/daily-heller/the-daily-heller-what-the-best-dressed-voters-are-wearing",
+      "source": "PRINT Magazine",
+      "company": "PRINT Magazine",
+      "summary": "Making elections great again. The post The Daily Heller: What the Best-Dressed Voters Are Wearing appeared first on PRINT Magazine .",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-boom-tanmay-saxena-on-leaving-a-banking-job-to-make-surreal-photographs-abo-2026-11-14",
+      "fingerprint": "print-magazine-the-daily-heller-what-the-best-dressed-voters-are-wearing-2026-11-14",
       "flag": "Feature candidate",
-      "image": "https://media.creativeboom.com/483aeb1b-8c37-4d43-893b-ed81ff945386/conversions/0cee4aba43d8077368964f592b9af8328fe64b5a-medium.webp",
+      "image": "https://www.printmag.com/wp-content/uploads/2026/11/image0.png",
       "beat": "Graphic design"
     },
     {
@@ -158,20 +158,6 @@
       "beat": "Social + campaigns"
     },
     {
-      "title": "The Daily Heller: What the Best-Dressed Voters Are Wearing",
-      "source_title": "The Daily Heller: What the Best-Dressed Voters Are Wearing",
-      "url": "https://www.printmag.com/daily-heller/the-daily-heller-what-the-best-dressed-voters-are-wearing",
-      "source": "PRINT Magazine",
-      "company": "PRINT Magazine",
-      "summary": "Making elections great again. The post The Daily Heller: What the Best-Dressed Voters Are Wearing appeared first on PRINT Magazine .",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-the-daily-heller-what-the-best-dressed-voters-are-wearing-2026-11-14",
-      "flag": "Feature candidate",
-      "image": "https://www.printmag.com/wp-content/uploads/2026/11/image0.png",
-      "beat": "Graphic design"
-    },
-    {
       "title": "The Daily Heller: John Massey, a Midcentury Modernist, Dies",
       "source_title": "The Daily Heller: John Massey, a Midcentury Modernist, Dies",
       "url": "https://www.printmag.com/daily-heller/the-daily-heller-john-massey-a-mid-century-modern-dies",
@@ -195,13 +181,10 @@
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
       "fingerprint": "creative-bloq-a-simple-logo-redesign-has-become-australia-s-latest-culture-war-why-2026-11-14",
-      "flag": "Design-ops lesson",
+      "flag": "Feature candidate",
       "image": "https://cdn.mos.cms.futurecdn.net/RdrksdwEsiCNpnEpKEs6rf-1920-80.jpg",
       "beat": "Graphic design"
-    }
-  ],
-  "campaigns": [],
-  "inspiration": [
+    },
     {
       "title": "Nvidia chaos and why the AI industry is suddenly on the back foot",
       "source_title": "Nvidia chaos and why the AI industry is suddenly on the back foot",
@@ -212,10 +195,13 @@
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
       "fingerprint": "creative-bloq-nvidia-chaos-and-why-the-ai-industry-is-suddenly-on-the-back-foot-2026-11-14",
-      "flag": "Moodboard fuel",
+      "flag": "Design-ops lesson",
       "image": "https://cdn.mos.cms.futurecdn.net/asScaCKZHcYekGGc8D2y2H-1920-80.jpg",
       "beat": "Graphic design"
-    },
+    }
+  ],
+  "campaigns": [],
+  "inspiration": [
     {
       "title": "You know that butter bot from Rick and Morty? You can buy that now",
       "source_title": "You know that butter bot from Rick and Morty? You can buy that now",
@@ -289,12 +275,12 @@
   ],
   "watchlist": [
     "First Ferrari Style flagship store in New York features metallic facade",
+    "Arudeko transforms discarded wool into paper-like material",
     "Japanese sauna by Daichi Inc makes \"people feel as though they are dissolving into the forest\"",
     "Perforated brick walls envelop giant market in Kinshasa by Think Tank Architecture",
     "BIG reveals \"modular blueprint\" for Refugee City in Uganda",
     "Studio Octopi revives art deco pavilion and lido on Scottish coast",
-    "Gen Z apps inform approachable wayfinding for V&A East Storehouse",
-    "Texas antique and design show unveils new exhibition building made from salvaged materials"
+    "Gen Z apps inform approachable wayfinding for V&A East Storehouse"
   ],
   "weekly_issue": null,
   "generation_method": "deterministic-fallback",
