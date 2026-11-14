@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "issue_title": "The Daily Edit",
   "editor_note": "Today’s issue favors concrete workflow changes, visual systems and studio references over generic technology news. Automated fallback selection was used, so the source desk remains the final authority.",
   "top_stories": [
@@ -12,37 +12,37 @@
       "summary": "It’s been a real joy to see a number of really bold, colourful art gallery and museum identities lately that aren’t afraid to take a risk or two – projects like Porto Rocha’s designs for Brazilian art gallery Almeida & Dale, the recent rebrand of The Horniman in London by Anatomy, and Pentagram’s spiral-centric branding for Japan’s MoN Takanawa spring The post Shorter and sharper: Denmark’s National Gallery becomes S",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "bp-o-shorter-and-sharper-denmark-s-national-gallery-becomes-smk-in-etypes-2026-11-13",
+      "fingerprint": "bp-o-shorter-and-sharper-denmark-s-national-gallery-becomes-smk-in-etypes-2026-11-14",
       "flag": "Feature candidate",
       "image": "https://bpando.org/wp-content/uploads/Statens-Museum-for-Kunst-SMK-eType-brand-identity-design-bpo-review-wordmark-logo-blue-1024x576.jpeg",
       "beat": "Graphic design"
     },
     {
-      "title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
-      "source_title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
-      "url": "https://www.creativebloq.com/deals/adobes-black-friday-deal-is-its-biggest-in-years-with-57-percent-off-creative-cloud-pro",
+      "title": "How AdHoc made Dispatch feel like an animated TV series",
+      "source_title": "How AdHoc made Dispatch feel like an animated TV series",
+      "url": "https://www.creativebloq.com/features/how-adhoc-made-dispatch-feel-like-an-animated-tv-series",
       "source": "Creative Bloq",
-      "company": "Adobe",
-      "summary": "The Adobe Black Friday sale has begun, and it was worth the wait if you've been holding out to lock in a year of savings on the world's most popular creative software. From today, you can save 57% on an annual Creative Cloud Pro subscription (new users only). This is the biggest Adobe Black Friday deal we've seen for several years. You can get all of the Creative Cloud desktop apps, mobile apps and services for just ",
+      "company": "Creative Bloq",
+      "summary": "Dispatch looks, sounds, and plays like an animated TV show, and that was deliberate: AdHoc wanted it to be a no-barrier entry point for people who don't usually play games. A year after its launch on 22 October 2025, the episodic superhero workplace comedy has more than five million players, and the new Dispatch Deluxe Edition offers new ways to play, including replacing its graphics with storyboard art. The game sta",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "adobe-adobe-s-black-friday-deal-is-its-biggest-in-years-with-57-off-creati-2026-11-13",
+      "fingerprint": "creative-bloq-how-adhoc-made-dispatch-feel-like-an-animated-tv-series-2026-11-14",
       "flag": "Feature candidate",
-      "image": "https://cdn.mos.cms.futurecdn.net/7PgafUs2fSRxLGq6M93T68-1920-80.jpg",
+      "image": "https://cdn.mos.cms.futurecdn.net/9i6TNVQBahppqh3xgL66nW-1920-80.jpg",
       "beat": "Motion + video"
     },
     {
-      "title": "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
-      "source_title": "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
-      "url": "https://www.creativebloq.com/inspiration/how-do-you-redesign-a-cult-kids-product-i-asked-yotos-new-designers",
-      "source": "Creative Bloq",
-      "company": "Creative Bloq",
-      "summary": "I’ve been obsessed with Yoto since 2019, when a friend introduced me to the tactile, lo-fi audio player for kids. My children have used it daily ever since , and it’s one of the most interesting brands out there. It arrived just as parents were looking for an alternative to endless high-stimulation screens, and it has grown from a community-led, Kickstarter-style product with its foibles into a polished, self-assured",
+      "title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+      "source_title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+      "url": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
+      "source": "The Verge",
+      "company": "Openai",
+      "summary": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI safety and policy community, though she is perhaps best known for having served on […]",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-how-do-you-redesign-a-cult-kids-product-i-asked-yoto-s-new-designers-2026-11-13",
+      "fingerprint": "openai-the-openai-board-member-who-fired-sam-altman-says-we-still-can-t-trust-2026-11-14",
       "flag": "Client reference",
-      "image": "https://cdn.mos.cms.futurecdn.net/QSGhCsJMHv4NJvJGvQuHa5-1920-80.png",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DCD-Helen-Toner.jpg?quality=90&strip=all&crop=0%2C10.711631919237%2C100%2C78.576736161526&w=1200",
       "beat": "Social + campaigns"
     },
     {
@@ -54,52 +54,10 @@
       "summary": "Turn Webflow/Framer app into a Claude/Codex project for free Discussion | Link",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "product-hunt-replicate-2026-11-13",
+      "fingerprint": "product-hunt-replicate-2026-11-14",
       "flag": "Tool test",
       "image": "",
       "beat": "Tools + workflow"
-    },
-    {
-      "title": "Swedes Love Fish. Just Not All Year.",
-      "source_title": "Swedes Love Fish. Just Not All Year.",
-      "url": "https://bpando.org/2026/11/11/swedes-love-fish",
-      "source": "BP&O",
-      "company": "BP&O",
-      "summary": "Packaging expert Lisa Cain shares her opinion on Pond Design’s visual identity and packaging for Swedish seafood brand Korshags. The post Swedes Love Fish. Just Not All Year. appeared first on BP&O - Branding, Packaging and Opinion .",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "bp-o-swedes-love-fish-just-not-all-year-2026-11-13",
-      "flag": "Feature candidate",
-      "image": "https://bpando.org/wp-content/uploads/korshags-pond-salmon-packs-wide-1024x576.jpg",
-      "beat": "Graphic design"
-    },
-    {
-      "title": "You know that butter bot from Rick and Morty? You can buy that now",
-      "source_title": "You know that butter bot from Rick and Morty? You can buy that now",
-      "url": "https://www.creativebloq.com/news/you-know-that-butter-bot-from-rick-and-morty-you-can-buy-that-now",
-      "source": "Creative Bloq",
-      "company": "Creative Bloq",
-      "summary": "Struggling to find a Christmas or Black Friday prezzie for the person who owns every novelty mug on Earth? Why not gift a palm-sized robot programmed to endure a relentless existential crisis on your desk?! Ladies and gentlemen – here is the Butter Bot . Following a successful 2024 Kickstarter and two years of intensive engineering, creative tech studio CircuitMess is finally shipping its officially licensed Rick and",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-you-know-that-butter-bot-from-rick-and-morty-you-can-buy-that-now-2026-11-13",
-      "flag": "Feature candidate",
-      "image": "https://cdn.mos.cms.futurecdn.net/xpvge49uAfBNpaH9oqFj5G-1920-80.jpg",
-      "beat": "Motion + video"
-    },
-    {
-      "title": "Ads of the Week: 12 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK",
-      "source_title": "Ads of the Week: 12 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNeHpsZlJQdUM4MmJpWVpWbXJBek5ER0luR01EOG02WERYT3QxOFFCRFF3SDNzTWxnM3Bud0tLczVIV2xWZ2FsRjhSTkRNeGtGX3FDSWRyNUVkeEg0QXRJbGJ2VlB5bW9LcDV6SDdIT2taaG1ZOFhFYmV4MU9KQkF4cEFoR2lwNnNGdnJaSjRma0lFRzUzY3Y0Nm1yRkZWWlNHN0doNEFIaGJCcW9TSnc?oc=5",
-      "source": "ADWEEK",
-      "company": "ADWEEK",
-      "summary": "Ads of the Week: 12 Campaigns That Caught Our Eye, From Disney to Maybelline ADWEEK",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "adweek-ads-of-the-week-12-campaigns-that-caught-our-eye-from-disney-to-mayb-2026-11-13",
-      "flag": "Client reference",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300",
-      "beat": "Social + campaigns"
     },
     {
       "title": "What 50 years in business has taught Springetts about building brands that thrive",
@@ -110,38 +68,52 @@
       "summary": "As it celebrates its half-century, the agency that named The Happy Egg Co., Nuii and Frubes shares the wisdom it's acquired along the way. Most UK businesses don't make it to their fifth birthday; acc...",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-boom-what-50-years-in-business-has-taught-springetts-about-building-brands-2026-11-13",
+      "fingerprint": "creative-boom-what-50-years-in-business-has-taught-springetts-about-building-brands-2026-11-14",
       "flag": "Feature candidate",
       "image": "https://media.creativeboom.com/01120b22-9fa4-4381-beb8-0890b2c3d393/conversions/c0da8df73e244c722e67db1b1776f411584cd402-medium.webp",
       "beat": "Graphic design"
     },
     {
-      "title": "Four video tracks and a doughnut shop – how Dispatch got its start",
-      "source_title": "Four video tracks and a doughnut shop – how Dispatch got its start",
-      "url": "https://www.creativebloq.com/features/four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start",
+      "title": "The Gatto trailer is dividing opinion over Pixar's new painterly style",
+      "source_title": "The Gatto trailer is dividing opinion over Pixar's new painterly style",
+      "url": "https://www.creativebloq.com/news/the-gatto-trailer-is-dividing-opinion-over-pixars-new-painterly-style",
       "source": "Creative Bloq",
       "company": "Creative Bloq",
-      "summary": "A year ago, Dispatch released a game that surprised many people, including me. It's a superhero game about managing reformed villains from behind a desk, launched on PC and PlayStation 5. It has since garnered over five million players, and a mobile version arrives on iOS and Android on 9 December, following October's Dispatch anniversary Deluxe Edition . Dispatch was made in Unreal Engine and stars Breaking Bad's Aa",
+      "summary": "Gatto is a huge departure for Pixar. It will be the first time in the Disney-owned studio's 40-year history that it has strayed from the 3D animation style that it popularised through franchises like Toy Story, Monsters Inc and Incredibles. The concept art and early teasers revealed a painterly 2D style. Now Pixar's released a complete trailer, providing a deeper look at the new hybrid animation approach. And it's re",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-four-video-tracks-and-a-doughnut-shop-how-dispatch-got-its-start-2026-11-13",
+      "fingerprint": "creative-bloq-the-gatto-trailer-is-dividing-opinion-over-pixar-s-new-painterly-style-2026-11-14",
       "flag": "Feature candidate",
-      "image": "https://cdn.mos.cms.futurecdn.net/BUHZpUMBKEZcvoDHtSBJ5j-1920-80.jpg",
+      "image": "https://cdn.mos.cms.futurecdn.net/zNfZMwxFk79A3w2aUmmnjn-1920-80.jpg",
       "beat": "Motion + video"
     },
     {
-      "title": "WHOOP Humans",
-      "source_title": "WHOOP Humans",
-      "url": "https://www.producthunt.com/products/whoop",
-      "source": "Product Hunt",
-      "company": "Product Hunt",
-      "summary": "WHOOP's social network built around real health data Discussion | Link",
+      "title": "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
+      "source_title": "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
+      "url": "https://www.creativebloq.com/inspiration/how-do-you-redesign-a-cult-kids-product-i-asked-yotos-new-designers",
+      "source": "Creative Bloq",
+      "company": "Creative Bloq",
+      "summary": "I’ve been obsessed with Yoto since 2019, when a friend introduced me to the tactile, lo-fi audio player for kids. My children have used it daily ever since , and it’s one of the most interesting brands out there. It arrived just as parents were looking for an alternative to endless high-stimulation screens, and it has grown from a community-led, Kickstarter-style product with its foibles into a polished, self-assured",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "product-hunt-whoop-humans-2026-11-13",
+      "fingerprint": "creative-bloq-how-do-you-redesign-a-cult-kids-product-i-asked-yoto-s-new-designers-2026-11-14",
       "flag": "Client reference",
-      "image": "",
+      "image": "https://cdn.mos.cms.futurecdn.net/QSGhCsJMHv4NJvJGvQuHa5-1920-80.png",
       "beat": "Social + campaigns"
+    },
+    {
+      "title": "ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you",
+      "source_title": "ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
+      "source": "The Verge",
+      "company": "Openai",
+      "summary": "After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for ChatGPT Pro subscribers in the US aged 18 and older using a US billing address and \"eligible US-issued American Express, Chase, Mastercard and Visa cards.\" After adding a card […]",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "openai-chatgpt-wallet-lets-openai-s-dots-agents-make-purchases-for-you-2026-11-14",
+      "flag": "Tool test",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS539_AI_AGENTS_SHOPPING_B.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "beat": "Tools + workflow"
     },
     {
       "title": "Tanmay Saxena on leaving a banking job to make surreal photographs about life's stranger moments",
@@ -152,10 +124,38 @@
       "summary": "From superheroes experiencing creative slumps to braids that trace generations of womanhood, the London-based artist draws on memories and the unexpected things he encounters while wandering. Even sup...",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-boom-tanmay-saxena-on-leaving-a-banking-job-to-make-surreal-photographs-abo-2026-11-13",
+      "fingerprint": "creative-boom-tanmay-saxena-on-leaving-a-banking-job-to-make-surreal-photographs-abo-2026-11-14",
       "flag": "Feature candidate",
       "image": "https://media.creativeboom.com/483aeb1b-8c37-4d43-893b-ed81ff945386/conversions/0cee4aba43d8077368964f592b9af8328fe64b5a-medium.webp",
       "beat": "Graphic design"
+    },
+    {
+      "title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
+      "source_title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
+      "url": "https://www.creativebloq.com/deals/adobes-black-friday-deal-is-its-biggest-in-years-with-57-percent-off-creative-cloud-pro",
+      "source": "Creative Bloq",
+      "company": "Adobe",
+      "summary": "The Adobe Black Friday sale has begun, and it was worth the wait if you've been holding out to lock in a year of savings on the world's most popular creative software. From today, you can save 57% on an annual Creative Cloud Pro subscription (new users only). This is the biggest Adobe Black Friday deal we've seen for several years. You can get all of the Creative Cloud desktop apps, mobile apps and services for just ",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "adobe-adobe-s-black-friday-deal-is-its-biggest-in-years-with-57-off-creati-2026-11-14",
+      "flag": "Feature candidate",
+      "image": "https://cdn.mos.cms.futurecdn.net/7PgafUs2fSRxLGq6M93T68-1920-80.jpg",
+      "beat": "Motion + video"
+    },
+    {
+      "title": "Ads of the Week: 13 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK",
+      "source_title": "Ads of the Week: 13 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNeHpsZlJQdUM4MmJpWVpWbXJBek5ER0luR01EOG02WERYT3QxOFFCRFF3SDNzTWxnM3Bud0tLczVIV2xWZ2FsRjhSTkRNeGtGX3FDSWRyNUVkeEg0QXRJbGJ2VlB5bW9LcDV6SDdIT2taaG1ZOFhFYmV4MU9KQkF4cEFoR2lwNnNGdnJaSjRma0lFRzUzY3Y0Nm1yRkZWWlNHN0doNEFIaGJCcW9TSnc?oc=5",
+      "source": "ADWEEK",
+      "company": "ADWEEK",
+      "summary": "Ads of the Week: 13 Campaigns That Caught Our Eye, From Disney to Maybelline ADWEEK",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "adweek-ads-of-the-week-13-campaigns-that-caught-our-eye-from-disney-to-mayb-2026-11-14",
+      "flag": "Client reference",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300",
+      "beat": "Social + campaigns"
     },
     {
       "title": "The Daily Heller: What the Best-Dressed Voters Are Wearing",
@@ -166,7 +166,7 @@
       "summary": "Making elections great again. The post The Daily Heller: What the Best-Dressed Voters Are Wearing appeared first on PRINT Magazine .",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-the-daily-heller-what-the-best-dressed-voters-are-wearing-2026-11-13",
+      "fingerprint": "print-magazine-the-daily-heller-what-the-best-dressed-voters-are-wearing-2026-11-14",
       "flag": "Feature candidate",
       "image": "https://www.printmag.com/wp-content/uploads/2026/11/image0.png",
       "beat": "Graphic design"
@@ -180,23 +180,23 @@
       "summary": "Massey has passed at 95. The post The Daily Heller: John Massey, a Midcentury Modernist, Dies appeared first on PRINT Magazine .",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-the-daily-heller-john-massey-a-midcentury-modernist-dies-2026-11-13",
-      "flag": "Design-ops lesson",
+      "fingerprint": "print-magazine-the-daily-heller-john-massey-a-midcentury-modernist-dies-2026-11-14",
+      "flag": "Feature candidate",
       "image": "https://www.printmag.com/wp-content/uploads/2026/11/00-Massey-1-intro.jpg",
       "beat": "Graphic design"
     },
     {
-      "title": "The Daily Heller: No Kings! But Plenty of Monarchs",
-      "source_title": "The Daily Heller: No Kings! But Plenty of Monarchs",
-      "url": "https://www.printmag.com/daily-heller/the-daily-heller-no-kings-but-plenty-of-monarchs",
-      "source": "PRINT Magazine",
-      "company": "PRINT Magazine",
-      "summary": "Peter Kuper's travelogues are mostly real, yet somewhat surreal. The post The Daily Heller: No Kings! But Plenty of Monarchs appeared first on PRINT Magazine .",
+      "title": "A simple logo redesign has become Australia's latest culture war – why that's bad news for designers",
+      "source_title": "A simple logo redesign has become Australia's latest culture war – why that's bad news for designers",
+      "url": "https://www.creativebloq.com/news/sydneys-logo-controversy-shows-how-politics-can-get-in-the-way-of-good-design",
+      "source": "Creative Bloq",
+      "company": "Creative Bloq",
+      "summary": "If you'd asked me last month to name the most politically explosive branding project in Australia, I wouldn't have guessed it'd be a local council's email signature. But here we are. Sutherland Shire Council, in Sydney's south, covers a population of around 240,000 people. It rarely gets much coverage in the national press, let alone grabs attention in England over 10,000 miles away. Yet in recent weeks, it's been at",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-the-daily-heller-no-kings-but-plenty-of-monarchs-2026-11-13",
+      "fingerprint": "creative-bloq-a-simple-logo-redesign-has-become-australia-s-latest-culture-war-why-2026-11-14",
       "flag": "Design-ops lesson",
-      "image": "https://i0.wp.com/www.printmag.com/wp-content/uploads/2026/11/Best-Photo-Op1-scaled.jpg?fit=2438%2C2560&quality=89&ssl=1",
+      "image": "https://cdn.mos.cms.futurecdn.net/RdrksdwEsiCNpnEpKEs6rf-1920-80.jpg",
       "beat": "Graphic design"
     }
   ],
@@ -211,10 +211,38 @@
       "summary": "Until recently, the AI industry seemed unstoppable. Every week saw more powerful models, extra billions in funding, and a further spread of data centres. Anyone who complained was told: \"Don't even bother. This is happening, whether you like it or not.\" This month, though, things felt different. US voters delivered a blunt verdict on AI infrastructure in ballot measures, while Nvidia, the chipmaker who's played a vit",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-nvidia-chaos-and-why-the-ai-industry-is-suddenly-on-the-back-foot-2026-11-13",
+      "fingerprint": "creative-bloq-nvidia-chaos-and-why-the-ai-industry-is-suddenly-on-the-back-foot-2026-11-14",
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/asScaCKZHcYekGGc8D2y2H-1920-80.jpg",
       "beat": "Graphic design"
+    },
+    {
+      "title": "You know that butter bot from Rick and Morty? You can buy that now",
+      "source_title": "You know that butter bot from Rick and Morty? You can buy that now",
+      "url": "https://www.creativebloq.com/news/you-know-that-butter-bot-from-rick-and-morty-you-can-buy-that-now",
+      "source": "Creative Bloq",
+      "company": "Creative Bloq",
+      "summary": "Struggling to find a Christmas or Black Friday prezzie for the person who owns every novelty mug on Earth? Why not gift a palm-sized robot programmed to endure a relentless existential crisis on your desk?! Ladies and gentlemen – here is the Butter Bot . Following a successful 2024 Kickstarter and two years of intensive engineering, creative tech studio CircuitMess is finally shipping its officially licensed Rick and",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-you-know-that-butter-bot-from-rick-and-morty-you-can-buy-that-now-2026-11-14",
+      "flag": "Moodboard fuel",
+      "image": "https://cdn.mos.cms.futurecdn.net/xpvge49uAfBNpaH9oqFj5G-1920-80.jpg",
+      "beat": "Motion + video"
+    },
+    {
+      "title": "This 3D artist finds inspiration in nature, Marvel heroes and tribal traditions",
+      "source_title": "This 3D artist finds inspiration in nature, Marvel heroes and tribal traditions",
+      "url": "https://www.creativebloq.com/features/this-3d-artist-finds-inspiration-in-nature-marvel-heroes-and-tribal-traditions",
+      "source": "Creative Bloq",
+      "company": "Creative Bloq",
+      "summary": "Based in France. Alexandre Mougenot is a 3D character artist who works on animated films, video games and trailers. He has mainly worked at TAT Productions on feature films, as well as on the series Asterix: The Big Fight for Netflix. Below, he shares four examples of personal work. Alexandre uses Zbrush, Maya, Substance Painter, Houdini, Marvelous Designer, Arnold, Marmoset Toolbag and Photoshop. See our guides to t",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-this-3d-artist-finds-inspiration-in-nature-marvel-heroes-and-tribal-t-2026-11-14",
+      "flag": "Moodboard fuel",
+      "image": "https://cdn.mos.cms.futurecdn.net/fwSnSKSCdAxw9saBvAe4gV-1920-80.jpg",
+      "beat": "Motion + video"
     },
     {
       "title": "Prusa CORE One+ review: Built to last and grow with you",
@@ -225,7 +253,7 @@
       "summary": "The CORE One+ is an enclosed Core XY 3D printer you can truly own, mod and repair, which has long been the cornerstone of Prusa Research. It goes toe to toe with Bambu Lab’s mid-sized machines, but its $1,299/£1,199 price tag makes it a more serious investment. I’ve reviewed the best 3D printers since 2021, and Prusa’s concern for their customers has always stood out. I’ve had this CORE One for well over a year, and ",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-prusa-core-one-review-built-to-last-and-grow-with-you-2026-11-13",
+      "fingerprint": "creative-bloq-prusa-core-one-review-built-to-last-and-grow-with-you-2026-11-14",
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/yEa7R48khqQ4EL9GTPnDGM-1920-80.png",
       "beat": "Motion + video"
@@ -239,7 +267,7 @@
       "summary": "Jan Zepp started his career in the games industry five years ago as an environment artist. Studying environment concept art and practicing sketching inspired him to explore stylised worlds. He now works across multiple tools, including Zbrush, Unreal Engine, Gaea, Blender, Photoshop, Substance Painter and Designer, and Maya. See our guides to the best drawing tablets and the best laptops for 3D modelling if you need ",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecess-2026-11-13",
+      "fingerprint": "creative-bloq-this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecess-2026-11-14",
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/xXPuppL4itYgGsRgn94RZM-1920-80.jpg",
       "beat": "Motion + video"
@@ -253,130 +281,22 @@
       "summary": "Today, the Nvidia logo is recognised not only by dedicated gamers and creatives interested in the best graphics cards for video editing . The company's stock performance has turned it into a household name, while the demand for computer components amid the AI boom has ensured that a new headline is never far away. Alas, it turns out that the DLSS 5 controversy is the least of its problems. Former CEO Jensen Huang has",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-does-nvidia-need-a-new-logo-as-well-as-a-new-ceo-2026-11-13",
+      "fingerprint": "creative-bloq-does-nvidia-need-a-new-logo-as-well-as-a-new-ceo-2026-11-14",
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/43PYejaaknyFMnCCJj2dKf-1920-80.jpg",
       "beat": "Motion + video"
-    },
-    {
-      "title": "Don’t go anywhere without these 8 essential creative travel gadgets",
-      "source_title": "Don’t go anywhere without these 8 essential creative travel gadgets",
-      "url": "https://www.creativebloq.com/deals/dont-go-anywhere-without-these-8-essential-creative-travel-gadgets",
-      "source": "Creative Bloq",
-      "company": "Creative Bloq",
-      "summary": "Technology has made it easier for creative professionals to work from anywhere at anytime, but travel can still bring some challenges. Running out of battery when you need to finish a piece of work out in the field is a common one, and passing through an airport with a bag full of tech can still be a hassle. Fortunately, there are eight travel accessories that could all potentially save the day at some point during a",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "creative-bloq-don-t-go-anywhere-without-these-8-essential-creative-travel-gadgets-2026-11-13",
-      "flag": "Moodboard fuel",
-      "image": "https://cdn.mos.cms.futurecdn.net/TjympcuzbSvBnE6QLxWMtB-1920-80.jpg",
-      "beat": "Graphic design"
     }
   ],
   "watchlist": [
     "First Ferrari Style flagship store in New York features metallic facade",
+    "Japanese sauna by Daichi Inc makes \"people feel as though they are dissolving into the forest\"",
     "Perforated brick walls envelop giant market in Kinshasa by Think Tank Architecture",
     "BIG reveals \"modular blueprint\" for Refugee City in Uganda",
     "Studio Octopi revives art deco pavilion and lido on Scottish coast",
     "Gen Z apps inform approachable wayfinding for V&A East Storehouse",
-    "Texas antique and design show unveils new exhibition building made from salvaged materials",
-    "Finnegan Shannon installs conveyor belt for displaying art accessibly in Brooklyn"
+    "Texas antique and design show unveils new exhibition building made from salvaged materials"
   ],
-  "weekly_issue": {
-    "title": "The Week Stayed Open",
-    "theme": "The strongest creative signals favored usable systems and specific visual decisions over novelty alone.",
-    "editors_letter": "This automated holding edition preserves the week’s strongest verified signals. Its selections passed source, freshness and duplicate checks even though the AI editorial pass was unavailable.",
-    "cover_story": {
-      "headline": "Shorter and sharper: Denmark’s National Gallery becomes SMK in eTypes’ bold new identity",
-      "dek": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "body": "It’s been a real joy to see a number of really bold, colourful art gallery and museum identities lately that aren’t afraid to take a risk or two – projects like Porto Rocha’s designs for Brazilian art gallery Almeida & Dale, the recent rebrand of The Horniman in London by Anatomy, and Pentagram’s spiral-centric branding for Japan’s MoN Takanawa spring The post Shorter and sharper: Denmark’s National Gallery becomes S",
-      "takeaway": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief."
-    },
-    "tool_radar": [
-      {
-        "title": "Shorter and sharper: Denmark’s National Gallery becomes SMK in eTypes’ bold new identity",
-        "recommendation": "Watch",
-        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://bpando.org/2026/11/12/smk-statens-museum-for-kunst-etypes-brand-identity-design"
-      },
-      {
-        "title": "Adobe's Black Friday deal is its biggest in years, with 57% off Creative Cloud Pro",
-        "recommendation": "Watch",
-        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/deals/adobes-black-friday-deal-is-its-biggest-in-years-with-57-percent-off-creative-cloud-pro"
-      },
-      {
-        "title": "How do you redesign a cult kids’ product? I asked Yoto’s new designers",
-        "recommendation": "Watch",
-        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/inspiration/how-do-you-redesign-a-cult-kids-product-i-asked-yotos-new-designers"
-      },
-      {
-        "title": "Replicate",
-        "recommendation": "Watch",
-        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.producthunt.com/products/replicate-10"
-      },
-      {
-        "title": "Swedes Love Fish. Just Not All Year.",
-        "recommendation": "Watch",
-        "note": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://bpando.org/2026/11/11/swedes-love-fish"
-      }
-    ],
-    "studio_signals": [],
-    "steal_this_move": {
-      "title": "Preserve editability",
-      "origin": "This week’s tool signals",
-      "method": "Test what remains changeable after generation.",
-      "exercise": "Hand one generated asset to a teammate and measure the revision cost."
-    },
-    "debate": {
-      "question": "Is finished-looking output hiding production debt?",
-      "side_a": "Speed expands exploration.",
-      "side_b": "Flattened output moves cost downstream.",
-      "position": "Judge the working file, not only the preview."
-    },
-    "moodboard": [
-      {
-        "title": "Nvidia chaos and why the AI industry is suddenly on the back foot",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/news/nvidia-chaos-and-why-the-ai-industry-is-suddenly-on-the-back-foot"
-      },
-      {
-        "title": "Prusa CORE One+ review: Built to last and grow with you",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/reviews/prusa-core-one-review-built-to-last-and-grow-with-you"
-      },
-      {
-        "title": "This approach to 3D art in Unreal Engine 5 helped me minimise unnecessary iterations",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/features/this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecessary-iterations"
-      },
-      {
-        "title": "Does Nvidia need a new logo as well as a new CEO?",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/news/does-nvidia-need-a-new-logo-as-well-as-a-new-ceo"
-      },
-      {
-        "title": "Don’t go anywhere without these 8 essential creative travel gadgets",
-        "look_at": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-        "url": "https://www.creativebloq.com/deals/dont-go-anywhere-without-these-8-essential-creative-travel-gadgets"
-      }
-    ],
-    "watchlist": [
-      "You know that butter bot from Rick and Morty? You can buy that now",
-      "Ads of the Week: 12 Campaigns That Caught Our Eye, From Disney to Maybelline - ADWEEK",
-      "What 50 years in business has taught Springetts about building brands that thrive",
-      "Four video tracks and a doughnut shop – how Dispatch got its start",
-      "WHOOP Humans"
-    ],
-    "team_actions": [
-      "Test one tool on a live brief.",
-      "Save one visual reference with a written reason.",
-      "Discuss the debate question in critique."
-    ]
-  },
+  "weekly_issue": null,
   "generation_method": "deterministic-fallback",
   "candidate_count": 60
 }
