@@ -5578,8 +5578,7 @@
         "creative-bloq-the-stunning-star-wars-lego-anniversary-poster-makes-me-finally-get-it-2026-11-15",
         "creative-bloq-this-3d-artist-finds-inspiration-in-nature-marvel-heroes-and-tribal-t-2026-11-15",
         "creative-bloq-prusa-core-one-review-built-to-last-and-grow-with-you-2026-11-15",
-        "creative-bloq-this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecess-2026-11-15",
-        "creative-bloq-does-nvidia-need-a-new-logo-as-well-as-a-new-ceo-2026-11-15"
+        "creative-bloq-this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecess-2026-11-15"
       ],
       "urls": [
         "https://www.printmag.com/daily-heller/the-daily-heller-what-the-best-dressed-voters-are-wearing",
@@ -5599,8 +5598,7 @@
         "https://www.creativebloq.com/news/the-stunning-star-wars-lego-anniversary-poster-makes-me-finally-get-it",
         "https://www.creativebloq.com/features/this-3d-artist-finds-inspiration-in-nature-marvel-heroes-and-tribal-traditions",
         "https://www.creativebloq.com/reviews/prusa-core-one-review-built-to-last-and-grow-with-you",
-        "https://www.creativebloq.com/features/this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecessary-iterations",
-        "https://www.creativebloq.com/news/does-nvidia-need-a-new-logo-as-well-as-a-new-ceo"
+        "https://www.creativebloq.com/features/this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecessary-iterations"
       ],
       "stories": [
         {
@@ -5781,16 +5779,6 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-this-approach-to-3d-art-in-unreal-engine-5-helped-me-minimise-unnecess-2026-11-15",
-          "flag": "Moodboard fuel"
-        },
-        {
-          "title": "Does Nvidia need a new logo as well as a new CEO?",
-          "url": "https://www.creativebloq.com/news/does-nvidia-need-a-new-logo-as-well-as-a-new-ceo",
-          "source": "Creative Bloq",
-          "summary": "Today, the Nvidia logo is recognised not only by dedicated gamers and creatives interested in the best graphics cards for video editing . The company's stock performance has turned it into a household name, while the demand for computer components amid the AI boom has ensured that a new headline is never far away. Alas, it turns out that the DLSS 5 controversy is the least of its problems. Former CEO Jensen Huang has",
-          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-          "fingerprint": "creative-bloq-does-nvidia-need-a-new-logo-as-well-as-a-new-ceo-2026-11-15",
           "flag": "Moodboard fuel"
         }
       ]
