@@ -14,6 +14,7 @@
 
 .library-open { border: 0; padding: 0; color: inherit; background: none; font: 700 10px var(--sans); text-transform: uppercase; cursor: pointer; }
 .library-open:hover { color: #ff8c67; }
+.library-open-floating { position: fixed; z-index: 90; top: 12px; right: 12px; padding: 12px; background: var(--ink); color: white; }
 .curation-card { min-width: 0; }
 .curation-controls { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; padding: 9px 0; }
 .curation-controls button, .library-tabs button, .library-close { min-width: 36px; height: 36px; border: 1px solid var(--line); background: transparent; color: inherit; cursor: pointer; }
