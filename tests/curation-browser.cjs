@@ -1,0 +1,35 @@
+const { chromium } = require('playwright');
+const assert = require('node:assert/strict');
+
+(async () => {
+  const browser = await chromium.launch();
+  for (const viewport of [{width: 1280, height: 900}, {width: 390, height: 844}]) {
+    const context = await browser.newContext({viewport});
+    const page = await context.newPage();
+    await page.goto('http://127.0.0.1:4173/');
+    const first = page.locator('.curation-controls').first();
+    assert.ok(await page.locator('.curation-controls').count() > 0);
+    assert.equal(await first.locator('[data-rating="5"]').isDisabled(), true);
+    await first.locator('[data-action="approve"]').click();
+    await first.locator('[data-rating="5"]').click();
+    await first.locator('[data-action="save"]').click();
+    await page.reload();
+    assert.equal(await page.locator('.curation-controls').first().locator('[data-action="approve"]').getAttribute('aria-pressed'), 'true');
+    if (viewport.width < 600) await page.locator('.menu-button').click();
+    await page.locator('.library-open').click();
+    await page.locator('[data-filter="Rated"]').click();
+    assert.equal(await page.locator('.library-count').innerText(), '1 article');
+    await page.locator('.library-item [data-action="reject"]').click();
+    await page.locator('[data-filter="Rejected"]').click();
+    assert.equal(await page.locator('.library-count').innerText(), '1 article');
+    await page.locator('[data-filter="Saved"]').click();
+    assert.equal(await page.locator('.library-count').innerText(), '0 articles');
+    await page.locator('[data-filter="Rejected"]').click();
+    await page.locator('.library-item [data-action="reject"]').click();
+    await page.locator('[data-filter="All"]').click();
+    assert.equal(await page.locator('.library-count').innerText(), '0 articles');
+    await context.close();
+  }
+  await browser.close();
+  console.log('Curation browser checks passed');
+})().catch(error => { console.error(error); process.exit(1); });
