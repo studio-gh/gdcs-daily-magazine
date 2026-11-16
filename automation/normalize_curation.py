@@ -69,6 +69,7 @@ def fallback_story(item: dict, date: str, flag: str) -> dict:
         "source_title": item["title"],
         "url": item["url"],
         "source": item.get("publication") or item.get("feed") or "Source",
+        "published": item.get("published", ""),
         "company": company,
         "summary": summary,
         "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
@@ -172,6 +173,7 @@ def validate_ai(issue: dict, candidates: list[dict], date: str) -> dict | None:
             story["source_title"] = candidate["title"]
             story["url"] = candidate["url"]
             story["source"] = story.get("source") or candidate.get("publication") or candidate.get("feed")
+            story["published"] = candidate.get("published", "")
             story["image"] = candidate.get("image", "")
             story["beat"] = beat_from(candidate)
             for field in ("title", "company", "summary", "why", "practical", "fingerprint", "flag"):
@@ -220,3 +222,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

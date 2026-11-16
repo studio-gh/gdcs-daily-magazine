@@ -63,6 +63,7 @@ jobs:
           python "$APP_DIR/automation/render_site.py" \
             --issue "$APP_DIR/data/latest.json" \
             --root "."
+          python "$APP_DIR/automation/instrument_archives.py"
           if test "$APP_DIR" != "."; then
             mkdir -p data
             cp "$APP_DIR/data/latest.json" data/latest.json
@@ -85,3 +86,4 @@ jobs:
             git commit -m "Publish Creative Intelligence issue ${ISSUE_DATE}"
             git push
           fi
+
