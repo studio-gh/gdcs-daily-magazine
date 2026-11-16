@@ -106,6 +106,7 @@ def render_issue(issue: dict, base: str = "") -> str:
     front = top[1:5] if lead else top[:4]
     department_pool = top[5:] + campaigns if lead else top[4:] + campaigns
     total = len(top) + len(campaigns) + len(inspiration)
+    curation_data = json.dumps({"date": issue.get("date"), "stories": top + campaigns + inspiration}, ensure_ascii=False).replace("<", "\\u003c")
     departments = {beat: [] for beat in ("Graphic design", "Motion + video", "Social + campaigns", "Tools + workflow")}
     for story in department_pool:
         departments.setdefault(story.get("beat") or "Tools + workflow", []).append(story)
@@ -139,7 +140,7 @@ def render_issue(issue: dict, base: str = "") -> str:
     <section class="moodboard ruled-section dark-section" id="inspiration"><div class="section-inner"><div class="section-index"><span>07</span><p>Moodboard fuel</p></div><div class="section-intro reveal"><h2>Look closely.</h2><p>References selected for their typography, image-making, motion, composition or art direction.</p></div><div class="moodboard-grid">{mood_rows(inspiration, base)}</div></div></section>
     <section class="watchlist ruled-section" id="watchlist"><div class="section-inner"><div class="section-index"><span>08</span><p>What to watch next</p></div><div class="watch-grid reveal"><h2>Signals still taking shape.</h2><ol>{watch_items}</ol></div></div></section>
     <section class="sources ruled-section" id="source-desk"><div class="section-inner"><div class="section-index"><span>09</span><p>Source desk</p></div><div class="sources-heading reveal"><h2>{total} stories. No repeats.</h2><p>Original reporting and primary sources behind the issue.</p></div><div class="source-list">{source_rows(issue)}</div></div></section>
-  </main><footer><a class="wordmark" href="#cover"><span>CSM</span><small>Creative Studio Magazine</small></a><p>{esc(issue.get('date'))} · {esc(issue.get('issue_title'))}</p><a href="{base}archive/index.html">Archive ↗</a></footer><script src="{base}script.js"></script>
+  </main><footer><a class="wordmark" href="#cover"><span>CSM</span><small>Creative Studio Magazine</small></a><p>{esc(issue.get('date'))} · {esc(issue.get('issue_title'))}</p><a href="{base}archive/index.html">Archive ↗</a></footer><script id="curation-data" type="application/json">{curation_data}</script><script src="{base}script.js"></script><script src="{base}curation.js"></script>
 </body></html>'''
 
 
@@ -225,3 +226,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
