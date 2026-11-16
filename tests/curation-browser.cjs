@@ -28,6 +28,14 @@ const assert = require('node:assert/strict');
     await page.locator('.library-item [data-action="reject"]').click();
     await page.locator('[data-filter="All"]').click();
     assert.equal(await page.locator('.library-count').innerText(), '0 articles');
+    await page.goto('http://127.0.0.1:4173/archive/2026-11-15/');
+    assert.ok(await page.locator('.curation-controls').count() > 0);
+    await page.locator('.curation-controls [data-action="save"]').first().click();
+    await page.goto('http://127.0.0.1:4173/weekly/2026-W46/');
+    assert.ok(await page.locator('.curation-controls').count() > 0);
+    await page.locator('.library-open').click();
+    await page.locator('[data-filter="Saved"]').click();
+    assert.equal(await page.locator('.library-count').innerText(), '1 article');
     await context.close();
   }
   await browser.close();
