@@ -1,8 +1,7 @@
 (function () {
   'use strict';
   const dataNode = document.getElementById('curation-data');
-  if (!dataNode) return;
-  const issue = JSON.parse(dataNode.textContent);
+  const issue = dataNode ? JSON.parse(dataNode.textContent) : {date: document.querySelector('.cover-meta span')?.textContent.trim() || '', stories: []};
   const key = 'csm-editorial-library-v1';
   let records = {};
   try { records = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (_) {}
@@ -11,7 +10,7 @@
   let source = '';
   let topic = '';
   const normalize = value => {
-    try { const u = new URL(value); u.hash = ''; u.search = ''; return u.href.replace(/\/$/, ''); } catch (_) { return ''; }
+    try { const u = new URL(value); if (!['http:', 'https:'].includes(u.protocol)) return ''; u.hash = ''; [...u.searchParams.keys()].forEach(k => { if (/^(utm_|fbclid$|gclid$)/i.test(k)) u.searchParams.delete(k); }); return u.href.replace(/\/$/, ''); } catch (_) { return ''; }
   };
   const stories = new Map((issue.stories || []).map(story => [normalize(story.url), story]).filter(pair => pair[0]));
   const escape = value => String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -27,6 +26,7 @@
   opener.type = 'button'; opener.className = 'library-open'; opener.textContent = 'Library';
   const nav = document.querySelector('#issue-nav');
   (nav || document.querySelector('header') || document.body).append(opener);
+  if (!nav) opener.classList.add('library-open-floating');
   const notice = document.createElement('div'); notice.className = 'curation-notice'; notice.setAttribute('role', 'status'); document.body.append(notice);
   let noticeTimer;
   function announce(message) { notice.textContent = message; notice.classList.add('visible'); clearTimeout(noticeTimer); noticeTimer = setTimeout(() => notice.classList.remove('visible'), 2200); }
@@ -56,13 +56,24 @@
     return el;
   }
   const slots = [];
+  function fallbackStory(anchor) {
+    const heading = anchor.querySelector('h3, strong');
+    if (!heading) return null;
+    return {url: anchor.href, title: heading.textContent.trim(), source: anchor.querySelector('figcaption')?.textContent.trim() || new URL(anchor.href).hostname.replace(/^www\./, ''), summary: anchor.querySelector('.department-copy > p:not(.story-label), small')?.textContent.trim() || '', beat: anchor.closest('section')?.querySelector('.section-index p')?.textContent.trim() || '', editionDate: issue.date};
+  }
   document.querySelectorAll('a.front-story, a.department-story, a.mood-item, a.source-item').forEach(anchor => {
-    const id = normalize(anchor.href), story = stories.get(id); if (!story) return;
+    const id = normalize(anchor.href), story = stories.get(id) || (id && fallbackStory(anchor)); if (!story) return;
     const wrapper = document.createElement('div'); wrapper.className = 'curation-card'; anchor.before(wrapper); wrapper.append(anchor);
     const slot = document.createElement('div'); wrapper.append(slot); slots.push({slot, id, story: {...story, editionDate: issue.date}});
   });
   const leadLink = document.querySelector('.lead-story .text-link');
-  if (leadLink) { const id = normalize(leadLink.href), story = stories.get(id); if (story) { const slot = document.createElement('div'); leadLink.after(slot); slots.push({slot, id, story: {...story, editionDate: issue.date}}); } }
+  if (leadLink) { const id = normalize(leadLink.href), lead = leadLink.closest('.lead-story'), story = stories.get(id) || (id && {url: id, title: lead.querySelector('h2')?.textContent.trim(), source: lead.querySelector('figcaption')?.textContent.trim() || new URL(id).hostname, summary: lead.querySelector('.lead-dek')?.textContent.trim() || '', editionDate: issue.date}); if (story) { const slot = document.createElement('div'); leadLink.after(slot); slots.push({slot, id, story: {...story, editionDate: issue.date}}); } }
+  if (!leadLink) {
+    const lead = document.querySelector('.lead-story');
+    const title = lead?.querySelector('h2')?.textContent.trim();
+    const match = slots.find(entry => entry.story.title === title);
+    if (match) { const slot = document.createElement('div'); lead.querySelector('div').append(slot); slots.push({...match, slot}); }
+  }
   function optionList(selector, values, current, label) {
     const select = drawer.querySelector(selector); select.innerHTML = '<option value="">All '+label+'</option>' + [...new Set(values.filter(Boolean))].sort().map(v => '<option value="'+escape(v)+'">'+escape(v)+'</option>').join(''); select.value = current;
   }
