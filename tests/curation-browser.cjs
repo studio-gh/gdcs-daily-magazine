@@ -55,6 +55,7 @@ const assert = require('node:assert/strict');
     await page.reload();
     await page.locator('.library-open').click();
     await page.locator('.library-import').setInputFiles(path);
+    await page.waitForFunction(() => document.querySelector('.curation-notice').textContent.startsWith('Imported'));
     assert.equal(await page.locator('.library-count').innerText(), '1 article');
     await page.locator('.library-annotation summary').click();
     assert.equal(await page.locator('.library-annotation textarea').inputValue(), 'A useful motion reference');
