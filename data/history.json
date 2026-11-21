@@ -7103,21 +7103,20 @@
         "product-hunt-nova-by-vybe-2026-11-21",
         "creative-boom-turner-duckworth-dips-maker-s-mark-s-new-identity-in-red-wax-2026-11-21",
         "print-magazine-the-daily-heller-lights-camera-nazis-2026-11-21",
-        "the-verge-youtube-is-reportedly-preparing-to-settle-social-media-addiction-claim-2026-11-21",
         "creative-boom-walsh-takes-a-bite-out-of-the-moon-for-insomnia-cookies-2026-11-21",
         "canva-canva-s-ai-off-switch-finally-recognises-the-backlash-from-creatives-2026-11-21",
-        "creative-boom-julie-legrand-finds-poetry-in-coffee-pots-shells-and-other-things-you-2026-11-21",
-        "creative-boom-it-s-official-creatives-are-using-ai-daily-but-most-aren-t-making-ex-2026-11-21",
         "creative-bloq-this-beautiful-logo-design-was-created-to-grow-like-nature-2026-11-21",
         "creative-bloq-these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-2026-11-21",
         "print-magazine-the-daily-heller-the-board-game-where-the-whole-world-is-the-loser-2026-11-21",
-        "creative-bloq-the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies-2026-11-21",
         "creative-bloq-the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price-2026-11-21",
         "creative-bloq-this-movie-poster-is-one-big-ai-slop-easter-egg-hunt-2026-11-21",
         "creative-bloq-how-to-pick-the-right-website-template-for-your-creative-business-2026-11-21",
+        "creative-bloq-the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies-2026-11-21",
         "creative-bloq-gta-6-s-environmental-storytelling-is-hidden-in-the-details-you-might-2026-11-21",
         "creative-bloq-how-sntient-2-0-put-a-ruined-city-outside-a-bedroom-sized-set-2026-11-21",
-        "creative-bloq-why-has-north-korea-redesigned-its-flag-it-s-not-about-aesthetics-2026-11-21"
+        "creative-bloq-why-has-north-korea-redesigned-its-flag-it-s-not-about-aesthetics-2026-11-21",
+        "creative-bloq-how-this-watercolour-artist-broke-free-from-neat-borders-2026-11-21",
+        "creative-bloq-host-the-perfect-craft-night-with-15-off-pottery-painting-kits-2026-11-21"
       ],
       "urls": [
         "https://bpando.org/2026/11/19/sonnys-corner-bar-brooklyn-brand-identity-design-by-order",
@@ -7126,21 +7125,20 @@
         "https://www.producthunt.com/products/vybe-4",
         "https://www.creativeboom.com/news/turner-duckworth-dips-makers-marks-new-identity-in-red-wax",
         "https://www.printmag.com/daily-heller/the-daily-heller-lights-camera-nazis",
-        "https://www.theverge.com/streaming/1039096/youtube-social-media-addiction-school-districts-settlement",
         "https://www.creativeboom.com/news/walsh-takes-a-bite-out-of-the-moon-for-insomnia-cookies",
         "https://www.creativebloq.com/news/the-canva-ai-off-switch-finally-recognises-the-artist-backlash",
-        "https://www.creativeboom.com/inspiration/julie-legrand-finds-poetry-in-coffee-pots-shells-and-other-things-you-see-every-day",
-        "https://www.creativeboom.com/insight/its-official-creatives-are-using-ai-daily-but-theyre-not-making-extra-money",
         "https://www.creativebloq.com/news/this-beautiful-logo-design-was-created-to-grow-like-nature",
         "https://www.creativebloq.com/news/these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-gaming-hardware",
         "https://www.printmag.com/daily-heller/the-daily-heller-the-game-where-the-loser-is-the-nation",
-        "https://www.creativebloq.com/news/the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies",
         "https://www.creativebloq.com/deals/the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price",
         "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
         "https://www.creativebloq.com/features/how-to-pick-the-right-website-template-for-your-creative-business",
+        "https://www.creativebloq.com/news/the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies",
         "https://www.creativebloq.com/news/gta-6s-environmental-storytelling-is-hidden-in-the-details-you-might-never-notice",
         "https://www.creativebloq.com/news/how-sntient-2-0-put-a-ruined-city-outside-a-bedroom-sized-set",
-        "https://www.creativebloq.com/news/why-has-north-korea-redesigned-its-flag-its-not-about-aesthetics"
+        "https://www.creativebloq.com/news/why-has-north-korea-redesigned-its-flag-its-not-about-aesthetics",
+        "https://www.creativebloq.com/features/how-this-watercolour-artist-broke-free-from-neat-borders",
+        "https://www.creativebloq.com/deals/host-the-perfect-craft-night-with-15-percent-off-pottery-painting-kits"
       ],
       "stories": [
         {
@@ -7204,16 +7202,6 @@
           "flag": "Feature candidate"
         },
         {
-          "title": "YouTube is reportedly preparing to settle social media addiction claims for $3 billion",
-          "url": "https://www.theverge.com/streaming/1039096/youtube-social-media-addiction-school-districts-settlement",
-          "source": "The Verge",
-          "summary": "YouTube is preparing to pay $3 billion to thousands of school districts to settle claims that its \"addictive design\" harmed kids, according to Bloomberg. Sources tell the publication that YouTube reached the agreement \"in principle,\" and that the deal would also include new safeguards for teens. The settlement would allow Google to avoid a wave […]",
-          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-          "fingerprint": "the-verge-youtube-is-reportedly-preparing-to-settle-social-media-addiction-claim-2026-11-21",
-          "flag": "Client reference"
-        },
-        {
           "title": "&Walsh takes a bite out of the moon for Insomnia Cookies",
           "url": "https://www.creativeboom.com/news/walsh-takes-a-bite-out-of-the-moon-for-insomnia-cookies",
           "source": "Creative Boom",
@@ -7234,26 +7222,6 @@
           "flag": "Feature candidate"
         },
         {
-          "title": "Julie Legrand finds poetry in coffee pots, shells and other things you see every day",
-          "url": "https://www.creativeboom.com/inspiration/julie-legrand-finds-poetry-in-coffee-pots-shells-and-other-things-you-see-every-day",
-          "source": "Creative Boom",
-          "summary": "The French illustrator and screen printer turns objects from her kitchen and studio into bold, smudged, characteristically simple images. Julie Legrand's portfolio is full of things you've seen a thou...",
-          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-          "fingerprint": "creative-boom-julie-legrand-finds-poetry-in-coffee-pots-shells-and-other-things-you-2026-11-21",
-          "flag": "Feature candidate"
-        },
-        {
-          "title": "It's official: creatives are using AI daily, but most aren't making extra money from it",
-          "url": "https://www.creativeboom.com/insight/its-official-creatives-are-using-ai-daily-but-theyre-not-making-extra-money",
-          "source": "Creative Boom",
-          "summary": "Envato's second annual survey of more than 1,000 creatives finds that AI use has become routine, even if they don't always tell the client. But whether they're using it well remains an open question....",
-          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-          "fingerprint": "creative-boom-it-s-official-creatives-are-using-ai-daily-but-most-aren-t-making-ex-2026-11-21",
-          "flag": "Feature candidate"
-        },
-        {
           "title": "This beautiful logo design was created to grow like nature",
           "url": "https://www.creativebloq.com/news/this-beautiful-logo-design-was-created-to-grow-like-nature",
           "source": "Creative Bloq",
@@ -7261,7 +7229,7 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-this-beautiful-logo-design-was-created-to-grow-like-nature-2026-11-21",
-          "flag": "Design-ops lesson"
+          "flag": "Feature candidate"
         },
         {
           "title": "These 8BitDo Tomb Raider controllers have made me rethink collectable gaming hardware",
@@ -7271,7 +7239,7 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-2026-11-21",
-          "flag": "Design-ops lesson"
+          "flag": "Feature candidate"
         },
         {
           "title": "The Daily Heller: The Board Game Where the Whole World is the Loser",
@@ -7284,16 +7252,6 @@
           "flag": "Design-ops lesson"
         },
         {
-          "title": "The best GTA 6 brand reactions, from Mercedes Benz to... Huggies?",
-          "url": "https://www.creativebloq.com/news/the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies",
-          "source": "Creative Bloq",
-          "summary": "A video game called GTA 6 was released yesterday, and it seems it's something of a big deal. Maybe you've heard about it? Our digital arts editor hasn't stopped raving about it since he got early access for his GTA 6 review . And some of the world's biggest brands want in on the action. We've already talked about GTA VI trendjacking , and yesterday it truly exploded. But which brands were creative enough to be able t",
-          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-          "fingerprint": "creative-bloq-the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies-2026-11-21",
-          "flag": "Client reference"
-        },
-        {
           "title": "The easiest craft laser machine to use is at a record low price",
           "url": "https://www.creativebloq.com/deals/the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price",
           "source": "Creative Bloq",
@@ -7301,7 +7259,7 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price-2026-11-21",
-          "flag": "Moodboard fuel"
+          "flag": "Design-ops lesson"
         },
         {
           "title": "This movie poster is one big AI slop Easter egg hunt",
@@ -7311,7 +7269,7 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-this-movie-poster-is-one-big-ai-slop-easter-egg-hunt-2026-11-21",
-          "flag": "Moodboard fuel"
+          "flag": "Design-ops lesson"
         },
         {
           "title": "How to pick the right website template for your creative business",
@@ -7321,7 +7279,17 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-how-to-pick-the-right-website-template-for-your-creative-business-2026-11-21",
-          "flag": "Moodboard fuel"
+          "flag": "Design-ops lesson"
+        },
+        {
+          "title": "The best GTA 6 brand reactions, from Mercedes Benz to... Huggies?",
+          "url": "https://www.creativebloq.com/news/the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies",
+          "source": "Creative Bloq",
+          "summary": "A video game called GTA 6 was released yesterday, and it seems it's something of a big deal. Maybe you've heard about it? Our digital arts editor hasn't stopped raving about it since he got early access for his GTA 6 review . And some of the world's biggest brands want in on the action. We've already talked about GTA VI trendjacking , and yesterday it truly exploded. But which brands were creative enough to be able t",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-the-best-gta-6-brand-reactions-from-mercedes-benz-to-huggies-2026-11-21",
+          "flag": "Client reference"
         },
         {
           "title": "GTA 6's environmental storytelling is hidden in the details you might never notice",
@@ -7351,6 +7319,26 @@
           "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
           "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
           "fingerprint": "creative-bloq-why-has-north-korea-redesigned-its-flag-it-s-not-about-aesthetics-2026-11-21",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "How this watercolour artist broke free from neat borders",
+          "url": "https://www.creativebloq.com/features/how-this-watercolour-artist-broke-free-from-neat-borders",
+          "source": "Creative Bloq",
+          "summary": "Lavera Grace is a watercolour artist from Australia who has always felt drawn to magical stories and the natural world. She says that inky lines and layered watercolours feel the most natural medium to achieve this, allowing ideas to flow onto the paper. Below, Lavera briefly presents four examples of her work. If you're inspired and need supplies for your own work, see our guides to the best watercolour paints and t",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-how-this-watercolour-artist-broke-free-from-neat-borders-2026-11-21",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "Host the perfect craft night with 15% off pottery painting kits",
+          "url": "https://www.creativebloq.com/deals/host-the-perfect-craft-night-with-15-percent-off-pottery-painting-kits",
+          "source": "Creative Bloq",
+          "summary": "Though it pains me to entertain it so early, Christmas is on the horizon, and it's time to start thinking ahead about those all-important presents. If you're looking for something a little different for that creative in your life, pottery and painting kits are a great gifting option, whether you're looking to create your own DIY present or simply gift the joy of handmade crafting. This Black Friday , we're already se",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-host-the-perfect-craft-night-with-15-off-pottery-painting-kits-2026-11-21",
           "flag": "Moodboard fuel"
         }
       ]
