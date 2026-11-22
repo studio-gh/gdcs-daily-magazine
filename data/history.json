@@ -7342,6 +7342,280 @@
           "flag": "Moodboard fuel"
         }
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "title": "The Daily Edit",
+      "fingerprints": [
+        "creative-bloq-this-beautiful-logo-design-was-created-to-grow-like-nature-2026-11-22",
+        "creative-bloq-this-artist-made-photoshop-alternative-has-no-ai-and-no-subscription-2026-11-22",
+        "patch-5-things-to-know-in-wethersfield-redevelopment-presentation-historic-2026-11-22",
+        "creative-bloq-these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-2026-11-22",
+        "canva-canva-s-ai-off-switch-finally-recognises-the-backlash-from-creatives-2026-11-22",
+        "print-magazine-the-daily-heller-the-board-game-where-the-whole-world-is-the-loser-2026-11-22",
+        "creative-bloq-the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price-2026-11-22",
+        "creative-bloq-gta-6-is-proof-that-human-creativity-is-still-the-most-impressive-tech-2026-11-22",
+        "adobe-it-s-not-meant-to-replace-your-creativity-adobe-s-ai-pitch-hasn-t-c-2026-11-22",
+        "creative-bloq-this-movie-poster-is-one-big-ai-slop-easter-egg-hunt-2026-11-22",
+        "creative-bloq-how-to-pick-the-right-website-template-for-your-creative-business-2026-11-22",
+        "product-hunt-creavit-studio-4-0-2026-11-22",
+        "creative-bloq-gta-6-s-environmental-storytelling-is-hidden-in-the-details-you-might-2026-11-22",
+        "the-verge-protesters-storm-meta-offices-in-india-2026-11-22",
+        "foro3d-werklig-designs-the-identity-for-voltcore-nordic-typography-for-the-p-2026-11-22",
+        "my-comox-valley-now-north-island-college-wins-design-awards-for-50th-anniversary-campaign-2026-11-22",
+        "creative-bloq-rockstar-spent-months-on-one-detail-in-gta-6-lucia-opening-a-door-wit-2026-11-22",
+        "creative-bloq-formnext-2026-4-things-i-loved-and-1-that-gives-me-the-jeebies-2026-11-22",
+        "creative-bloq-how-sntient-2-0-put-a-ruined-city-outside-a-bedroom-sized-set-2026-11-22",
+        "creative-bloq-why-has-north-korea-redesigned-its-flag-it-s-not-about-aesthetics-2026-11-22",
+        "creative-bloq-how-this-watercolour-artist-broke-free-from-neat-borders-2026-11-22",
+        "creative-bloq-host-the-perfect-craft-night-with-15-off-pottery-painting-kits-2026-11-22"
+      ],
+      "urls": [
+        "https://www.creativebloq.com/news/this-beautiful-logo-design-was-created-to-grow-like-nature",
+        "https://www.creativebloq.com/news/this-artist-made-photoshop-alt-has-no-ai-and-no-subscription",
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZy1qUWxsbk1vYkl6cGhCZUtXMjQyUEY2cjR1U2dKbFRzejBXUmJtWUJJS1lzeXdKT2VoMzBHWE9TRWM3Vm9YSmM4X09FdGsyU2p2LUFDcHpZdE9MNXZ0OTdGU2U3VGhibWF2MDQtNDVaRkV3WGdYd2tXSU1XQUNmdGVSRzFjYVpuTXAxRnZtcXBBM2pCTmExbU9FZzc3Z3IwckphWmVzTTBFY05oQUladk96WE3SAesBQVVfeXFMUDhVMXNyTUtaV19fQ21XVEdUX2hJMVpla016QzNpTjU1VzltRkplaVNBZFBMTWtodXg3Q3hpNWFBQmlCcHpPMDRKME1UVW5kOXFGWnlLMFBvU0ZkWmZGazFFdWxWSjBseUFfZkd4SnZJbnQyM1hoQ1dvTHNoWUN0Tl94TldfZzZwa2l5ZW9hSHJRWXpacEI0czVnOUxZa2VwUmtlSTU4MzFOY3lXVDJ2SGZmd2tzVEV2RnVvRnZZZnQtZk9od3lES0Q2Mk1BVV9obEhNRVJXMENQUFVDV0w0eWp6em5rbHJndmRnbw?oc=5",
+        "https://www.creativebloq.com/news/these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-gaming-hardware",
+        "https://www.creativebloq.com/news/the-canva-ai-off-switch-finally-recognises-the-artist-backlash",
+        "https://www.printmag.com/daily-heller/the-daily-heller-the-game-where-the-loser-is-the-nation",
+        "https://www.creativebloq.com/deals/the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price",
+        "https://www.creativebloq.com/news/gta-6-is-proof-that-human-creativity-is-still-the-most-impressive-technology-we-have",
+        "https://www.creativebloq.com/features/its-not-meant-to-replace-your-creativity-adobes-ai-pitch-hasnt-changed-in-two-years-but-the-tools-have",
+        "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
+        "https://www.creativebloq.com/features/how-to-pick-the-right-website-template-for-your-creative-business",
+        "https://www.producthunt.com/products/creavit-studio",
+        "https://www.creativebloq.com/news/gta-6s-environmental-storytelling-is-hidden-in-the-details-you-might-never-notice",
+        "https://www.theverge.com/tech/1039732/protesters-storm-meta-offices-in-india",
+        "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQjZMU1lXbExoQjNSNWN5blBGSUxjR0ltcUtabmRpZXVqUFRzRk9oYXJERFlLQm1uRTVRZzBkQ1VIYkdmdW1VX3pUSFI5bTVyVzF3aHRxZ0oxX1ExeVoxLUtrQ1owWkVSLUoxaHpYZ2M2aGNzQkVfYjI4LXFlM0VwNTNzTkNhbTUwYlptQjNOcnp2dGg4TDJsNTlkd2VKZGNIeGpYN25BRDF5S3RGeEVuZHNR?oc=5",
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQUUxsNTlMVktaWGw1VzJZVUxhUWZzcFYydk1fMzZaUG5oVEVCT09rbXc4Rm9VSVhubHE5eC14aWp2YlZ1bkFXb01oaTIzQmhBUG1ZOVBXWUY5SEl1S0ZKMnQwSXhGRGdmU0M3VXJUSkpxQXdRZmkwYUFnT1luZ08zd1JGdmF4NEd5X3g3bDlsTDdrZFZGTDU3UFAtSHhSNS1lakR3OVdkNm9ld0tVU3BXT0RFbG5KSHJuMERiLUJQZnIyZTdNYWhzZFBzSkJBeC0yM29WbEdQZVN2X19kQ25J?oc=5",
+        "https://www.creativebloq.com/news/rockstar-spent-months-on-one-detail-in-gta-6-lucia-opening-a-door-with-her-hip",
+        "https://www.creativebloq.com/news/formnext-2026-4-things-i-loved-and-1-that-gives-me-the-jeebies",
+        "https://www.creativebloq.com/news/how-sntient-2-0-put-a-ruined-city-outside-a-bedroom-sized-set",
+        "https://www.creativebloq.com/news/why-has-north-korea-redesigned-its-flag-its-not-about-aesthetics",
+        "https://www.creativebloq.com/features/how-this-watercolour-artist-broke-free-from-neat-borders",
+        "https://www.creativebloq.com/deals/host-the-perfect-craft-night-with-15-percent-off-pottery-painting-kits"
+      ],
+      "stories": [
+        {
+          "title": "This beautiful logo design was created to grow like nature",
+          "url": "https://www.creativebloq.com/news/this-beautiful-logo-design-was-created-to-grow-like-nature",
+          "source": "Creative Bloq",
+          "summary": "How do you rebrand a 200-year-old institution that wants its new logo to \"feel like plants\"? Plants are constantly changing; they grow, wilt, bloom, move in the wind, shed their leaves and sprout new ones. Captivating that in a permanent identity built to last years might seem like an impossible task. And yet the new identity for the Pennsylvania Horticultural Society achieves it. The logo is a clear candidate as one",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-this-beautiful-logo-design-was-created-to-grow-like-nature-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "This artist-made Photoshop alternative has no AI and no subscription",
+          "url": "https://www.creativebloq.com/news/this-artist-made-photoshop-alt-has-no-ai-and-no-subscription",
+          "source": "Creative Bloq",
+          "summary": "Adobe software might still rule in many industries, but there's a growing number of alternatives, from Canva's free Affinity to open-source Krita, Maxon's Autograph for motion design and DaVinci Resolve for video editing. Into the fray, comes a new artist-led app who's main selling points include the fact that it DOESN'T have any generative AI tools. NIVA is clean and light, works in your browser and it's led by a co",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-this-artist-made-photoshop-alternative-has-no-ai-and-no-subscription-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "5 Things To Know In Wethersfield: Redevelopment Presentation, Historic District Hearings, School Board - Patch",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZy1qUWxsbk1vYkl6cGhCZUtXMjQyUEY2cjR1U2dKbFRzejBXUmJtWUJJS1lzeXdKT2VoMzBHWE9TRWM3Vm9YSmM4X09FdGsyU2p2LUFDcHpZdE9MNXZ0OTdGU2U3VGhibWF2MDQtNDVaRkV3WGdYd2tXSU1XQUNmdGVSRzFjYVpuTXAxRnZtcXBBM2pCTmExbU9FZzc3Z3IwckphWmVzTTBFY05oQUladk96WE3SAesBQVVfeXFMUDhVMXNyTUtaV19fQ21XVEdUX2hJMVpla016QzNpTjU1VzltRkplaVNBZFBMTWtodXg3Q3hpNWFBQmlCcHpPMDRKME1UVW5kOXFGWnlLMFBvU0ZkWmZGazFFdWxWSjBseUFfZkd4SnZJbnQyM1hoQ1dvTHNoWUN0Tl94TldfZzZwa2l5ZW9hSHJRWXpacEI0czVnOUxZa2VwUmtlSTU4MzFOY3lXVDJ2SGZmd2tzVEV2RnVvRnZZZnQtZk9od3lES0Q2Mk1BVV9obEhNRVJXMENQUFVDV0w0eWp6em5rbHJndmRnbw?oc=5",
+          "source": "Patch",
+          "summary": "5 Things To Know In Wethersfield: Redevelopment Presentation, Historic District Hearings, School Board Patch",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "patch-5-things-to-know-in-wethersfield-redevelopment-presentation-historic-2026-11-22",
+          "flag": "Tool test"
+        },
+        {
+          "title": "These 8BitDo Tomb Raider controllers have made me rethink collectable gaming hardware",
+          "url": "https://www.creativebloq.com/news/these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-gaming-hardware",
+          "source": "Creative Bloq",
+          "summary": "I've never really been one for collectable controllers . I'm a fairly practical gamer, I suppose, and while I appreciate nice hardware design, I'm usually more interested in how a controller feels than how it looks, whether it has an on-brand D-pad or decals, for example. But opening the Tomb Raider 30th Anniversary Edition of 8BitDo's Ultimate 3 Controller has changed my mind a little, and I think it's largely down ",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-these-8bitdo-tomb-raider-controllers-have-made-me-rethink-collectable-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "Canva's 'AI off switch' finally recognises the backlash from creatives",
+          "url": "https://www.creativebloq.com/news/the-canva-ai-off-switch-finally-recognises-the-artist-backlash",
+          "source": "Creative Bloq",
+          "summary": "Over the past couple of years, most of the press releases coming from software companies have contained announcements of new AI features. Image, video and vector generation, removal tools, agentic workflows, AI assistants, and myriad other advances that can help artists do in seconds something that used to take hours. Canva is one of those companies, and it's introduced a bunch of generative AI tools to its design pl",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "canva-canva-s-ai-off-switch-finally-recognises-the-backlash-from-creatives-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "The Daily Heller: The Board Game Where the Whole World is the Loser",
+          "url": "https://www.printmag.com/daily-heller/the-daily-heller-the-game-where-the-loser-is-the-nation",
+          "source": "PRINT Magazine",
+          "summary": "Secret Hitler is just a game. (Right?) The post The Daily Heller: The Board Game Where the Whole World is the Loser appeared first on PRINT Magazine .",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "print-magazine-the-daily-heller-the-board-game-where-the-whole-world-is-the-loser-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "The easiest craft laser machine to use is at a record low price",
+          "url": "https://www.creativebloq.com/deals/the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price",
+          "source": "Creative Bloq",
+          "summary": "If you're looking for a genuinely great saving this Black Friday, this deal on the latest xTool M2 Colour Craft might be for you. It's currently down from $699 to $474 over at Amazon in the US , and down to £529 in the UK . The 2-in-1 laser and CMYK inkjet printer offers colour printing, laser cutting, and engraving in one device. It also supports over 100 materials, catering to personalised crafts and small-business",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-the-easiest-craft-laser-machine-to-use-is-at-a-record-low-price-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "GTA 6 is proof that human creativity is still the most impressive technology we have",
+          "url": "https://www.creativebloq.com/news/gta-6-is-proof-that-human-creativity-is-still-the-most-impressive-technology-we-have",
+          "source": "Creative Bloq",
+          "summary": "Every week, another AI tool promises to conjure images, environments and characters from a few lines of text. Autodesk and Adobe are among those promising to make creating worlds and bringing ideas to life easier, often with little more than a prompt. Then I spent three weeks playing GTA 6, and it reminded me why I still find artists and designers so bloody impressive. I've spent weeks exploring Rockstar's Leonida, a",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-gta-6-is-proof-that-human-creativity-is-still-the-most-impressive-tech-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "“It’s not meant to replace your creativity”: Adobe’s AI pitch hasn’t changed in two years, but the tools have",
+          "url": "https://www.creativebloq.com/features/its-not-meant-to-replace-your-creativity-adobes-ai-pitch-hasnt-changed-in-two-years-but-the-tools-have",
+          "source": "Creative Bloq",
+          "summary": "Over the years, the definition of the 'creative' has been in flux. No longer comprised of classically trained industry veterans, design has been democratised (for better or for worse, depending on who you ask), and Adobe continues to pioneer this adapting creative sphere. But what does the creative professional of 2026 look like? And with advancements like Adobe Firefly and the increasing development of AI tools, how",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "adobe-it-s-not-meant-to-replace-your-creativity-adobe-s-ai-pitch-hasn-t-c-2026-11-22",
+          "flag": "Feature candidate"
+        },
+        {
+          "title": "This movie poster is one big AI slop Easter egg hunt",
+          "url": "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
+          "source": "Creative Bloq",
+          "summary": "Nowadays, AI slop posters are no rarity in the movie world, so when I saw the design for Luca Guadagnino's latest film, Artificial, I rolled my eyes and continued scrolling. Little did I know that was the exact reaction the director wanted. Had I been a little more observant, I'd have spotted the little text in the bottom right corner reading \"Artwork made by Humans\". Yes, this movie poster has all the makings of unc",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-this-movie-poster-is-one-big-ai-slop-easter-egg-hunt-2026-11-22",
+          "flag": "Design-ops lesson"
+        },
+        {
+          "title": "How to pick the right website template for your creative business",
+          "url": "https://www.creativebloq.com/features/how-to-pick-the-right-website-template-for-your-creative-business",
+          "source": "Creative Bloq",
+          "summary": "Even if you're using one of the best website builders, I recommend taking your time when choosing your template if you're going that route. A website template provides the foundation for everything, and choosing wisely at the beginning can save you time and energy further down the line. Templates can still offer substantial value by handling the heavy lifting of page structure, navigation, and responsive design. But ",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-how-to-pick-the-right-website-template-for-your-creative-business-2026-11-22",
+          "flag": "Design-ops lesson"
+        },
+        {
+          "title": "Creavit Studio 4.0",
+          "url": "https://www.producthunt.com/products/creavit-studio",
+          "source": "Product Hunt",
+          "summary": "Screen recording, iPhone camera and cinematic demos for Mac Discussion | Link",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "product-hunt-creavit-studio-4-0-2026-11-22",
+          "flag": "Design-ops lesson"
+        },
+        {
+          "title": "GTA 6's environmental storytelling is hidden in the details you might never notice",
+          "url": "https://www.creativebloq.com/news/gta-6s-environmental-storytelling-is-hidden-in-the-details-you-might-never-notice",
+          "source": "Creative Bloq",
+          "summary": "The best environmental storytelling in video games doesn’t always hit you in the face and demand you stop to look, and GTA 6 has perfected that. Sometimes it’s a carefully dressed room, an overgrown garden, or a detail you spot out of the corner of your eye while heading somewhere else. Rockstar’s developers say that kind of discovery is central to Grand Theft Auto 6, a world designed to reward players who take their",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-gta-6-s-environmental-storytelling-is-hidden-in-the-details-you-might-2026-11-22",
+          "flag": "Design-ops lesson"
+        },
+        {
+          "title": "Protesters storm Meta offices in India",
+          "url": "https://www.theverge.com/tech/1039732/protesters-storm-meta-offices-in-india",
+          "source": "The Verge",
+          "summary": "Members of the opposition Congress party protested outside Meta's offices in Delhi on Friday and appear to have entered the building in a video shared by CNN. Members of the party's youth wing are demanding the company restore accounts of party leaders and warned of more protests to come. The Congress party has criticized Meta […]",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "the-verge-protesters-storm-meta-offices-in-india-2026-11-22",
+          "flag": "Design-ops lesson"
+        },
+        {
+          "title": "Werklig designs the identity for Voltcore: Nordic typography for the power grid - Foro3D",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQjZMU1lXbExoQjNSNWN5blBGSUxjR0ltcUtabmRpZXVqUFRzRk9oYXJERFlLQm1uRTVRZzBkQ1VIYkdmdW1VX3pUSFI5bTVyVzF3aHRxZ0oxX1ExeVoxLUtrQ1owWkVSLUoxaHpYZ2M2aGNzQkVfYjI4LXFlM0VwNTNzTkNhbTUwYlptQjNOcnp2dGg4TDJsNTlkd2VKZGNIeGpYN25BRDF5S3RGeEVuZHNR?oc=5",
+          "source": "Foro3D",
+          "summary": "Werklig designs the identity for Voltcore: Nordic typography for the power grid Foro3D",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "foro3d-werklig-designs-the-identity-for-voltcore-nordic-typography-for-the-p-2026-11-22",
+          "flag": "Client reference"
+        },
+        {
+          "title": "North Island College wins design awards for 50th anniversary campaign - My Comox Valley Now",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQUUxsNTlMVktaWGw1VzJZVUxhUWZzcFYydk1fMzZaUG5oVEVCT09rbXc4Rm9VSVhubHE5eC14aWp2YlZ1bkFXb01oaTIzQmhBUG1ZOVBXWUY5SEl1S0ZKMnQwSXhGRGdmU0M3VXJUSkpxQXdRZmkwYUFnT1luZ08zd1JGdmF4NEd5X3g3bDlsTDdrZFZGTDU3UFAtSHhSNS1lakR3OVdkNm9ld0tVU3BXT0RFbG5KSHJuMERiLUJQZnIyZTdNYWhzZFBzSkJBeC0yM29WbEdQZVN2X19kQ25J?oc=5",
+          "source": "My Comox Valley Now",
+          "summary": "North Island College wins design awards for 50th anniversary campaign My Comox Valley Now",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "my-comox-valley-now-north-island-college-wins-design-awards-for-50th-anniversary-campaign-2026-11-22",
+          "flag": "Client reference"
+        },
+        {
+          "title": "Rockstar spent months on one detail in GTA 6: Lucia opening a door with her hip",
+          "url": "https://www.creativebloq.com/news/rockstar-spent-months-on-one-detail-in-gta-6-lucia-opening-a-door-with-her-hip",
+          "source": "Creative Bloq",
+          "summary": "There's a moment in GTA 6 where Lucia is carrying drinks, her hands are full, and she turns around and bumps a door open with her hip. It's an animation repeated throughout the game, subtle but realistic. I picked up on this in my GTA 6 review when Lucia buys a shake and ice cream and has to nudge the door with her hip to get through. It’s tiny and incidental. It’s also, according to Rockstar’s animators, the kind of",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-rockstar-spent-months-on-one-detail-in-gta-6-lucia-opening-a-door-wit-2026-11-22",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "Formnext 2026: 4 things I loved and 1 that gives me the jeebies",
+          "url": "https://www.creativebloq.com/news/formnext-2026-4-things-i-loved-and-1-that-gives-me-the-jeebies",
+          "source": "Creative Bloq",
+          "summary": "Formnext is the world’s biggest additive manufacturing trade show, gathering the best 3D printer manufacturers, large and small, to show off their latest goods in Germany each year. And this year was a blast. The event is open to the public, but the true purpose of the show is for businesses, factories and retailers to come and do some shopping. This year the show shrank to three halls from the usual four, with consu",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-formnext-2026-4-things-i-loved-and-1-that-gives-me-the-jeebies-2026-11-22",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "How SNTIENT 2.0 put a ruined city outside a bedroom-sized set",
+          "url": "https://www.creativebloq.com/news/how-sntient-2-0-put-a-ruined-city-outside-a-bedroom-sized-set",
+          "source": "Creative Bloq",
+          "summary": "When your physical set is three walls and a ceiling, whatever’s outside the window has to carry a lot of the film. For SNTIENT 2.0, the Fashion Innovation Agency’s film for London College of Fashion, that view was a bleak, abandoned city, and it lived entirely in Unreal Engine . The story is a dystopia with a twist, set around the idea that resources have run out, humans have retreated into a simulation, and the robo",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-how-sntient-2-0-put-a-ruined-city-outside-a-bedroom-sized-set-2026-11-22",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "Why has North Korea redesigned its flag? It's not about aesthetics...",
+          "url": "https://www.creativebloq.com/news/why-has-north-korea-redesigned-its-flag-its-not-about-aesthetics",
+          "source": "Creative Bloq",
+          "summary": "Despite being a failed nation in most regards (60% are thought to be below the poverty line, and reports of widespread starvation have surfaced as recently as 2021), North Korea continues to fascinate us. Even this week, as Trump, Putin and Xi prepared to meet in Shenzhen, China the media was playing \"Where's Kim?\" after Trump told reporters North Korean leader Kim Jong Un \"would like to\" attend, and that whether he ",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-why-has-north-korea-redesigned-its-flag-it-s-not-about-aesthetics-2026-11-22",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "How this watercolour artist broke free from neat borders",
+          "url": "https://www.creativebloq.com/features/how-this-watercolour-artist-broke-free-from-neat-borders",
+          "source": "Creative Bloq",
+          "summary": "Lavera Grace is a watercolour artist from Australia who has always felt drawn to magical stories and the natural world. She says that inky lines and layered watercolours feel the most natural medium to achieve this, allowing ideas to flow onto the paper. Below, Lavera briefly presents four examples of her work. If you're inspired and need supplies for your own work, see our guides to the best watercolour paints and t",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-how-this-watercolour-artist-broke-free-from-neat-borders-2026-11-22",
+          "flag": "Moodboard fuel"
+        },
+        {
+          "title": "Host the perfect craft night with 15% off pottery painting kits",
+          "url": "https://www.creativebloq.com/deals/host-the-perfect-craft-night-with-15-percent-off-pottery-painting-kits",
+          "source": "Creative Bloq",
+          "summary": "Though it pains me to entertain it so early, Christmas is on the horizon, and it's time to start thinking ahead about those all-important presents. If you're looking for something a little different for that creative in your life, pottery and painting kits are a great gifting option, whether you're looking to create your own DIY present or simply gift the joy of handmade crafting. This Black Friday , we're already se",
+          "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+          "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+          "fingerprint": "creative-bloq-host-the-perfect-craft-night-with-15-off-pottery-painting-kits-2026-11-22",
+          "flag": "Moodboard fuel"
+        }
+      ]
     }
   ]
 }
