@@ -49,18 +49,18 @@
       "beat": "Social + campaigns"
     },
     {
-      "title": "Agenda Hero Magic Labs",
-      "source_title": "Agenda Hero Magic Labs",
-      "url": "https://www.producthunt.com/products/agenda-hero-magic",
-      "source": "Product Hunt",
-      "published": "2026-11-24T06:26:55+00:00",
-      "company": "Product Hunt",
-      "summary": "Any schedule. Any layout. Any style. Discussion | Link",
+      "title": "The Verge’s 2026 holiday gift guide for moms",
+      "source_title": "The Verge’s 2026 holiday gift guide for moms",
+      "url": "https://www.theverge.com/gadgets/1021621/best-gifts-for-mom-2026",
+      "source": "The Verge",
+      "published": "2026-11-24T23:15:11+00:00",
+      "company": "The Verge",
+      "summary": "Given everything moms do for us, it feels good to give back during the holidays. But where to start? How do you come up with a physical representation of how you feel about such a key and influential figure in your life? The possibilities seem as endless as they are daunting, but fear not, we've […]",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
       "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "product-hunt-agenda-hero-magic-labs-2026-11-24",
+      "fingerprint": "the-verge-the-verge-s-2026-holiday-gift-guide-for-moms-2026-11-24",
       "flag": "Tool test",
-      "image": "",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/268757_2026_gift_guides_UNDER_25_CVirginia_MOMS.jpg?quality=90&strip=all&crop=0%2C10.728364100735%2C100%2C78.54327179853&w=1200",
       "beat": "Tools + workflow"
     },
     {
@@ -92,6 +92,21 @@
       "flag": "Feature candidate",
       "image": "https://cdn.mos.cms.futurecdn.net/mBcy4yJXXf9f7yYqb6WF7S-1920-80.jpg",
       "beat": "Motion + video"
+    },
+    {
+      "title": "Agenda Hero Magic Labs",
+      "source_title": "Agenda Hero Magic Labs",
+      "url": "https://www.producthunt.com/products/agenda-hero-magic",
+      "source": "Product Hunt",
+      "published": "2026-11-24T06:26:55+00:00",
+      "company": "Product Hunt",
+      "summary": "Any schedule. Any layout. Any style. Discussion | Link",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "product-hunt-agenda-hero-magic-labs-2026-11-24",
+      "flag": "Tool test",
+      "image": "",
+      "beat": "Tools + workflow"
     },
     {
       "title": "Yungbld gives startup haircare brand Vollie a look that’s premium, but never precious",
@@ -169,21 +184,6 @@
       "beat": "Graphic design"
     },
     {
-      "title": "What Matters to Steven Denekas",
-      "source_title": "What Matters to Steven Denekas",
-      "url": "https://www.printmag.com/what-matters/what-matters-to-steven-denekas",
-      "source": "PRINT Magazine",
-      "published": "2026-11-24T14:00:00+00:00",
-      "company": "PRINT Magazine",
-      "summary": "Self-taught designer and Head of Design at Sibera studio Steven Denekas discusses dedication to design, living with heartbreak, and connecting with past lives in this week's What Matters. The post What Matters to Steven Denekas appeared first on PRINT Magazine .",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-what-matters-to-steven-denekas-2026-11-24",
-      "flag": "Design-ops lesson",
-      "image": "https://i0.wp.com/www.printmag.com/wp-content/uploads/2026/11/Steven_Denekas-2.jpeg?fit=994%2C961&quality=89&ssl=1",
-      "beat": "Graphic design"
-    },
-    {
       "title": "Booms & Shakes: who’s moved where in November, from Neville Brody to Uber’s creative leader",
       "source_title": "Booms & Shakes: who’s moved where in November, from Neville Brody to Uber’s creative leader",
       "url": "https://www.creativeboom.com/news/booms-shakes-novembers-biggest-creative-industry-moves-from-neville-brody-to-apples-agency",
@@ -220,7 +220,7 @@
       "source_title": "TikTok was down",
       "url": "https://www.theverge.com/tech/1041618/tiktok-down-outage",
       "source": "The Verge",
-      "published": "2026-11-24T20:58:35+00:00",
+      "published": "2026-11-24T21:06:21+00:00",
       "company": "The Verge",
       "summary": "Earlier on Tuesday, TikTok experienced some issues, with videos, search results, favorites, and other features not loading as they usually do. Videos sometimes wouldn't load in the For You feed on my iPhone, and search results occasionally didn't show up as expected in the app on iOS or Android, or on the web. Even trying […]",
       "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
@@ -232,21 +232,6 @@
     }
   ],
   "inspiration": [
-    {
-      "title": "The Daily Heller: Extruded Thermoplastic Reflectorized Pavement Markings",
-      "source_title": "The Daily Heller: Extruded Thermoplastic Reflectorized Pavement Markings",
-      "url": "https://www.printmag.com/daily-heller/the-daily-heller-extruded-thermoplastic-reflectorized-pavement-markings",
-      "source": "PRINT Magazine",
-      "published": "2026-11-23T12:00:00+00:00",
-      "company": "PRINT Magazine",
-      "summary": "Who is responsible for street typography in New York City? The post The Daily Heller: Extruded Thermoplastic Reflectorized Pavement Markings appeared first on PRINT Magazine .",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-the-daily-heller-extruded-thermoplastic-reflectorized-pavement-markin-2026-11-24",
-      "flag": "Moodboard fuel",
-      "image": "https://www.printmag.com/wp-content/uploads/2026/11/IMG_4543-1.jpeg",
-      "beat": "Graphic design"
-    },
     {
       "title": "Luke McConkey on spreading a pandemic of joy and working with Uniqlo",
       "source_title": "Luke McConkey on spreading a pandemic of joy and working with Uniqlo",
@@ -260,36 +245,6 @@
       "fingerprint": "creative-boom-luke-mcconkey-on-spreading-a-pandemic-of-joy-and-working-with-uniqlo-2026-11-24",
       "flag": "Moodboard fuel",
       "image": "https://media.creativeboom.com/86b4cd96-05f8-455f-a025-c0bdf80efa90/conversions/3b9a58136f622b9db1c78f8adad111e25e055e74-medium.webp",
-      "beat": "Graphic design"
-    },
-    {
-      "title": "A Master of Graphic Invention: A Conversation with Seymour Chwast",
-      "source_title": "A Master of Graphic Invention: A Conversation with Seymour Chwast",
-      "url": "https://www.printmag.com/book-club/a-master-of-graphic-invention-a-conversation-with-seymour-chwast",
-      "source": "PRINT Magazine",
-      "published": "2026-11-24T15:00:00+00:00",
-      "company": "PRINT Magazine",
-      "summary": "Join PRINT for a conversation that celebrates not simply a career, but a way of seeing. Chwast’s work is more than a record of graphic design history. It is a testament to the power of an individual visual language—one shaped by curiosity, humor, experimentation, and an enduring willingness to question convention. The post A Master of Graphic Invention: A Conversation with Seymour Chwast appeared first on PRINT Magaz",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-a-master-of-graphic-invention-a-conversation-with-seymour-chwast-2026-11-24",
-      "flag": "Moodboard fuel",
-      "image": "https://i0.wp.com/www.printmag.com/wp-content/uploads/2026/11/Headshot-1-1.png?fit=1320%2C969&quality=80&ssl=1",
-      "beat": "Graphic design"
-    },
-    {
-      "title": "The Daily Heller: A Birds-eye View of a Divided World",
-      "source_title": "The Daily Heller: A Birds-eye View of a Divided World",
-      "url": "https://www.printmag.com/daily-heller/the-daily-heller-a-birdseye-view-of-a-divided-world",
-      "source": "PRINT Magazine",
-      "published": "2026-11-24T12:00:00+00:00",
-      "company": "PRINT Magazine",
-      "summary": "An eagle, a dove, and the world today. The post The Daily Heller: A Birds-eye View of a Divided World appeared first on PRINT Magazine .",
-      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
-      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
-      "fingerprint": "print-magazine-the-daily-heller-a-birds-eye-view-of-a-divided-world-2026-11-24",
-      "flag": "Moodboard fuel",
-      "image": "https://www.printmag.com/wp-content/uploads/2026/11/teasevx.jpg",
       "beat": "Graphic design"
     },
     {
@@ -321,6 +276,51 @@
       "flag": "Moodboard fuel",
       "image": "https://cdn.mos.cms.futurecdn.net/JXrXfe45eGwo7Pa6CNZCjK-1920-80.jpg",
       "beat": "Motion + video"
+    },
+    {
+      "title": "\"I don’t erase mistakes, I paint over them\" – artist Fredrik Löfgren Eriksson on finding inspiration from Magic: The Gathering",
+      "source_title": "\"I don’t erase mistakes, I paint over them\" – artist Fredrik Löfgren Eriksson on finding inspiration from Magic: The Gathering",
+      "url": "https://www.creativebloq.com/how-to/i-dont-erase-mistakes-i-paint-over-them-artist-fredrik-lofgren-eriksson-on-finding-inspiration-from-magic-the-gathering",
+      "source": "Creative Bloq",
+      "published": "2026-11-24T07:00:00+00:00",
+      "company": "Creative Bloq",
+      "summary": "My dream is to work for Magic: The Gathering some day. So I decided to paint something that would fit into one of their cards. After a little reference searching, I found a spell that could be really eye catching: the Disintegrate spell. I decided that the composition of the image would follow a triangle shape with three characters. The powers would seem chaotic but flow up around the magic caster in a circle to crea",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-i-don-t-erase-mistakes-i-paint-over-them-artist-fredrik-l-fgren-e-2026-11-24",
+      "flag": "Moodboard fuel",
+      "image": "https://cdn.mos.cms.futurecdn.net/brWjdhzr4R6otaiik43oQb-1920-80.jpg",
+      "beat": "Motion + video"
+    },
+    {
+      "title": "Disney's Ice Age: Boiling Point trailer gets a frosty reception",
+      "source_title": "Disney's Ice Age: Boiling Point trailer gets a frosty reception",
+      "url": "https://www.creativebloq.com/news/disneys-ice-age-boiling-point-trailer-gets-a-frosty-reception",
+      "source": "Creative Bloq",
+      "published": "2026-11-24T06:00:00+00:00",
+      "company": "Creative Bloq",
+      "summary": "Disney's Hexed is out next week, and there's a lot of excitement about the short that will accompany it. Lilo & Scratch is something of a revolution for the studio. As well as being its first theatrical short since Once Upon a Studio in 2023, the combination of 3D CG animation with hand-painted 2D elements will be a test of a new animation pipeline that could define the future of Disney's animated movies. We're told ",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-disney-s-ice-age-boiling-point-trailer-gets-a-frosty-reception-2026-11-24",
+      "flag": "Moodboard fuel",
+      "image": "https://cdn.mos.cms.futurecdn.net/xuBpAaVpG85eAEfJ9TTgtH-1920-80.jpg",
+      "beat": "Motion + video"
+    },
+    {
+      "title": "Cyberpunk 2's director just called GTA 6 \"a technological and creative miracle\"",
+      "source_title": "Cyberpunk 2's director just called GTA 6 \"a technological and creative miracle\"",
+      "url": "https://www.creativebloq.com/news/cyberpunk-2s-director-just-called-gta-6-a-technological-and-creative-miracle",
+      "source": "Creative Bloq",
+      "published": "2026-11-24T21:01:15+00:00",
+      "company": "Creative Bloq",
+      "summary": "GTA 6 has been out for less than a week, and it isn't just players and critics who are losing their minds. I gave it 5/5 in my GTA 6 review, and it holds a 99 Metascore, tying Ocarina of Time as the highest-rated game ever. As more people play and see more of Leonida, other game developers (those who really know what's what) are lining up to say they're a bit rattled. The most dramatic reaction I've read came from Ig",
+      "why": "The signal is specific enough to test, reference or discuss in a creative-team context.",
+      "practical": "Open the source, identify the concrete visual or workflow move, and decide whether it belongs in a live brief.",
+      "fingerprint": "creative-bloq-cyberpunk-2-s-director-just-called-gta-6-a-technological-and-creative-2026-11-24",
+      "flag": "Moodboard fuel",
+      "image": "https://cdn.mos.cms.futurecdn.net/RDb866fJxVwQEPzozdgyTb-1920-80.jpg",
+      "beat": "Motion + video"
     }
   ],
   "watchlist": [
@@ -330,7 +330,7 @@
     "London Museum brings \"back a bit of London's heritage\" with Smithfield Market opening",
     "Raúl Sánchez Architects transforms laundry into light-filled Barcelona home",
     "Mason & Fifth's Belsize Park guesthouse was designed to be “domestic and low-impact”",
-    "Dezeen reports from New York's new November design week"
+    "Estudio A-G uses colour to update 1960s book-lined house in Mexico City"
   ],
   "weekly_issue": null,
   "generation_method": "deterministic-fallback",
